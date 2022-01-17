@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNU Alati</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo">GNU Alati</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page" style="background-color: #ff8177;
+                    background-image: linear-gradient(to right, #581845 40%, #cc5333 100%);
+                    background-size: 100%;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-fill-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    cursor:pointer;
+                    text-decoration: none;
+                    font-size: 1.4rem;
+                    ">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="console.html" class="navbar__links" id="konzola-page">Konzola</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="bash.html" class="navbar__links" id="bash-page">Bash</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gcc.html" class="navbar__links" id="gcc-page">GCC</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="make.html" class="navbar__links" id="make-page">Make</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gdb.html" class="navbar__links" id="gdb-page">GDB</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="quiz.html" class="navbar__links" id="quiz-page">Kviz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <div class="hero" id="home">
+        <div class="hero__container">
+            <h1 class="hero__heading">GNU Alati</h1>
+            <p class="hero__description">HSMM-Team</p>
+            <button class="main__btn"><a href="#consoleID">Počni</a></button>
+        </div>
+    </div>
+
+    <!-- Console section -->
+    <div class="consoleHome" id="consoleID">
+        <div class="console__container">
+            <div class="text-box">
+                <h1 class="naslov-l">KONZOLA</h1>
+                <p class="tekst">Bilo da ste početnik ili iskusni programer, konzola je nešto sa čime se morate susresti ukoliko radite na Linux operativnom sistemu. Većina distribucija Linux-a ima malo grafičkih alata koji se koriste za podešavanje i održavanje sistema, tako da se veliki broj operacija mora vršiti iz konzole, jednostavnim unošenjem komandi preko tastature. Zato ćemo se u ovom, uvodnom poglavlju, upoznati sa osnovim komandama konzole i samo nekim od mogućnosti koje nam pruža.</p>
+            </div>
+            
+            <button class="console__btn"><a href="console.html">Konzola</a></button>
+        </div>
+    </div>
+
+    <!-- Bash section -->
+    <div class="bashHome" id="bashID">
+        <div class="bash__container">
+            <div class="text-box">
+                <h1 class="naslov_bash-l">BASH</h1>
+                <p class="tekst">Kao korisnici Linux operativnog sistema, naš cilj je da možemo da komuniciramo sa sistemom preko komandne linije. Upravo je to glavna svrha Shell-a. Bash Shell je upravo taj koji je podrazumevani na većini sistema i koji omogućava efikasnu komunikaciju korisnika i mašine. Iz tog razloga, u ovom poglavlju imaćete prilike da se upoznate sa osnovama Bash skript jezika, kao i nekim načinim manjegove upotrebe.</p>
+                </p>
+            </div>
+            
+            <button class="bash__btn"><a href="bash.html">Bash</a></button>
+        </div>
+    </div>
+
+    <!-- GCC section -->
+    <div class="gccHome" id="gccID">
+        <div class="gcc__container">
+            <div class="text-box">
+                <h1 class="naslov_gcc-l">GCC</h1>
+                <p class="tekst">Kao početnici u svetu programskih jezika i računara trebalo bi da budemo svesni da računari ne mogu da razumeju nijedan od programskih jezika sa kojima radimo. Mogu da tumače samo mašinski jezik nula i jedinica. Kompajler nam ovde priskače u pomoć. U ovom poglavlju upoznaćemo se sa opštim konceptima GCC kompajlera.</p>
+            </div>
+            
+            <button class="gcc__btn"><a href="gcc.html">GCC</a></button>
+        </div>
+    </div>
+
+
+    <!-- Make section -->
+    <div class="makeHome" id="makeID">
+        <div class="make__container">
+            <div class="text-box">
+                <h1 class="naslov_make-l">MAKE</h1>
+                <p class="tekst">Većina programera se susreće sa GNU Make-om u nekom trenutku svoje karijere, bilo da ga koriste za kompajliranje malih biblioteka ili pravljenje čitavog projekta. Iako postoji mnogo, mnogo alternativa Make-u, on se i dalje često bira kao sistem za izradu novog softvera s obzirom na njegov skup funkcionalnosti i široku podršku.
+                    U ovom poglavlju upoznaćemo se sa opštim konceptima i karakteristikama GNU Make-a i naučiti kako da ih na najbolji način iskoristimo. <br>
+                    </p>
+            </div>
+            
+            <button class="make__btn"><a href="make.html">Make</a></button>
+        </div>
+    </div>
+
+    <!-- GDB section -->
+    <div class="gdbHome" id="gdbID">
+        <div class="gdb__container">
+            <div class="text-box">
+                <h1 class="naslov_gdb-l">GDB</h1>
+                <p class="tekst">Nekada se dešava da provedemo sate i sate gledajući u kod i pokušavajući da pronađemo grešku, odnosno razlog zbog koga se naš program ne ponaša očekivano. Za ubrzanje procesa detekcije greške koriste se specijalni programi koji se nazivaju debageri. U ovom poglavlju upoznaćemo se sa osnovnim konceptima i upotrebom GDB debagera.</p>
+            </div>
+            
+            <button class="gdb__btn"><a href="gdb.html">GDB</a></button>
+        </div>
+    </div>
+
+    <!-- About section -->
+    <div class="about" id="aboutID">
+        <section>
+         <div class="about__container">
+             <div class="card">
+                 <div class="imgBx">
+                     <h1>Hristina Nikolić</h1>
+                     <img src="img/Hristina.png">
+                 </div>
+                 <div class="content">
+                     <h2>Kontakt:<br>mr18103@alas.matf.bg.ac.rs
+                        Zaduženje:<br>Prikupljanje i obrada materijala iz oblasti Make i GCC</h2>
+                 </div>
+             </div>
+             <div class="card">
+                <div class="imgBx">
+                    <h1>Sara Živković</h1>
+                    <img src="img/Sara.png">
+                </div>
+                <div class="content">
+                    <h2>Kontakt:<br>mr18022@alas.matf.bg.ac.rs
+                       Zaduženje:<br>Prikupljanje i obrada materijala iz oblasti Bash i Konzola</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <h1>Milica Karličić</h1>
+                    <img src="img/Milica.png">
+                </div>
+                <div class="content">
+                    <h2>Kontakt:<br>mr18101@alas.matf.bg.ac.rs
+                       Zaduženje:<br>Prikupljanje i obrada materijala iz oblasti GDB</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <h1>Milan Dimitrijević</h1>
+                    <img src="img/Milan.png">
+                </div>
+                <div class="content">
+                    <h2>Kontakt:<br>mr18307@alas.matf.bg.ac.rs
+                       Zaduženje:<br>Dizajn sajta i kviza, postavljanje materijala na sajt i povezivanje sa serverom</h2>
+                </div>
+            </div>
+            
+         </div>
+        </section>
+    </div>
+    <div class="copyright__container">
+        <p>©2021 HSMM-Team All rights reserved</p>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

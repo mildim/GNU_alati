@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/index.html" id="navbar__logo" style="background-image: linear-gradient(to right, #353535, #979797);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;">GNU Alati</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="console.html" class="navbar__links" id="konzola-page">Konzola</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="bash.html" class="navbar__links" id="bash-page" style="
+                    background-image: linear-gradient(to right, #353535ad, #979797af);
+                    background-size: 100%;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-fill-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    cursor:pointer;
+                    text-decoration: none;
+                    ">Bash</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gcc.html" class="navbar__links" id="gcc-page">GCC</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="make.html" class="navbar__links" id="make-page">Make</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gdb.html" class="navbar__links" id="gdb-page">GDB</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Navigation bar Section -->
+    <div class="sidenavD">
+        <div class="sidenav_bash">
+            <a class="bashID" href="#bashID" style="color:#97979781 ;"><span class="nav_h">BASH</span></a>
+
+            <a class="uvod_n" href="#uvod_n"><span class="nav_h">Uvod</span></a>
+            <a class="sta_n" href="#sta_n">&#x021C0 Šta je Shell?</a>
+            <a class="karakteristike_n" href="#karakteristike_n">&#x021C0 Karakteristike BASH shell&minus;a</a>
+            <a class="skripti_n" href="#skripti_n"><span class="nav_h">BASH skripti</span></a>
+            <a class="kako_pravimo_n" href="#kako_pravimo_n">&#x021C0 Kako pravimo Bash skripte?</a>
+            <a class="pokretanje_n" href="#pokretanje_n">&#x021C0 Kako pokrećemo Bash skripte?</a>
+            <a class="prvi_n" href="#prvi_n">&#x021C0 Prvi program</a>
+            <a class="komentari_n" href="#komentari_n">&#x021C0 Komentari</a>
+            <a class="navodnici_n" href="#navodnici_n">&#x021C0 Navodnici u Bash-u</a>
+            <a class="promenljive_n" href="#promenljive_n"><span class="nav_h">Promenljive u BASH&minus;u</span></a>
+            <a class="tipovi_n" href="#tipovi_n">&#x021C0 Tipovi podataka</a>
+            <a class="tip_prom_n" href="#tip_prom_n">&#x021C0 Tipovi promenljivih</a>
+            <a class="prom_n" href="#prom_n">&#x021C0 Rad sa promenljivama</a>
+            <a class="arg_n" href="#arg_n">&#x021C0 Argumenti komande linije</a>
+            <a class="unos_n" href="#unos_n"><span class="nav_h">Unos podataka od strane korisnika</span></a>
+            <a class="datum_n" href="#datum_n"><span class="nav_h">Datum u BASH&minus;u</span></a>
+            <a class="date_n" href="#date_n">&#x021C0 `Date` komanda </a>
+            <a class="aritmeticke_n" href="#aritmeticke_n"><span class="nav_h">Aritmetičke operacije</span></a>
+            <a class="duple_z_n" href="#duple_z_n">&#x021C0 Duple zagrade</a>
+            <a class="let_n" href="#let_n">&#x021C0 let konstrukcija</a>
+            <a class="backticks_n" href="#backticks_n">&#x021C0 backticks</a>
+            <a class="uslovne_n" href="#uslovne_n"><span class="nav_h">Bash uslovne naredbe</span></a>
+            <a class="if_n" href="#if_n">&#x021C0 If naredba</a>
+            <a class="uif_n" href="#uif_n">&#x021C0 Ugnježena if naredba</a>
+            <a class="ifelse_n" href="#ifelse_n">&#x021C0 If else naredba</a>
+            <a class="uifelse_n" href="#uifelse_n">&#x021C0 Ugnježdena if-else naredba </a>
+            <a class="elif_n" href="#elif_n">&#x021C0 Else if naredba</a>
+            <a class="case_n" href="#case_n">&#x021C0 Case naredba</a>
+            <a class="bashp_n" href="#bashp_n"><span class="nav_h">Bash petlje</span></a>
+            <a class="for_n" href="#for_n">&#x021C0 For petlja</a>
+            <a class="while_n" href="#while_n">&#x021C0 While petlja</a>
+            <a class="until_n" href="#until_n">&#x021C0 Until petlja </a>
+            <a class="niske_n" href="#niske_n"><span class="nav_h">Bash niske </span></a>
+            <a class="opniske_n" href="#opniske_n">&#x021C0 Operatori za rad sa niskama</a>
+            <a class="nalazenje_n" href="#nalazenje_n">&#x021C0 Nalaženje dužine niski</a>
+            <a class="podniske_n" href="#podniske_n">&#x021C0 Podniske u Bash-u</a>
+            <a class="konkatenacija_n" href="#konkatenacija_n">&#x021C0 Konkatenacija (spajanje) niski</a>
+            <a class="fje_n" href="#fje_n"><span class="nav_h">Bash funkcije</span></a>
+            <a class="parg_n" href="#parg_n">&#x021C0 Prosledjivanje argumenata</a>
+            <a class="opseg_n" href="#opseg_n">&#x021C0 Opseg promenljivih</a>
+            <a class="pvf_n" href="#pvf_n">&#x021C0 Povratne vrednosti funkcija</a>
+            <a class="bnizovi_n" href="#bnizovi_n"><span class="nav_h">Bash nizovi </span></a>
+            <a class="deklaracija_n" href="#deklaracija_n">&#x021C0 Deklaracija nizova</a>
+            <a class="pristupanje_n" href="#pristupanje_n">&#x021C0 Pristupanje elementima niza</a>
+            <a class="ispisivanje_n" href="#ispisivanje_n">&#x021C0 Ispisivanje elemenata niza</a>
+            <a class="operacije_n" href="#operacije_n">&#x021C0 Operacije sa nizovima</a>
+            <a class="refer_n" href="#refer_n">&ensp;&minus; Referisanje na jedan element</a>
+            <a class="isp_n" href="#isp_n">&ensp;&minus; Ispisivanje indeksa elemenata niza</a>
+            <a class="nalaz_n" href="#nalaz_n">&ensp;&minus; Nalaženje dužine niza </a>
+            <a class="dod_n" href="#dod_n">&ensp;&minus; Dodavanje elementa u niz</a>
+            <a class="brisanje_n" href="#brisanje_n">&ensp;&minus; Brisanje elementa niza</a>
+            <a class="brisc_n" href="#brisc_n">&ensp;&minus; Brisanje celog niza</a>
+            <a class="traz_n" href="#traz_n">&ensp;&minus; Traženje isečka niza (`slice operator`)</a>
+
+            <a class="" href="#"><span class="nav_h"><br> <br> <br> <br> <br> <br></span></a>
+        </div>
+    </div>
+
+    <!-- Bash section -->
+    <div class="bash" id="bashID">
+        <div class="bash__container">
+            <div class="text-box">
+                <h2 class="naslov_bash-l">BASH</h2>
+                <p class="tekst">Bash je interpreter i programski jezik u obliku komandne linije koji je napisao Brajan Foks 1987. godine.
+                    Uključen je na većini juniksolikih operativnih sistema sa GNU licencom. Na većini Linux sistema, ovo je podrazumevani interpreter, 
+                    tj. interpreter koji se automatski dodjeljuje novim korisnicima. 
+                    <br> 
+                    Bash sadrži sopstveni skript jezik, pomoću kojeg je moguće ostvariti visok nivo automatizacije poslova, jer podržava petlje, grananja, aritmetičke operacije, promjenljive i manipulaciju njihovim vrednostima pomoću regularnih izraza, manipulaciju standardnog ulaza, izlaza i izlaza za greške i preusmeravanje u datoteke, što u kombinaciji sa standardnim skupom alata na juniksolikim sistemima čini <span class="b_bash">moćnu programersku alatku</span> .
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bash" style="background-image: url(img/Background-Bash-tekst.jpg);">
+        <div class="bash__container">
+            <div class="text-box">
+
+                <h2 class="naslov_bash-l" id="uvod_n">Uvod</h2>
+                <span class="tekst my_comment"> <i>
+                    Bash je nastao kao naslednik interpretera Born (engl. Bourne shell), koji je dobio ime po Stivenu Bornu. Ime „Bash“, predstavlja akronim za „Bourne Again Shell“ („Opet Born interpreter“), što je aluzija na „Born again shell“ („Ponovno rođeni interpreter“).
+                </i> </span> <br> <br>
+
+                <h2 class="naslov_bash-s" id="sta_n">Šta je Shell?</h2>
+                <p class="tekst">
+                    UNIKS Shell je program ili tumač komandne linije koji tumači komande koje je korisnik uneo direktno u terminal ili koje se mogu pročitati iz datoteke (tj. Shell Script - a), a zatim ih prosleđuje operativnom sistemu na obradu. <br>
+                    Shell skripti se ne kompajliraju, već interpretiraju.<br>
+                    <br>
+                    Postoje različite vrste shell- a koje su dostupne na Linux operativnom sistemu:<br>
+                    
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>Bourne Shell<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>C Shell<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>Corn Shell<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>GNU Bourne Shell<br>
+                    <br>
+                    Da biste znali koji tip shell-a podržava vaš operativni sitem, unesite narednu komandu u terminal:<br> <br>
+                    <span class="my_code">cat /etc/ shells	</span> <br> <br>
+                    Da biste znali gde je bash lociran u vašem OS-u, unesite sl.komandu: <br> <br>
+                    <span class="my_code">which bash  </span> <br> <br>           
+                </p>
+
+                <h2 class="naslov_bash-s" id="karakteristike_n">Karakteristike BASH shell&minus;a</h2>
+                <p class="tekst">
+                    <span class="b_bash">&ensp;&ensp;1. </span>Bash je sh - kompatibilan jer je izveden iz originalnog UNIKS Shell-a. U njega su uključene najbolje i korisne karakteristike Corn i C shell - a (manipulacija direktorijumom, kontrola poslova, aliasi, itd.) <br><br>
+                    <span class="b_bash">&ensp;&ensp;2. </span>Bash se može pozvati opcijama komandne linije sa jednim znakom (-a, -b, -c, -i, -l, -r, itd.), kao i opcijama komandne linije sa više znakova, kao što su --debugger,   --help,  --login itd.<br><br>
+                    <span class="b_bash">&ensp;&ensp;3. </span>Bash start-up fajlovi su skripti koji se izvršavaju kada je Bash pokrenut; svaki ima svoju posebnu ulogu, a svi zajedno služe za stvaranje okruženja.<br><br>
+                </p>
+
+                <h2 class="naslov_bash" id="skripti_n">BASH skripti</h2>
+                <p class="tekst">
+                    <span class="b_bash">Bash skript</span> je običan tekstualni fajl koji sadrži niz različitih komandi koje obično kucamo u komandnom prozoru. Uključuje jednu, ili više komandi ili delove karakteristične za imperativno programiranje: petlje, funkcije, uslovne izraze… <br>
+                    Uglavnom se koristi da automatizuje zadatke koji se ponavljaju na Linux sistemu. <br>
+                    Bash skript je napisan na Bash programskom jeziku. <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="kako_pravimo_n">Kako pravimo Bash skripte?</h2>
+                <p class="tekst">
+                    <span class="b_bash">&ensp;&ensp;● </span>Da bi napravili prazan bash skript, pozicioniramo se u direktorijum gde želimo da skript bude kreiran, <span class="b_bash">cd komandom</span> <br>
+                    <span class="b_bash">&ensp;&ensp;● </span>Sa komandom <span class="b_bash">touch</span> možete stvoriti prazne skriptove <br>
+                    <span class="my_code">$ touch ime_fajla.sh</span><br><br>
+
+                    <span class="b_bash">&ensp;&ensp;● </span>Možemo koristiti tekst editor kao što je npr gedit za kucanje shell komandi; narednom komandom otvaramo već napravljeni, prazan,  shell skript <br>
+                    <span class="my_code">$ gedit ime_fajla.sh</span><br><br>
+                    
+                    <span class="b_bash">&ensp;&ensp;● </span>Ekstenzija potrebna da bi se fajl izvršio je je <span class="b_bash">.sh </span><br><br>
+                    Svaki Bash skript počinje linijom:<br><br>
+                    <span class="my_code">#!/bin/bash</span><br><br>
+                     
+                    #! se naziva <span class="b_bash">shebang</span> a ostatak linije je put do interpretera   <br> <br>                                                     
+
+                    <span class="my_comment">
+                        <span class="b_c_bash">Shebang (#!)</span>
+                        Kod juniksolikih operativnih sistema, ovaj znak na početku linije obaveštava interpreter da izvrši linije skripta, i poznat je kao <span class="b_c_bash">direktiva putanje</span> za izvršavanje različitih vrsta skriptova, kao što su Bash, Python…<br>
+                        Bitno je da je uvek u prvoj liniji skripta i da ne sme da postoji prostor pre #, kao i izmedju !, # (#!) i puta do interperetera.<br><br>
+                    </span> <br>
+
+                    <span class="b_bash">echo</span><br>
+                    echo je ugradjena komanda u Bash-u, koristi se za prikazivanje output-a prosleđujući argumente<br>
+                    Sintaksa:   <br>
+                    <span class="my_code">$ echo [opcija] string<br><br>$ echo string</span> <br> 
+                     
+                    Može se takodje koristiti za ubacivanje razmaka izmedju dva reda, tako što u skriptu samo napišemo komandu echo bez argumenata izmedju dva output-a.<br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="pokretanje_n">Kako pokrećemo Bash skripte?</h2>
+                <p class="tekst">
+                    <span class="b_bash">Metoda1:</span> <br>
+                    Novokreirani fajlovi se neće izvršavati bez obzira na ekstenziju koju im dodelimo. Zbog toga moramo da tom fajlu koji želimo da izvršimo dodelimo dozvolu za izvršavanje.<br>
+                    Za to koristimo narednu komandu:<br><br>
+
+                    <span class="my_code">$ chmod +x ime_fajla.sh</span> <br> 
+
+                    Sada možemo pokrenuti naš Bash skript, koristeći komandu ./<br><br>
+
+                    <span class="my_code">$ ./ime_fajla.sh</span> <br> 
+                    
+                    <span class="b_bash">Metoda2:</span><br>
+                    Drugi način za pokretanje Bash skriptova je pozivanje interpretera eksplicitno.<br><br>
+
+                    <span class="my_code">$ bash ime_fajla.sh</span> <br> 
+
+                    Kod ove metode nije potrebno dodati dozvolu za izvršavanje fajlu.<br><br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="prvi_n">Prvi program</h2>
+                <p class="tekst">
+                    Kada smo prošli osnovne komande vezane za pravljenje i pokretanje Bash skriptova, sada možemo napraviti naš prvi program praćenjem sledećih koraka.<br><br>
+
+                    <span class="b_bash">Korak 1:</span> Otvorite terminal, pomoću komande cd pozicionirajte se na željenu lokaciju u sistemu<br>
+                    <span class="b_bash">Korak 2:</span> Kreirajte praznu datoteku pomoću touch komande; da biste je mogli izvršiti nazovite je bash_script.sh. <br><br>
+
+                    <span class="b_bash">Korak 3:</span> Otvorite fajl koristeći neki editor teksta : gedit, kate …<br>
+                    <img src="img/slike_bash/hello_world.png" alt="hello world" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="b_bash">Korak 4:</span> Kodiranje<br><br>
+
+                    <span class="b_bash">Korak 5:</span> Izvršite skript komandom ./.<br>
+                    <img src="img/slike_bash/greska.png" alt="greska" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Dobićete grešku, jer kao što možete da vidite na slici ispod, fajl ima samo dozvolu za čitanje i pisanje<br>
+                    <img src="img/slike_bash/greska2.png" alt="greska2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="b_bash">Korak6:</span> Dodaje dozvolu za izvršavanje komandom narednom komandom:<br><br>
+
+                    <span class="my_code">$ chmod +x bash_script.sh </span> <br> 
+
+                    Sada možemo izvršiti skript :-)<br>
+                    <img src="img/slike_bash/skript.png" alt="izvrsavanje skripta" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="komentari_n">Komentari</h2>
+                <p class="tekst">
+                    Za pisanje <span class="b_bash">jednolinijskih</span> komentara koristi se <span class="b_bash"># (hash)</span><br> <br> 
+
+                    <span class="my_code">$ #Ovo je komentar u Bash-u.<br> 
+                        $ echo  "This is Code" # ovo je takodje komentar, u istoj liniji sa kodom. </span> <br> 
+
+                        &ensp;&ensp;●razmak izmedju teksta i # nije obavezan! <br> <br>
+
+                    Postoje dva načina za pisanje <span class="b_bash">višelinijskih</span> komentara:<br> 
+                    <span class="b_bash">&ensp;&ensp;1. </span>komentari se pišu izmedju <span class="b_bash">&lt;&lt;COMMENT i  COMMENT</span>.<br> 
+                    <span class="b_bash">&ensp;&ensp;2. </span>komentari se pišu izmedju  (: ') i  (')
+                </p>
+
+                <h2 class="naslov_bash-s" id="navodnici_n">Navodnici u Bash-u</h2>
+                <p class="tekst">
+                    &minus; Kada radimo sa običnim tekstom, ne postoji razlika izmedju jednostrukih i dvostrukih navodnika <br>
+                    &minus; Stavljanje znakova pod <span class="b_bash">jednostruke navodnike (')</span> čuva vrednost svakog znaka unutar navodnika. Jednostruki navodnik se neće pojaviti između jednostrukih navodnika, čak i kada mu prethodi obrnuta kosa crta.<br>
+                    &minus; Stavljanje znakova pod <span class="b_bash">dvostruke navodnike  (")</span> čuva doslovnu vrednost svih znakova unutar navodnika, sa izuzetkom $, `, \ . Znakovi $ i ` zadržavaju svoje posebno značenje unutar dvostrukih navodnika. Kosa crta zadržava svoje posebno značenje samo kada je praćena jednim od sledećih znakova: $, `, ", \ ili novi red. Unutar dvostrukih navodnika uklanjaju se obrnute kose crte iza kojih se nalazi jedan od ovih znakova. Obrnute kose crte koje prethode znakovima bez posebnog značenja ostaju nepromenjene. Dvostruki navodnik se može citirati unutar dvostrukih navodnika tako što mu prethodi obrnuta kosa crta.<br>
+                    &minus; Znakovi * i @ imaju posebno značenje kada su u dvostrukim navodnicima<br>
+                </p>
+
+                <h2 class="naslov_bash" id="promenljive_n">Promenljive u BASH&minus;u</h2>
+                <p class="tekst">
+                    Promenljive su suština programiranja. <br>
+                    Promenljive čuvaju podatke, poznate su kao privremena skladišta za bilo koju vrstu podataka kao što su ceo broj, float, char, itd… Njihova vrednost se može promeniti i koristiti više puta.<br><br>
+
+                    Sintaksa: <br><br>
+
+                    <span class="my_code">$ ime_promenljive=vrednost</span> <br>
+
+                    Pravila za definisanje promenljivih u Bash - u:<br>
+                    Da biste ispisali promenljivu morate staviti znak dolara <span class="b_bash">($)</span> kao prefiks<br>
+                    Takodje, isto pravilo važi za dodeljivanje vrednosti promenljivoj<br>
+                    &minus; Ime promenljive može da sadrži slova (mala i velika), cifre i donju crtu, a njeno ime može da započne samo slovima i donjom crtom.<br>
+                    &minus; Ime promenljive je osetljivo na velika i mala slova: x i X se smatraju za dve različite promenljive.<br>
+                    &minus; Ime promenljive može biti napisano ili u UPPER_CASE ili LOVER_CASE slovima ili mešavina oba kako želite.<br>
+                    &minus; Promenljiva se može koristiti bilo gde u Bash skriptu ili na komandnoj liniji, jer će je Bash za vreme izvršavanja zameniti njenom dodeljenom vrednošću. To je moguće zbog vršenja zamene pre pokretanja komande.<br>
+                    &minus; <span class="b_bash">Nema razmaka</span> sa obe strane znaka jednakosti (=) između imena promenljive i njene vrednosti. <br>
+                    &minus; Da biste definisali promenljivu sa jednoznakovnom vrednošću, kao što je var1=vrednost, nema potrebe da koristite navodnike.<br>
+                    &minus; Da biste uneli više reči ili string kao jednu stavku u promenljivoj, onda koristite navodnike za dodeljivanje vašeg sadržaja toj promenljivoj.<br>
+                    &ensp;&ensp;- Jednostruki navodnik ('') pomaže da se tretira svaki znak.<br>
+                    &ensp;&ensp;- Dvostruki navodnik ("") pomaže da se izvrši zamena (supstitucija)<br>
+                </p>
+                <h2 class="naslov_bash-s" id="tipovi_n">Tipovi podataka</h2>
+                <p class="tekst">
+                    U slučaju Bash- a, ne morate da definišete tip promenljive za vreme deklaracije. Bash promenljive su <span class="b_bash">netipizirane - promenljivoj dodeljujete samo vrednost, a tip se automatski dodeljuje</span>. <br> <br>
+                    Podaci se ispisuju korišćenjem echo komande, <span class="b_bash">sa znakom $ ispred imena, </span>npr.<br>
+                    <img src="img/slike_bash/tipovi.png" alt="tipovi" style="width:100%;max-width: 700px;"> <br> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="tip_prom_n">Tipovi promenljivih</h2>
+                <p class="tekst">
+                    Razlikujemo dva tipa promenljivih: <br>
+                    <span class="b_bash">&ensp;&ensp;1. </span>Sistemski definisane promenljive<br>
+                    <span class="b_bash">&ensp;&ensp;2. </span>Korisnički definisane promenljive<br><br>
+
+                    <span class="b_bash">Sistemski definisane promenljive</span>: tzv. predefinisane promenljive, jer su stvorene od strane Linux operativnog sistema; uglavnom su definisane velikim slovima<br>
+                    To su:<br>
+                    <span class="b_bash">&ensp;&ensp;1. BASH</span> - predstavlja ime shell-a<br>
+                    <span class="b_bash">&ensp;&ensp;2. BASH_VERSION</span> - govori u kojoj verziji shell-a se Bash nalazi<br>
+                    <span class="b_bash">&ensp;&ensp;3. COLUMNS</span> - prikazuje broj kolona na vašem ekranu<br>
+                    <span class="b_bash">&ensp;&ensp;4. HOME</span> - prikazuje home direktorijum korisnika<br>
+                    <span class="b_bash">&ensp;&ensp;5. OSTYPE</span> - govori koji se operativni sistem koristi<br>
+                    <span class="b_bash">&ensp;&ensp;6. PWD</span> - predstavlja trenutni radni direktorijum<br>
+                    <span class="b_bash">&ensp;&ensp;7. USERNAME</span> - predstavlja ime trenutno ulogovanog korisnika<br><br>
+
+                    <img src="img/slike_bash/tipoviProm.png" alt="tipoviProm" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    Ako želite da saznate listu ovih promenljivih koje postoje na vašem sistemu, ukucajte komande <span class="b_bash">set, env, i printenv</span> <br><br>
+
+                    <img src="img/slike_bash/env.png" alt="env" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    <span class="b_bash">Korisnički definisane promenljive:</span> Ove promenljive stvara i njima manipuliše korisnik; uglavnom su definisane malim slovima, ali mogu da se pišu i velikim slovima.<br>
+                    <span class="b_bash">Nije potrebno definisati tip promenljive prilikom deklaracije!<br>
+                    Za njihovo ispisivanje koristi se komanda echo. <br>
+                    Imenu promenljive mora prethoditi znak dolara $ svaki put kada referenciramo na vrednost koju sadrži.<br><br>
+                    </span>
+
+                    Primer:<br>
+                    <img src="img/slike_bash/tipoviPod2.png" alt="tipoviPod2" style="width:100%;max-width: 700px;"> <br> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="prom_n">Rad sa promenljivama</h2>
+                <p class="tekst">
+                    Promenljive podržavaju dva tipa akcija: <br>
+                    <span class="b_bash">&ensp;&ensp;1. dodela vrednosti promenljivoj</span> - najčešće direktna dodela vrednosti<br>
+                    <span class="b_bash">&ensp;&ensp;2. ispisivanje vrednosti promenljive</span> - stavljanjem iznaka $ ispred imena promenljive bilo gde u skriptu gde želimo da vidimo vrednost te promenljive<br><br>
+
+                    Sa svim promenljivama, o kojima smo pričali, možemo raditi i u terminalu i u Bash skriptu takodje.<br><br>
+
+                    <span class="b_bash">U terminalu:</span> <br><br>
+
+                    Primer1: postavljanje vrednosti promenljivama (nemamo razmak pre i posle znaka =)<br><br>
+                    <img src="img/slike_bash/prom1.png" alt="prom1" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    Primer2: ispisivanje i refenciranje promenljivih, korišćenjem komande echo <br><br>
+                    <img src="img/slike_bash/prom2.png" alt="prom2" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    Primer3: nevažeće promenljive<br><br>
+                    <img src="img/slike_bash/prom3.png" alt="prom3" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    Primer4: kombinovanje više promenljivih<br>
+                    vrednosti promenljivih menjaju njihova imena<br><br>
+                    <img src="img/slike_bash/prom4.png" alt="prom4" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    <span class="b_bash">U Bash skriptu:</span> <br>
+                    Za ispisivanje vrednosti promenljivih, isto kao i u terminalu koristimo komandu echo.<br>
+                    Pravila za manipulaciju promenljivima su identična<br>
+                    Primer:<br><br>
+                    <img src="img/slike_bash/prom5.png" alt="prom5" style="width:100%;max-width: 700px;"> <br> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="arg_n">Argumenti komande linije</h2>
+                <p class="tekst">
+                    Argumenti komandne linije se koriste da bi naš Bash skript učinili dinamičnijim prosleđivanjem unosa sa komandne linije u kod. <br>
+                    Prosleđujemo ove argumente tokom izvršavanja skripta u sledećem obliku:<br><br>
+
+                    <span class="my_code">$ ./ime_skripta arg1 arg2 arg3.....</span> <br> <br>
+
+                    U Bash Shell-u, argumenti komandne linije se koriste sa referencama na sledeće podrazumevane parametre:<br><br>
+
+                    <span class="b_bash">&ensp;&ensp;$0</span> čuva ime skripta koji se poziva.<br>
+                    <span class="b_bash">&ensp;&ensp;$1-$9</span> čuva imena prvih 9 argumenata ili se može koristiti kao pozicija argumenata.<br>
+                    <span class="b_bash">&ensp;&ensp;$#</span> specificira ukupan broj argumenata prosleđenih skriptu.<br>
+                    <span class="b_bash">&ensp;&ensp;$*</span> čuva sve argumente komandne linije tako što ih spaja.<br>
+                    <span class="b_bash">&ensp;&ensp;$@</span> čuva listu argumenata kao niz.<br>
+                    <span class="b_bash">&ensp;&ensp;$?</span> specificira ID trenutnog skripta.<br>
+                    <span class="b_bash">&ensp;&ensp;$$</span> specificira izlazni status poslednje komande ili poslednjeg izvršenog procesa <br>
+                    <span class="b_bash">&ensp;&ensp;$!</span> prikazuje ID poslednjeg pozadinskog posla.<br><br>
+
+                    Dve metode koje koristimo za prosleđivanje argumenata komandne linije:<br><br>
+
+                    <span class="b_bash">Metoda 1: Korišćenjem broja pozicije</span> <br>
+                    &minus;prva komanda će ispisati ime skripta koji pokrećemo<br>
+                    &minus;druga komada će ispisati prvih 6 argumenata komandne linije<br>
+                    <img src="img/slike_bash/arg.png" alt="argumenti" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    <span class="b_bash">Metoda2: Korišćenjem niza</span> <br><br>
+
+                    Da bi primenili ovu metodu, treba uraditi sledeće korake:<br>
+                    <span class="b_bash">&ensp;&ensp;1. </span>Napraviti Bash skriptu<br>
+                    <span class="b_bash">&ensp;&ensp;2. </span>Deklarisati bilo koju promenljivu i dodeliti joj vrednost $@ - predstavlja argument koji čuva argumente komande linije koje prosledimo kao niz<br>
+                    <span class="my_code">variable_name=("$@")</span>  <br> <br>
+                    <span class="b_bash">&ensp;&ensp;3. </span>Prikazati argumente koristeći sledeću sintaksu:<br>
+                    <span class="my_code">${variable_name[i]}</span>  <br><br>
+
+                    <span class="b_bash">&ensp;&ensp;4. </span>Izvršiti napisani skript<br><br>
+                    <img src="img/slike_bash/arg1.png" alt="argumenti1" style="width:100%;max-width: 700px;"> <br> <br> <br>
+                    <img src="img/slike_bash/arg2.png" alt="argumenti2" style="width:100%;max-width: 700px;"> <br> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash" id="unos_n">Unos podataka od strane korisnika</h2>
+                <p class="tekst">
+                    Da bismo registrovali unos podataka od strane korisnika, koristimo ugradjenu komandu u Bash-u zvanu <span class="b_bash">read</span>. <br>
+                    Ova komanda preuzima korisnički unos i dodeljuje ga promenljivoj. Čita samo jednu liniju iz Bash shell-a.<br><br>
+
+                    Sintaksa: <br>
+                    <span class="my_code">$ read &lt;ime_promenljive&gt;</span> <br>
+
+                    <span class="b_bash">&#x021C0 Primeri:</span><br>
+                    <span class="b_bash">&minus;Primer1:</span><br>    
+                    <img src="img/slike_bash/unos1.png" alt="unos1" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/unos2.png" alt="unos2" style="width:100%;max-width: 700px;"> <br> <br> 
+
+                    <span class="b_bash">&minus;Primer2:</span> <br>
+                    Šta ako ne prosledimo ni jednu promenljivu komandi read?<br>
+                    Ako se to desi, možemo koristiti ugradjenu promenljivu <span class="b_bash">REPLY</span> (treba staviti prefiks $)  dok se prikazuje unos:<br><br>
+                    <img src="img/slike_bash/unos3.png" alt="unos3" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_bash/unos4.png" alt="unos4" style="width:100%;max-width: 700px;"> <br> <br> 
+
+                    <span class="b_bash">&minus;Primer3:</span> Vrednost može da se unese u istom redu gde je i poruka za korisnika (tzv. prompt)<br>
+                    Da bismo ovo omogućili, koristimo opciju <span class="b_bash">-p</span><br><br>
+
+                    Sintaksa: <br><br>
+
+                    <span class="my_code">$ read -p PROMPT &lt;ime_promenljive&gt;</span> <br> <br>
+                    <img src="img/slike_bash/unos5.png" alt="unos5" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/unos6.png" alt="unos6" style="width:100%;max-width: 700px;"> <br> <br> 
+
+                    <span class="b_bash">&minus;Primer4:</span> Možemo da unesemo i više vrednosti korišćenjem niza<br>
+                    Sintaksa:<br> 
+
+                    <span class="my_code">$ read -a &lt;ime_promenljive&gt;</span>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> ime promenljive referiše na niz argumenata komandne linije<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> koristimo opciju <span class="b_bash">-a</span>    <br>
+                    <img src="img/slike_bash/unos7.png" alt="unos7" style="width:100%;max-width: 700px;"> <br>
+                    Output:<br>
+                    <img src="img/slike_bash/unos8.png" alt="unos8" style="width:100%;max-width: 700px;"> <br> <br> 
+                </p>
+
+                <h2 class="naslov_bash" id="datum_n">Datum u BASH&minus;u</h2>
+                <p class="tekst">
+                    Bash shell pruža različite komande za rad sa datumima zajedno sa različitim opcijama formatiranja. <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="date_n">`Date` komanda</h2>
+                <p class="tekst">
+                    Možemo koristiti komandu `date` da prikažemo ili promenimo trenutnu vrednost datuma i vremena sistema. Možemo je koristiti i za izračunavanje zadataka koji se odnose na računanje vrednosti datuma i vremena. <br><br>
+
+                    Ako se naredba `date` koristi bez ikakve opcije, onda će ona odštampati vrednost datuma i vremena trenutnog sistema. <br><br>
+
+                    Sintaksa: <br>
+                    <span class="my_code">date</span> <br> 
+
+
+                    Komanda `date` sadrži nekoliko opcija formatiranja za formatiranje izlaza, te možemo da odštampamo vrednost datuma i vremena u različitim formatima.<br><br>
+
+                    Sintaksa:<br>
+                    <span class="my_code">date +&lt;opcije formatiranja&gt;&lt;opcije formatiranja&gt;...</span> <br>
+
+                    Opcije za formatiranje datuma su <span class="b_bash">case sensitive</span>, tj bitna je razlika izmedju velikih i malih slova. <br>
+                    Na primer, ako koristimo %m za mesec, %d za dan i %Y za godinu dobili bi drugačiji rezultat ako stavimo %M na mestu %m, jer ta opcija definiše minute. <br><br>
+
+                    Lista opcija za formatiranje datuma:<br>
+                    <table class="my_table tekst" style="font-size: 10pt;">
+                        <tr>
+                            <td><span class="b_bash">Opcija </span></td>
+                            <td><span class="b_bash">Deo datuma </span></td>
+                            <td><span class="b_bash">Opis  </span></td>
+                            <td><span class="b_bash">Primer output&minus;a </span></td>
+                        </tr>
+                        <tr>
+                            <td>date +%a</td>
+                            <td>Dan u nedelji</td>
+                            <td>Ime dana u nedelji u kratkoj formi(Sun, Mon, Tue, Wed, Thu, Fri, Sat)</td>
+                            <td>Mon</td>
+                        </tr>
+                        <tr>
+                            <td>date +%b</td>
+                            <td>Mesec</td>
+                            <td>Ime meseca u kratkoj formi (Jan, Feb, Mar...)</td>
+                            <td>Jan</td>
+                        </tr>
+                        <tr>
+                            <td>date +%B</td>
+                            <td>Mesec</td>
+                            <td>Puno ime meseca (January, February...)</td>
+                            <td>January</td>
+                        </tr>
+                        <tr>
+                            <td>date +%d</td>
+                            <td>Dan</td>
+                            <td>Dan u mesecu (01)</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>date +%D</td>
+                            <td>MM/DD/YY</td>
+                            <td>Trenutni datum u obliku MM/DD/YY</td>
+                            <td>08/27/2019</td>
+                        </tr>
+                        <tr>
+                            <td>date +%F</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>Datum u obliku YYYY-MM-DD</td>
+                            <td>2019-08-27</td>
+                        </tr>
+                        <tr>
+                            <td>date +%H</td>
+                            <td>Časovi</td>
+                            <td>Vreme u 24-časovnom formatu</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>date +%I</td>
+                            <td>Časovi</td>
+                            <td>Vreme u 12-časovnom formatu</td>
+                            <td>04</td>
+                        </tr>
+                        <tr>
+                            <td>date +%j</td>
+                            <td>Dan</td>
+                            <td>Dan u godini (001 do 366)</td>
+                            <td>239</td>
+                        </tr>
+                        <tr>
+                            <td>date +%m</td>
+                            <td>Mesec</td>
+                            <td>Broj meseca (01 do 12 gde je 01 Januar )</td>
+                            <td>08</td>
+                        </tr>
+                        <tr>
+                            <td>date +%M</td>
+                            <td>Minuti</td>
+                            <td>Minuti (00 do 59)</td>
+                            <td>55</td>
+                        </tr>
+                        <tr>
+                            <td>date +%S</td>
+                            <td>Sekunde</td>
+                            <td>Sekunde (00 do 59)</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>date +%N</td>
+                            <td>Nanosekunde</td>
+                            <td>Nanosekunde (000000000 do 999999999)</td>
+                            <td>300261496</td>
+                        </tr>
+                        <tr>
+                            <td>date +%T</td>
+                            <td>HH:MM:SS</td>
+                            <td>Vreme u obliku HH:MM:SS</td>
+                            <td>15:59:10</td>
+                        </tr>
+                        <tr>
+                            <td>date +%u</td>
+                            <td>Dan u nedelji </td>
+                            <td>Dan u nedelji (01 do 07gde je 01 Ponedeljak)</td>
+                            <td>02</td>
+                        </tr>
+                        <tr>
+                            <td>date +%Y</td>
+                            <td>Godina</td>
+                            <td>Prikazuje celu godinu (YYYY)</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>date +%Z</td>
+                            <td>Vremenska zona</td>
+                            <td>Prikazuje vremesku zonu u kojoj smo trenutno</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    Primeri: <br>
+                    Da bi prikazali datum u formatu <span class="b_bash">MM-DD-YYYY</span> koristimo komandu <span class="b_bash">date +%m-%d-%Y</span><br>
+                    Da bi prikazali datum u formatu <span class="b_bash">MM-YYYY</span> koristimo komandu  <span class="b_bash">date +%m-%Y</span><br>
+                    Da bi prikazali datum u formatu <span class="b_bash">DD-Month, YYYY koristimo komandu</span> <br>
+                    <span class="b_bash">date +%A %d-%B, %Y</span><br><br>
+                </p>
+
+                <h2 class="naslov_bash" id="aritmeticke_n">Aritmetičke operacije</h2>
+                <p class="tekst">
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> postoje 11 aritmetičkih operacija koje se primenjuju na numeričkim vrednostima<br><br>
+
+                    U narednoj tabeli imamo njihovu sintaksu<br>
+                    <table class="my_table tekst" style="font-size: 10pt;">
+                        <tr>
+                            <td><span class="b_bash">Operator </span></td>
+                            <td><span class="b_bash">Opis </span></td>
+                            <td><span class="b_bash">Primeri </span></td>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Sabiranje</td>
+                            <td>$(( 10 + 3 )),rezultat=13</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Oduzimanje </td>
+                            <td>$(( 10 - 3 )), rezultat=7</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Moženje</td>
+                            <td>$(( 10 * 3 )), rezultat=30</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Deljenje</td>
+                            <td>$(( 10 / 3 )), rezultat=3</td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>Eksponent</td>
+                            <td>$((  10 ** 3 )), rezultat=1000</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Ostatak pri deljenju prvog operanda drugim </td>
+                            <td>$(( 10 % 3 )), rezultat=1</td>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>Povećanje vrednosti prvog operanda (promenljiva) za konstantu koja je sa desne strane operatora
+                                Rezultat se ponovo smešta u prvi operand
+                                </td>
+                            <td>x=10 <br>
+                                let "x += 3" <br>
+                                echo $x <br>
+                                rezultat=13
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>Umanjenje vrednosti prvog operanda za konstantu koja je sa desne strane operatora 
+                                Rezultat se ponovo smešta u prvi operand 
+                                </td>
+                            <td>x=10 <br>
+                                let "x -= 3" <br>
+                                echo $x <br>
+                                rezultat=7 
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>Množenje prvog operanda(promenljiva) konstantom sa desne strane operatora (drugi operand). Rezultat se ponovo smešta u prvi operand </td>
+                            <td>x=10 <br>
+                                let "x *= 3" <br>
+                                echo $x <br>
+                                rezultat=30
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>Deljenje prvog operanda(promenljiva) konstantom sa desne strane operatora (drugi operand)
+                                Rezultat se ponovo smešta u prvi operand
+                                </td>
+                            <td>x=10 <br>
+                                let "x /= 3" <br>
+                                echo $x <br>
+                                rezultat=3
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>%=</td>
+                            <td>Ostatak pri deljenju  prvog operanda(promenljiva) konstantom sa desne strane operatora (drugi operand)
+                                Rezultat se ponovo smešta u prvi operand
+                                </td>
+                            <td>x=10 <br>
+                                let "10 %= 3" <br>
+                                echo $x <br>
+                                rezultat=1
+                                </td>
+                        </tr>
+                    </table>    
+                </p>
+                <p class="tekst">
+                    Postoji više načina za izvodjenje aritmetičkih operacija:
+                </p>
+
+                <h2 class="naslov_bash-s" id="duple_z_n">Duple zagrade</h2>
+                <p class="tekst">
+                    Bilo koja aritmetička operacija u Bash-u se može izvršiti bez korišćenja komandi. <br>
+                    Najlakši način za izvodjenje aritmetičkih operacija u Bash shell-u. Zagrade se mogu iskoristiti na 4 različita načina:<br>
+                    <span class="b_bash">Metoda 1</span><br>
+                    <span class="my_code">$ Sum=$((10+3))  <br>
+                    $ echo "Suma = $Sum"
+                    </span> <br> <br>
+                     
+
+                    <span class="b_bash">Metoda 2</span><br>
+                    <span class="my_code">$ ((Sum=10+3))<br>  
+                        $ echo "Suma = $Sum"
+                    </span> <br> <br>
+                    
+                    <span class="b_bash">Metoda 3</span><br>
+                    <span class="my_code">$ Num1=10  <br>
+                        $ Num2=3  <br>
+                        $ ((Sum=Num1+Num2))  <br>
+                        $ echo "Suma = $Sum" 
+                    </span> <br> <br>
+                    
+
+                    <span class="b_bash">Metoda 4</span><br>
+                    <span class="my_code">$ Num1=10  <br>
+                        $ Num2=3  <br>
+                        $ Sum=$((Num1+Num2))  <br>
+                        $ echo "Suma = $Sum" 
+                    </span> <br> 
+                    
+
+                    Sve metode dovode do istog outputa: broj 13<br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="let_n">let konstrukcija</h2>
+                <p class="tekst">
+                    `let` je još jedna ugrađena komanda za obavljanje aritmetičkih operacija u bash-u. `let` komanda ne može da štampa izlaz na terminalu bez čuvanja vrednosti u promenljivoj. Ali komanda `let` se može koristiti za uklanjanje drugih ograničenja komande `expr`. <br>
+                    <span class="my_code">let &lt;aritmetički izraz&gt;</span> <br> <br>
+                    Primer: <br>
+                    <img src="img/slike_bash/let1.png" alt="let1" style="width:100%;max-width: 700px;"> <br>
+
+                    Output: <br>
+                    <img src="img/slike_bash/let2.png" alt="let2" style="width:100%;max-width: 700px;"> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="backticks_n">backticks</h2>
+                <p class="tekst">
+                    &#x021C0 `expr` ima sličnu upotrebu kao i `let`, ali ne čuva rezultat u promenljivu, samo direktno štampa rezultat <br>
+                    &#x021C0 moramo koristiti space izmedju članova izraza<br>
+                    &#x021C0 možemo koristiti  `expr` bez backticks - ova<br>
+                    Sintaksa:<br>
+                    <span class="my_code">`expr operand1 operator operand2`</span><br>
+                    ili <br>
+                    <span class="my_code">expr operand1 operator operand2</span> <br><br>
+
+                    Primer:    
+                    <img src="img/slike_bash/backticks1.png" alt="backticks1" style="width:100%;max-width: 700px;"> <br>
+                    Output:
+                    <img src="img/slike_bash/backticks2.png" alt="backticks2" style="width:100%;max-width: 700px;"> <br>
+                </p>
+
+                <h2 class="naslov_bash" id="uslovne_n">Bash uslovne naredbe</h2>
+
+                <h2 class="naslov_bash-s" id="if_n">If naredba</h2>
+                <p class="tekst">
+                    <span class="b_bash">If naredba</span> nam pomaže da odredimo da li da izvršimo deo koda, u zavisnosti od ispunjenja uslova koji nametnemo. Drugim rečima, ako je uslovni izraz tačan onda se naredba, ili niz naredbi izvršava. <br><br>
+
+                    Sintaksa:<br>
+                    <span class="my_code">if [ uslovni_izraz ];  <br>
+                    then  <br>
+                    &ensp;&ensp;naredba<br>
+                    fi</span> <br> 
+                    
+                                       
+                    <span class="b_bash">Bitno:</span> <br>
+                    &#x021C0 izraz izmedju then i fi će se izvršiti jedino ako je uslovni_izraz tačan<br>
+                    &#x021C0 if uslovna naredba se završava ključnom reči fi<br>
+                    &#x021C0 razmak izmedju uglastih zagrada i uslovnog izraza, upotrebljen u prvom redu, kao i ; na kraju reda su <span class="b_bash">obavezni</span><br><br>
+                    
+                    <span class="b_bash">Spajanje više uslova u naredbi:</span><br>
+                    <span class="b_bash">&ensp;&ensp;1. AND operator</span> (oba izaraza moraju biti tačna da bi se naredba izvršila)<br><br>
+                    
+                    <span class="my_code">if [ izraz_1 ] && [ izraz_2 ];  <br>
+                    then  <br>
+                    &ensp;&ensp;naredbe<br> 
+                    fi </span> <br> 
+                                      
+                    
+                    <span class="b_bash">&ensp;&ensp;2. OR operator</span> (da bi se naredba izvršila jedan od izraza mora  biti tačan)<br><br>
+                    
+                    <span class="my_code">if [ izraz_1 ] || [ expression_2 ];  <br>
+                    then<br>
+                    &ensp;&ensp;naredbe  <br>
+                    fi </span> <br> 
+                    
+      
+                    <span class="b_bash">&ensp;&ensp;3. kombinovanje operatora</span><br><br>
+                    
+                    <span class="my_code">if [ izraz_1 && izraz_2 || izraz_3 ];  <br>
+                    then  <br>
+                    &ensp;&ensp;naredbe<br>  
+                    fi</span> <br>  
+                    
+                    <span class="b_bash">Opcije koje možemo koristiti kao uslovni izraz:</span> <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_bash">Opcija(operator) </span></td>
+                            <td><span class="b_bash">Opis </span></td>
+                        </tr>
+                        <tr>
+                            <td>! IZRAZ</td>
+                            <td>proverava da li je IZRAZ netačan</td>
+                        </tr>
+                        <tr>
+                            <td>-n STRING</td>
+                            <td>proverava da li je dužina STRINGA veća od nula</td>
+                        </tr>
+                        <tr>
+                            <td>-z STRING</td>
+                            <td>proverava da li je dužina STRINGA nula</td>
+                        </tr>
+                        <tr>
+                            <td>STRING1 == STRING2</td>
+                            <td>proverava jednakost STRINGOVA</td>
+                        </tr>
+                        <tr>
+                            <td>STRING1 != STRING2</td>
+                            <td>proverava nejednakost STRINGOVA</td>
+                        </tr>
+                        <tr>
+                            <td>INTEGER1 -eq INTEGER2</td>
+                            <td>proverava da li je INTEGER1 numerički jednak sa INTEGER2</td>
+                        </tr>
+                        <tr>
+                            <td>INTEGER1 -gt INTEGER2</td>
+                            <td>proverava da li je INTEGER1 numerički veći od INTEGER2</td>
+                        </tr>
+                        <tr>
+                            <td>INTEGER1 -lt INTEGER2</td>
+                            <td>proverava da li je INTEGER1 numerički manji od INTEGER2</td>
+                        </tr>
+                        <tr>
+                            <td>-d FILE</td>
+                            <td>proverava da li FILE postoji u direktorijumu</td>
+                        </tr>
+                        <tr>
+                            <td>-e FILE</td>
+                            <td>proverava da li FILE postoji</td>
+                        </tr>
+                        <tr>
+                            <td>-r FILE</td>
+                            <td>proverava da li FILE postoji i da li imamo dozvolu za čitanje</td>
+                        </tr>
+                        <tr>
+                            <td>-s FILE</td>
+                            <td>proverava da li FILE postoji i da li nije prazan </td>
+                        </tr>
+                        <tr>
+                            <td>-w FILE</td>
+                            <td>proverava da li FILE postoji i da li imamo dozvolu za pisanje </td>
+                        </tr>
+                        <tr>
+                            <td>-x FILE</td>
+                            <td>proverava da li FILE postoji i da li imamo dozvolu za njegovo izvršavanje </td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    <span class="my_comment"> <i> == se malo razlikuje od -eq <br>
+                        Recimo [ 001 == 1 ] će vratiti false jer == vrši poređenje niski (tj.jednakost karaktera po karakter) dok -eq radi numeričko poređenje što znači da će [ 001 -eq 1 ] vratiti tačno <br>
+                    </i> </span> <br>
+
+                    <span class="b_bash">&#x021C0Primeri:</span> <br>
+                    <span class="b_bash">Primer1:</span> Proveramo da li je broj koji je korisnik uneo, veći od 125<br><br>
+                    <img src="img/slike_bash/if1.png" alt="if1" style="width:100%;max-width: 700px;"> <br>
+                    Output:<br>
+                    <img src="img/slike_bash/if2.png" alt="if2" style="width:100%;max-width: 700px;"> <br><br>
+
+                    <span class="b_bash">Primer2:</span> Koristimo AND operator da bi u izraz uključili više uslova<br><br>
+
+                    <img src="img/slike_bash/if3.png" alt="if3" style="width:100%;max-width: 700px;"> <br>
+                    Output:<br>
+                    <img src="img/slike_bash/if4.png" alt="if4" style="width:100%;max-width: 700px;"> <br><br>
+
+
+                    <span class="b_bash">Primer3:</span> Poredimo brojeve <br><br>
+                    štampaju se samo oni stringovi gde je uslov zadovoljen<br>
+
+                    <img src="img/slike_bash/if5.png" alt="if5" style="width:100%;max-width: 700px;"> <br>
+                    Output:<br>
+                    <img src="img/slike_bash/if6.png" alt="if6" style="width:100%;max-width: 700px;"> <br><br>
+
+                </p>
+
+ 
+                <h2 class="naslov_bash-s" id="uif_n">Ugnježena if naredba</h2>
+                <p class="tekst">
+                    U vašem Bash skriptu, pored toga što možete upotrebiti koliko god if naredbi da želite, takodje možete koristiti <span class="b_bash">jednu if naredbu unutar druge - ugnježdena if naredba. </span><br> <br>
+
+                    <span class="b_bash">Primer:</span> Za broj koji unosimo kao argument komandne linije, prvo proveravamo da li je veći od 50, a potom da li je paran<br><br>
+                    <img src="img/slike_bash/uif1.png" alt="uif1" style="width:100%;max-width: 700px;"> <br>
+                    Output:<br>
+                    <img src="img/slike_bash/uif2.png" alt="uif2" style="width:100%;max-width: 700px;"> <br><br>
+                    <span class="my_comment"> <i>Možete da ugnjezdite onoliko if izjava koliko želimo, ali opšte pravilo je da ako treba da ugnjezdimo više od 3 nivoa, verovatno bi trebalo da razmislimo o reorganizaciji logike.</i> </span> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="ifelse_n">If else naredba</h2>
+                <p class="tekst">
+                    <span class="b_bash">If-else naredbe</span> se koriste za obavljanje uslovnih zadataka u sekvencijalnom toku izvršavanja naredbi. Ponekad želimo da obradimo određeni skup iskaza ako je uslov tačan, a drugi skup iskaza ako je netačan i za to koristimo upravo if-else naredbu. <br><br>
+
+                    Sintaksa: <br>
+
+                    <span class="my_code">if [ uslovni_izraz ];  <br>
+                    then  <br>
+                    &ensp;&ensp;&lt;if blok komandi&gt;  <br>
+                    else  <br>
+                    &ensp;&ensp;&lt;else blok komandi&gt;<br>
+                    fi</span><br>
+                    
+                    
+                    <span class="b_bash">Bitno:</span><br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>Možemo koristiti skup od jednog ili više uslova spojenih pomoću uslovnih operatora.<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>Blok komande else uključuje skup radnji koje treba izvršiti kada je uslov netačan.<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>Tačka zarez (;) posle uslovnog izraza je obavezna.<br><br>
+
+                    <span class="b_bash">Primer: Prvi if-else uslov je tačan, a drugi nije</span> <br> <br>
+                    U prvom if-else izrazu, uslov ( 10 -gt 3 ) je tačan i tako se izvršava naredba u bloku if.  U drugom if-else izrazu je uslov (3 -gt 10) netačan i tako se izvršava naredba u bloku else.<br>
+                    <img src="img/slike_bash/ifelse1.png" alt="ifelse1" style="width:100%;max-width: 700px;"> <br>
+                    Output: 
+                    <img src="img/slike_bash/ifelse2.png" alt="ifelse2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Možemo napisati kompletnu if-else inaredbu zajedno sa komandama <span class="b_bash">u jednom redu</span>. Pravila za pisanje su: <br>
+                    <span class="b_bash">&ensp;&ensp;1. </span>Koristimo tačku i zarez (;) na kraju naredbi u blokovima if i else. <br>
+                    <span class="b_bash">&ensp;&ensp;2. </span>Koristimo razmake kao graničnik da bismo dodali sve izjave. <br> <br>
+
+                    <span class="b_bash">Primer:</span> <br>
+                    <img src="img/slike_bash/ifelse3.png" alt="ifelse3" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/ifelse4.png" alt="ifelse4" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+                
+                <h2 class="naslov_bash-s" id="uifelse_n">Ugnježdena if-else naredba</h2>
+                <p class="tekst">
+                    Baš kao i if naredba, i if-else naredba se može koristiti unutar druge if-else naredbe pa tako dobijamo <span class="b_bash">ugnježdenu if-else naredbu</span>.<br><br>
+
+                    Primer:<br>
+                    <img src="img/slike_bash/uifelse1.png" alt="uifelse1" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/uifelse2.png" alt="uifelse2" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+                
+                <h2 class="naslov_bash-s" id="elif_n">Else if naredba</h2>
+                <p class="tekst">
+                    <span class="b_bash">Else-if (elif) naredba</span> se koristi kada imamo više uslova. Možemo je posmatrati kao dodatak if-else naredbi. <br>
+                    U elifu može postojati nekoliko elif blokova sa logičkim izrazom za svaki od njih dok u  slučaju prve 'if naredbe', ako uslov postane netačan, onda se proverava drugi 'if uslov'.<br><br>
+
+                    Sintaksa:<br>
+                    <span class="my_code">if [ uslovni_izraz ];  <br>
+                    then  <br>
+                    &ensp;&ensp;&lt;komande&gt;  <br>
+                    elif [ uslovni_izraz ];  <br>
+                    then  <br>
+                    &ensp;&ensp;&lt;komande&gt;<br>  
+                    else  <br>
+                    &ensp;&ensp;&lt;komande&gt;<br>  
+                    fi </span> <br>
+
+                    Primer: <br>
+                    <img src="img/slike_bash/elif1.png" alt="elif1" style="width:100%;max-width: 700px;"> <br> <br>
+                    Output: <br>
+                    
+                    Slučaj1:  ako unesemo br 110 onda je uslov u if naredbi tačan, pa dobijamo output:<br>
+                    <img src="img/slike_bash/elif2.png" alt="elif2" style="width:100%;max-width: 700px;"> <br> <br>
+                    Slučaj2: ako unesemo broj 90, onda je uslov u elif naredbi tačan, pa dobijamo output:<br>
+                    <img src="img/slike_bash/elif3.png" alt="elif3" style="width:100%;max-width: 700px;"> <br> <br>
+                    Slučaj3: ako unesemo broj 100, onda nijedan uslov neće biti tačan, pa u ovom slučaju blok komandi u else narebi će se izvršiti: <br>
+                    <img src="img/slike_bash/elif4.png" alt="elif4" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+                
+                <h2 class="naslov_bash-s" id="case_n">Case naredba</h2>
+                <p class="tekst">
+                    <span class="b_bash">Case naredba</span> je najjednostavniji oblik If-then-else naredbe, sa puno elif elemenata. <br>
+                    Obično se upotrebljava za pojednostavljivanje velikog broja opcija kod komplikovanijih uslova. <br>
+                    Korišćenjem case naredbe naši bash skriptovi postavu čitljiviji i lakši za održavanje. <br><br>
+                    
+                    Sintaksa: <br>
+                    <span class="my_code">case uslovni_izraz in  <br>
+                    &ensp;&ensp;slučaj_1)  <br>
+                    &ensp;&ensp;&ensp; naredbe <br>
+                    &ensp;&ensp;&ensp;;;<br>
+                    &ensp;&ensp;slučaj_2)  <br>
+                    &ensp;&ensp;&ensp; naredbe <br>
+                    &ensp;&ensp;&ensp;;;<br>
+                    &ensp;&ensp;slučaj_3|slučaj_4|slučaj_5)  <br>
+                    &ensp;&ensp;&ensp;naredbe <br> 
+                    &ensp;&ensp;&ensp;;;<br>
+                    &ensp;&ensp;slučaj-n)  <br>
+                    &ensp;&ensp;&ensp;naredbe <br>
+                    &ensp;&ensp;&ensp;;;<br>
+                    &ensp;&ensp;*) <br>
+                    &ensp;&ensp;&ensp;naredbe  <br>
+                    &ensp;&ensp;&ensp;;;<br>  
+                    esac</span> <br>
+
+                    <span class="b_bash">Bitno:</span><br>
+                    &#x021C0 svaka case naredba počinje sa ključnom rečju <span class="b_bash">'case'</span> koja je praćena uslovom case naredbe i zatim ključnom rečju <span class="b_bash">'in'</span><br>
+                    &#x021C0 case naredba se završava ključnom rečju <span class="b_bash">'esac'</span> <br>
+                    &#x021C0 možemo imati i više slučaja koji odgovaraju istoj naredbi, oni su odvojeni operatorom <span class="b_bash">|</span> <br>
+                    &#x021C0 operator <span class="b_bash">)</span> označava završetak liste slučajeva koji odgovaraju jednoj naredbi <br>
+                    &#x021C0 slučaj (lista slučajeva) i naredba koja mu je pridružena označavaju se kao klauza i moraju se završiti znakom <span class="b_bash">(;;)</span>.<br>
+                    &#x021C0 simbol <span class="b_bash">(*)</span> se koristi, kako bi se definisao krajnji slučaj, koji se izvršava ukoliko ni jedan od prethodnih uslova nije ispunjen<br> <br>
+                    <span class="b_bash">Kako naredba radi?</span><br>
+                    Case naredba pokušava da upari rezultat uslovnog izraza sa nekim od slučajeva. Kada pronadje poklapanje, sve naredbe koje su povezane sa tim slučajem se izvršavaju dok se ne dodje do znaka (;;)<br>
+                    Nakon prvog poklapanja, naredba case prekida izvršavanje.<br> <br>
+                    Ako nemamo poklopnjen slučaj, tj obrazac , exit status case komande će biti nula, a u suprotnom, se biti exit status izvršene komande.<br><br>
+                    Ako imamo defoltni slučaj (*), on će se izvršiti ako pre toga nismo pronašli ni jedno poklapanje.<br><br>
+                    Primer: <br>
+                    <img src="img/slike_bash/case1.png" alt="case1" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>     
+                    <img src="img/slike_bash/case2.png" alt="case2" style="width:100%;max-width: 700px;"> <br> <br>               
+                </p>
+
+                <h2 class="naslov_bash" id="bashp_n">Bash petlje</h2>
+                <p class="tekst">
+                    Bash petlje su veoma korisne. <br>
+                    Petlje nam omogućavaju da počnemo sa izvršavanjem niza komandi i nastavimo da ih izvršavamo dok se ne postigne određeni cilj. Korisne su za <span class="b_bash">automatizaciju zadataka koji se ponavljaju</span>. <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="for_n">For petlja</h2>
+                <p class="tekst">
+                    Kao i u drugim programskim jezicima, i u Bash-u koristimo for petlju za neke naredbe koje se ponavljaju u našem skriptu.<br><br>
+
+                    Sintaksa:<br>
+                    Možemo primeniti for petlju na dva načina: <br><br>
+                    
+                    1. for-in<br>
+                    <span class="my_code">for promenljiva in lista <br>
+                    do  <br>
+                    &ensp;&ensp;komande <br>
+                    done</span> <br><br>
+                     
+                                       
+                    2. sintaksa koja liči na programski jezik C<br>
+                    <span class="my_code">for (( izraz1; izraz2 ; izraz3 ))  <br>
+                    do  <br>
+                    &ensp;&ensp;komande  <br>
+                    done</span> <br>
+                     
+                      
+                    <span class="b_bash">Kako petlja radi?</span><br>
+                    Svaki blok naredbe for petlje u Bash-u počinje ključnom reči <span class="b_bash">'do'</span> iza koje slede komande unutar bloka. Naredba je zatvorena ključnom reči <span class="b_bash">'done'</span>.<br>
+                    Broj puta koji će se 'for petlja' ponavljati zavisi od deklarisanih promenljivih liste.<br>
+                    Petlja će izabrati jednu stavku sa liste i dodeliti tu vrednost promenljivoj koja će se koristiti u okviru petlje.<br>
+                    Nakon izvršenja komandi navedenih između ključnih reči 'do' i 'done', petlja se vraća na vrh i bira sledeću stavku sa liste i ponavlja ceo proces.<br>
+                    Lista može da sadrži brojeve, nizove itd. odvojene razmacima.<br><br>
+                    
+                    <span class="b_bash">Primeri:</span> <br>
+                    
+                    Primer1:  osnovni primer<br>
+                    <img src="img/slike_bash/for1.png" alt="for1" style="width:100%;max-width: 700px;"> <br> 
+                    Output:<br>
+                    <img src="img/slike_bash/for2.png" alt="for2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Primer2:  štampanje brojeva iz intervala <br>
+                    
+                    Važno je kada koristite ovakav interval da ne postoje razmaci između vitičastih zagrada { }. Ako postoje, komanda se neće tumačiti kao interval već kao lista stavki.<br>
+                    Kada navedete interval, možete navesti bilo koji broj koji želite i za početnu i za krajnju vrednost. Prva vrednost takođe može biti veća od druge u kom slučaju će se odbrojavati otpozadi.<br><br>
+                    
+                    Takođe je moguće odrediti vrednost za povećanje ili smanjenje svaki put. Ovo radite tako što dodate još dve tačke (..) i vrednost za koju treba pomerati brojeve.<br><br>
+                    <img src="img/slike_bash/for3.png" alt="for3" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_bash/for4.png" alt="for4" style="width:100%;max-width: 700px;"> <br> <br>
+                    <img src="img/slike_bash/for5.png" alt="for5" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_bash/for6.png" alt="for6" style="width:100%;max-width: 700px;"> <br> <br>
+                    
+                    Primer3:  iteracija kroz niz<br>
+                    <img src="img/slike_bash/for7.png" alt="for7" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_bash/for8.png" alt="for8" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Ponekad, tokom izvršavanja petlji, dolazimo u situaciju da moramo da malo promenimo njihov rad. <br>
+                    Postoje dve naredbe koje možemo da koristimo da bismo to uradili: <span class="b_bash">break i continue</span><br><br>
+                    
+                    Primer5: upotreba sa break naredbom<br><br>
+                    
+                    Naredba break govori našem programu da odmah napusti petlju. <br><br>
+                    <img src="img/slike_bash/for9.png" alt="for9" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_bash/for10.png" alt="for10" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Primer6:  upotreba sa continue naredbom<br><br>
+                    
+                    Continue naredbu unutar for petlje koristimo da bi preskočili izvršavanje odredjene naredbe. Ta odredjena iteracija se preskače, i petlja nastavlja sa daljim iteracijama. <br>
+                    <img src="img/slike_bash/for11.png" alt="for11" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_bash/for12.png" alt="for12" style="width:100%;max-width: 700px;"> <br> <br>
+
+                </p>
+
+                <h2 class="naslov_bash-s" id="while_n">While petlja</h2>
+                <p class="tekst">
+                    While petlja je naredba kontrole toka koja dozvoljava ponavljanje datog skupa komandi sve dok je uslov tačan. <br><br>
+
+                    Sintaksa:<br>
+
+                    <span class="my_code">while [ uslovni_izraz ];  <br>
+                    do  <br>
+                    &ensp;&ensp;komande <br>
+                    done </span> <br>
+                    
+
+                    <span class="b_bash">Bitno:</span><br>
+                    &#x021C0 argument while petlje može biti logički izraz<br>
+                    &#x021C0 uslov se proverava pre nego što se komande u telu petlje izvršavaju<br>
+                    &#x021C0 while petlja je ravnopravna sa for petljom, tj mogu se upotrebljavati za rešavanje istih problema<br>
+                    &#x021C0 izvršavanje komandi navedenih izmedju ključnih reči `do` i `done` se ponavlja dokle god je uslov tačan<br><br>
+
+                    <span class="b_bash">Kako radi?</span> <br>
+                    Ova petlja je <span class="b_bash">petlja ograničenog ulaska</span> - to znači da se uslov proverava pre izvršavanja komandi unutar while petlje. Ako je uslovni izraz tačan, izvršava se skup naredbi koje slede. U suprotnom, petlja se prekida, a kontrolu programa preuzima komanda koja sledi nakon naredbe 'done'.<br><br>
+
+                    <span class="b_bash">Primeri:</span><br><br>
+
+                    Primer 1: - osnovni primer<br>
+                    <img src="img/slike_bash/while1.png" alt="while1" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/while2.png" alt="while2" style="width:100%;max-width: 700px;"> <br><br>
+                    Primer 2: - beskonačna while petlja<br> <br>
+
+                    <span class="my_comment"> <i>Beskonačna petlja je ona koja se nikad ne završava. Ako je uslov uvek tačan, stvara se ova petlja koja će se izvršavati konstantno dok je nasilno ne zaustavimo komandom CTRL+C :</i> </span><br> <br>
+                    <img src="img/slike_bash/while3.png" alt="while3" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/while4.png" alt="while4" style="width:100%;max-width: 700px;"> <br><br>
+                    
+                    Ovde smo koristili ugradjenu komandu (:) koja uvek vraća tačnu vrednost. Za pravljenje beskonačne petlje uvek možemo koristiti i komandu true<br>
+
+                    Primer 3: - while petlja sa <span class="b_bash">break</span> naredbom <br>
+                    <img src="img/slike_bash/while5.png" alt="while5" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/while6.png" alt="while6" style="width:100%;max-width: 700px;"> <br><br>
+                    Primer 4: - while petlja sa <span class="b_bash">continue</span> naredbom<br>
+                    <img src="img/slike_bash/while7.png" alt="while7" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/while8.png" alt="while8" style="width:100%;max-width: 700px;"> <br><br>
+
+
+                </p>
+
+                <h2 class="naslov_bash-s" id="until_n">Until petlja</h2>
+                <p class="tekst">
+                    While petlja je odlična opcija za izvršavanje skupa komandi kada je neki uslov tačan. Medjutim ponekad moramo da izvršimo skup komandi sve dok uslov ne postane tačan. U takvim slučajevima, util petlja je korisna. <br><br>
+
+                    <span class="b_bash">Until petlja</span> u Bash skriptu se koristi za ponavljanje niza komandi na osnovu logičkog rezultata izraza. <br>
+                    Skup komandi se izvršava samo dok izraz ne postane tačan. To znači da dok je izraz netačan, skup komandi se izvršava iterativno. <br>
+                    Petlja se prekida čim izraz prvi put postane tačan.<br><br>
+
+                    Sintaksa:<br><br>
+
+                    <span class="my_code">until [ uslovni_izraz ];  <br>
+                    do  <br>
+                    &ensp;&ensp;komanda1  <br>
+                    &ensp;&ensp;komanda2  <br>
+                    &ensp;&ensp;. . .  <br>
+                    &ensp;&ensp;. . .    <br>
+                    &ensp;&ensp;komandaN  <br>
+                    done </span> <br>
+                    
+
+                    Ako imamo više uslovnih izraza, sintaksa je sledeća:<br><br>
+
+                    <span class="my_code">until [[ izraz ]];  <br>
+                    do  <br>
+                    &ensp;&ensp;komanda1  <br>
+                    &ensp;&ensp;komanda2  <br>
+                    &ensp;&ensp;. . .  <br>
+                    &ensp;&ensp;. . .  <br> 
+                    &ensp;&ensp;komandaN  <br>
+                    done</span> <br>
+                    
+
+                    <span class="b_bash">Bitno:</span><br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>tačnost  uslovnog izraza se proverava pre izvršavanja komandi<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>komande se izvršavaju samo ako je uslov netačan<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>petlja se prekida čim se uslov proceni kao tačan.<br><br>
+                        
+                    <span class="b_bash">While i until petlja</span><br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>komande unutar until petlje se izvrašavaju dok se ne vrati ne-nula vrednost <br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>komande while petlje se izvršavaju dok se ne vrati nula vrednost<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>until petlja se mora izvršiti <span class="b_bash">barem jednom</span>, dok se while petlja ne mora izvršiti <span class="b_bash">ni jednom</span><br>
+                    <span class="b_bash">Primeri:</span><br><br>
+                    Primer1: - util petlja sa jednim uslovom<br>
+                    <img src="img/slike_bash/until1.png" alt="until1" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/until2.png" alt="until2" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Primer2: - until petlja sa večim brojem uslova<br>
+                    <img src="img/slike_bash/until3.png" alt="until3" style="width:100%;max-width: 700px;"> <br>
+                    Output:<br>
+                    <img src="img/slike_bash/until4.png" alt="until4" style="width:100%;max-width: 700px;"> <br><br>
+                </p>
+
+                <h2 class="naslov_bash" id="niske_n">Bash niske </h2>
+                <p class="tekst">
+                    Kao i u drugim programskim jezicima, niska je tip podataka koji se uglavnom koristi za predstavljanje teksta. Predstavlja kombinaciju skupa znakova koji mogu da sadrže i brojeve. <br><br>
+
+                    Na primer, reč "plavo" i rečenica "Nebo je plavo" su niske. <br>
+                    Čak se i "01234" može smatrati niskom, ako je pravilno naveden.<br>
+                    Programeri su obavezni da niske pri navodjenju stave pod navodnike da bi se podaci pravilno tumačili, a neda se tumače kao brojevi, promenljive ili nizovi npr.<br><br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="opniske_n">Operatori za rad sa niskama</h2>
+                <p class="tekst">
+                    <span class="b_bash">&ensp;&ensp;1. </span>Operator jednakosti <span class="b_bash">(==)</span> <br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>koristi za proveravanje da li su dve niske jednake<br><br>
+                    <span class="my_code">str1 == str2 </span> <br>
+                    
+                    <span class="b_bash">&ensp;&ensp;2. </span>Operator nejednakosti <span class="b_bash">(!=)</span><br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>koristi se za proveravanje da li su dve niske različite<br><br>
+                    <span class="my_code">str1 = str2 </span> <br>
+                    
+                    <span class="b_bash">&ensp;&ensp;3. </span>Operator manje od <span class="b_bash">(\&lt;)</span><br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>uslovni operator, koristi se za proveru da li je str1 leksikografski manji od str2<br><br>
+                    <span class="my_code">str1 \&lt;  str2</span> <br>
+                     
+                    <span class="b_bash">&ensp;&ensp;4. </span>Operator veće od <span class="b_bash">(\&gt;)</span><br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>uslovni operator, koristi se za proveru da li je str1 leksikografski veći od str2<br><br>
+                    <span class="my_code">str1 \&gt;  str2</span> <br>
+                     
+                    <span class="b_bash">&ensp;&ensp;5. </span>Operator za proveru da li niska ima barem jedno slovo:<br><br>
+                    <span class="my_code">[ -n niska ]</span> <br>  
+                     
+                    Primer:<br><br>
+                    <img src="img/slike_bash/opniske1.png" alt="opniske1" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/opniske2.png" alt="opniske2" style="width:100%;max-width: 700px;"> <br><br>
+                    <span class="b_bash">&ensp;&ensp;6. </span>Operator za proveru da li je niska prazna:<br>
+                    <span class="my_code">[ -z niska ] </span> <br>
+                    Primer:<br><br>
+                    <img src="img/slike_bash/opniske3.png" alt="opniske3" style="width:100%;max-width: 700px;"> <br>
+                    Output: <br>
+                    <img src="img/slike_bash/opniske4.png" alt="opniske4" style="width:100%;max-width: 700px;"> <br><br>
+
+
+                </p>
+
+                <h2 class="naslov_bash-s" id="nalazenje_n">Nalaženje dužine niski</h2>
+                <p class="tekst">
+                    Ukupan broj znakova u niski označava dužinu te niske. <br>
+                    Većina programskih jezika ima svoje ugrađene funkcije za izračunavanje broja znakova, tj dužine. Međutim, kod Bash programskog jezika, to nije slučaj. Ali postoji nekoliko načina na koje možemo da pronađemo dužinu niske u Bash skriptovima.<br><br>
+                    <span class="my_comment"> <i>!!!Obratite pažnju na dvostruke navodnike koji se koriste oko $ime_niske. Ako niska ima razmake u sebi, onda su dvostruki navodnici neophodni. <br>
+                    Najbolje je da uvek koristimo dvostruke navodnike oko $ime_niske da bismo bili sigurni da neće doći do zanemarivanja razmaka.<br><br>
+                    </i> </span> <br>
+                    
+                    <span class="b_bash">Primeri:</span><br><br>
+                    Primer1:  najjednostavniji način za pronalaženje dužine niske je korišćenjem simbola <span class="b_bash">'#'</span><br><br>
+
+                    Sintaksa: <br><br>
+                    <span class="my_code">${#niska} </span> <br>
+                    <img src="img/slike_bash/nalazenje1.png" alt="nalazenje1" style="width:100%;max-width: 700px;"> <br> <br>
+                    Primer2: drugi način za nalaženje dužine niske je korišćenje komande <span class="b_bash">`expr`</span> sa ključnom reči <span class="b_bash">'length'</span> <br><br>
+
+                    Sintaksa:<br><br>
+                    <span class="my_code">`expr length "$niska"`</span> <br>
+                    <img src="img/slike_bash/nalazenje2.png" alt="nalazenje2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Primer3: takodje, možemo koristiti komandu <span class="b_bash">`expr`</span> je sa narednom sintaksom:<br><br>
+                    <span class="my_code">`expr "$str" : ' .*'`</span> <br>
+                    <img src="img/slike_bash/nalazenje3.png" alt="nalazenje3" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Primer4: možemo koristiti i komandu <span class="b_bash">`wc`</span> za nalaženje dužine stringa<br><br>
+
+                    Sintaksa:<br><br>
+                    <span class="my_code">`echo $str | wc -c`</span> <br>
+                    <img src="img/slike_bash/nalazenje4.png" alt="nalazenje4" style="width:100%;max-width: 700px;"> <br> <br>
+                    
+                    Primer4: - možemo koristiti i komandu <span class="b_bash">`awk`</span> za nalaženje dužine niske<br><br>
+                    
+                    Sintaksa:<br><br>
+                    <span class="my_code">`echo $str |awk '{print length}'`</span> <br>
+                    <img src="img/slike_bash/nalazenje5.png" alt="nalazenje5" style="width:100%;max-width: 700px;"> <br> <br>
+                    
+                    Sve komande imaju isti output:<br> <br>
+                    <img src="img/slike_bash/nalazenje6.png" alt="nalazenje6" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="podniske_n">Podniske u Bash-u</h2>
+                <p class="tekst">
+                    Podniska je niz znakova unutar niske. Bash programski jezik pruža opciju za izdvajanje informacija o podniski iz same niske.<br>
+                    Možete izdvojiti cifre ili dati niz koristeći nekoliko metoda.<br><br>
+
+                    Sintaksa:<br><br>
+                    Sledeća komanda je ugradjena u Bash programski jezik<br><br>
+                    <span class="my_code">$ {promenljiva:pozicija:duzina}</span> <br>
+                    
+                    Gde je:<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> promenljiva - ime promenljive koja sadrži nisku<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> pozicija - specificira odakle se počinje sa izdvajanjem podniske<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> duzina - specifira raspon karaktera koji se izdvajaju iz date niske, počevši od date pozicije<br><br>
+
+                    <span class="b_bash">Primeri:</span><br> <br>
+
+                    Primer1:  izdavanje članova niske od početka<br><br>
+                    <img src="img/slike_bash/podniske1.png" alt="podniske1" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/podniske2.png" alt="podniske2" style="width:100%;max-width: 700px;"> <br><br>
+                    
+                    Primer2:  izdavajanje članova niske do kraja<br><br>
+                    <img src="img/slike_bash/podniske3.png" alt="podniske3" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/podniske4.png" alt="podniske4" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Primer3: izdvajanje odredjene grupe karaktera<br><br>
+                    <img src="img/slike_bash/podniske5.png" alt="podniske5" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/podniske6.png" alt="podniske6" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Primer4: izdajanje jedinstvenog karaktera<br><br>
+                    <img src="img/slike_bash/podniske7.png" alt="podniske7" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/podniske8.png" alt="podniske8" style="width:100%;max-width: 700px;"> <br><br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="konkatenacija_n">Konkatenacija (spajanje) niski</h2>
+                <p class="tekst">
+                    U skriptu, možemo dodati novu ili spojiti dve ili više niski zajedno, tj. moguća je konkatenacija stringova. <br>
+                    U Bash-u ne postoji ni jedna ugradjena funkcija za kombinovanje niski, te je najlakši način za izvođenje konkatenacije stringova u bash-u pisanje promenljivih koje sadrže nisku jednu pored druge.<br><br>
+
+                    Osnovna sintaksa:<br><br>
+                    <span class="my_code">str3="$str1$str2"</span> <br>
+                    
+                    komada će spojiti vrednosti niski str1 i str2 i zapamtiće novu vrednost u promenljivu str3<br><br>
+
+                    Primer:<br><br>
+                    <img src="img/slike_bash/konkatenacija1.png" alt="konkatenacija1" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/konkatenacija2.png" alt="konkatenacija2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Još neke metode za konkatenaciju stringova: <br>
+                    <span class="b_bash">&ensp;&ensp;1. korišćenje duplih navodnika</span> - ovaj metod nam omogućava korišćenje promenljivih koje sadrže vrednost niske, unutar druge niske; promenljiva se može upotrebiti na bilo kom mestu u niski<br><br>
+                    <img src="img/slike_bash/konkatenacija3.png" alt="konkatenacija3" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/konkatenacija4.png" alt="konkatenacija4" style="width:100%;max-width: 700px;"> <br> <br>
+                    <span class="b_bash">&ensp;&ensp;2. korišćenje operatora (+=) sa petljom</span> - ovaj metod dodaje nove niske na kraj početne niske koja je levi operand <br><br>
+                    <img src="img/slike_bash/konkatenacija5.png" alt="konkatenacija5" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/konkatenacija6.png" alt="konkatenacija6" style="width:100%;max-width: 700px;"> <br> <br>
+                    <span class="b_bash">&ensp;&ensp;3. korišćenje printf funkcije</span> <br><br>
+                    <img src="img/slike_bash/konkatenacija7.png" alt="konkatenacija7" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/konkatenacija8.png" alt="konkatenacija8" style="width:100%;max-width: 700px;"> <br> <br>
+                    <span class="b_bash">&ensp;&ensp;4. korišćenje _</span> <br><br>
+                    <img src="img/slike_bash/konkatenacija9.png" alt="konkatenacija9" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/konkatenacija10.png" alt="konkatenacija10" style="width:100%;max-width: 700px;"> <br> <br>
+                    <span class="b_bash">&ensp;&ensp;5. korišćenje bilo kog znaka</span><br>
+                    <img src="img/slike_bash/konkatenacija11.png" alt="konkatenacija11" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/konkatenacija12.png" alt="konkatenacija12" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash" id="fje_n">Bash funkcije</h2>
+                <p class="tekst">
+                    Bash funkcija se može definisati kao skup komandi koje se mogu pozvati nekoliko puta unutar bash skripta. Svrha funkcije u bash-u je da vam pomogne da svoje skripte učinite čitljivijim i da izbegnete pisanje istog koda iznova i iznova. Takođe omogućava programerima da razbiju komplikovan i dugačak kod na male delove koji se mogu pozvati kad god je to potrebno. <br>
+                    Funkcije se mogu pozivati bilo kada i više puta.<br><br>
+
+                    Za Bash funkcije važe sledeća pravila: <br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> funkcija mora biti deklarisana u shell skriptu pre poziva funkcije<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> lokalne promenljive se mogu dodeliti unutar funkcije, a životni vek takvih promenljivih biće samo unutar te određene funkcije<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span> ugrađene komande Bash-a mogu se zameniti korišćenjem funkcija<br><br>
+
+                    Sintaksa:<br>
+                    <span class="b_bash">Metoda 1:</span> počinje sa imenom funkcije<br><br>
+                                   
+                    <span class="my_code">ime_funkcije () {  <br>
+                    &ensp;&ensp;komande<br>
+                    }</span> <br>
+                    <img src="img/slike_bash/bfja1.png" alt="bfje1" style="width:100%;max-width: 700px;"> <br> <br>
+                    <span class="b_bash">Metoda2:</span>  počinje ključnom rečju `function`, nakon čega sledi ime funkcije <br><br>
+                    <span class="my_code">function ime_funkcije () {<br>
+                        &ensp;&ensp;komande<br>
+                        }</span> <br>
+                    <img src="img/slike_bash/bfja2.png" alt="bfje2" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="parg_n">Prosledjivanje argumenata</h2>
+                <p class="tekst">
+                    Kao i u većini programskih jezika, možemo proslediti argumente funkciji i obraditi podatke u Bash funkcijama. Možemo da ubacimo podatke u funkciju na sličan način kao što prosleđujemo argumenate komandne linije bash skriptu.<br><br>
+
+                    Da bismo prosledili bilo koji broj argumenata bash funkciji, od nas se traži da ih ubacimo odmah iza imena funkcije. Moramo primeniti razmake između imena funkcije i argumenata. Takođe će biti odličan izbor da koristite dvostruke navodnike oko argumenata kako biste sprečili pogrešno uparivanje argumenata sa razmacima u njima.<br><br>
+
+                    Slede neke ključne tačke o prosleđivanju argumenata bash funkcijama:<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>datim argumentima se pristupa kao <span class="b_bash">$1, $2, $3 ... $n</span>, što odgovara redosledu kojim navodimo argumente<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>promenljiva <span class="b_bash">$0</span> je rezervisana za ime funkcije<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>promenljiva <span class="b_bash">$#</span> se koristi za čuvanje broja parametara funkcije<br>
+                    <span class="b_bash">&ensp;&ensp;&#x021C0</span>promenljive <span class="b_bash">$*</span> i <span class="b_bash">$@</span> se koriste za pamćenje svih parametara datih funkciji.<br>
+                    &ensp;&ensp;&ensp;&ensp;- kada se $* koristi sa dvostrukim navodnicima (tj. "$*"), značenje se proširuje na jedan string odvojen razmakom. Na primer, "$1 $2 $n itd".<br>
+                    &ensp;&ensp;&ensp;&ensp;- kada se $@ koristi sa dvostrukim navodnicima (tj. "$@"), značenje se proširuje na pojedinačne string. Na primer, "$1" "$2" "$n" itd.<br>
+                            Kada se $* i $# ne koriste sa dvostrukim navodnicima, oba imaju istu ulogu<br><br>
+
+                    Primer: <br>
+                    U ovom skriptu smo dodali argumente funkcije nakon što smo je pozvali.<br>
+                    Te vrednosti se prosleđuju funkciji kao parametri i čuvaju u lokalnoj promenljivoj. <br>
+                    <span class="b_bash">Međutim, za razliku od drugih jezika, interpreter čuva prosleđene vrednosti u unapred definisanim promenljivima, koje se zatim imenuju u skladu sa redosledom parametara koji se prenose.</span><br><br>
+                    <img src="img/slike_bash/proslarg1.png" alt="proslarg1" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/proslarg2.png" alt="proslarg2" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="opseg_n">Opseg promenljivih</h2>
+                <p class="tekst">
+                    <span class="b_bash">Globalne promenljive</span> su promenljive kojima se može pristupiti bilo gde u okviru skripta bez obzira na opseg. Podrazumevano, sve promenljive su definisane kao globalne, čak i ako su deklarisane unutar funkcije. <br>
+                    Takođe možemo stvoriti promenljivu kao lokalnu promenljivu. <br>
+                    <span class="b_bash">Lokalne promenljive</span> se mogu deklarisati unutar tela funkcije pomoću <span class="b_bash">`local`</span> ključne reči kada su koriste po prvi put. One su dostupne samo unutar te funkcije. <br>
+                    Možemo kreirati lokalne promenljive sa istim imenom u različitim funkcijama. <br><br>
+
+                    Da bismo dodali lokalnu promenljivu, možemo koristiti sledeću sintaksu:<br><br>
+
+                    <span class="my_code">local ime_promenljive=&lt;vrednost_promenljive&gt;</span> <br><br>
+                    
+                    Primer:<br><br>
+                    <img src="img/slike_bash/opseg1.png" alt="opseg1" style="width:100%;max-width: 700px;"> <br> <br>
+                    <img src="img/slike_bash/opseg2.png" alt="opseg2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Zaključak: <br>
+                    Ako deklarišemo promenljivu unutar tela funkcije sa istim imenom kao već  postojeća globalna promenljiva, onda će ona imati prednost nad globalnom promenljivom. <br>
+                    Globalne promenljive se mogu menjati unutar funkcije.<br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="pvf_n">Povratne vrednosti funkcija</h2>
+                <p class="tekst">
+                    U većini programskih jezika, funkcije mogu imati povratnu vrednost. To znači da funkcija šalje podatke nazad na prvobitnu lokaciju poziva. <br>
+                    Za razliku od funkcija u 'pravim' programskim jezicima, Bash funkcije <span class="b_bash">ne pružaju podršku za vraćanje vrednosti kada se pozovu.</span> <br>
+                    Međutim, možemo da postavimo status povratka koji je sličan izlaznom statusu programa. Kada se bash funkcija završi, njena povratna vrednost je status poslednjeg izvršenog izraza u funkciji. Vraća 0 za status uspeha, a decimalni broj različit od nule u opsegu 1-255 za neuspeh.<br><br>
+
+                    Status povratka se može naznačiti korišćenjem ključne reči <span class="b_bash">'return'</span>, a dodeljuje se promenljivoj <span class="b_bash">$?</span>. Naredba return prekida funkciju i koristi se kao izlazni status funkcije.<br>
+                    Primer:<br><br>
+                    <img src="img/slike_bash/pvf1.png" alt="pvf1" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_bash/pvf2.png" alt="pvf2" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <h2 class="naslov_bash" id="bnizovi_n">Bash nizovi </h2>
+                <p class="tekst">
+                    Niz se može definisati kao kolekcija elemenata sličnog tipa. Za razliku od većine programskih jezika, nizovi u Bash skriptima ne moraju biti kolekcija sličnih elemenata. Niz može da sadrži i niske i brojeve.<br><br>
+
+                    Bash ne pruža podršku za višedimenzionalne nizove (ne možemo imati elemente koji su nizovi u sebi) <br>
+                    Bash pruža podršku za jednodimenzionalne numerički indeksirane nizove. Da bismo pristupili numerički indeksiranom nizu počevši sa kraja, možemo koristiti negativne indekse. Indeks '-1' će se smatrati referencom za poslednji element.<br> 
+                </p>
+
+                <h2 class="naslov_bash-s" id="deklaracija_n">Deklaracija nizova</h2>
+                <p class="tekst">
+                    Da bi eksplicitno deklarisali nizu Bash-u, koristimo ključnu reč `declare` i sintaksu:<br><br>
+                    <span class="my_code">declare -a ime_niza</span> <br>
+        
+                    Metod za stvaranje indeksiranog niza može se opisati na sledeći način:<br><br>
+                    <span class="my_code">ime_niza[index_1]=value_1  <br>
+                    ime_niza[index_2]=value_2  <br>
+                    &ensp;&ensp;…<br>
+                    ime_niza[index_n]=value_n </span> <br>
+              
+                </p>
+
+                <h2 class="naslov_bash-s" id="pristupanje_n">Pristupanje elementima niza</h2>
+                <p class="tekst">
+                    Za pristupanje elementima niza koristimo narednu sintaksu: <br> <br>
+                    <span class="my_code">echo ${ime_niza[traženi_indeks]} </span> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="ispisivanje_n">Ispisivanje elemenata niza</h2>
+                <p class="tekst">
+                    Sintaksa: <br> <br>
+                    <span class="my_code">declare -p ime_niza</span> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="operacije_n">Operacije sa nizovima</h2>
+                <p class="tekst">
+                    Jednom kada je niz deklarisan, možemo da primenimo neke korisne operacije na njemu. Možemo da prikažemo njegove indekse i vrednosti, kao i da ih izmenimo dodavanjem ili uklanjanjem elemenata: <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="refer_n">Referisanje na jedan element</h2>
+                <p class="tekst">
+                    Da bismo referencirali jedan element, od nas se traži da znamo indeks tog elementa u nizu, tj. njegovu poziciju. <br><br>
+
+                    Možemo referencirati ili odštampati bilo koji element koristeći sledeću sintaksu:<br> <br>
+                    <span class="my_code">$ {ime_niza[index]}</span> <br>
+
+                    Da bi odštampali sve elemente niza možemo koristiti sledeću sintaksu: <br> <br>
+                    <span class="my_code">"$ {ime_niza[@]}"</span> <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="isp_n">Ispisivanje indeksa elemenata niza</h2>
+                <p class="tekst">
+                    Takođe možemo da ispišemo indekse elemenata koji se koriste u indeksiranim nizovima. To se može  izvesti dodavanjem <span class="b_bash">! operatora</span> ispred imena niza kao u nastavku: <br> <br>
+                    <span class="my_code">$ {!ime_niza[index]}</span> <br>
+                    
+                </p>
+
+                <h2 class="naslov_bash-s" id="nalaz_n">Nalaženje dužine niza </h2>
+                <p class="tekst">
+                    
+                    Možemo prebrojati elemente niza, koristeći sledeću sintaksu: <br> <br>
+                    <span class="my_code">$ {#ime_niza[@]}</span> <br>
+                </p>
+                
+                <h2 class="naslov_bash-s" id="dod_n">Dodavanje elementa u niz</h2>
+                <p class="tekst">
+                    Imamo opciju da dodamo elemente u niz tako što ćemo navesti njihov indeks.<br>
+                    Sintaksa: <br> <br>
+                    <span class="my_code">ime_niza[index_n]="Novi element" </span> <br>
+                    Drugi metod za dodavanje novog elementa u niz je korišćenje += operatora. Nema potrebe da navedete indeks u ovoj metodi. <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="brisanje_n">Brisanje elementa niza</h2>
+                <p class="tekst">
+                    Ako želimo da izbrišemo element iz niza, moramo znati njegov indeks. <br>
+                    Element se može ukloniti korišćenjem komande 'unset': <br><br>
+                    <span class="my_code">unset ime_niza[index]</span> <br>
+                    
+                </p>
+
+                <h2 class="naslov_bash-s" id="brisc_n">Brisanje celog niza</h2>
+                <p class="tekst">
+                    Brisanje čitavog niza je vrlo jednostavan zadatak. Može se izvesti tako što se ime niza prenese kao argument komandi <span class="b_bash">'unset'</span> bez navođenja indeksa. <br>
+                </p>
+
+                <h2 class="naslov_bash-s" id="traz_n">Traženje isečka niza (`slice operator`)</h2>
+                <p class="tekst">
+                    Možemo naći isečak niza od datog početnog indeksa do datog završnog indeksa.<br>
+                    Za nalaženje isečka od početnog indeksa 'm' do završnog indeksa 'n', možemo koristiti sledeću sintaksu:<br><br>
+                    <span class="my_code">novi_niz=(“${ime_početnog_niza[@]:m:n}") </span> <br>
+                </p>
+
+
+
+            </div>
+            <div style="padding-top: 40vh; padding-bottom: 30vh;">
+                <button class="bash__btn" ><a href="/quiz.html">Kviz</a></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCC</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo"><span style=
+                "background-image: linear-gradient(to right, #f54a1d 40%, #5e1402 100%);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-text-fill-color: transparent;">GNU Alati</span></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="console.html" class="navbar__links" id="konzola-page">Konzola</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="bash.html" class="navbar__links" id="bash-page">Bash</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gcc.html" class="navbar__links" id="gcc-page" style="
+                    background-image: linear-gradient(to right, #f54a1d 40%, #5e1402ee 100%);
+                    background-size: 100%;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-fill-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    cursor:pointer;
+                    text-decoration: none;
+                    ">GCC</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="make.html" class="navbar__links" id="make-page">Make</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gdb.html" class="navbar__links" id="gdb-page">GDB</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Navigation bar Section -->
+    <div class="sidenavD">
+        <div class="sidenav_gcc">
+            <a class="consoleID" href="#consoleID" style="color: #f5481d8f;"><span class="nav_h">GCC</span></a>
+
+            <a class="uvod_n" href="#uvod_n"><span class="nav_h">Uvod</span></a>
+            <a class="toolchain_n" href="#toolchain_n">&#x021C0 GNU Toolchain</a>
+            <a class="sta_je_gcc_n" href="#sta_je_gcc_n">&#x021C0 Šta je GCC?</a>
+            <a class="arhitektura_n" href="#arhitektura_n">&#x021C0 Arhitektura GCC-a</a>
+            <a class="instalacija_n" href="#instalacija_n">&#x021C0 Kako instalirati GCC?</a>
+            <a class="kompilacija_n" href="#kompilacija_n"><span class="nav_h">Kompilacija programa </span></a>
+            <a class="prevodjenje_n" href="#prevodjenje_n">&#x021C0 Prevođenje fajlova sa različitim ekstenzijama</a>
+            <a class="faze_n" href="#faze_n">&#x021C0 Faze kompilacije </a>
+            <a class="primer_n" href="#primer_n"><span class="nav_h">Primer  </span></a>
+            <a class="jedan_korak_n" href="#jedan_korak_n">&#x021C0 Kompilacija u jednom koraku</a>
+            <a class="nekoliko_koraka_n" href="#nekoliko_koraka_n">&#x021C0 Kompilacija u nekoliko koraka</a>
+            <a class="standardi_n" href="#standardi_n"><span class="nav_h">Jezički standardi podržani od strane GCC-a </span></a>
+            <a class="c_n" href="#c_n">&#x021C0 Programski jezik C</a>
+            <a class="cpp_n" href="#cpp_n">&#x021C0 Programski jezik C++</a>
+            <a class="opcije_kom_lin_n" href="#opcije_kom_lin_n"><span class="nav_h">Opcije komandne linije </span></a>
+            <a class="pretprocesiranje_n" href="#pretprocesiranje_n">&#x021C0 Pretprocesiranje</a>
+            <a class="povezivanje_n" href="#povezivanje_n">&#x021C0 Povezivanje</a>
+            <a class="upozorenja_n" href="#upozorenja_n">&#x021C0 Traženje i suzbijenje upozorenja</a>
+            <a class="otkl_gresaka_n" href="#otkl_gresaka_n">&#x021C0 Otklanjanje grešaka</a>
+            <a class="optimizacija_n" href="#optimizacija_n">&#x021C0 Optimizacija</a>
+            <a class="" href="#"><span class="nav_h"><br> <br> <br> <br> <br> <br></span></a>
+        </div>
+    </div>
+    <!-- GCC section -->
+    <div class="gcc" id="gccID">
+        <div class="gcc__container">
+            <div class="text-box">
+                <h2 class="naslov_gcc-l">GCC</h2>
+                <p class="tekst">Kao početnici u svetu programskih jezika i računara trebalo bi da budemo svesni da računari ne mogu da razumeju nijedan od programskih jezika sa kojima radimo. Mogu da tumače samo mašinski jezik nula i jedinica. Kompajler nam ovde priskače u pomoć. U ovom poglavlju upoznaćemo se sa opštim konceptima GCC kompajlera.</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="gcc" style="background-image: url(img/Background-Gcc-tekst.jpg);">
+        <div class="gcc__container">
+            <div class="text-box">
+
+                <h2 class="naslov_gcc-l" id="uvod_n">Uvod</h2>
+                <h2 class="naslov_gcc-s" id="toolchain_n">GNU Toolchain</h2>
+                <p class="tekst">
+                    GNU lanac alata je široka kolekcija programskih alata proizvedenih od strane GNU projekta. Ovi alati zapravo čine skup alata koji je koristi na serijski način za razvoj softverskih aplikacija i operativnih sistema. <br><br>
+                    GNU Toolchain sadrži: <br>
+                    &emsp;&emsp;● GCC Compiler Collection <br>
+                    &emsp;&emsp;● GNU Make <br>
+                    &emsp;&emsp;● GNU Binutils <br>
+                    &emsp;&emsp;● GNU Debugger <br>
+                    &emsp;&emsp;● GNU Autotools <br>
+                    &emsp;&emsp;● GNU Bison <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="sta_je_gcc_n">Šta je GCC?</h2>
+                <p class="tekst">
+                    GCC je integrisana distribucija kompajlera za nekoliko glavnih programskih jezika: C, C++, Objective-C, Objective-C++, Fortran, Ada, D i GO. On prevodi programske jezike na mašinski jezik, tj. konvertuje izvorni kod u izvršnu datoteku instrukcija za računare. Proizveden je u okviru GNU projekta. Osim što je zvanični kompajler GNU sistema, usvojen je kao standardni kompajler većine modernih operativnih sistema baziranih na Unix-u, uključujuci Linux, BSD i Mac OS X. <br> <br>
+                    Prva verzija GCC-a, GCC 1.0, objavljena je 1987. godine. <br><br>
+                    Skraćenica GCC ima višestruko značenje:<br>
+                    &emsp;&emsp;● GNU Compiler Collection - odnosi se na kompletan skup alata<br>
+                    &emsp;&emsp;● GNU C Compiler - koristi se kada je naglasak na kompajliranju C programa<br>
+                    &emsp;&emsp;● komponenta GCC nezavisna od jezika - kod koji se deli među kompajlerima za sve podržane jezike<br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="arhitektura_n">Arhitektura GCC-a</h2>
+                <p class="tekst">
+                    Svaki kompajler sastoji se od 3 komponente:<br>
+                    &emsp;&emsp;● prednji kraj - razlikuje se za različite programske jezike <br>
+                    &emsp;&emsp;● srednji kraj<br>
+                    &emsp;&emsp;● zadnji kraj - razlikuje se za različite arhitekture<br><br>
+
+                    GCC kompajlira jednu po jednu datoteku tako što izvorni kod prolazi kroz sve 3 komponente, redom.<br>
+                    Deo GCC-a nezavisan od jezika uključuje većinu optimizatora, kao i pozadinske komponente koje generišu mašinski kod za različite procesore. <br>
+                    Pored prednjih krajeva koji su integrisane komponente GCC-a, postoji nekoliko drugih prednjih krajeva koji se održavaju odvojeno. Oni podržavaju jezike kao što su Mercuri i COBOL. Da bi ih koristili, moraju biti izgrađeni zajedno sa GCC-om.<br>
+
+                </p>
+
+                <h2 class="naslov_gcc-s" id="instalacija_n">Kako instalirati GCC?</h2>
+                <p class="tekst">
+                    Da biste koristili GCC morate proveriti da li je instaliran na vašem sistemu. To možete uraditi komandom:<br> <br>
+                    <span class="my_code">$ gcc --version</span> 
+                    <br>
+                    Ako jeste, dobićete poruku o broju verzije i autorskim pravima na standardni izlaz. Ubuntu 20.04 obezbeđuje 9.3.0 GCC verziju pa u tom slučaju dobijate sledeće:<br><br>
+                    <span class="my_code">gcc (Ubuntu 9.3.0-10ubuntu2) <br>
+                    9.3.0Copyright (C) 2019 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br></span> 
+                    <br>
+                    Podrazumevani Ubuntu repozitorijumi sadrže meta-paket pod nazivom build-essential koji uključuje GNU kompajler, GNU debager (više o njemu biće reči na samom kraju kursa) i druge razvojne biblioteke i alate potrebne za kompajliranje softvera.<br>
+                    Da biste instalirali pakete razvojnih alata, pokrenite sledeću komandu kao root ili korisnik sa sudo privilegijama:<br><br>
+                    <span class="my_code">$ sudo apt update</span> 
+                    <br>
+                    <span class="my_code">$ sudo apt install build-essential</span> 
+                    <br>
+                    Komanda instalira dosta paketa među kojima su gcc, g++ i make.<br>
+                    Da biste bili sigurni da li je GCC kompajler uspešno instaliran možete ponovo pokrenuti komandu za proveru verzije.<br>
+                    Dokumentaciju o GCC-u možete dobiti pomoću sledećih komandi:<br><br>
+                    <span class="my_code">$ man gcc</span> 
+                    <br>
+                    <span class="my_code">$ info gcc</span><br>
+                </p>
+
+                <h2 class="naslov_gcc" id="kompilacija_n">Kompilacija programa</h2>
+                <p class="tekst">
+                    Ukoliko se C program nalazi u fajlu fajl.c, prevodilac možete jednostavno pozvati komandom:<br><br>
+                    <span class="my_code">$ gcc fajl.c</span> <br>
+                    
+                    U ovom slučaju rezultat kompajliranja će biti izvršni fajl sa generičkim imenom a.out.<br>
+                    Izvršni fajl možete pokrenuti pomoću sledeće komande koja poziva fajl sa nazivom a.out iz tekućeg direktorijuma:<br><br>
+                    <span class="my_code">$ ./a.out</span> <br>
+                     
+                    Ukoliko želite dodeliti alternativno ime izvršnom fajlu, to se može omogućiti pomoću parametra -o (output):<br><br>
+                    <span class="my_code">$ gcc &nbsp;<span class="b_gcc">-o</span>&nbsp; ime_izvršnog_fajla fajl.c</span> <br>
+                        
+                    Tada izvršni fajl možete pokrenuti na sličan način, korišćenjem sledeće komande koja poziva fajl sa nazivom ime_izvršnog_fajla iz tekućeg direktorijuma:<br><br>
+                    <span class="my_code">$ ./ime_izvršnog_fajla</span> <br>
+                     
+                    Takodje, možete smestiti izvršni fajl u određeni folder na računaru tako što ćete navesti putanju:<br><br>
+                    <span class="my_code">$ gcc &nbsp;<span class="b_gcc">-o</span>&nbsp; ~/bin/fajl</span> <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="prevodjenje_n">Prevođenje fajlova sa različitim ekstenzijama</h2>
+                <p class="tekst">
+                    S obzirom da GCC predstavlja kolekciju prevodioca, koji će prevodilac biti pokrenut određuje se ne osnovu ekstenzije fajla. <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">.h </span></td>
+                            <td>C datoteka zaglavlja (ne treba da se kompajlira ili poveže)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.c </span></td>
+                            <td>C izvorni kod koji mora da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.i </span></td>
+                            <td>C izvorni kod koji ne treba da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.ii </span></td>
+                            <td>C++ izvorni kod koji ne treba da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.cc, .cp, .cxx, .cpp, .c++, .c </span></td>
+                            <td>C++ izvorni kod koji mora da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.m </span></td>
+                            <td>Objective-C izvorni kod</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.mi </span></td>
+                            <td>Objective-C izvorni kod koji ne treba da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.mm, .M </span></td>
+                            <td>Objective-C++ izvorni kod koji mora da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.mii </span></td>
+                            <td>Objective-C++ izvorni kod koji ne treba da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.f, .for, .FOR </span></td>
+                            <td>Fortran izvorni kod koji ne treba da se pretprocesira</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.F, .fpp, .FPP </span></td>
+                            <td>Fortran izvorni kod koji mora da se pretprocesira (tradicionalinim pretprocesorom)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.r </span></td>
+                            <td>Fortran izvorni kod koji mora da se pretprocesira RATFOR pretprocesorom koji se ne nalazi u sklopu GCC-a</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.go </span></td>
+                            <td>GO izvorni kod</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.d </span></td>
+                            <td>D izvorni kod</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.s </span></td>
+                            <td>Asemblerski kod</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">.S, .sx </span></td>
+                            <td>Asemblerski kod koji mora da se pretprocesira</td>
+                        </tr>                                      
+                    </table>
+                </p>
+                <p class="tekst">
+                    Korišćenjem opcije -x možete eksplicitno navesti jezik ulaznog fajla. Ona kao argument ima identifikator jezika za koji će prevodilac biti pozvan. Neki od argumenata dati su u tabeli: <br> <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">programski jezik </span></td>
+                            <td><span class="b_gcc">kompajler </span></td>
+                            <td><span class="b_gcc">identifikator </span></td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>gcc</td>
+                            <td>c</td>
+                        </tr>
+                        <tr>
+                            <td>C++</td>
+                            <td>g++</td>
+                            <td>c++</td>
+                        </tr>
+                        <tr>
+                            <td>Objective-C</td>
+                            <td>gcc</td>
+                            <td>objective-c</td>
+                        </tr>
+                        <tr>
+                            <td>Objective-C++</td>
+                            <td>gcc</td>
+                            <td>objective-c++</td>
+                        </tr>
+                        <tr>
+                            <td>Fortran</td>
+                            <td>g77</td>
+                            <td>f77</td>
+                        </tr>
+                        <tr>
+                            <td>Ada</td>
+                            <td>gnat</td>
+                            <td>ada</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>dmd</td>
+                            <td>d</td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    Ukoliko je neki C program smesten u fajl sa imenom fajl.code, naredba za njegovo prevođenje glasila bi: <br> <br>
+                    <span class="my_code">$ gcc &nbsp;<span class="b_gcc">-x c</span>&nbsp; fajl.code</span> <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="faze_n">Faze kompilacije </h2>
+                <p class="tekst">
+                    Moguće je posebno kompajlirati i povezivati izvršni fajl: <br> <br>
+                    <span class="my_code">$ gcc -c fajl.c &ensp;&ensp;<span class="my_bold_console">// kao rezultat se dobija fajl.o</span></span> <br>
+                    <span class="my_code">$ gcc -o fajl fajl.o &ensp;&ensp;<span class="my_bold_console">// kao rezultat se dobija fajl</span></span> <br>
+                    GCC proces kompilacije se zapravo sastoji iz više koraka od kojih se svaki može izvršiti posebno: <br>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="b_gcc">● Pretprocesiranje (preprocessing)</span> <br>
+                    Ovo je nulta faza kompilacije u kojoj se vrši elementarna obrada izvornog koda:<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span>uključivanje datoteka zaglavlja i spajanje svih ulaznih datoteka u jedinicu prevođenja (compilation unit) <span class="b_gcc">#include </span><br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span>ekspanzija makroa <span class="b_gcc">#define</span><br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span>uklanjanje komentara <span class="b_gcc">//</span><br>
+                    <span class="b_gcc">● Kompilacija u užem smislu (compilation)</span><br>
+                    Od jedinice prevođenja generiše se asemblerski kod.<br>
+                    <span class="b_gcc">● Asembliranje (assembeling)</span>  <br>
+                    Asemblerski kod konvertuje se u objektni kod na mašinskom jeziku.<br>
+                    <span class="b_gcc">● Povezivanje (linking) </span><br>
+                    Objektni kod dobijen kompilacijom pojedinačnih modula se korišćenjem programa koji se naziva povezivač (linker) povezuje sa objektnim kodom statičkih biblioteka čime se dobija jedinstven izvršivi program (executable file).<br>
+                </p>
+                <p class="tekst">
+                    U poslednje 2 faze, pored GCC-a koriste se i GNU Binutils binarni alati. To je skup programskih alata za kreiranje i upravljanje binarnim programima, objektnim fajlovima, bibliotekama, itd. <br> 
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span>as - GNU Assembler <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span>ld - GNU Linker <br> <br>   
+                    Proces kompilacije C/C++ programa prikazan je šematski na sledećoj slici: <br>
+                </p>
+                <img src="img/slike_gcc/kompiliranje.jpg" alt="kompiliranje" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+
+                <h2 class="naslov_gcc" id="primer_n">Primer </h2>
+                <p class="tekst">
+                    Neka je dat jednostavam “Hello World” C program koji se nalazi u hello.c fajlu i samo ispisuje poruku u terminalu:<br><br>
+                    <span class="my_code">#include &lt;stdio.h&gt;<br>
+                    int main() {<br>
+                        &ensp;&ensp;printf(“Hello World\n”);<br>
+                        &ensp;&ensp;return 0;<br>
+                    }</span> <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="jedan_korak_n">Kompilacija u jednom koraku</h2>
+                <p class="tekst">
+                    Sledeća komanda vrši kompilaciju u jednom koraku, pri čemu se dobija izvršni fajl a.out:<br> <br>
+                    <span class="my_code">$ gcc hello.c</span> <br>
+                    Ako želite da dobijete izvršni fajl pod nazivom hello, to možete uraditi opcijom -o:<br> <br>
+                    <span class="my_code">$ gcc -o hello hello.c</span> <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="nekoliko_koraka_n">Kompilacija u nekoliko koraka</h2>
+                <p class="tekst">
+                    Svaku od faza kompilacije možete izvršiti pojedinačno:<br> <br>
+                    &ensp;&ensp;1. pretprocesiranje<br>
+                    <span class="my_code">$ gcc -E hello.c -o hello.i</span> <br>
+                    &ensp;&ensp;2. kompilacija<br>
+                    <span class="my_code">$ gcc -S hello.i</span> <br>
+                    &ensp;&ensp;3. asembliranje <br>
+                    <span class="my_code">$ gcc -c hello.s</span> <br>
+                    &ensp;&ensp;4. linkovanje<br>
+                    <span class="my_code">$ gcc -o hello hello.o</span> <br>
+                </p>
+
+                <h2 class="naslov_gcc" id="standardi_n">Jezički standardi podržani od strane GCC-a</h2>
+                <p class="tekst">
+                    Za svaki podržani jezik GCC pokušava da prati jednu ili više standardnih verzija. Po potrebi možete koristiti opcije za navođenje standarda sa kojim će GCC biti usklađen prilikom kompilacije. <br>
+                    Dodatno, da biste dobili svu dijagnostiku za kršenje ograničenja i pravila sintakse, trebalo bi da navedete -pedantic ili -pedantic-errors ukoliko želite da upozorenja budu prikazana kao greške. <br> <br>
+                    U nastavku govorićemo o istoriji standarda C-a i C++-a, kao i o komandnim opcijama za njihovo korišćenje. <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="c_n">Programski jezik C</h2>
+                <p class="tekst">
+                    Podrazumevani jezički standard za programski jezik C je gnu11, što je C11 standard sa GNU specifičnim ekstenzijama. <br>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">    
+                    ● C89 je prvi zvanični C standard koji je ANSI objavio 1989. godine. <br>
+                    Razlikovao se od neformalnog K&R C standarda po sledećim funkcionalnostima:<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> prototipi funkcija<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za void pokazivače koji moraju biti kastovani da bi se pristupilo podacima<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za međunarodni skup znakova<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> poboljšanje deklaracije parametara funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+                    ● C90 je ISO verzija standarda koja opisuje potpuno isti jezik kao C89. ANSI je zvanično usvojio ISO verziju standarda. <br>
+                    ● C94 / C95 je bio amandman na C90, dodajući nekoliko karakteristika, uglavnom digrafe i široku podršku karaktera. <br>
+                    ● C99 je ISO objavio 1999. Dodat je veliki broj novih funkcionalnosti:<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> inline funkcije (prednost u odnosu na makroe jer omogućavaju proveru tipova)<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> nizovi promenljive dužine gde je dužina niza izraz vremena izvršavanja<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> ključna reč restrict koja se koristi u deklaracijama pokazivača kao kvalifikator tipa za pokazivače<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> jednolinijski komentari koji počinu sa // kao u C++-u <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> generičke matematičke funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> složeni literali za strukture i nizove<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> promenljivi broj argumenata za makroe (varijabilni makroi)<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za univerzalni skup znakova za imena<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> novi tipovi podataka: long long int, bool, complex<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za tipove celih brojeva specifične za implementaciju<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za pokretni zarez uključuje IEEE 754-1985 ili IEC 60559 definicije s pokretnim zarezom koje odgovaraju hardverskoj podršci koju ima većina mikroprocesora<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> nove bibliotečke funkcije: snprintf<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> nove standardne datoteke zaglavlja: stdbool.h (logički tip), complex.h (kompleksni brojevi), tgmath.h (matematika) i inttipes.h (novi celogbrojni tipovi) <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+                    ● C11 je ISO izdao 2011. C11 je nastojao da se pozabavi problemima C99 i da se bliže uskladi sa C++ standardom, C++11. On menja neke potrebne funkcije C99 u opcione. Dodaci se takođe mapiraju u C++11 karakteristike koje olakšavaju povezivanje C i C++ koda:<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za Unicode karaktere <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> usaglašena podrška za IEC 60559 aritmetiku sa pokretnim zarezom<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> podrška za višenitno programiranje<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> anonimne strukture i unije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> nove ključne reči: alignas (prefiks za označavanje promenljivog poravnanja) i alignof (vraća poravnanje u bajtovima za dati tip)<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> poboljšanje bibliotečkih funkcija za manipulaciju sa stringovima: strcat_s, strncpi_s (imaju dodatni parametar veličine koji se koristi za ograničavanje operacija stringova tako da nedostajući null terminator ne dozvoljava funkcijama da pređu kraj bafera)<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+                                    
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">C standard</span></td>
+                            <td><span class="b_gcc">komandna opcija</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C89 / C90</span></td>
+                            <td>-ansi, -std=c89, -std=c90, -std=iso9899:1990</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C94</span></td>
+                            <td>-std=iso9899:199409</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C99</span></td>
+                            <td>-std=c99, -std=iso9899:1999</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C11</span></td>
+                            <td>-std=c11,  -std=iso9899:2011</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C17</span></td>
+                            <td>-std=c17, -std=iso9899:2017</td>
+                        </tr>
+                                                          
+                    </table>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="cpp_n">Programski jezik C++</h2>
+                <p class="tekst">
+                    GCC podržava originalni ISO C++ standard objavljen 1998. godine i revizije iz 2011, 2014, 2017. i veći deo revizije iz 2020. <br>                </p>
+                <p class="tekst" style="padding-left: 40px;"> 
+                    ● C++98 je prva verzija ISO C++-a. <br>
+                    ● C++03 je skoro identičan C++98. Najvažnija razlika ogleda se u tome što je C++03 uveo inicijalizaciju vrednosti.<br>
+                    ● C++11 je bio značajna revizija jezika. Dodato je sledeće: <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> standardizovana semantika za višenitno programiranje<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> rvalue reference<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> pametni pokazivači<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> semantika kretanja<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> petlje zasnovane na opsegu<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> lambda funkcije <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> heš tabele<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> novi tipovi: auto, decltype<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+                    ● C++14 ima nekoliko poboljšanja u poređenju sa C++11:<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> generalizovane lamda funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> proširenje povratnog tipa na sve funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> omogućavanje mnogo više konstrukcija da se pojave u funkcijama constexpr<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+                    ● C++17 je napravio velike promene u jeziku. Neke nove karakteristike jezika jezgra koje pojednostavljuju mnoge uobičajene konstrukcije uključuju: <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> poboljšanje lambda funkcija<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> istovremeni i paralelni algoritmi u biblioteci standardnih šablona (STL)<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> ugnježdeni prostori imena<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> inicijalizacija u if-u i switch-u<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> nove biblioteke: std::variant i std::opcional <br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+                    ● C++20 obezbedio je sledeće funkcionalnosti:<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> korutine<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> koncepti<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> naznačeni inicijalizatori<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> sintaksa šablona za lambda funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> tipovi klasa u parametrima šablona koji nemaju tip<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> constexpr virtuelne funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> neposredne funkcije<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> korišćenje enum-a<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> sinhronizovani baferovani izlazni tok<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> nove biblioteke: std::span, std::numbers (matematičke konstante), std::is_constant_evaluated, std::bit_cast, std::midpoint, std::to_array<br>
+                    <span class="b_gcc">&ensp;&ensp;&#x021C0</span> …<br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">C++ standard</span></td>
+                            <td><span class="b_gcc">komandna opcija za standardu verziju</span></td>
+                            <td><span class="b_gcc">komandna opcija za proširenu verziju</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C++98, C++03</span></td>
+                            <td>-ansi, -std=c++98, -std=c++03</td>
+                            <td>-std=gnu++98</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C++11</span></td>
+                            <td>-std=c++11</td>
+                            <td>-std=gnu++11</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C++14</span></td>
+                            <td>-std=c++14</td>
+                            <td>-std=gnu++14</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C++17</span></td>
+                            <td>-std=c++17</td>
+                            <td>-std=gnu++17</td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">C++20</span></td>
+                            <td>-std=c++20</td>
+                            <td>-std=gnu++20</td>
+                        </tr>
+                                                          
+                    </table>
+                </p>
+
+                <h2 class="naslov_gcc" id="opcije_kom_lin_n">Opcije komandne linije</h2>
+                <p class="tekst">
+                    Većina opcija komandne linije koje možete koristiti sa GCC-om su korisne za C programe. <br>
+                    Možete mešati opcije i druge argumente. Uglavnom, redosled koji koristite nije bitan. Redosled je bitan samo ukoliko koristite nekoliko opcija iste vrste. Neke opcije uzimaju jedan ili više argumenata koji su obično odvojeni ili razmakom ili znakom jednakosti koji potiče iz naziva opcije. <br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="pretprocesiranje_n">Pretprocesiranje</h2>
+                <p class="tekst">
+                    Ove opcije kontrolišu C pretprocesor, koji se pokreće na svakoj C izvornoj datoteci pre stvarne kompilacije. Imaju smisla samo zajedno sa -E opcijom jer uzrokuju da izlaz pretprocesora bude neprikladan za stvarnu kompilaciju. <br><br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">komandna opcija</span></td>
+                            <td><span class="b_gcc">opis komandne opcije</span></td>
+                        </tr>
+                        <tr>
+                            <td>-D ime</td>
+                            <td>Makrou ime dodeljuje se vrednost 1.</td>
+                        </tr>
+                        <tr>
+                            <td>-D ime=definicija</td>
+                            <td>Makrou ime dodeljuje se vrednost 1.</td>
+                        </tr>
+                        <tr>
+                            <td>-U ime</td>
+                            <td>Uklanja definiciju makroa ime dodeljenu opcijom -D.</td>
+                        </tr>
+                        <tr>
+                            <td>-include fajl</td>
+                            <td>Obrađuje datoteku kao da se #include fajl pojavio kao prvi red primarne izvorne datoteke. Ako je dato više -include opcija, fajlovi se uključuju u redosledu u kome su navedeni u komandnoj liniji.</td>
+                        </tr>
+                        <tr>
+                            <td>-imacros fajl</td>
+                            <td>Radi isto kao i -include, s tim što se svaki izlaz proizveden skeniranjem datoteke odbacuje. Makroi koje definiše ostaju definisani. Omogućava da preuzmete sve makroe iz zaglavlja bez obrade njihovih deklaracija. <br>
+                                Sve datoteke navedene sa -imacros se obrađuju pre svih datoteka navedenih sa -include.
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>-H</td>
+                            <td>Štampa listu svih korišćenih datoteka zaglavlja.</td>
+                        </tr>
+                        <tr>
+                            <td>-undef</td>
+                            <td>Obezbeđuje da standardni makroi budu definisani i da se ne mogu predefinisati.</td>
+                        </tr>
+                                                          
+                    </table>
+                </p>
+
+
+                <h2 class="naslov_gcc-s" id="povezivanje_n">Povezivanje</h2>
+                <p class="tekst">
+                    Sledeće opcije korisne su kada kompajler povezuje objektne datoteke u izvršnu datoteku. Besmislene su ukoliko kompajler ne vrši korak povezivanje. <br>
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">komandna opcija</span></td>
+                            <td><span class="b_gcc">opis komandne opcije</span></td>
+                        </tr>
+                        <tr>
+                            <td>-flinker-output=type</td>
+                            <td>Kontroliše generisanje koda optimizatora vremena povezivanja.</td>
+                        </tr>
+                        <tr>
+                            <td>-fuse-ld=bfd</td>
+                            <td>Umesto podrazumevanog koristi bfd linker.</td>
+                        </tr>
+                        <tr>
+                            <td>-fuse-ld=gold</td>
+                            <td>Umesto podrazumevanog koristi gold linker.</td>
+                        </tr>
+                        <tr>
+                            <td>-fuse-ld=lld</td>
+                            <td>Umesto podrazumevanog koristi lld linker.</td>
+                        </tr>
+                        <tr>
+                            <td>-l</td>
+                            <td>Nakon nje se, bez blanko znakova, navodi bibliotka koja se dodaje ili putanja do nje.</td>
+                        </tr>
+                        <tr>
+                            <td>-L</td>
+                            <td>Nakon nje se, bez blanko znakova, navodi datoteke zaglavlja koja se dodaje ili putanja do nje.</td>
+                        </tr>
+                        <tr>
+                            <td>-nostartfiles</td>
+                            <td>Prilikom povezivanja ne koriste se standardne datoteke za pokretanje sistema prilikom povezivanja.</td>
+                        </tr>
+                        <tr>
+                            <td>-nodefaultlibs</td>
+                            <td>Prilikom povezivanja ne koriste se standardne sistemske biblioteke prilikom povezivanja. Povezivaču se prosleđuju samo one biblioteke koje navedete.</td>
+                        </tr>
+                        <tr>
+                            <td>-nolibc</td>
+                            <td>Prilikom povezivanja ne koristi C biblioteku i sistemske biblioteke vezane za nju.</td>
+                        </tr>
+                        <tr>
+                            <td>-nostdlib</td>
+                            <td>Prilikom povezivanja ne koristi standardne datoteke za pokretanje sistema i biblioteke.</td>
+                        </tr>
+                        <tr>
+                            <td>-pie</td>
+                            <td>Proizvodi dinamički povezanu izvršnu datoteku nezavisnu od pozicije na ciljevima koji je podržavaju. Za predvidljive rezultate morate da navedete isti skup opcija koje se koriste za kompilaciju (-fpie, -fPIE ili podopcije modela).</td>
+                        </tr>
+                        <tr>
+                            <td>-no-pie</td>
+                            <td>Ne proizvodi dinamički povezanu izvršnu datoteku nezavisnu od pozicije. </td>
+                        </tr>
+                        <tr>
+                            <td>-static-pie</td>
+                            <td>Proizvodi izvršnu datoteku nezavisnu od statične pozicije na ciljevima koji ga podržavaju. Izvršni fajl nezavisno od statičkog položaja sličan je statičkom izvršnom fajlu, ali se može učitati na bilo kojoj adresi bez dinamičkog povezivača. Za predvidljive rezultate morate navedesti isti skup opcija koje se koriste za kompilaciju (-fpie, -fPIE ili podopcije modela).</td>
+                        </tr>
+                        <tr>
+                            <td>-r</td>
+                            <td>Proizvodi pokretni objekat kao izlaz. Ovo je poznato i kao delimično povezivanje. </td>
+                        </tr>
+                        <tr>
+                            <td>-s</td>
+                            <td>Uklanja sve tabele simbola i informacije o premeštanju iz izvršne datoteke.</td>
+                        </tr>      
+                    </table>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="upozorenja_n">Traženje i suzbijenje upozorenja</h2>    
+                <p class="tekst">
+                    GCC pored poruka o sintaksnim greškama (u slučaju čijeg postojanja ne biva generisan izvršni fajl) može da generiše i poruke o upozorenjima na konstrukcije koje su sintaksno ispravne, ali liče na semantički neispravne. Neka upozorenja dostupna su i bez uključivanja dodatnih opcija. Šta će sve biti prijavljeno kao upozorenje određuje se opijama koje imaju prefiks -W: <br> <br>
+                    <span class="my_code">$ gcc &nbsp;<span class="b_gcc">-W</span>&nbsp; fajl.c </span> <br>
+                    <span class="my_comment">Napomena: Obratite pažnju na veliko W !!!</span>  <br> <br>
+                    Najveći broj bitnih konstrukcija biće prijavljivan ako zadate grupnu opciju -Wall. Neke od opcija koje bivaju uključene sa -Wall su: <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">komandna opcija</span></td>
+                            <td><span class="b_gcc">opis komandne opcije</span></td>
+                        </tr>
+                        <tr>
+                            <td>-Wchar-subscripts</td>
+                            <td>Upozorava ako indeks niza ima tip char. Ovo je čest uzrok greške, jer programeri često zaboravljaju da je ovaj tip signed na nekim mašinama.</td>
+                        </tr>    
+                        <tr>
+                            <td>-Wcomment</td>
+                            <td>Upozorava kada se sekvenca za početak komentara '/*' pojavi u komentaru '/*', ili kada se u komentaru '//' pojavi obrnuta kosa crta-novi red.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wformat</td>
+                            <td>Proverite pozive funkcija kaošto su printf i scanf da biste bili sigurni da dostavljeni argumenti imaju tipove koji odgovaraju navedenom nizu formata i da konverzije navedene u stringu imaju smisla. Ovo uključuje standardne i druge funkcije određene atributima formata.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wnonnull</td>
+                            <td>Upozorava na prosleđivanje null pokazivača za argumente koji zahtevaju vrednost koja nije null. Može se onemogućiti opcijom -Wno-nonnull.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Winit-self</td>
+                            <td>Upozorava na neinicijalizovane promenljive koje su inicijalizovane same sobom. Imajte na umu da se ova opcija može koristiti samo sa opcijom -Wuninitialized, koja radi samo sa opcijama -O1 i iznad.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wimplicit-int</td>
+                            <td>Upozorava kada deklaracija ne navodi tip.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wimplicit-function-declaration</td>
+                            <td>Upozorava ako je funkcija korišćena pre nego što je deklarisana.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wmain</td>
+                            <td>Upozorite ako je tip main-a sumnjiv. Main bi trebalo da bude funkcija sa spoljnim povezivanjem koja vraća int, uzimajući nula, dva ili tri argumenta odgovarajućeg tipa.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wmissing-braces</td>
+                            <td>Upozorava ako inicijalizator agregata ili unije nije u potpunosti u zagradama.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wmissing-include-dirs</td>
+                            <td>Upozorava ako direktorijum uključivanja koji je dostavio korisnik ne postoji.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wreturn-type</td>
+                            <td>Upozorava kad god je funkcija definisana povratnim tipom koji je podrazumevano postavljen na int. Takođe upozorite na bilo koju povratnu naredbu bez povratne vrednosti u funkciji čiji povratni tip nije void.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wswitch</td>
+                            <td>Upozorava kad god naredba svitch ima indeks nabrojivog tipa i nema velika i mala slova za jedan ili više imenovanih kodova te enumeracije. Oznake slučaja van opsega nabrajanja takođe izazivaju upozorenja kada se koristi ova opcija.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wunused-function</td>
+                            <td>Upozorava kad god je statička funkcija deklarisana, ali nije definisana ili se neugrađena statička funkcija ne koristi.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wunused-label</td>
+                            <td>Upozorava kad god je labela definisana, ali se ne koristi.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wunused-variable</td>
+                            <td>Upozorava kad god se lokalna promenljiva ili nekonstantna statička promenljiva ne koristi osim u svojoj deklaraciji.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wunused-value</td>
+                            <td>Upozorava kad god se neka izračunata vrednost ne koristi.</td>
+                        </tr> 
+                        <tr>
+                            <td>-Wuninitialized</td>
+                            <td>Upozorava ako se automatska promenljiva koristi bez prethodne inicijalizacije ili ako promenljiva može biti blokirana pozivom setjmp. Ova upozorenja su moguća samo u optimizaciji kompilacije, pa ih nema smisla koristiti bez neke od -O* opcija.</td>
+                        </tr> 
+                        
+                    </table>
+                </p>
+                <p class="tekst">
+                    Grupna opcija -Wextra podržava više upozorenja od -Wall, a opcijom -Werror sva upozorenja prijavljuju se kao greške. <br> <br>
+                    Takođe, opcija -Werror= pretvara upozorenje navedeno posle znaka jednakosti u grešku. Ova opcija ima i negativan oblik koji se koristiti za negiranje -Werror za određena upozorenja.<br>
+                    Na primer -Werror=switch pretvara upozorenja koja kontroliše -Wswitch u greške, a -Wno-error=switch čini da upozorenja -Wswitch ne budu greške, čak i kada je -Werror na snazi.<br><br>
+                    <span class="my_comment">Napomena: Imajte na umu da navođenje <br> &minus;Werror = foo automatski implicira &minus;Wfoo. Međutim, <br> &minus;Wno-error = foo ne podrazumeva ništa. </span><br><br>
+                    Ako želite da kompajler prekine kompilaciju pri prvoj grešci umesto da pokušava da nastavi i štampa dalje poruke o greškama možete koristiti opciju -Wfatal-errors.<br>
+                </p>
+
+                <h2 class="naslov_gcc-s" id="otkl_gresaka_n">Otklanjanje grešaka</h2>    
+                <p class="tekst">
+                    Obično izvršna datoteka ne sadrži nikakve reference na originalni izvorni kod programa, kao što su imena promenljivih ili brojevi linija. Izvršna datoteka je jednostavno niz instrukcija mašinskog koda koje proizvodi kompajler. Ovo je nedovoljno za otklanjanje grešaka, pošto ne postoji jednostavan način da se pronađe uzrok greške ako dođe do pada programa. <br> <br>
+                    Svaki iole veći program u jednom trenutku treba debagovati. Opcijom -g proizvode se informacije za otklanjanje grešaka u izvornom formatu operativnog sistema. One mogu biti korišćene za debagovanje od strane GDB-a (o njemu će više reči biti u poslednjem poglavlju kursa). <br> <br>
+                    <span class="my_code">$ gcc &nbsp;<span class="b_gcc">-g</span>&nbsp; fajl.c </span> <br>
+                    Na sličan način možete koristiti i neke od sledećih opcije: <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">komandna opcija</span></td>
+                            <td><span class="b_gcc">opis komandne opcije</span></td>
+                        </tr>
+                        <tr>
+                            <td>-ggdb</td>
+                            <td>Proizvodi informacije za otklanjenje grašaka specijalno za GDB.</td>
+                        </tr>    
+                        <tr>
+                            <td>-Q</td>
+                            <td>Omogućava štampanje imena svake funkcije i statistika o svakom prolazu kada se završi.</td>
+                        </tr>    
+                        <tr>
+                            <td>-ftime-report</td>
+                            <td>Omogućava štampanje statistima o utrošenom vremenu pri svakom prolazu kada se završi. </td>
+                        </tr>    
+                        <tr>
+                            <td>-fmem-report</td>
+                            <td>Omogućava štampanje statistima o trajnoj alokaciji memorije pri svakom prolazu kada se završi.</td>
+                        </tr>    
+                    </table>
+                </p>
+                <p class="tekst">
+                    Najbolje je da tokom razvoja programa opciju -g držiti stalno uključenom i isključite je tek pri generisanju verzije programa očišćene od grešaka. <br>    
+                </p>
+
+                <h2 class="naslov_gcc-s" id="optimizacija_n">Optimizacija</h2>    
+                <p class="tekst">
+                    Kada završite sa debagovanjem programa možete uključiti opcije prevodioca namenjene optimizaciji. Uključivanjem opcija za optimizaciju kompajler pokušava da poboljša performanse i/ili veličinu koda nauštrb vremena kompilacije i eventualno mogućnosti otklanjanja grešaka u programu. <br> <br>
+                    Možete koristiti neke od sledećih opcija: <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">opcija</span></td>
+                            <td><span class="b_gcc">opis komande </span></td>
+                            <td><span class="b_gcc">1-vreme izvršavanja <br> 2-veličina koda <br> 3-količina memorije <br> 4-vreme kompilacije</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="b_gcc">&minus;O0</span></td>
+                            <td>Smanjuje vreme kompilacije i obezbeđuje da otklanjanje grešaka daje očekivane rezultate. Ovo je podrazumevana opcija.</td>
+                            <td><span class="b_gcc">1 + <br> 2 + <br> 3 - <br> 4 -</span></td>
+                        </tr>    
+                        <tr>
+                            <td><span class="b_gcc">&minus;O, &minus;O1</span></td>
+                            <td>Obezbeđuje optimizovano kompajliranje. Zahteva nešto više vremena i mnogo više memorije za složenije funkcije.</td>
+                            <td><span class="b_gcc">1 -<br>2 -<br>3 +<br>4 +</span></td>
+                        </tr> 
+                        <tr>
+                            <td><span class="b_gcc">&minus;O2</span></td>
+                            <td>Obezbeđuje opsežniju optimizaciju. Preporučuje se za većinu kodova. U poređenju sa prethodnom opcija, ova opcija povećava i vreme kompilacije i performanse generisanog koda. </td>
+                            <td><span class="b_gcc">1 --<br> 2  <br> 3 +<br>4 ++</span></td>
+                        </tr> 
+                        <tr>
+                            <td><span class="b_gcc">&minus;O3</span></td>
+                            <td>Agresivnija je od -O2. Preporučuje se za kodove sa petljama koje uključuju intenzivne proračune sa pokretnim zarezom.</td>
+                            <td><span class="b_gcc">1 --<br> 2 <br> 3 +<br> 4 +++</span></td>
+                        </tr> 
+                        <tr>
+                            <td><span class="b_gcc">&minus;Os</span></td>
+                            <td>Minimizuje memoriju koju će izvršni kod koristiti.</td>
+                            <td><span class="b_gcc">1 <br> 2 --<br> 3 <br> 4 ++</span></td>
+                        </tr> 
+                        <tr>
+                            <td><span class="b_gcc">&minus;Og</span></td>
+                            <td>Nudi razuman nivo optimizacije uz održavanje brze kompilacije i dobrog iskustva u otklanjanju grešaka. Bolji je izbor od -O0 za proizvodnju koda za otklanjanje grešaka jer su neki prolazi kompajlera koji prikupljaju informacije o otklanjanju grešaka onemogućeni sa -O0.</td>
+                            <td><span class="b_gcc">1<br> 2<br> 3<br> 4</span></td>
+                        </tr> 
+                        <tr>
+                            <td><span class="b_gcc">&minus;Ofast</span></td>
+                            <td>Obezbeđuje optimizaciju slično kao i -O3 ali sa nekim dodacima. Dovodi do zanemarivanja stroge usklađenosti sa standardima.</td>
+                            <td><span class="b_gcc">1<br> 2<br> 3<br> 4</span></td>
+                        </tr>  
+                    </table>
+                </p>
+                <p class="tekst">
+                    Neke od opcija koje bivaju uključene sa -O1 su: <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_gcc">komandna opcija</span></td>
+                            <td><span class="b_gcc">opis komandne opcije</span></td>
+                        </tr>
+                        <tr>
+                            <td>-fdce</td>
+                            <td>Vrši eliminaciju mrtvog koda.</td>
+                        </tr>    
+                        <tr>
+                            <td>-fdse</td>
+                            <td>Vrši eliminaciju dodela promenljive koje u nastavku nisu korišćene.</td>
+                        </tr>
+                        <tr>
+                            <td>-fmerge-constants</td>
+                            <td>Pokušava spajanje identičnih konstanti (konstante niza i konstante s pokretnim zarezom) u jedinicama kompilacije. Podrazumevana za optimizovanu kompilaciju ako je asembler i linker podržavaju. Koristite -fno-merge-constants da sprečite ovo ponašanje.</td>
+                        </tr> 
+                        <tr>
+                            <td>-fif-conversion</td>
+                            <td>Pokušava da transformiše uslovne skokove u ekvivalente bez grananja. </td>
+                        </tr> 
+                        <tr>
+                            <td>-fif-conversion2</td>
+                            <td>Koristiti uslovno izvršavanje (gde je dostupno) da transformišete uslovne skokove u ekvivalente bez grananja.</td>
+                        </tr> 
+                        <tr>
+                            <td>-fdelayed-branch</td>
+                            <td>Ako je podržana za ciljnu mašinu, pokušava da promeni redosled instrukcija da bi se iskoristilo mesto za instrukcije koje je dostupna nakon odloženih instrukcija grananja.</td>
+                        </tr>     
+                    </table>
+                </p>
+                <p class="tekst">
+                    Da biste saznali tačan skup optimizacija koji su omogućeni na svakom nivou, možete pozvati GCC pomoću: <br> <br>
+                    <span class="my_code">$  gcc -K -help = optimizers<br> </span>
+                </p>
+
+            </div>
+            <div style="padding-top: 40vh; padding-bottom: 30vh;">
+                <button class="gcc__btn" ><a href="/quiz.html">Kviz</a></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>

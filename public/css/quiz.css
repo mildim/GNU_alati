@@ -1,0 +1,126 @@
+.container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url('../img/Background-quiz.jpg');
+    /* background-size: cover; */
+    background-size: contain;
+    background-position: left;
+    padding: 40px 100px 200px ;
+   
+}
+body{
+    color: rgba(255, 240, 245, 0.904);
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-center{
+    align-items: center;
+}
+.hud-prefix{
+    padding-top: 2rem;
+    font-size: 3rem;
+    color: rgba(255, 240, 245, 0.904);
+}
+.justify-center{
+    justify-content: center;
+}
+.hidden{
+    display: none;
+}
+.choice-container{
+    display: flex;
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    min-width: 80vw;
+    border-radius: 14px;
+    padding: 14px;
+    padding: 5px;
+    padding-left: 10px;
+    background: rgba(255, 255, 255, 0.151);
+    box-shadow: 0 10px 25px rgb(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: all 0.25s;
+}
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 255, 0.212);
+    transform: scale(1.02);
+    transform: 0.1s;
+}
+.choice-prefix{
+    padding: 1rem 1.5rem;
+    color: rgba(255, 240, 245, 0.904);
+}
+.choice-text{
+    padding:1rem;
+    width: 100%;
+}
+#question{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+.correct{
+    background-color: hsla(90, 100%, 49%, 0.5);
+}
+.incorrect{
+    background-color:rgba(168, 8, 8, 0.5);
+}
+
+/* Heads up Display */
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+.hud-prefix{
+    text-align: center;
+    font-size: 2rem;
+}
+.hud-main-text{
+    text-align: center;
+}
+
+#progressBar{
+    width: 75vw;
+    height: 1.5rem;
+    border: 0.2rem solid rgba(82, 241, 19, 0.664);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+#progressBarFull{
+    height: 100%;
+    background:rgba(82, 241, 19, 0.664) ;
+    width: 0%;
+}
+#fscore{
+    font-size: 4.5rem;
+    padding-top: 8rem;
+    padding-right: 30vh;
+    padding-left: 30vh;
+}
+@media screen and (max-width: 1150px){
+    #fscore{
+        font-size: 3.5rem;
+    }
+    .choice-container{
+        font-size: 1.4rem;
+    }
+    #question{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .choice-container{
+        font-size: 1rem;
+    }
+    #question{
+        font-size: 1rem;
+    }
+}

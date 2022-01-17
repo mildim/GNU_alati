@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konzola</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo" ><span style=
+                "background-image: linear-gradient(to right, #47c727 40%, #255018 100%);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-text-fill-color: transparent;">GNU Alati</span></a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="console.html" class="navbar__links" id="konzola-page" style="
+                    background-image: linear-gradient(to right, #47c727 40%, #255018 100%);
+                    background-size: 100%;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-fill-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    cursor:pointer;
+                    text-decoration: none;
+                    ">Konzola</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="bash.html" class="navbar__links" id="bash-page">Bash</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gcc.html" class="navbar__links" id="gcc-page">GCC</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="make.html" class="navbar__links" id="make-page">Make</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gdb.html" class="navbar__links" id="gdb-page">GDB</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Scroll Navigation bar Section -->
+    <div class="sidenavD">
+        <div class="sidenav">
+            <a class="consoleID" href="#consoleID" style="color: #47c7278a;"><span class="nav_h">KONZOLA</span></a>
+
+            <a class="uvod_n" href="#uvod_n"><span class="nav_h">Uvod</span></a>
+            <a class="razlikatis_n" href="#razlikatis_n" ><span class="nav_h">Razlika izmedju terminala, konzole i shell-a?</span></a>
+            <a class="terminal_n" href="#terminal_n">&#x021C0 Terminal - interfejs izmedju čoveka i kompjutera</a>
+            <a class="sta_je_k_n" href="#sta_je_k_n">&#x021C0 Šta je konzola, čemu služi i kako se koristi?</a>
+            <a class="shell_n" href="#shell_n">&#x021C0 Shell</a>
+            <a class="pokr_k_n" href="#pokr_k_n"><span class="nav_h">Pokretanje konzole na vašem sistemu</span></a>
+            <a class="sta_je_kk_n" href="#sta_je_kk_n">&#x021C0 Šta je komanda konzole?</a>
+            <a class="pomoc_n" href="#pomoc_n">&#x021C0 Traženje pomoći</a>
+            <a class="kom_za_nav_i_kon_n" href="#kom_za_nav_i_kon_n"><span class="nav_h">Komande za navigaciju i kontrolu</span> </a>
+            <a class="pwd_n" href="#pwd_n">&#x021C0 pwd komanda i lokacija</a>
+            <a class="cd_n" href="#cd_n">&#x021C0 cd komanda</a>
+            <a class="ria_put_n" href="#ria_put_n">&#x021C0 Relativne i apsolutne putanje</a>
+            <a class="mkdir_n" href="#mkdir_n">&#x021C0 mkdir komanda </a>
+            <a class="ls_n" href="#ls_n">&#x021C0 ls komanda </a>
+            <a class="rmdir_n" href="#rmdir_n">&#x021C0 rmdir komanda</a>
+            <a class="fsistem_n" href="#fsistem_n">&#x021C0 Fajlsistem i dozvole</a>
+            <a class="komande_n" href="#komande_n"><span class="nav_h">Komande za upravljanje fajlovima</span></a>
+            <a class="cp_n" href="#cp_n">&#x021C0 cp komanda</a>
+            <a class="mv_n" href="#mv_n">&#x021C0 mv komanda</a>
+            <a class="rm_n" href="#rm_n">&#x021C0 rm komanda</a>
+            <a class="komande_prikaz_n" href="#komande_prikaz_n"><span class="nav_h">Komande za prikazivanje fajlova</span></a>
+            <a class="cat_n" href="#cat_n">&#x021C0 cat komanda</a>
+            <a class="echo_n" href="#echo_n">&#x021C0 echo komanda</a>
+            <a class="head_n" href="#head_n">&#x021C0 head komanda</a>
+            <a class="tail_n" href="#tail_n">&#x021C0 tail komanda</a>
+            <a class="komande_ostale_n" href="#komande_ostale_n"><span class="nav_h">Još neke komande konzole</span></a>
+            <a class="trikovi_n" href="#trikovi_n"><span class="nav_h">Trikovi za korišćenje komandne linije</span></a>
+            <a class="ciscenje_n" href="#ciscenje_n"><span class="nav_h">Čišćenje</span></a>
+            <a class="superkorisnik_n" href="#superkorisnik_n"><span class="nav_h">Komandna linija i superkorisnik</span></a>
+            <a class="novi_softver_n" href="#novi_softver_n">&#x021C0 Instaliranje novog softvera</a>
+            <a class="skriveni_n" href="#skriveni_n"><span class="nav_h">Skriveni fajlovi</span></a>
+            <a class="" href="#"><span class="nav_h"><br> <br> <br> <br> <br> <br></span></a> 
+        </div>
+    </div>
+    <!-- Console section -->
+    <div class="console" id="consoleID">
+        <div class="console__container">
+            <div class="text-box">
+                <h2 class="naslov-l">KONZOLA</h2>
+                <p class ="tekst">U svim operativnim sistemima koje se temelje na UNIX-u, konzola (terminal) se upotrebljava u velikoj meri (u osnovi ne koristi se izvorna konzola, već shell - spoljašnji sloj koji omogućava interakciju korisnika sa konzolom). <br>
+                    Većina distribucija Linux-a ima malo grafičkih alata koji se koriste za podešavanje i održavanje sistema, tako da se veliki broj operacija mora vršiti iz konzole, jednostavnim unošenjem komandi preko tastature. Stoga, da bi uspešno mogli raditi na jednom Linux operativnom sistemu, svakako je potrebno dobro poznavati konzolu. Konzole većine operativnih sistema zasnovanih na UNIX-u  koriste BASH shell (Bourne Again Shell).</p>
+            </div>            
+        </div>
+    </div>
+    <div class="console" style="background-image: url(img/Background-Console_tekst.jpg);">
+        <div class="console__container">
+            <div class="text-box">
+                <h2 class="naslov-l" id="uvod_n">Uvod</h2>
+                <p class="tekst">Da biste ispratili ovaj kurs biće vam potreban kompjuter sa 
+                    Ubuntu operativnim sistemom ili nekom drugom verzijom Linux distribucije.
+                </p>
+                <a href="https://ubuntu.com/tutorials/install-ubuntu-desktop-1804#1-overview" 
+                    class="tekst" 
+                    style="color:rgba(44, 84, 214, 0.678);">Kako instalirati ovu verziju Ubuntu sitema</a>
+                <h2 class="naslov" id="razlikatis_n"><br> Razlika izmedju terminala, konzole i shell-a?</h2>
+                <p class="tekst">Šta znači kada se kaže da se ukuca komanda u terminal, komandnu liniju ili shell?<br>
+                    Uglavnom, misli se na istu stvar i termini se koriste ravnopravno. 
+                    Medjutim na modernim Linux sistemima, postoji mala praktična razlika. <br>
+                </p>
+                <h2 class="naslov-s" id="terminal_n"><br>Terminal - interfejs izmedju čoveka i kompjutera</h2>
+                <p class="tekst">
+                    Kao imenica, terminal ima mnoga značenja: “kombinacija tastature I izlaznog uređaja pomoću 
+                    kojih se podaci mogu unositi ili se preko računara ili nekog 
+                    elektronskog komunikacionog sistema mogu prikazivati”<br>
+                    Čoveku je potreban interfejs za unos informacija u računar I čitanje izlaznih podataka. 
+                    Ulazni uredjaji uglavnom obuhvataju tastaturu, miš I mikrofon, 
+                    dok izlazni uredjaji uključuju monitor I zvučnik. Obično se nazivaju perifernim uredjajima. <br>
+                    U svetu Linux-a, ulazni I izlazni uredjaji se nazivaju <span class="my_bold_console">terminali - okruženje za unos i izlaz teksta. </span> <br>
+                    Terminal je program koji vam omogućava da pokrenete shell, uredjaj sa ekranom čitljivim ljudima koji 
+                    prihvata niz znakova i prikazuje ih. <br>
+                </p>
+                <h2 class="naslov-s" id="sta_je_k_n"><br>Šta je konzola, čemu služi i kako se koristi?</h2>
+                <p class="tekst">Konzola je vrsta interfejsa. Razlikuje se od grafičkog interfejsa po odsustvu 
+                    grafičkih elemenata odnosno prozora, dugmadi, polja za opcije... <br>
+                    Umesto otvaranja prozora i kliktanja na polja za potvrdu, u konzoli se podešavanja menjaju 
+                    izmenom datoteka u kojima se podešavanja čuvaju, a komande zadaju kucanjem naziva komandi i 
+                    sažetih podešavanja. <br> <br>
+                    Konzola je fizički terminal koji je primarni terminal direktno povezan sa mašinom. 
+                    To je prozor u kome su aktivni vaši programi u tekstualnom režimu. <br> <br>
+                    Konzola i terminal se često koriste kao sinonimi na ličnim računarima. 
+                </p>
+                <h2 class="naslov-s" id="shell_n"><br> Shell</h2>
+                <p class="tekst">
+                    Terminal je, u stvari samo mehanizam za prenos informacija. Da bi te informacije razumeo 
+                    operativni sistem, potreban nam je shell. <br>
+                    Shell (interpreter komandne linije)u Linux -u je program koji tumači komande koje unosite 
+                    u prozor terminala i daje rezultate, tako da operativni sistem može da razume ono što želite 
+                    da uradite. <br>
+                    Za razliku od korisnika, shell ima pristup jezgru. Korisnici mogu da dobiju pristup jezgru 
+                    samo korišćenjem shell-a i unosom odgovarajućih komandi. <br> <br>
+                    Najčešći shell je Bash shell, o kome ćete kasnije čitati, ali postoje više varijanti; Ubuntu 
+                    koristi Dash shell, a neki korisnici preferiraju Fish ili ZSH shell. <br> <br>
+                    Da biste proverili koji tip vi koristite, pokrenite sledeću komandu: <br>
+                </p>
+                <p class="tekst">
+                    <span class="my_code">$ echo $0</span> 
+                </p>
+                <h2 class="naslov" id="pokr_k_n">Pokretanje konzole na vašem sistemu</h2>
+                <p class="tekst">Na Ubuntu 18.04 sistemu možete pokrenuti terminal kliknuvši na <span class="my_bold_console">Activities</span> 
+                    dugme u gornjem levom uglu ekrana i nakon toga kucajući prvih par slova reči
+                    <span class="my_bold_console">“terminal”, “command”, “prompt” ili  “shell”</span>  
+                    (developeri su za pokretanje omogućili upotrebu svih najčešćih sinonima)<br>
+                    Ako ne možete pokrenuti Terminal na ovaj način, ili samo želite brži način za 
+                    pokretanje, večina Linux sistema koriste istu prečicu na tastaturi za pokretanje: 
+                    <span class="my_bold_console">Ctrl-Alt-T</span>.
+                </p>
+                <img src="img/slike_konzola/pokretanje.png" alt="Pokretanje" style="width: 100%;max-width: 800px;">
+                <p class="tekst"> <br>
+                    <img src="img/slike_konzola/terminal.png" alt="Pokretanje" style="float:right;width: 50%;max-width: 600px;">
+                    Kako god da ste pokrenuli terminal, dobićete prozor jednostavnog 
+                    izgleda sa tekstom u gornjem levom uglu, i velikim delom za kucanje teksta. 
+                    U zavisnosti od vašeg sistema boje će biti drugačije i tekst će se razlikovati. <br>
+                    Generalno, kada ukucate komandu, ona se pojavi u istom redu kao i početni tekst. 
+                    Taj tekst je tu da bi vam rekao da je kompjuter spreman da prihvati komandu, 
+                    tako vas on obaveštava (na engl. prompting). Zato se taj tekst 
+                    obično zove  prompt. <br>
+                    Na prompt možemo da gledamo kao obaveštenje da postoji linija u terminalu 
+                    gde možete kucati komandu (tj. komandna linija). <br> <br>
+                    Još jedna bitna stvar je, da kada pokrenete komandu, bilo koji output će se, 
+                    obično videti direktno na terminalu. Nakon toga, kada je izvršavanje komande završeno, prikazaće vam se još jedan prompt u narednoj liniji. <br>
+                    Neke komande će prikazati dosta teksta, dok druge kao output 
+                    neće prikazati ništa. <br> <br>
+                    Sada tu možete pisati svoje komande. <br>
+                </p>
+                <h2 class="naslov-s" id="sta_je_kk_n">Šta je komanda konzole?</h2>
+                <p class="tekst">Komada je program koji juniksolikim sistemima govori 
+                    da nešto urade. <br>
+                    Opšta forma svake Linux komande je: <br>
+                </p>
+                <p class="tekst">
+                    <span class="my_code">$ command [<b>opcije</b>] [<b>argumenti</b>]</span> 
+                </p>
+                <p class="tekst">[argumenti]- lista fajlova, ili samo jedan fajl koji 
+                    govori na čemu se komada primenjuje; u zavisnosti od vrste fajlova 
+                    komanda će se izvršavati na različite načine <br>
+                    [opcije] - uglavnom im prethodi crtica (-), kada se navedu menjaju 
+                    način izvršavanja komande <br> <br>
+                    Za većinu komandi može se navesti više od jedne opcije u formi: 
+                </p>
+                <p class="tekst">
+                    <span class="my_code">$ &nbsp<b>command</b> &ensp; -[opcija] [opcija] [opcija]</span> 
+                </p>
+                <p class="tekst"> ili <br></p>
+                <p class="tekst">
+                    <span class="my_code">$ &nbsp<b>command</b> &ensp; -opcija1 -opcija2 -opcija3</span> 
+                </p>
+                <p class="tekst">
+                    <span class="my_bold_console">&#x021C0</span> komande su case-sensitive, tj pravi se razlika u velikim i malim 
+                    slovima u nazivu <br>
+                    <span class="my_bold_console">&#x021C0</span> Postoje konvencije za komande, ali ne prate sve Linux komande 
+                    standard - neke ne zahtevaju crticu ispred opcija,a kod nekih ne možete 
+                    da grupišete opcije <br> <br>
+                    <span class="tekst my_comment"> <i>
+                        Postoje korisne prečice koje vam mogu uštedeti dosta vremena u kucanju, ako fajlovi imaju slična imena: <br>
+                        &emsp;&emsp;&bull;<span class="my_bold_c_console"> upitnik (”?”)</span> se koristi da označi  “bilo koji karakter” u imenu fajla <br> 
+                        &emsp;&emsp;&bull;<span class="my_bold_c_console"> zvezdica (”*”)</span>  se koristi da označi “nula ili više karaktera”
+                    </span></i> <br><br>
+                    <span class="my_bold_console">&#x021C0</span> Opcije i sintaksa za svaku komandu su izlistane na man stranici za tu komandu.
+
+                </p>
+                <h2 class="naslov-s" id="pomoc_n">Traženje pomoći</h2>
+                <p class="tekst">
+                    Man stranica (manual page) je dokumentacija softvera za juniksolike 
+                    operativne sisteme, dostupna je on-line kako bi detaljnije objasnila 
+                    korišćenje sistema i komandi. <br> <br>
+                    Da bi iskoristili man stranicu, treba ukucati 
+                    `<span class="my_bold_console">man</span>` i <span class="my_bold_console">
+                    komandu za koju želimo dokumentaciju</span>  u terminal. <br> <br>
+                    Sintaksa:
+                </p>
+                <p class="tekst">
+                    <span class="my_code">$ &nbsp<b>man</b> &ensp; [opcije] ime_komande</span> 
+                </p>
+                <p class="tekst">Najčešće opcije: <br></p>
+                <p class="tekst">
+                    <span class="my_code">$ &nbsp;man&ensp;<b>-f</b>&nbsp[ime_komande]</span> 
+                </p>
+                <p class="tekst">
+                    <span class="my_bold_console">&#x021C0</span> daje nam broj sekcije u kojoj je komanda prisutna
+                </p>
+                <img src="img/slike_konzola/Screenshot from 2021-12-04 10-41-13.png" alt="Pokretanje" style="width: 80%;max-width: 600px;">
+
+                <p class="tekst"> <br>
+                    <span class="my_code">$ &nbsp;man&ensp;<b>-a</b>&nbsp[ime_komande]</span> 
+                </p>
+                <p class="tekst">
+                    <span class="my_bold_console">&#x021C0</span> vraća sve man stranice navedene komande sukcesivno 
+                </p>
+                <img src="img/slike_konzola/man1.png" alt="Pokretanje" style="width: 100%;max-width: 600px;">
+
+                <p class="tekst"> <br>
+                    <span class="my_code">$ &nbsp;man&ensp;<b>-k</b>&nbsp[ime_komande]</span> 
+                </p>
+                <p class="tekst">
+                    <span class="my_bold_console">&#x021C0</span> pretražuje navedenu komandu kao regularni izraz u svim man stranicama i vraća sve one, sa brojem sekcije u kome je pronadjena 
+                </p>
+
+                <p class="tekst"> <br>
+                    <span class="my_code">$ &nbsp;man&ensp;<b>-w</b>&nbsp[ime_komande]</span> 
+                </p>
+                <p class="tekst">
+                    <span class="my_bold_console">&#x021C0</span> vraća lokaciju gde se man stranica za navedenu komandu nalazi 
+                </p>
+                <img src="img/slike_konzola/Screenshot from 2021-12-04 10-41-48.png" alt="Pokretanje" style="width: 80%;max-width: 600px;">
+
+                <p class="tekst"> <br>
+                    <span class="my_code">$ &nbsp;man&ensp;<b>-I</b>&nbsp[ime_komande]</span> 
+                </p>
+                <p class="tekst">
+                    <span class="my_bold_console">&#x021C0</span> komanda čije ime se navodi postaje `case-sensitive` 
+                </p>
+                <img src="img/slike_konzola/Screenshot from 2021-12-04 10-42-14.png" alt="Pokretanje" style="width: 80%;max-width: 600px;">
+
+                <p class="tekst"> <br>
+                    Sve man stranice imaju uobičajeni raspored sa sekcijama: <br> <br>
+                    <span class="my_bold_console">NAME</span> - ime komande ili funkcije, praćeno 
+                    jednolinijskim opisom šta komanda radi <br> <br>
+                    <span class="my_bold_console">SYNOPSIS</span> - formalni opis kako pokrenuti 
+                    komandu i koje opcije može imati, za programske funkcije, daje listu parametara 
+                    funkcije i koji fajl sadrži njenu deklaraciju <br> <br>
+                    <span class="my_bold_console">DESCRIPTION</span> - tekstualni opis funkcionalnosti 
+                    komande ili funkcije <br> <br>
+                    <span class="my_bold_console">EXAMPLES</span> - neki primeri uobičajene upotrebe <br> <br>
+                    <span class="my_bold_console">SEE ALSO</span> - lista povezanih komandi i funkcija <br> <br>
+                    Takodje, i druge opcije mogu biti prisutne: <span class="my_bold_console">OPTIONS, 
+                        EXIT STATUS, RETURN VALUE, ENVIRONMENT, BUGS, FILES, AUTHOR, REPORTING BUGS, 
+                        HISTORY i  COPYRIGHT</span>. <br> <br>
+                    Kako je uputstvo podeljeno na sekcije, ova komada se koristi kako bismo videli samo 
+                    specifičnu, traženu sekciju čiji broj navodimo ispred imena komande:
+                </p>
+                <p class="tekst"> <br>
+                    <span class="my_code">$ &nbsp;<b>man</b>&nbsp [broj_sekcije] [ime_komande]</span> 
+                </p>
+                <h2 class="naslov" id="kom_za_nav_i_kon_n">Komande za navigaciju i kontrolu </h2>
+                
+                <p class="tekst">Linux sistem fajlova je <span class="my_bold_console">drvolike strukture i počinje od korena</span> . <br> 
+                    Koreni (`<span class="my_bold_console">root</span>`) direktorijum sistema je predstavljen znakom (/). <br>
+                    Sistemski i korisnički direktorijumi su organizovani pod korenim. <br>
+                    Korisnik nema koreni direktorijum u Linux-u, te se korisnici loguju na svoj <span class="my_bold_console">home</span> direktorijum, pod njim mogu stvarati druge direktorijume. <br> <br>
+                    Sledeća tabela opisuje glavne komande za navigaciju i kontrolu fajl sitema: 
+                </p>
+                <table class="my_table tekst">
+                    <tr>
+                      <td><span class="my_bold_console">cd</span> [direktorijum]</td>
+                      <td><span class="my_bold_console">menjamo direktorijum</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">ls</span> [opcije] [direktorijum ili fajl]</td>
+                      <td><span class="my_bold_console">prikazujemo sadržaj direktorijuma ili fajla</span> </td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">mkdir</span> [opcije] direktorijum </td>
+                      <td><span class="my_bold_console">pravimo direktorijum</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">pwd</span></td>
+                      <td><span class="my_bold_console">štampamo trenutni (radni) direktorijum</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">rmdir</span> [opcije] direktorijum </td>
+                      <td><span class="my_bold_console">uklanjamo direktorijum</span> </td>
+                    </tr>
+                </table>
+
+                <h2 class="naslov-s" id="pwd_n">pwd komanda i lokacija </h2>
+                <p class="tekst"><span class="my_bold_console">pwd komanda</span> 
+                    (‘<span class="my_bold_console">p</span>rint 
+                    <span class="my_bold_console">w</span>orking 
+                    <span class="my_bold_console">d</span>irectory’) 
+                    stampa trenutni radni direktorijum u kojem se korisnik nalazi, 
+                    nema nikakvih dodatnih argumenata <br> <br>
+                    Kliknite mišem na prozor da biste bili sigurni da ćete tu otkucati vaš tekst. <br>
+                    Kada otkucate komandu u terminal: <br> <br>
+
+                    <img src="img/slike_konzola/pwd.png" alt="Pokretanje" style="float:left;width:50%;padding-right: 20px;max-width: 300px;">
+                    Trebali biste da vidite odštampan put do direktorijuma  
+                    <i>/home/vaše_korisničko_ime</i> i ponovljen tekst sa početka.
+                </p>
+                <p class="tekst my_comment">
+                    Šta je radni direktorijum? <br>
+                    Ako pokušate da napravite nove fajlove ili direktorijume, 
+                    da pogledate postojeće ili da ih obrišete, shell 
+                    pretpostavlja da ih tražite u trenutnom radnom direktorijumu, 
+                    osim ako ne naglasite drugačije. Zato je veoma bitno da 
+                    znate u kom direktorijumu je shell u svakom trenutku .
+                </p>
+
+                <h2 class="naslov-s" id="cd_n"><br> cd komanda </h2>
+                <p class="tekst">
+                    <span class="my_bold_console">cd komanda</span> 
+                    (‘<span class="my_bold_console">c</span>hange 
+                    <span class="my_bold_console">d</span>irectory’) menja 
+                    trenutni radni direktorijum, na direktorijum koji 
+                    navodimo kao agument,  kucanjem: <br> <br>
+                    <span class="my_code">$ &nbsp;<b>cd</b>&nbsp [direktorijum]</span> 
+                </p>
+                <p class="tekst">
+                    Ova komanda radi i sa relativnim i sa apsolutnim putanjama podjednako. <br> <br>
+                </p>    
+
+                <h2 class="naslov-s" id="ria_put_n" >Relativne i apsolutne putanje</h2> <br> <br>
+                <p class="tekst">
+                    Primer: <br>
+                    Recimo da želimo da dodjemo do “etc”  foldera (on se nalazi u korenu fajl sistema)
+                    Ako ste već u korenom direktorijumu sve će raditi odlično. (slika 1) <br>
+                    Ali ako niste, dobićete grešku “No such file or directory”. (slika 2)
+                </p>
+                <img src="img/slike_konzola/putanja1.png" alt="Pokretanje" style="float:left;width:50%;padding-right: 10px;">
+                <img src="img/slike_konzola/putanja2.png" alt="Pokretanje" style="float:right;width:50%;">
+
+                <p class="tekst">
+                    Zaključak: Promena direktorijuma navodjenjem imena, 
+                    ili korišćenje .. će imati različite efekte u odnosu na 
+                    to gde se nalazite u tom trenutku. Putanja ima smisla samo 
+                    <span class="my_bold_console">relativno</span> u odnosu na 
+                    vaš radni direktorijum.
+                </p>
+
+                <p class="tekst">
+                    <img src="img/slike_konzola/apsolutna putanja.png" alt="Apsolutna putanja" style="float:right;width:50%;padding-left: 20px;max-width: 400px;">                    
+                    Svaka putanja koja počinje sa <span class="my_bold_console">/</span> 
+                    je <span class="my_bold_console">apsolutna putanja</span>. 
+                    (Možete je zamisliti kao da kažete “prebaci se na koreni direktorijum, 
+                    i odatle prati putanju” ). <br> <br>
+                    Tako se mnogo lakše prebacujemo na recimo etc direktorijum, 
+                    bez obzira na to gde smo trenutno u fajl sistemu.
+                </p>
+
+                <img src="img/slike_konzola/apsolutna_putanja2.png" alt="Apsolutna putanja 2" style="float:right;width:50%;padding-left: 20px;max-width: 400px;">                    
+                <p class="tekst my_comment">
+                    Prečica ~ <br>
+                    Korišćenje karaktera tilda ~  na početku vaše putanje, 
+                    znači da počinjete od vašeg home direktorijuma.
+                </p>
+
+                <p class="tekst"> <br>
+                    Primeri: <br>
+                    <span class="my_bold_console">&emsp; 1.</span> 
+                    Narednom komandom naš radni direktorijum postaje “/”, 
+                    baza fajl sistema (root). Odatle sve se grana u drvo 
+                    direktorijuma i poddirektorijuma. <br> <br>
+                    <span class="my_code">$ &nbsp;cd /</span> <br>
+
+                    <span class="my_bold_console">&emsp; 2.</span> 
+                    Iz korenog direktorijuma, sledeća komanda će vas 
+                    premestiti u “home” direktorijum, koji je prvi 
+                    poddirektorijum “/”: <br> <br>
+                    <span class="my_code">$ &nbsp;cd home</span> <br>
+                    
+                    <span class="my_bold_console">&emsp; 3.</span> 
+                    Da bi prešli u roditeljski direktorijum nazad, 
+                    u ovom slučaju u “/”, koristimo dve tačke (..) 
+                    kada menjamo direktorijum (izmedju cd i .. 
+                    mora postojati razmak). <br> <br>
+                    <span class="my_code">$ &nbsp;cd ..</span> <br>
+
+                    <span class="my_bold_console">&emsp; 4.</span> 
+                    Možete koristi .. više od jednom, ukoliko 
+                    želite da se krećete kroz više nivoa 
+                    roditeljskih direktorijuma <br> <br>
+                    <span class="my_code">$ &nbsp;cd ../..</span> <br>
+
+                    <span class="my_bold_console">&emsp; 5.</span> 
+                    Ukolko samo otkucate cd to vas vodi ponovo 
+                    na vaš “home” direktorijum. <br> <br>
+                    <span class="my_code">$ &nbsp;cd</span> <br>
+
+                </p>
+
+                <h2 class="naslov-s" id="mkdir_n">mkdir komanda</h2>
+                <p class="tekst">
+                    <span class="my_bold_console">mkdir komanda</span> 
+                    (‘<span class="my_bold_console">m</span>a<span class="my_bold_console">k</span>e 
+                    <span class="my_bold_console">d</span>irectory’) - 
+                    omogućava korisnicima da naprave nove direktorijume, 
+                    a možemo napraviti i više (pod)direktorijuma odjednom <br> <br>
+                    <span class="my_code">$ &nbsp;<b>mkdir</b> &nbsp;[opcije] direktorijum</span> <br>
+
+                    Primer: <br>
+                    Pravimo direktorijum tutorial  direktno u direktorijumu /tmp 
+                    koristeći apsolutnu putanju, i pozicioniramo se u njemu komandom: <br> <br>
+                    <span class="my_code">$ &nbsp;mkdir /tmp/tutorial <br>$ &nbsp;cd  /tmp/tutorial</span> <br>
+                </p>
+
+                <p class="tekst my_comment">
+                    Bez / na početku, mkdir komanda bi probala da nadje tmp direktorijum u 
+                    trenutnom radnom direktorijumu, i onda da napravi direktorijum tutorial 
+                    u njemu. Ako ne bi pronašla tmp folder, komanda se ne bi izvršila.
+                </p> <br>
+                <p class="tekst">
+                    <span class="my_code">$ &nbsp;mkdir dir1 dir2 dir3</span> <br>
+                    Ova komanda stvara tri podirektorijuma u našem radnom direktorijumu. 
+                </p>
+                <img src="img/slike_konzola/mkdir.png" alt="mkdir" style="width:100%;max-width: 700px;">
+                <br> <br>
+                <p class="tekst my_comment"> 
+                    Ovde vidimo da mkdir komada može raditi sa više argumenata, 
+                    a svakako zahteva bar jedan. Sa druge strane, komanda cd može 
+                    raditi bez argumenata, ili samo sa jednim.
+                </p>
+
+                <p class="tekst"> <br>
+                    mkdir komada je napravila sve direktorijume u jednom direktorijumu <span class="my_bold_console">tutorial</span>. Nije stvorila <span class="my_bold_console">dir3</span> u <span class="my_bold_console">dir2</span> u <span class="my_bold_console">dir1</span>, ili bilo koju ugnježdenu strukturu. Ali nekad mi to baš želimo, i <span class="my_bold_console">mkdir komanda ima opciju -p</span> za to: <br> <br>
+                    <span class="my_code">$ &nbsp;mkdir &nbsp;<b>-p</b>&nbsp; dir4/dir5/dir6</span> <br>
+
+                    Sada je samo dir4 dodat u listu, jer je dir5 u njemu, a dir6 u dir5. <br> <br>
+                    Šta ako želimo da napravimo folder koji ima dva imena? <br> <br>
+                    <img src="img/slike_konzola/mkdir2.png" alt="mkdir2" style="width:100%;max-width: 700px;">
+                    <br>
+                </p>
+                <p class="tekst">
+                    Ako želimo da radimo sa razmacima u imenima fajlova moramo da ih eskejpujemo 
+                    (koristeći navodnike ili beksleš \) <br> <br>
+                    <img src="img/slike_konzola/putanje.png" alt="putanje" style="width:100%;max-width: 700px;">
+                </p>
+
+                <h2 class="naslov-s" id="ls_n">ls komanda </h2>
+
+                <p class="tekst">
+                    <span class="my_bold_console">ls komanda</span> (list) - koristimo je da bi videli sadržaj našeg trenutnog radnog direktorijuma (ukoliko ne navedemo ni jedan argument), a ako želite da vidite sadržaj nekog drugog ukucajte komandu ls i apsolutnu putanju do ciljnog direktorijuma <br> <br>
+                    <span class="my_code">$ &nbsp;<b>ls </b>&nbsp; [opcije] [argumenti]</span> <br>
+                    Najčešće opcije: <br> <br>
+                    <span class="my_code">$ &nbsp;ls &nbsp;<b>-R</b></span>
+                    <span class="my_bold_console">&#x021C0</span> izlistaće sve fajlove u poddirektorijumima takodje <br> <br>
+                    
+                    <span class="my_code">$ &nbsp;ls &nbsp;<b>-a</b></span>
+                    <span class="my_bold_console">&#x021C0</span> prikazaće sve skrivene fajlove <br> <br>
+
+                    <span class="my_code">$ &nbsp;ls &nbsp;<b>-d</b></span>
+                    <span class="my_bold_console">&#x021C0</span> izlistaće samo imena direktorijuma, ne i fajlova u direktorijumu  <br>
+                    <br>
+                
+                    <span class="tekst my_comment">
+                        Stvaranje fajlova korišćenjem redirekcije <br>
+                        Ukoliko, recimo, želite da sačuvate output komande ls kao tekstualni fajl, kojim bismo kasnije mogli manipulisati, sve što treba da uradite jeste da na kraju komande dodate znak <span class="my_bold_c_console">> praćen imenom fajla u koji želite da pišete.</span> <br>
+                        <span class="my_code">$ &nbsp;ls > output.txt</span> <br>
+                    </span>    
+                </p>   
+                <p class="tekst"> <br>
+                    Nakon ove komande nemamo ništa ispisano na ekranu, jer se output preusmerava u fajl čije ime navodimo iza > i koji se kreira tom naredbnom. <br>
+                </p>
+
+                <h2 class="naslov-s" id="rmdir_n">rmdir komanda</h2>
+                <p class="tekst">
+                    <span class="my_bold_console">rmdir komanda</span> (`<span class="my_bold_console">r</span>emove <span class="my_bold_console">d</span>irectory`) - briše <span class="my_bold_console">prazan</span> direktorijum; ako nije prazan, moramo prvo ukloniti fajlove koje sadrži.
+                    Ne možemo ukloniti trenutni radni direktorijum, već se prvo moramo pozicionirati van njega <br> <br>
+
+                    <span class="my_code">$ &nbsp;<b>rmdir </b>&nbsp;direktorijum</span> <br>
+                </p>
+
+                <h2 class="naslov-s" id="fsistem_n">Fajlsistem i dozvole</h2>
+                <p class="tekst">
+                    Fajlsistem je obuhvata kolekciju fajlova i foldera. Odredjuje kako se podaci čuvaju. <br>
+                    Linux sistem je drvolika struktura koja se sastoji od mnogo direktorijuma - fajlovi koji sadrže listu drugih fajlova. <br>
+                    Linux, u stvari ne pravi razliku izmedju fajlova i direktorijuma, te su svi fajlovi podeljeni na:<br>
+                    &ensp;&ensp;<span class="my_bold_console">1.</span> Obične fajlove - sadrže podatke, tekst, slike, instrukcije programa<br>
+                    &ensp;&ensp;<span class="my_bold_console">2.</span> Specijalne fajlove - daju dozvolu za korišćenje hardverskih uredjaja<br>
+                    &ensp;&ensp;<span class="my_bold_console">3.</span> Direktorijume - sadrže obične i specijalne fajlove<br>
+                    Da bi imali u vid u fajlsistem našeg Linux sistema, koristimo komandu <span class="my_bold_console">ls - l.</span><br>
+
+                    <img src="img/slike_konzola/fajlsistem.png" alt="fajlstream" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    <span class="my_bold_console">Prva kolona</span> predstavlja tip fajla i dozvole za fajl. Svaki red fajla počinje tipom fajla, a zatim navodi dozvole pristupa koje su povezane sa fajlovima. <br>
+                    Postoje sledeći tipovi datoteka, kojima su pridruženi znakovi u zagradi:<br>
+                    &ensp;&ensp;<span class="my_bold_console">-</span> Običan fajl (-)<br>
+                    &ensp;&ensp;<span class="my_bold_console">-</span> Imenik (d)<br>
+                    &ensp;&ensp;<span class="my_bold_console">-</span> Veza (l)<br>
+                    &ensp;&ensp;<span class="my_bold_console">-</span> Posebna datoteka (c)<br>
+                    <span class="my_bold_console">Druga kolona</span> predstavlja broj memorijskih blokova koje fajl zauzima.<br>
+                    <span class="my_bold_console">Treća kolona</span> predstavlja vlasnika datoteke ili superkorisnika, koji ima administrativnu moć.<br>
+                    <span class="my_bold_console">Četvrta kolona</span> predstavlja grupu vlasnika/superkorisnika.<br>
+                    <span class="my_bold_console">Peta kolona</span> predstavlja veličinu datoteke.<br>
+                    <span class="my_bold_console">Šesta kolona</span> predstavlja datum i vreme kada je datoteka kreirana ili poslednje izmenjena.<br>
+                    <span class="my_bold_console">Poslednja kolona</span> predstavlja ime datoteke ili direktorijuma.<br><br>
+
+                    Dozvole za fajlsistem<br>
+                    Operativni sistem zasnovan na Linux-u zahteva dozvole za fajlove da bi obezbedio svoj fajlsistem. To radi pomoću dva atributa autorizacije:  <br>
+                    &ensp;&ensp;<span class="my_bold_console">1.</span> Dozvole<br>
+                    &ensp;&ensp;<span class="my_bold_console">2.</span> Vlasništvo<br><br>
+
+                    Postoje tri tipa dozvola: <br>
+                    &ensp;&ensp;<span class="my_bold_console">1.</span> Dozvola za čitanje (<span class="my_bold_console">r</span>) pomoću koje možete pregledati sadržaj fajla.<br><br>
+
+                    &ensp;&ensp;<span class="my_bold_console">2.</span> Dozvola za pisanje (<span class="my_bold_console">v</span>) pomoću koje možete menjati sadržaj fajla.<br><br>
+
+                    &ensp;&ensp;<span class="my_bold_console">3.</span> Dozvola za izvršavanje (<span class="my_bold_console">k</span>) pomoću koje se može pokrenuti fajl ili skript <br><br>
+
+                    Postoje tri tipa korisnika Linux-a:<br><br>
+
+                    &ensp;&ensp;<span class="my_bold_console">1. Vlasnik</span> je superkorisnik koji kreira fajl. On može pristupiti svim dozvolama povezanim sa datotekom koja uključuje čitanje, modifikovanje i pokretanje datoteke.<br><br>
+
+                    &ensp;&ensp;<span class="my_bold_console">2. Grupa</span> je skup korisnika ili više korisnika. Superkorisnik ga kreira. Svaki član grupe ima iste dozvole pristupa povezane sa datotekom.<br><br>
+
+                    &ensp;&ensp;<span class="my_bold_console">3. Drugi korisnici</span>, odnosno korisnici treće strane mogu biti bilo ko drugi ko ne pripada Superkorisniku / članovima grupe, i koriste njihove dozvole.<br><br>
+
+                    Promena dozvola<br>
+                    Možete promeniti dozvole korišćenjem <span class="my_bold_console">chmod komande</span> <br><br>
+
+                    <span class="my_code">$ &nbsp;chmod [class][operator][permission] file_name  <br>
+                        $ &nbsp;chmod [ugoa][+or-][rwx] file_name</span> <br><br>
+
+                    class- predstavljena indikatorima - <span class="my_bold_console">u(korisnik), g(grupa), o(ostali) i  a(klasa)</span><br>
+                    operator (+ ili -) - koristi se da se da ili oduzme dozvola<br>
+                    permission (dozvola) - predstavljena je indikatorima <span class="my_bold_console">r, v, k</span> da bi se omogućio pristup za čitanje, modifikovanje ili pokretanje skripta.<br><br>
+
+                    <span class="my_bold_console">Primer:</span><br>
+                    <img src="img/slike_konzola/fajlsistem1.png" alt="fajlstream1" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    Posmatramo označeni red: <br>
+                    &ensp;&ensp;&minus; Prvi slot (-) predstavlja datoteku pod nazivom PythonTutorial.pdf<br>
+                    &ensp;&ensp;&minus;Sledeća tri slota (rw-) određuju dozvole koje koristi vlasnik. Ove dozvole uključuju čitanje i pisanje. Dozvola za izvršenje odbijena.<br><br>
+
+                    &ensp;&ensp;&minus;Sledeća tri slota (rw-) određuju dozvole koje koriste članovi grupe koji poseduju direktorijum. Ove dozvole uključuju čitanje i pisanje, ali ne uključuju dozvolu za izvršavanje.<br>
+                    &ensp;&ensp;&minus;Sledeća tri slota (r--) određuju dozvole koje koriste korisnici sa strane. Ove dozvole uključuju dozvolu samo za čitanje. Ovde, pisanje i izvršavanje je odbijeno<br><br>
+
+                    Menjamo dozvole za naš fajl:<br>
+                    &ensp;&ensp;<span class="my_bold_console">1.</span> Dodajemo denied dozvolu za sve klase<br> 
+                    <img src="img/slike_konzola/dozvole.png" alt="dozvole" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                    &ensp;&ensp;<span class="my_bold_console">2.</span> Brišemo dozvolu za pisanje i čitanje za druge klase <br>
+                    <img src="img/slike_konzola/dozvole_2.png" alt="dozvole2" style="width:100%;max-width: 700px;"> <br> <br> <br>
+
+                </p>
+
+                <h2 class="naslov" id="komande_n">Komande za upravljanje fajlovima</h2>
+                <p>
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="my_bold_console">chgrp</span> [direktorijum]</td>
+                            <td><span class="my_bold_console">menja grupu fajla</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="my_bold_console">chmod </span> [opcije] fajl</td>
+                            <td><span class="my_bold_console">menja pristupne dozvole fajla ili direktorijuma</span> </td>
+                        </tr>
+                        <tr>
+                            <td><span class="my_bold_console">chown </span> [opcije] vlasnik_fajla </td>
+                            <td><span class="my_bold_console">menja vlasništvo nad fajlom; može je koristiti samo superkorisnik</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="my_bold_console">cp</span> [opcije] fajl1 fajl2</td>
+                            <td><span class="my_bold_console">kopira fajl1 u fajl2; komada pravi ili prepisuje fajl2</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="my_bold_console">mv</span>  [opcije] fajl1 fajl2 </td>
+                            <td><span class="my_bold_console">premešta fajl1 u fajl2</span> </td>
+                        </tr>
+                        <tr>
+                            <td><span class="my_bold_console">rm </span> [opcije] fajl </td>
+                            <td><span class="my_bold_console">uklanja (briše) fajl ili direktorijum</span> </td>
+                        </tr>
+                    </table>
+                </p>
+
+                <h2 class="naslov-s" id="cp_n">cp komanda</h2>
+
+                <p class="tekst">
+                    <span class="my_bold_console">cp komanda</span> (`<span class="my_bold_console">c</span>o<span class="my_bold_console">p</span>y`) -  kopira fajlove, grupu fajlova ili direktorijum; stvara identičnu kopiju fajla, ali su oni potpuno nezavisni pa možete menjati bilo koji po potrebi; zahteva bar dva imena fajla kao svoje argumente <br>
+                    Način izvršavanja ove komande zavisi od broja i tipa argumenata koji su joj prosleđeni.
+                    <br> <br>
+                    <span class="my_bold_console">1. argumenti su dva fajla</span>  - tada se sadržaj prvog fajla koji je naveden kopira u drugi fajl, ako drugi ne postoji, onda prvi fajl stvara drugi, a ako postoji njegov sadržaj se prepiše sadržajem prvog fajla <br> <br>
+                    <span class="my_code">$ &nbsp;<b>cp </b>&nbsp;izvorni_fajl  destinacija</span> <br>
+                    Primer: Ako na Desktopu imamo fajl a.txt, narednom komandom možemo napraviti njegovu kopiju - fajl b.txt <br> <br>
+                    <img src="img/slike_konzola/Screenshot from 2021-12-04 13-49-14.png" alt="cp" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <p class="tekst">
+                    <span class="my_bold_console">2. više argumenata </span>  - ako komanda ima jedan ili više argument koji predstavlja ime fajlova koje prati argument koji predstavlja ime direktorijuma (obavezno mora biti direktorijum na kraju),  onda se sadržaj svakog od fajlova kopira u direktorijum čije je ime navedeno  <br> <br>
+                    <span class="my_code">$ &nbsp;&nbsp;<b> cp </b>&nbsp;izvorni_fajl1 izvorni_fajl2 izvorni_fajl3 direktorijum</span> <br>
+                    Primer: Ako na Desktopu imamo fajlove a.txt i b.txt, ovom komandom možemo da ih kopiramo u datoteku koju ćemo nazvati new <br> <br>
+                    Primetite da ne možemo kopirati fajlove u datoteku koja ne postoji, jer se ona, za razliku od fajla, neće sama stvoriti ! <br> <br>
+                    <img src="img/slike_konzola/Screenshot from 2021-12-04 14-05-56.png" alt="cp" style="width:100%;max-width: 700px;"> <br> <br>
+                </p>
+
+                <p class="tekst">
+                    <span class="my_bold_console">3. dva direktorijuma (kopiranje direktorijuma) </span>  - komanda kopira sve fajlove prvog navedenog direktorijuma u drugi (destinacija), stvarajući sve potrebne fajlove i direktorijume po potrebi. <br> <br>
+                    Upotreba komande na ovaj način zahteva dodatnu opciju <span class="my_bold_console">-R</span>, da bi se naglasilo rekurzivno kopiranje direktorijuma  <br> <br>
+                    <span class="my_code">$ &nbsp;cp -R  &nbsp;izvorni_direktorijum direktorijum_destinacija</span> <br>
+                    Ponašanje komande zavisi od toga da li direktorijum_destinacija postoji ili ne. Ukoliko ne postoji, cp komanda ga pravi i kopira sadržaj izvorni_direktorijum - a rekurzivno. Ali ako postoji, onda kopija sadržaja izvorni_direktorijum-a  postaje poddirektorijum direktorijum_destinacija.<br> <br>
+                    <img src="img/slike_konzola/Screenshot from 2021-12-04 14-05-56.png" alt="cp" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="my_bold_console">Najčešće opcije:</span> <br> <br>
+                    <span class="my_code">$ &nbsp;cp &nbsp;<b>-i (interactive)</b></span> 
+                    <span class="my_bold_console">&#x021C0</span>sa ovom opcijom sistem nas prvo upozorava pre nego što prepiše fajl koji je destinacija; ako pritisnete y onda komanda prepisuje fajl. <br>
+                    <br>
+                    <img src="img/slike_konzola/Screenshot from 2021-12-04 14-38-08.png" alt="cp" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="my_code">$ &nbsp;cp &nbsp;<b>-b (backup)</b></span> 
+                    <span class="my_bold_console">&#x021C0</span>sa ovom opcijom komanda stvara backup fajla destinacije u istom folderu, samo sa drugačijim imenom i u drugačijem formatu. <br>
+                    <br>
+                    <img src="img/slike_konzola/Screenshot from 2021-12-04 14-41-57.png" alt="cp" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="my_bold_console">Kopiranje pomoću * (wildcard)</span> <br> <br>
+                    Pretpostavimo da imamo puno tekstualnih fajlova (svi se završavaju sa .txt) i želimo da ih kopiramo u jedan direktorijum. Treba puno vremena da se fajlovi kopiraju jedan po jedan, ali korišćenjem * postupak se dosta pojednostavljuje. <br>
+                </p>
+                
+                <h2 class="naslov-s" id="mv_n">mv komanda</h2>
+
+                <p class="tekst">
+                    <span class="my_bold_console">mv komanda</span> ('<span class="my_bold_console">m</span>o<span class="my_bold_console">v</span>e') - koristi se za preimenovanje i premeštanje fajlova i direktorijuma iz jednog u drugi <br> <br>
+                    <span class="my_code">$ &nbsp; <b>mv</b> &nbsp;[opcije] izvorni_fajl  fajl(direktorijum)_destinacije</span> <br>
+                    <span class="my_bold_console">1. preimenovanje fajlova</span> - ako želimo da promenimo ime kreiranom fajlu, u Linux sistemu to se radi komandom mv, u ovom slučaju su argumenti: fajl koji želite da preimenujete, i novi fajl čije ime želite da koristite na dalje. <br> <br>
+                    Primer: <br>
+
+                    <span class="my_code">$&nbsp;ls <br> 
+                        $ a.txt  b.txt  c.txt  d.txt <br> <br>
+                        $ mv a.txt geek.txt <br> <br>
+                        $ ls <br>
+                        $ b.txt  c.txt  d.txt  geek.txt
+                    </span> <br>
+                    Ako fajl_destinacije ne postoji, biće napravljen, a ako postoji, onda će samo biti prepisan i izvorni_fajl će biti obrisan. <br> <br>
+                    <span class="my_bold_console">2. premeštanje fajlova </span><br> <br>
+                    <span class="my_code">$ &nbsp; <b>mv</b> &nbsp;a.txt dir1</span> <br>
+                    Ovom komandom premeštamo fajl a.txt iz trenutnog radnog direktorijuma u folder dir1. <br>
+                    Sada ako želimo da premestimo fajl ipak u radni direktorijum. Da bismo izbegli promenu direktorijuma, možemo koristiti prečicu. <br>
+                    Kao što koristimo (..) za predstavljanje roditeljskog direktorijuma, tako jedna tačka (.) predstavlja trenutni radni direktorijum. <br>
+                    Pošto znamo da postoji samo jedan fajl u dir1 možemo samo da koristimo wildcart “*”  za bilo koje ime fajla u tom direktorijumu. <br>
+                    Naša komanda je: ( postoji razmak ispred tačke, tj dva parametra funkcije mv). <br> <br>
+                    <span class="my_code">$ &nbsp; <b>mv</b> &nbsp;dir1/* . </span> <br>
+
+                    <span class="my_bold_console">3. pomeranje više fajlova odjednom</span> - ako prosledite više od dva argumenta, svi fajlovi(direktorijumi) će se premestiiti u poslednji naveden direktorijum
+                    Jednom komandom ćemo premestiti <span class="my_bold_console">a.txt</span>, sve <span class="my_bold_console">test_n.txt</span> fajlove i <span class="my_bold_console">dir3</span> u <span class="my_bold_console">dir2.</span><br> <br>
+                    <span class="my_code">$ mv a.txt test_* dir3 dir2</span> <br>
+                    Najčešće opcije: <br> <br>
+                    <span class="my_code">$ mv - i (interactive)</span>
+                    <span class="my_bold_console">&#x021C0</span>sa -n opcijom, mv komanda  sprečava postojeći fajl da bude prepisan <br> <br>
+
+                    <span class="my_code">$ mv  -b (backup)</span>
+                    <span class="my_bold_console">&#x021C0</span>sa ovom opcijom, jednostavnije je da napravimo backup verziju postojećeg fajla koji će biti prepisan kao rezultat komande mv. <br>
+                    <span class="my_bold_console">&#x021C0</span>napraviće se backup fajl sa karakterom tilda (~) na kraju naziva
+                </p>
+
+                <h2 class="naslov-s" id="rm_n">rm komanda</h2>
+
+                <p class="tekst">
+                    <span class="my_bold_console">rm komanda</span> ('<span class="my_bold_console">r</span>e<span class="my_bold_console">m</span>ove') - uklanjanje fajlova, s tim da jednom kada obrišete fajl nećete biti u mogućnosti da povratite njegov sadržaj. <br>
+                    Inicijalno, komanda rm <span class="my_bold_console">ne može obrisati ceo folder</span>, ali postoji opcija koja i to omogućava. <br> <br>
+                
+                <span class="my_code">$ &nbsp;<b>rm</b> &nbsp;[opcije] fajl</span> <br>
+                Primer: Neka u datoteci postoje 5 fajlova: a.txt b.txt c.txt d.txt e.txt  <br>
+                <span class="my_code">$ ls <br>
+                                    $  a.txt b.txt c.txt d.txt e.txt </span> <br>
+                Uklanjanje jednog po jednog fajla: <br>
+                <span class="my_code">& rm a.txt <br> <br>
+                    & ls
+                    & b.txt  c.txt  d.txt  e.txt
+                    <br>
+                    
+                </span> <br>
+                Uklanjanje više fajlova odjednom <br>
+                <span class="my_code">& rm b.txt c.txt
+                    <br><br>
+                    & ls <br>
+                    & d.txt  e.txt <br>
+                </span> <br>
+
+                Opcije:  <br> <br>
+                <span class="my_code">$ rm -i (Interactive Deletion)</span> 
+                <span class="my_bold_console">&#x021C0</span>radi na istom principu, kao kod cp komande npr.
+                <br> <br>
+                <span class="my_code">$ rm -r (Recursive Deletion) direktorijum</span>
+                <span class="my_bold_console">&#x021C0</span>opcija <span class="my_bold_console">-r</span> (ili <span class="my_bold_console">-R</span>) će obrisati sve fajlove i poddirektorijume, rekurzivno, navedenog (roditeljskog) direktorijuma.
+                </p>
+
+                <h2 class="naslov" id="komande_prikaz_n">Komande za prikazivanje fajlova</h2>
+
+                <table class="my_table tekst">
+                    <tr>
+                      <td><span class="my_bold_console">cat </span>  [opcije] fajl</td>
+                      <td><span class="my_bold_console">za stvaranje, pregled, spajanje fajlova...</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">echo</span> [string] </td>
+                      <td><span class="my_bold_console"> ispisuje string koji je argument na standardni izlaz</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">head</span> [-broj] fajl  </td>
+                      <td><span class="my_bold_console">prikazuje prvih 10 (ili navedeni broj) linija fajla</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">tail</span> [opcije] fajl</td>
+                      <td><span class="my_bold_console">prikazuje poslednjih 10 (ili navedeni broj) linija fajla</span></td>
+                    </tr>
+                </table>
+
+                <h2 class="naslov-s" id="cat_n">cat komanda</h2>
+
+                <p class="tekst">
+                    <span class="my_bold_console">cat komanda</span> (‘con<span class="my_bold_console">cat</span>enate’ - povezati medjusobno) - ova često korišćena komanda čita podatke iz fajlova i njihov sadržaj ispisuje u terminal; koristi se za stvaranje, pregled, spajanje fajlova itd. <br> <br>
+                </p>
+
+                <p class="tekst"> <br>
+                    Primeri: <br>
+                    <span class="my_bold_console">&emsp; 1. da bi pregledali jedan fajl</span> 
+                     - komada će kao output dati sadržaj navedenog fajla <br>
+                    <span class="my_code">$ cat ime_fajla</span> <br>
+
+                    <span class="my_bold_console">&emsp; 2. da bi pregledali više fajlova odjednom</span> 
+                     - komada će prikazati sadržaj svih navedenih fajlova, kao jedinstvene blokove teksta <br>
+                    <span class="my_code">$ cat ime_fajla1  ime_fajla2  ime_fajla3</span> <br>
+                    
+                    <span class="my_bold_console">&emsp; 3. da bi pregledali sadržaj fajla do odredjenog broja linija (n)</span>  <br> 
+                    <span class="my_code">$ cat  -n  ime_fajla</span> <br>
+
+                    <span class="my_bold_console">&emsp; 4. da bi stvorili fajl</span> 
+                     - stvara fajl sa imenom koji prosledjujemo kao argument komande <br> 
+                    <span class="my_code">$ cat  > ime_novog_fajla</span> <br>
+
+                    <span class="my_bold_console">&emsp; 5. da bi kopirali  sadržaj jednog fajla u drugi</span>  <br>
+                    <span class="my_code">$ cat ime_fajla1  > ime_fajla2 ( destinacija)</span> <br>
+
+                    <span class="my_bold_console">&emsp; 6. da bi nadovezali sadržaj jednog fajla na sadržaj drugog</span>  <br>
+                    <span class="my_code">$ cat  fajl1 >> fajl2</span> <br>
+
+                    <span class="my_bold_console">&emsp; 7. da bi prikazali sadržaj fajla u obrnutom redosledu, koristeći komandu tac</span>  <br>
+                    <span class="my_code">$ tac  ime_fajla</span> <br>
+
+                    <span class="my_bold_console">&emsp; 8. da bi spojili sadržaj više fajlova u jedan fajl</span>
+                     - spajamo sadržaj svih navedenih fajlova u fajl koji je poslednji naveden  <br>
+                    <span class="my_code">$ cat fajl1 fajl2 fajl3 > spojeni_fajlovi</span> <br>
+
+                    <span class="my_bold_console">&emsp; 9. da bi pisali u već postojećem fajlu</span>  
+                     - ova komada dopisuje tekst na kraj fajla<br>
+                    <span class="my_code">$ cat  >> fajl <br>Tekst koji se dodaje</span> <br>
+                </p>
+
+                <h2 class="naslov-s" id="echo_n">echo komanda</h2>
+
+                <p class="tekst">
+                    <span class="my_bold_console">echo komanda</span> -  koristi se za prikazivanje linije teksta/string koji su prosleđeni kao argumenti <br> <br>
+                    <span class="my_code">$ echo [option] [string]</span> <br>
+                </p>
+                <img src="img/slike_konzola/Screenshot from 2021-12-04 17-03-25.png" alt="echo" style="width:100%;max-width: 600px;"> <br> <br>
+
+                <p class="tekst">
+                    Najčešće opcije: <br>
+                    ! opcija <span class="my_bold_console">-e </span>omogućava pravilno tumačenje beksleša <br>
+                    &emsp;&emsp;&bull; \<span class="my_bold_console">b</span> - uklanja sve beline izmedju teksta <br>
+                    &emsp;&emsp;&bull; \<span class="my_bold_console">n</span> : - stvara novu liniju tu gde se koristi  <br>
+                    &emsp;&emsp;&bull; \<span class="my_bold_console">t</span> : - stvara horizontalni tab razmak <br>
+                    &emsp;&emsp;&bull; \<span class="my_bold_console">v</span> : - stvara vertikalni tab razmak <br>
+                    &emsp;&emsp;&bull; <span class="my_bold_console">echo *</span> : - štampa sve fajlove/direktorijume, slično komandi ls <br>
+                </p>
+
+                <img src="img/slike_konzola/Screenshot from 2021-12-04 17-15-30.png" alt="echo2" style="width:100%;max-width: 600px;"> <br> <br> <br>
+
+                <h2 class="naslov-s" id="head_n">head komanda</h2>
+                <p class="tekst">
+                    <span class="my_bold_console"> head komanda</span> - ispisuje prvih N linija fajla koji se navodi kao argument; ukoliko broj linija nije naveden štampa prvih 10 linija teksta. <br> <br>
+                    <span class="my_code">$ head [opcije] fajl</span> <br>
+                    Najčešće opcije: <br> <br>
+
+                    <span class="my_code">$ head -n broj fajl</span> 
+                    <span class="my_bold_console">&#x021C0</span>štampa onoliko prvih linija fajla koji je broj naveden, umesto prvih 10 <br> <br>
+
+                    <span class="my_code">$ head -c broj fajl</span> 
+                    <span class="my_bold_console">&#x021C0</span>štampa prvih nekoliko bajtova fajla u zavisnosti od navedenog broja <br> <br>
+                    
+                </p>
+
+                <h2 class="naslov-s" id="tail_n">tail komanda</h2>
+                <p class="tekst">
+                    <span class="my_bold_console">tail komanda</span> - komplement head komande; ispisuje poslednjih N linija fajla koji navodimo kao argument; ukoliko broj linija nije naveden štampa poslednjih 10 linija teksta.<br> <br>
+                    <span class="my_code">$ tail [opcije] fajl</span> <br>
+                    Najčešće opcije: <br> <br>
+
+                    <span class="my_code">$ tail -n broj fajl</span> 
+                    <span class="my_bold_console">&#x021C0</span>štampa onoliko poslednjih linija fajla koji je broj naveden, umesto prvih 10 <br> 
+                    <span class="my_bold_console">&#x021C0</span>komanda se može napisati i bez `-n` karaktera ali `-` mora da stoji  <br> <br>
+
+                    <span class="my_code">$ tail +n fajl</span> 
+                    <span class="my_bold_console">&#x021C0</span>štampa sadržaj fajla od navedenog broja linije pa do njegovog kraja <br> <br>
+                    
+                    <span class="my_code">$ tail -c broj fajl</span> 
+                    <span class="my_bold_console">&#x021C0</span>štampa poslednjih nekoliko bajtova fajla u zavisnosti od navedenog broja ako navedemo negativan broj nakon karaktera -c <br> 
+                    <span class="my_bold_console">&#x021C0</span>ako navedemo pozitivan broj nakon karaktera -c, komanda prikazuje podatke nakon preskakanja prvih linija fajla jednakih navedenom broju  <br> <br>
+                </p>
+
+                <h2 class="naslov" id="komande_ostale_n">Još neke komande konzole</h2>
+
+                <table class="my_table tekst">
+                    <tr>
+                      <td><span class="my_bold_console">touch </span></td>
+                      <td>za stvaranje fajla, može biti bilo šta od praznog tekstualnog fajla to praznog zip fajla <br>
+                        Na primer:  “<span class="my_bold_console">touch new.txt</span>”.</td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">locate</span></td>
+                      <td>za lociranje fajla u sistemu, koristi se kada ne znamo gde je fajl sačuvan ili ne znamo ime fajla;
+                        ako koritimo opciju -i komda ignoriše mala i velika slova u nazivu fajla
+                        </td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">find</span> </td>
+                      <td>isto kao i komanda locate, koristi se za traženje fajlova i direktorijuma, uz razliku da se potraga vrši u datom direktorijumu</td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">grep </span> </td>
+                      <td>za pretraživanje teksta u datom fajlu <br>
+                        Na primer: komanda <span class="my_bold_console">grep plavo notepad.txt</span> će tražiti reč plavo u fajlu notepad.txt</td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">df</span> </td>
+                      <td>za dobijanje izveštaja o upotrebi prostora na disku, u procentima ili kilobajtima 
+                        ukoliko želimo rezultat u megabajtim koristimo opciju <span class="my_bold_console">-m</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">diff </span> </td>
+                      <td>poredi sadržaj dva fajla liniju po liniju i kada analizira fajlove, odštampa linije koje nisu iste (programeri često koriste ovu komandu kada vrše izmene na programu da ne bi ponovo pisali ceo izvorni kod) <br> <br>
+                        Na primer: <span class="my_bold_console">diff file1.ext file2.ext</span></td>
+                    </tr>
+                </table>
+
+                <table class="my_table tekst">
+                    <tr>
+                      <td><span class="my_bold_console">kill</span> </td>
+                      <td>koristi se za prekidanje rada programa</td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">history </span> </td>
+                      <td>korisna ukoliko zelimo da pogledamo sve komande koje smo ranije koristili</td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">hostname</span> </td>
+                      <td>ako želite da znate ime vaše mreže  <br>
+                        ako želite da prikažete IP adresu vaše mreže ukucajte opciju <span class="my_bold_console">-i</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="my_bold_console">zip, unzip </span> </td>
+                      <td>komanda zip kompresuje vaše fajlove u zip arhivu, a unzip ekstraktuje fajlove iz zip arhive</td>
+                    </tr>
+                </table> <br> <br>
+
+                <h2 class="naslov" id="trikovi_n">Trikovi za korišćenje komandne linije</h2>
+                <p class="tekst">
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> Možete koristiti komandu <span class="my_bold_console">clear</span> da očistite terminal, ukoliko se popuni sa previše komandi <br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span><span class="my_bold_console"> TAB</span> možete koristiti da popunite terminal; npr samo ukucajte “<span class="my_bold_console">cd Doc</span>”, a zatim kliknite <span class="my_bold_console">TAB</span> i terminal ostatak popunjava sam i pravi komandu “<span class="my_bold_console">cd Documents</span>”<br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> <span class="my_bold_console">Ctrl+C</span> se koristi da se bezbedno zaustavi bilo koja komanda u terminalu ; ako se ne zaustavi time, onda se komanda <span class="my_bold_console">Ctrl+Z</span> može iskoristiti za nasilno zaustavljnaje programa<br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> Možete izaći iz terminala koristeći komandu <span class="my_bold_console">exit</span><br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> Možete isključiti ili ponovo pokrenuti kompjuter koristeći komande  <span class="my_bold_console">sudo halt</span> i <span class="my_bold_console">sudo reboot</span><br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> <span class="my_bold_console">Ctrl + Shift + C</span> se koristi za kopiranje teksta iz konzole<br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> <span class="my_bold_console">Ctrl + Shift + V</span> se koristi za prenošenje teksta u konzolu<br>
+                    &emsp;&emsp;<span class="my_bold_console">&bull;</span> možemo koristiti <span class="my_bold_console">Up Strelicu</span> i  <span class="my_bold_console">Down Strelicu</span> da se krećemo kroz istoriju komandi koje smo koristili u terminalu do tada<br>
+                </p>
+
+                <h2 class="naslov" id="ciscenje_n">Čišćenje</h2>
+                <p class="tekst">
+                    Došli smo do kraja ovog dela kursa i sada bi trebali da se vratimo u svoj početni direktorijum (koristite pwd da proverite gde ste i cd da odete tamo ako niste). <br>
+                    Dobra praksa je ostaviti računar u istom stanju u kojem smo ga pronašli, pa za kraj treba ukloniti fajlove koje smo koristili u primerima, i da proverimo da li je nestala zaista: <br> <br>
+                    <span class="my_code">$ rm -r /tmp/tutorial <br>
+                        & ls /tmp
+                        </span> <br>
+                        Kao poslednji korak, treba zatvoriti terminal.
+                        Možete zatvoriti prozor, ali je bolje odjaviti se iz shell-a. U te svrhe možete koristiri komandu za odjavu (<span class="my_bold_console">logout</span>) ili <span class="my_bold_console">Ctrl-D</span> prečicu na tastaturi. 
+
+                </p>
+
+                <h2 class="naslov" id="superkorisnik_n">Komandna linija i superkorisnik</h2>
+                <p class="tekst">
+                    Jedan dobar razlog za učenje osnovnih komandi je što instrukcije koje možete naći na internetu favorizuju upotrebu komandi shell-a u odnosu na GUI. <br>
+                    Neka uputstva zahtevaju promene na vašoj mašini, koje prevazilaze npr. izmene nekoliko datoteka u home direktorijumu, te ćete se neizbežno susresti sa komandama koje treba da pokrećete kao <span class="my_bold_console">administrator mašine (na Unix jeziku superkorisnik)</span>.<br>
+                    Superkorisnik može da : <br>
+                    &emsp;&emsp;<span class="my_bold_console">&#x021C0</span>izmeni ili izbriše bilo koju datoteku u bilo kom direktorijumu na sistemu <br>
+                    &emsp;&emsp;<span class="my_bold_console">&#x021C0</span>prepiše pravila zaštitnog zida ili da pokrene mrežne usluge koje bi potencijalno mogle da otvore mašinu za napad <br>
+                    &emsp;&emsp;<span class="my_bold_console">&#x021C0</span>isključi mašinu čak iako je drugi ljudi još uvek koriste<br><br>
+
+                    Ukratko, superkorisnik može da uradi skoro sve, lako preskačući zaštitne mere koje se obično postavljaju <br><br>
+
+                    Da bi se smanjile moguće greške koje superkorisnik može da napravi, mnoge Linux distribucije podstiču upotrebu komande <span class="my_bold_console">su</span> (skraćenica od <span class="my_bold_console">superuser</span>), koja omogućava da se prebacite na drugog korisnika mašine, bez da morate da se izlogujete.<br>
+                    &emsp;&emsp;<span class="my_bold_console">&#x021C0</span>kada se koristi bez argumenata, pretpostavlja se da želite da promenite nalog na root korisnika<br>
+                    &emsp;&emsp;<span class="my_bold_console">&#x021C0</span>možete da prosledite kao argument korisničko ime i tada prelazite na odredjeni korisnički nalog<br><br>
+
+                    <u>Cilj:</u>  administratori većinu svog vremena koriste normalan nalog, a prelaze na superkorisnika samo kada im je to potrebno, a zatim koriste komandu za odjavu ili Ctrl-D prečicu. Na taj način minimalizacijom vremena provedenog ulogovano kao root, smanjuje se mogućnost pravljenja katastofalne greške<br>
+                    Kada koristite su komandu, cela sesija terminala se prebacuje na drugog korisnika.<br>
+                    Medjutim, može da se dogodi da komande koje su potpuno benigne kada biste ih pokrenuli kao običan korisnik, mogu da unište ceo sistem ako se pokrenu kao root.<br>
+                    Zbog toga je najbolje da potpuno onemogućite root nalog, a da zatim umesto da dozvolite dugotrajne sesije u terminalu sa potencijalno rizičnim ovlašćenjima, da od korisnika zahtevate da posebno zahteva prava superkorisnika na osnovu svake komande. Za ovo se koristi komanda <span class="my_bold_console">sudo</span> (“<span class="my_bold_console">s</span>witch <span class="my_bold_console">u</span>ser and <span class="my_bold_console">do</span> this command”)<br>
+                    <span class="my_bold_console">sudo komanda</span> se koristi za prefiks komande koja se mora pokrenuti sa privilegijama superkorisnika<br>
+                    Kada se pokreće komanda te vrste, od korisnika se traži lozinka, koja se kešira na odredjeni vremenski period (podrazumevano 15 min), tako da ako treba da se pokrene više komandi na nivou superkorisnika, ne dobijaju stalno molbu da je ukucaju.<br><br>
+
+                    Na Ubuntu sistemu, prvi korisnik stvoren kada je sistem instaliran smatra se superkorisnikom. Prilikom dodavanja novog korisnika postoji opcija da ih kreirate kao administratora, u kom slučaju će oni takođe moći da pokreću komande superkorisnika sa sudo. Na ovom snimku ekrana Ubuntu 18.04 možete videti opciju na vrhu dijaloga<br><br>
+
+                    <img src="img/slike_konzola/su_komanda.png" alt="su" style="width:100%;max-width: 500px;"> <br> <br> <br>
+                    
+                    Pod pretpostavkom da smo na Linux sistemu koji koristi sudo komandu, a naš nalog je konfigurisan kao administrator, ako želimo da pristupimo datoteci koja se smatra osetljivom (sadrži šifrovane lozinke): <br> <br>
+
+                    <img src="img/slike_konzola/sudo_komanda.png" alt="sudo" style="width:100%;max-width: 700px;"> <br> <br> 
+
+                    Ako unesemo lozinku kada se to zatraži, trebalo bi da vidimo sadržaj datoteke /etc/shadow. Sada ako obrišemo terminal pokretanjem komande za resetovanje i ponovo pokrenemo sudo cat /etc/shadow. Sada će datoteka biti prikazana bez traženja lozinke, jer je ona još uvek u kešu. <br> <br>
+                </p>
+
+                <h2 class="naslov-s" id="novi_softver_n">Instaliranje novog softvera</h2>
+                <p class="tekst">
+                    Glavna upotreba sudo komande je za instaliranje novog softvera za naš sistem pomoću komandi  <span class="my_bold_console">apt</span> ili <span class="my_bold_console">apt-get</span>. <br> <br>
+                    Postoji mnogo različitih načina za instaliranje softvera na Linux sistemima. Instaliranje direktno iz zvaničnih skladišta softvera vaše distribucije je najsigurnija opcija, ali ponekad aplikacija ili verzija koju želite jednostavno nije dostupna na taj način. Kada instalirate preko bilo kog drugog mehanizma, uverite se da dobijate datoteke iz zvaničnog izvora. <br>
+                </p>
+
+                <h2 class="naslov" id="skriveni_n">Skriveni fajlovi</h2>
+
+                <p class="tekst">
+                    Skriveni fajlovi se obično koriste u Linux sistemima za čuvanje podešavanja i konfiguracionih podataka i obično su skriveni jednostavno tako da ne ometaju prikaz vaših sopstvenih fajlova. <br> <br>
+                    Nema ničeg posebnog u vezi sa skrivenim fajlom ili folderom, osim njenog imena: započinjanje imena sa tačkom (”.”) je dovoljno da nestane. <br> <br>
+                    kada drugi put pokrenete komandu ls, skriveni fajl .navodnici.sh se neće prikazati <br> <br>
+
+                    <img src="img/slike_konzola/skriveni1.png" alt="sudo" style="width:100%;max-width: 700px;"> <br> <br> 
+
+                    Još uvek možete da radite sa skrivenim fajlom tako što ćete se pobrinuti da <span class="my_bold_console">uključite tačku</span> kada navedete ime njegovog fajla: <br> <br>
+
+                    <img src="img/slike_konzola/skriveni2.png" alt="sudo" style="width:100%;max-width: 700px;"> <br> <br> 
+
+                    Direktorijum  .skriveni je skriven. I dalje možete da vidite njegov sadržaj koristeći komandu  ls, ali on sadrži samo jednu datoteku koja je sama po sebi skrivena, tako da neće biti outputa. <br> <br>
+                    Ali možete da koristite opciju <span class="my_bold_console">-a (prikaži sve)</span> na ls da biste prikazali sve u direktorijumu, uključujući skrivene datoteke i fascikle: <br> <br>
+
+                    <img src="img/slike_konzola/skriveni3.png" alt="sudo" style="width:100%;max-width: 700px;"> <br> <br> 
+
+
+                </p>
+
+
+
+            </div>
+            <div style="padding-top: 40vh; padding-bottom: 30vh;">
+                <button class="console__btn" ><a href="/quiz.html">Kviz</a></button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

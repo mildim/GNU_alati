@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo" style="background-image: linear-gradient(to right, #0a3c68 30%, #1673c4 100%);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;">GNU Alati</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="console.html" class="navbar__links" id="konzola-page">Konzola</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="bash.html" class="navbar__links" id="bash-page">Bash</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gcc.html" class="navbar__links" id="gcc-page">GCC</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="make.html" class="navbar__links" id="make-page" style="
+                    background-image: linear-gradient(to right, #0a3c68e5 30%, #1673c4 100%);
+                    background-size: 100%;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-fill-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    cursor:pointer;
+                    text-decoration: none;
+                    ">Make</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gdb.html" class="navbar__links" id="gdb-page">GDB</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Navigation bar Section -->
+    <div class="sidenavD">
+        <div class="sidenav_make">
+            <a class="makeID" href="#makeID" style="color: #1673c485;"><span class="nav_h">MAKE</span></a>
+
+            <a class="_n" href="#"><span class="nav_h"></span></a>
+            <a class="uvod_n" href="#uvod_n"><span class="nav_h">Uvod</span></a>
+            <a class="sta_je_make_n" href="#sta_je_make_n">&#x021C0 Šta je GNU Make?</a>
+            <a class="pogodnost_n" href="#pogodnost_n">&#x021C0 Kada je pogodno, a kada nije pogodno koristiti Make?</a>
+            <a class="instalacija_n" href="#instalacija_n">&#x021C0 Kako instalirati Make?</a>
+            <a class="pozivanje_n" href="#pozivanje_n">&#x021C0 Pozivanje Make-a</a>
+            <a class="komponente_n" href="#komponente_n">&#x021C0 Komponente Makefile-a</a>
+            <a class="promenljive_n" href="#promenljive_n"><span class="nav_h">Promenljive</span></a>
+            <a class="imena_n" href="#imena_n">&#x021C0 Davanje imena promenljivama</a>
+            <a class="automatske_n" href="#automatske_n">&#x021C0 Automatske promenljive</a>
+            <a class="impl_n" href="#impl_n">&#x021C0 Implicitne promenljive</a>
+            <a class="op_n" href="#op_n">&#x021C0 Operatori dodele i proširivanja</a>
+            <a class="refzam_n" href="#refzam_n">&#x021C0 Referenca zamene</a>
+            <a class="nadj_n" href="#nadj_n">&#x021C0 Nadjačavanje promenljivih i override direktiva</a>
+            <a class="viselin_n" href="#viselin_n">&#x021C0 Višelinijske promenljive i define direktiva</a>
+            <a class="promo_n" href="#promo_n">&#x021C0 Promenljive okruženja</a>
+            <a class="proms_n" href="#proms_n">&#x021C0 Promenljive specifične za cilj</a>
+            <a class="promso_n" href="#promso_n">&#x021C0 Promenljive specifične za obrazac</a>
+            <a class="bris_n" href="#bris_n">&#x021C0 Brisanje vrednosti promenljivih i undefine direktiva</a>
+            <a class="pravila_n" href="#pravila_n"><span class="nav_h">Pravila</span></a>
+            <a class="sinp_n" href="#sinp_n">&#x021C0 Sintaksa pravila</a>
+            <a class="dzoker_n" href="#dzoker_n">&#x021C0 Korišćenje džokera u pravilima i funkcija wildcard</a>
+            <a class="pravb_n" href="#pravb_n">&#x021C0 Pravila bez preduslova</a>
+            <a class="implp_n" href="#implp_n">&#x021C0 Implicitna pravila</a>
+            <a class="ciljevi_n" href="#ciljevi_n"><span class="nav_h">Ciljevi</span></a>
+            <a class="ugrim_n" href="#ugrim_n">&#x021C0 Ugrađena imena ciljeva</a>
+            <a class="lazni_n" href="#lazni_n">&#x021C0 Lažni ciljevi</a>
+            <a class="praznec_n" href="#praznec_n">&#x021C0 Prazne ciljne datoteke</a>
+            <a class="autog_n" href="#autog_n">&#x021C0 Automatsko generisanje ciljeva</a>
+            <a class="viscilj_n" href="#viscilj_n"><span class="nav_h">Višestruki ciljevi</span></a>
+            <a class="pravilac_n" href="#pravilac_n">&#x021C0 Pravila sa nezavisnim ciljevima</a>
+            <a class="pravilag_n" href="#pravilag_n">&#x021C0 Pravila sa grupisanim ciljevima</a>
+            <a class="preduslovi_n" href="#preduslovi_n"><span class="nav_h">Preduslovi</span></a>
+            <a class="normp_n" href="#normp_n">&#x021C0 Normalni preduslovi</a>
+            <a class="predr_n" href="#predr_n">&#x021C0 Preduslovi sa redosledom</a>
+            <a class="pret_n" href="#pret_n"><span class="nav_h">Pretrazivanje preduslova u direktorijumima</span></a>
+            <a class="vpath_n" href="#vpath_n">&#x021C0 Opšta pretraga i VPATH</a>
+            <a class="selek_n" href="#selek_n">&#x021C0 Selektivna pretraga i vpath direktiva</a>
+            <a class="komande_n" href="#komande_n"><span class="nav_h">Komande</span></a>
+            <a class="sintaksa_n" href="#sintaksa_n">&#x021C0 Sintaksa komandi</a>
+            <a class="izvrsavanje_n" href="#izvrsavanje_n">&#x021C0 Izvršavanje</a>
+            <a class="greske_n" href="#greske_n">&#x021C0 Greške </a>
+            <a class="fje_n" href="#fje_n"><span class="nav_h">Funkcije </span></a>
+            <a class="fsint_n" href="#fsint_n">&#x021C0 Sintaksa za pozivanje funkcija</a>
+            <a class="fza_n" href="#fza_n">&#x021C0 Funkcije za zamenu i analizu stringova</a>
+            <a class="fid_n" href="#fid_n">&#x021C0 Funkcije za imena datoteka</a>
+            <a class="fu_n" href="#fu_n">&#x021C0 Funkcije za uslove</a>
+            <a class="fforeach_n" href="#fforeach_n">&#x021C0 Funkcija foreach</a>
+            <a class="fdat_n" href="#fdat_n">&#x021C0 Funkcija datoteke</a>
+            <a class="fpoz_n" href="#fpoz_n">&#x021C0 Funkcija poziva</a>
+            <a class="fvred_n" href="#fvred_n">&#x021C0 Funkcija vrednosti</a>
+            <a class="feval_n" href="#feval_n">&#x021C0 Funkcija eval</a>
+            <a class="fpor_n" href="#fpor_n">&#x021C0 Funkcija porekla</a>
+            <a class="fukusa_n" href="#fukusa_n">&#x021C0 Funkcija ukusa</a>
+            <a class="fkmake_n" href="#fkmake_n">&#x021C0 Funkcije koje kontrolišu Make</a>
+            <a class="uslovi_n" href="#uslovi_n"><span class="nav_h">Uslovi</span></a>
+            <a class="upr_n" href="#upr_n">&#x021C0 Primer</a>
+            <a class="sinu_n" href="#sinu_n">&#x021C0 Sintaksa uslova</a>
+            <a class="udir_n" href="#udir_n">&#x021C0 Uslovne direktive</a>
+            <a class="pr1_n" href="#pr1_n"><span class="nav_h">Primer 1</span></a>
+            <a class="kjedank_n" href="#kjedank_n">&#x021C0 Kompilacija u jednom koraku</a>
+            <a class="kil_n" href="#kil_n">&#x021C0 Kompilacija i linkovanje</a>
+            <a class="lazcilj_n" href="#lazcilj_n">&#x021C0 Lažni ciljevi</a>
+            <a class="aprom_n" href="#aprom_n">&#x021C0 Automatke promenljive</a>
+            <a class="pr2_n" href="#pr2_n"><span class="nav_h">Primer 2</span></a>
+            <a class="pr3_n" href="#pr3_n"><span class="nav_h">Primer 3</span></a>
+
+            <a class="" href="#"><span class="nav_h"><br> <br> <br> <br> <br> <br></span></a>
+        </div>
+    </div>
+    
+    <!-- Make section -->
+    <div class="make" id="makeID">
+        <div class="make__container">
+            <div class="text-box">
+                <h2 class="naslov_make-l">MAKE</h2>
+                <p class="tekst">Većina programera se susreće sa GNU Make-om u nekom trenutku svoje karijere, bilo da ga koriste za kompajliranje malih biblioteka ili pravljenje čitavog projekta. Iako postoji mnogo, mnogo alternativa Make-u, on se i dalje često bira kao sistem za izradu novog softvera s obzirom na njegov skup funkcionalnosti i široku podršku. 
+                    U ovom poglavlju upoznaćemo se sa opštim konceptima i karakteristikama GNU Make-a i naučiti kako da ih na najbolji način iskoristimo. <br>
+                    </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="make" style="background-image: url(img/Background-Make-tekst.jpg);">
+        <div class="make__container">
+            <div class="text-box">
+
+                <h2 class="naslov_make-l" id="uvod_n">Uvod</h2>
+                
+                <h2 class="naslov_make-s" id="sta_je_make_n">Šta je GNU Make?</h2>
+                <p class="tekst">
+                    Shell komande za prevođenje i povezivanje programa mogu biti kompleksne i mnogobrojne. Make automatizuje složene aspekte kreiranja izvršnog fajla od izvornog koda. Obično se koristi za transformaciju datoteka u neki drugi oblik, npr. kompajliranje datoteka izvornog koda u programe ili biblioteke. To radi praćenjem preduslova i izvršavanjem hijerarhije komandi za proizvodnju ciljeva.  <br>
+                </p>
+
+                <h2 class="naslov_make-s" id="pogodnost_n">Kada je pogodno, a kada nije pogodno koristiti Make?</h2>
+                <p class="tekst">
+                    Make je pogodan za pravljenje manjih C/C++ projekata ili biblioteka koje bi bile ukljucene u neki drugi projekat. <br>
+                    Za veće projekte postoje moderniji alati jednostavniji za rad. U sledećim situacijama bilo bi pogodnije izabrati <span class="b_make">CMake</span>, <span class="b_make">Bazel</span> ili <span class="b_make">Mesol</span>:<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Kada broj fajlova iznosi nekoliko stotina.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Kada je poželjan korak konfigurisanja.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Kada projekat ostaje privatan i kada krajnji korisnik ne mora da ga gradi. <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Kada je otklanjanje grešaka prenaporno. <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Kada je potrebno da verzija bude višeplatforma, tj. podržana na macOS, Linux i Windows sistemima.<br>
+
+                </p>
+
+                <h2 class="naslov_make-s" id="instalacija_n">Kako instalirati Make?</h2>
+                <p class="tekst">
+                    Podrazumevani Ubuntu repozitorijumi sadrže meta-paket pod nazivom<span class="b_make"> build-essential</span> koji uključuje različite razvojne biblioteke i alate potrebne za kompajliranje softvera (GNU kompajler, GNU debager, …). <br>
+                    Da biste instalirali pakete razvojnih alata, pokrenite sledeću komandu kao root ili korisnik sa sudo privilegijama:<br>
+                    <span class="my_code">$ sudo apt update <br>
+                    $ sudo apt install build-essential</span> <br>
+                    
+                    Komanda instalira dosta paketa među kojima su gcc, g++ i make.<br>
+                    Dokumentaciju o Make-u možete dobiti pomoću sledećih naredbi:<br>
+                    <span class="my_code">$ man make <br>
+                    $ make -help</span> <br>
+                    
+
+                </p>
+                
+                <h2 class="naslov_make-s" id="pozivanje_n">Pozivanje Make-a</h2>
+                <p class="tekst">
+                    Pokretanje <span class="b_make">make</span> iz terminala će tražiti datoteku pod nazivom <span class="b_make">GNUmakefile</span>, <span class="b_make">makefile</span> ili <span class="b_make">Makefile</span>, tim redom, iz trenutnog direktorijuma i pokušati da ažurira podrazumevani cilj.<br>
+                    Određeni makefile možete navesti sa -f/--file argumentom:<br>
+                    <span class="my_code">$ make <span class="b_make">&nbsp;-f &nbsp;</span> foo.mk</span>
+                    <span class="my_code">$ make <span class="b_make">&nbsp;-file&nbsp;</span> foo.mk</span><br>
+                    
+                    Make-u možete proslediti direktorijum sa -C argumentom:<br>
+                    <span class="my_code">$ make <span class="b_make">&nbsp;-C &nbsp;</span> some/sub/directory</span> <br>
+                    
+
+                    Takođe, Make može i paralelno da pokreće poslove ako zadate opcije -j ili -l. Ograničenje posla  potrebno je postaviti na 1,5 puta veći broj od broja procesorskih jezgara koje imate:<br>
+                    <span class="my_code" style="color: green;"># računar ima 4 jezgra</span>
+                    
+                    <span class="my_code">$ make <span class="b_make">&nbsp;-j &nbsp;</span> 6</span> <br>
+                    
+
+                    Postoji nekoliko načina da programski pronađete broj CPU za trenutnu mašinu. Jedna mogućnost je da koristite funkciju python multiprocessing.cpu_count() da biste dobili broj niti koje sistem podržava:<br>
+                    <span class="my_code" style="color: green;"># pozivamo python funkciju za cpu_count() u subshell-u</span> 
+                    				
+                    <span class="my_code">$ make -l $(python -c "import multiprocessing; print(multiprocessing.cpu_count())")</span> <br>
+                    
+
+                    Ako imate mnogo izlaza iz Make komandi paralelno, možda će doći do preplitanja na standardnom izlazu. Ovo rešavamo korišćenjem opcije --output-sync=target:<br>
+                    <span class="my_code">$ make -j <span class="b_make">&nbsp; --output-sync=target&nbsp;</span></span> <br>
+                    
+                    Ona će odštampati ceo izlaz komande svakog cilja bez umetanja izlaza neke druge komande.<br>
+
+                </p>
+
+                <h2 class="naslov_make-s" id="komponente_n">Komponente Makefile-a </h2>
+                <p class="tekst">
+                    Svaki Makefile moze da sadrži:
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="b_make">● Eksplicitno pravilo</span> kaže kada i kako prepraviti jednu ili više datoteka, koje se navode kao preduslovi za cilj. Takođe, može dati pravilo za korišćenje, za kreiranje ili ažuriranje ciljeva. <br>
+                    <span class="b_make">● Implicitno pravilo</span> kaže kada i kako prepraviti klasu datoteka na osnovu njihovih imena. Opisuje kako cilj može zavisiti od datoteke sa imenom sličnim cilju i daje pravilo za kreiranje ili ažuriranje takvog cilja. <br>
+                    <span class="b_make">● Definicija promenljive</span> je linija koja navodi vrednost tekstualnog niza za promenljivu koja kasnije može zameniti deo makefile-a. <br>
+                    <span class="b_make">● Direktiva</span> je instrukcija za make da uradi nešto posebno dok čita makefile. Ovo uključuje:<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>čitanje drugog makefile-a<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>odlučivanje (na osnovu vrednosti promenljivih) da li da koristite ili ignorišete deo makefile-a<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>definisanje promenljive iz doslovnog niza koji sadrži više redova<br>
+                    <span class="b_make">● Komentar</span> je linija koja počinje simbolom #. Linija koja sadrži samo komentar (sa možda razmacima pre njega) je praktično prazna i ignoriše se. Ako želite literal #, možete ga koristiti u kombinaciji sa obrnutom kosom crtom, \#. <br><br>
+                    <span class="my_comment"> <i>Ne možete koristiti komentare unutar referenci promenljivih ili poziva funkcija jer se tada svaka instanca # tretira doslovno, a ne kao početak komentara !!!</i> </span> <br> <br>
+                </p> 
+                <p class="tekst">
+                    U sledećem primeru možete videti neke od komponenti o kojima će biti više reči u nastavku:<br>
+                    <span class="my_code" style="color: green;"># Ovo je jedan komentar</span> 
+                    <span class="my_code" style="color: green;"># foo je promenljiva</span> 						                               
+                    <span class="my_code">foo = "Hello world!"</span> <br>				
+                    								
+                    <span class="my_code" style="color: green;"># Ovo pravilo kreira cilj "test" koristeći "test.c" kao preduslov</span>
+                    <span class="my_code">test: test.c</span> 
+                    <span class="my_code" style="color: green;">&ensp;&ensp;# korišćenje promenljive "FOO"</span>  					
+                    <span class="my_code">&ensp;&ensp;echo $(foo)	</span> 
+                    <span class="my_code" style="color: green;">&ensp;&ensp;# pozivanje C kompajlera korišćenjem promenljive koja predefiniše podrazumevani C compiler u '$(CC)'</span>
+                    <span class="my_code">&ensp;&ensp;$(CC) test.c -o test</span> <br> 											
+                </p>
+
+                <h2 class="naslov_make" id="promenljive_n">Promenljive</h2>
+                <p class="tekst">
+                    Promenljive su imena definisana u makefile-u koja predstavljaju sekvence karaktera jer Make ne sadrži druge tipove podataka. Omogućavaju da se tekstualni niz definiše jednom i koristi eksplicitnom zamenom u pravilima (ciljevima, preduslovima i komandama) i drugim delovima makefile-a. Na taj način promene možete vršiti samo nad promenljivom, a one će biti vidljive na svim mestima u makefile-u na kojima je promenljiva korišćena. <br> <br>
+                    <span class="my_comment"> <i>U nekim drugim verzijama Make-a, promenljive se nazivaju makroi. </i> </span> <br> 
+                    
+                    Promenljive mogu predstavljati liste imena datoteka, opcije za prosleđivanje kompajlerima, programe za pokretanje, direktorijume za traženje izvornih datoteka, direktorijume za pisanje izlaza, itd. Praksa je da svaki makefile sadrži promenljivu sa imenom objects, OBJECTS, objs, OBJS, obj ili OBJ koja sadrži listu svih objektnih fajlova. <br>
+                </p>
+
+                <h2 class="naslov_make-s" id="imena_n">Davanje imena promenljivama</h2>
+                <p class="tekst">
+                    Ime promenljive može biti bilo koji niz znakova koji NE sadrži dve tačke (:), tarabu (#), jednako (=) ili blako karakter. Razlikujemo velika i mala slova. Imena foo, FOO i Foo odnose se na različite promenljive. Koriste se na sledeći način: <br><br>
+                    <span class="my_code">$ foo</span> <br>
+                    
+                    <span class="my_code">$ FOO</span> <br>
+                    
+                    <span class="my_code">$ Foo</span> <br>
+                    <span class="my_comment"> <i>Imena promenljivih koja počinju tačkom (.) i velikim slovom imaće posebna značenja u novijim verzijama Make-a.</i> </span> <br>
+                    
+                    Preporuka je da se mala slova koriste za imena promenljivih koja služe internim svrhama u makefile-u, a da se velika slova rezervišu za parametre koji kontrolišu implicitna pravila ili za parametre koje korisnik treba da zameni komandnom opcijom.<br>
+
+                </p>
+                
+                <h2 class="naslov_make-s" id="automatske_n">Automatske promenljive</h2>
+                <p class="tekst">
+                    Automatske promenljive su specijalne promenljive definisane od strane Make-a čija se imena sastoje od jednog ili nekoliko znakova interpunkcije. Njihove vrednosti računaju se iznova za svako pravilo koje se izvršava, na osnovu cilja i preduslova. <br> <br>
+
+                    Neke od automatskih promenljivih date su u sledećoj tabeli: <br>                    
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_make">promenljiva </span></td>
+                            <td><span class="b_make">vrednost promenljive </span></td>
+                        </tr>
+                        <tr>
+                            <td>$@</td>
+                            <td>ime fajla cilja</td>
+                        </tr>
+                        <tr>
+                            <td>$%</td>
+                            <td>ime ciljnog člana, kada je cilj član arhive</td>
+                        </tr>
+                        <tr>
+                            <td>$*</td>
+                            <td>ime datoteke cilja bez ekstenzije</td>
+                        </tr>
+                        <tr>
+                            <td>$&lt;</td>
+                            <td>ime fajla prvog preduslova </td>
+                        </tr>
+                        <tr>
+                            <td>$^</td>
+                            <td>imena svih preduslova bez dupliranja (sa razmakom između njih)</td>
+                        </tr>
+                        <tr>
+                            <td>$+</td>
+                            <td>imena svih preduslova sa dupliranja</td>
+                        </tr>
+                        <tr>
+                            <td>$?</td>
+                            <td>imena svih preduslova novijih od cilja</td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    Pretpostavimo da pišete pravilo za prevođenje .c datoteke u .o datoteku. U komandi ne možete napisati ime izvorne datoteke jer će se ona razlikovati svaki put kada se pravilo primeni. Tada možete koristili $@ za naziv objektne datoteke i $&lt; za naziv izvorne datoteke. <br> <br>
+
+                    Vrednosti automatskih promenljivih imaju ograničen opseg u kome su dostupne. Ne možete ih koristiti bilo gde u okviru ciljne liste pravila. Tamo nemaju nikakvu vrednost i proširiće se na prazan string. Takođe, ne može im se pristupiti direktno u okviru liste preduslova pravila. <br> <br>
+                    <span class="my_comment"> <i>Postoji posebna karakteristika GNU Make-a, sekundarno proširenje, koja omogućava da se vrednosti automatskih promenljivih koriste u listama preduslova.</i> </span> <br>
+                </p>
+
+                <h2 class="naslov_make-s" id="impl_n">Implicitne promenljive</h2>
+                <p class="tekst">
+                    Ugrađena implicitna pravila koriste određene unapred definisane promenljive koje nazivamo implicitnim promenljivama. Mogu se podeliti u dve klase: <br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>one koje predstavljaju imena programa (poput CC) <br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>one koje sadrže argumente za programe (poput CFLAGS)<br> <br> 
+                    <span class="my_comment"> <i>Ako vrednost promenljive sadrži više od jednog argumenata, razdvojite ih razmacima.</i> </span> <br>
+                    
+                    
+                    Sledeća tabela opisuju neke od najčešće korišćenih implicitnih promenljivih. Ova lista nije konačna, a podrazumevane vrednosti prikazane ovde možda ne odgovaraju vašem okruženju. Da biste videli kompletnu listu za vašu instancu GNU Make-a, možete pokrenuti:<br> <br> 
+                    <span class="my_code">$ make -p</span> 
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_make">promenljiva </span></td>
+                            <td><span class="b_make">vrednost promenljive </span></td>
+                        </tr>
+                        <tr>
+                            <td>$(CC)</td>
+                            <td>C kompajler (cc)</td>
+                        </tr>
+                        <tr>
+                            <td>$(CPP)</td>
+                            <td>C pretprocesor</td>
+                        </tr>
+                        <tr>
+                            <td>$(CXX)</td>
+                            <td>C++ kompajler (g++)</td>
+                        </tr>
+                        <tr>
+                            <td>$(CFLAGS)</td>
+                            <td>dodatne opcije za C kompajler</td>
+                        </tr>
+                        <tr>
+                            <td>$(CXXFLAGS)</td>
+                            <td>dodatne opcije za C++ kompajler</td>
+                        </tr>
+                        <tr>
+                            <td>$(AR) </td>
+                            <td>program za arhiviranje (ar)</td>
+                        </tr>
+                        <tr>
+                            <td>$(AS)</td>
+                            <td>program za asembliranje (as)</td>
+                        </tr>
+                    </table>
+                    
+                </p>
+                <p class="tekst">
+                    Možete da promenite vrednosti ovih promenljivih u makefile-u, sa argumentima koje treba da napravite, ili da u okruženju promenite način na koji implicitna pravila funkcionišu bez redefinisanja samih pravila. Možete da otkažete sve promenljive koje koriste implicitna pravila opcijom -R ili opcijom --no-builtin-variables. <br>
+                </p>
+                
+                <h2 class="naslov_make-s" id="op_n">Operatori dodele i proširivanja</h2>
+                <p class="tekst">
+                    Razlikujemo dve vrste promenljivih u zavisnosti od toga kako im se dodeljuje vrednost i kako se pomašaju kada se prošire: <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>rekurzivno proširene - PROMENLJIVA = IZRAZ<br>
+                    Izraz na desnoj strani se doslovce dodeljuje promenljivoj. Ponaša se slično kao <br>
+                    makro u C/C++.<br><br>
+                    <span class="my_code">foo = 1</span> 
+                    			
+                    <span class="my_code">bar = $(foo)</span>
+                    		
+                    <span class="my_code">foo = 2</span> 
+                    	
+                    <span class="my_code" style="color: green;"># štampa bar=2</span> 
+                    	
+                    <span class="my_code">$(info bar=$(bar))</span> <br>
+                    	
+                    
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>jednostavno proširene - PROMENLJIVA := IZRAZ<br><br>
+                    Rezultat izraza sa desne strane dodeljuje se promenljivoj. Izraz se proširuje u vreme dodeljivanja. <br>
+                    <span class="my_code">foo = 1	</span> 
+                    		
+                    <span class="my_code">bar := $(foo)</span> 
+                    		
+                    <span class="my_code">foo = 2	</span> 
+                    		
+                    <span class="my_code" style="color: green;"># Štampa bar=1</span> 
+                    	
+                    <span class="my_code">$(info bar=$(bar))</span> <br>
+                    	
+                    <span class="my_comment"> <i>Funkcija $(info ...) se koristi za štampanje izraza i može biti korisna prilikom otklanjanja grešaka u makefile-u!</i> </span> <br>
+                    
+                    
+                    Postoji još jedan operator dodele za promenljive, operator uslovne promenljive (?=). Ima efekat samo ako promenljiva još uvek nije definisana. Sledeći kodovi su ekvivalentni:<br>
+                    <span class="my_code">foo ?= bar</span> <br>
+                    
+                    <span class="my_code">ifeq ($(origin foo), undefined)</span> 
+                    	
+                    <span class="my_code">&ensp;&ensp;foo = bar</span> 
+                    <span class="my_code">endif	</span> <br>
+                   			
+                    <span class="my_comment"> <i>Promenljiva postavljena na praznu vrednost je i dalje definisana, tako da ?= neće postaviti tu promenljivu.</i> </span> <br>
+                    
+                    
+                    Obično je korisno dodati tekst na vrednost promenljive koja je već definisana. Proširivanje promenljive će na nju dodati blanko karakter i novi sadržaj:<br>
+                    <span class="my_code">foo = jedan	</span> 
+                    		
+                    <span class="my_code">foo += dva</span> 
+                    	
+                    <span class="my_code" style="color: green;"># foo je sada "jedan dva"</span> <br>
+                    	
+                    
+                    Razmak možete izbeci na sledeći način:<br>
+                    <span class="my_code">foo = jedan	</span> 
+                    		
+                    <span class="my_code">foo = $(foo)dva	</span> 
+                    	
+                    <span class="my_code" style="color: green;"># foo je sada "jedandva"</span> <br>
+                    	
+                    <span class="my_comment"> <i>Napomena: Promenljive koje nisu eksplicitno, implicitno, niti automatski postavljene, procenjivaće se kao prazan string.</i> </span> <br>
+                    
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="refzam_n">Referenca zamene</h2>
+                <p class="tekst">
+                    Referenca zamene zamenjuje vrednost promenljive sa izmenama koje navedete. Uzima vrednost promenljive i prvi karakter koji ste naveli, a koji se nalazi na kraju reci, i zamenjuje ga drugim karakterom koji ste naveli. Kada kažemo „na kraju reči“, mislimo da se mora pojaviti ili nakon razmaka ili na kraju vrednosti da bi bio zamenjen. Ostala pojavljivanja prvog karaktera u vrednosti ostaju nepromenjena.<br>
+                    Ima sledeći oblik: <br><br>
+                    <span class="my_code">$(var:a=b)</span> <br>
+                    <span class="my_code">${var:a=b}</span> <br>
+                    
+                    Uzima vrednost promenljive var i zamenjuje svako <span class="b_make">a</span> na kraju reči sa <span class="b_make">b</span>. <br>
+                    Sledeći primer postavlja bar na a.c b.c l.a c.c.<br><br>
+                    <span class="my_code">foo := a.o b.o l.a c.o <br>
+                    bar := $(foo:.o=.c)</span> <br>
+                    
+                    
+                    Referenca zamene je skraćenica za funkciju proširenja <span class="b_make">patsubst</span>. Naredni kodovi su ekvivalenti:<br><br>
+                    <span class="my_code">$(var:a=b)
+                    </span> <br>
+                    <span class="my_code">$(patsubst %a,%b,var)</span><br>
+                    
+                    Druga vrsta reference zamene omogućava da koristite punu snagu patsubst funkcije. Ima isti oblik opisan gore, s tim što sada <span class="b_make">a</span> mora da sadrži jedan znak %. Sledeći kodovi su ekvivalentni:<br><br>
+                    <span class="my_code">$(var:a=b)
+                    </span> <br>
+                    <span class="my_code">$(patsubst a,b,$(var))</span><br>
+                    
+                    
+                    Sledeći primer postavlja bar na a.c b.c l.a c.c.<br><br>
+                    <span class="my_code">foo := a.o b.o l.a c.o<br>
+                    bar := $(foo:%.o=%.c)</span> <br>
+                    
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="nadj_n">Nadjačavanje promenljivih i override direktiva</h2>
+                <p class="tekst">
+                    Ako argument komandne linije dodeljuje vrednost promenljivoj korišćenjem operatora = ili :=, ignorišu se sve uobičajene dodele iste promenljive u makefile-u. Tada kažemo da su zamenjene argumentom komandne linije. Najčešći način korišćenja ove mogućnosti je prosleđivanje dodatnih opcija kompajlerima.<br><br>
+
+                    U pravilno napisanom makefile-u, promenljiva CFLAGS je uključena u svaku komandu koju pokreće C kompajler i njena uobičajena vrednost je CFLAGS=-g. Svaka C kompilacija se izvršava na sledeći način:<br><br>
+                    <span class="my_code">$ cc -c $(CFLAGS) foo.c</span> <br>
+                    
+                    što je ekvivalentno sa:<br><br>
+                    <span class="my_code">$ cc -c -g foo.c</span> <br>
+                    
+                    Možete zameniti ovu vrednost prilikom pokretanja Make-a. Ako CFLAGS postavite na CFLAGS='-g -O', svaka C kompilacija će biti urađena sa sledeći način:<br><br>
+                    <span class="my_code">$ cc -c -g -O foo.c</span> <br>
+                        
+                    <span class="my_comment"> <i>Na ovaj način možete da koristite navodnike u ljusci za zatvaranje razmaka i drugih specijalnih znakova u vrednosti promenljive kada je zamenite.</i> </span> <br>
+                    
+                    
+                    Ako želite da postavite promenljivu u makefile-u iako je postavljena sa komandnim argumentom, možete da koristite override direktivu na neki od sledećih načina: <br><br>
+                    <span class="my_code">override promenljiva = vrednost</span> <br>
+                    <span class="my_code">override promenljiva := vrednost</span><br>
+                    
+                    Da biste proširili promenljivu definisanu u komandnoj liniji možete koristiti:<br><br>
+                    <span class="my_code">override promenljiva += dodatni tekst</span> <br>
+                    
+                    
+                    Dodeljivanje promenljivih override direktivom ima veći prioritet od svih drugih dodela, osim drugog override-a. Naknadna dodeljivanja ili proširivanje ove promenljive koja nisu označena sa override biće zanemarena.<br><br>
+                    <span class="my_comment"> <i>Direktiva nadjačavanja nije izmišljena za eskalaciju u ratu između makefile-a i komandnih argumenata. Izmišljena je tako da možete da menjate i dodajete vrednosti koje korisnik zadaje komandnim argumentima.</i> </span> <br>
+                    
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="viselin_n">Višelinijske promenljive i define direktiva</h2>
+                <p class="tekst">
+                    Još jedan način za postavljanje vrednosti promenljive je korišćenje define direktive. Ova direktiva ima neobičnu sintaksu koja omogućava da se karakteri novog reda uvrste u vrednost, što je zgodno za definisanje i standardnih sekvenci komandi kao i delova sintakse makefile-a za korišćenje sa eval funkcijom.<br><br>
+
+                    Direktiva define je praćena u istom redu imenom promenljive koja se definiše i (opcionim) operatorom dodele. Vrednost koju treba dati promenljivoj pojavljuje se u sledećim redovima. Kraj vrednosti je označen linijom koja sadrži samo reč endef. Poslednji novi red pre endef-a nije uključen u vrednost. Ako želite da vaša vrednost sadrži novi red na kraju, morate uključiti prazan red. Da biste definisali promenljivu koja sadrži znak novog reda, morate koristiti dva prazna reda, a ne jedan.<br><br>
+                    <span class="my_code">define newline<br>		
+                    <br>            
+                    <br>            
+                    endef</span> <br>
+                    Ako se izostavi operator dodele, make pretpostavlja da je = i kreira rekurzivno proširenu promenljivu. Kada koristite operator +=, vrednost se dodaje prethodnoj vrednosti kao i kod bilo koje druge operacije dodavanja, sa jednim razmakom koji razdvaja stare i nove vrednosti.<br><br>
+                    
+                    Ako želite da definicije promenljivih napravljene pomoću define imaju prednost nad definicijama promenljivih iz komandne linije, možete koristiti override direktivu zajedno sa define:<br><br>
+                    <span class="my_code">override define two-lines =<br>	
+                    foo	<br>			
+                    $(bar)	<br>			
+                    endef</span> <br>
+                    				
+                </p>
+                
+                <h2 class="naslov_make-s" id="promo_n">Promenljive okruženja</h2>
+                <p class="tekst">
+                    Promenljive u make-u mogu da potiču iz okruženja u kome se make izvodi. Međutim, eksplicitna dodela u makefile-u, ili sa argumentom komande, zamenjuje okruženje. Ako je navedena oznaka -e, tada vrednosti iz okruženja zamenjuju dodele u makefile-u. Ne preporučuje se korišćenje ove opcije!<br><br>
+
+                    Postavljanjem promenljive CFLAGS u vašem okruženju, možete prouzrokovati da sve C kompilacije u većini makefile-ova koriste opcije kompajlera koje želite. Ovo je bezbedno za promenljive sa standardnim ili konvencionalnim značenjima jer znate da ih nijedan makefile neće koristiti za druge stvari. <br><br>
+                    
+                    <span class="my_comment"> <i>Imajte na umu da ovo nije sasvim pouzdano. Neki makefile-ovi eksplicitno postavljaju CFLAGS i stoga na njih ne utiče vrednost u okruženju.</i> </span> <br>
+                    
+                    Razmotrimo sledeći makefile:<br>
+                    <span class="my_code">$(info YOLO variable = $(YOLO))	</span> <br>
+                    
+                    Vrednost promenljive YOLO možete postaviti u shell komandi kada pokrećete make: <br>
+                    <span class="my_code">$ YOLO="Hello world!" make<br>		
+                    YOLO variable = Hello world!		<br>
+                    make: *** No targets.  Stop.</span> <br>
+                    		
+                    <span class="my_comment"> <i>Make prijavljuje ‘’No targets’’ grešku jer naš makefile nema ciljeve.</i> </span> <br>
+                    
+                    
+                    Ako koristite sintaksu dodele ?=, Make će dodeliti tu vrednost samo ako promenljiva već nema vrednost. <br>
+                    Razmotrimo sledeći makefile:<br>
+                    <span class="my_code" style="color: green;"># defoltni CC u gcc<br>	</span> <br>
+                    <span class="my_code">CC ?= gcc	</span> <br>
+                    	
+                    Sada možemo da zamenimo $(CC) u tom makefile-u:<br>
+                    <span class="my_code">$ CC=clang make	</span> <br>
+                        
+                    
+                    Drugi uobičajeni obrazac je omogućavanje umetanja dodatnih opcija. U makefile-u bismo dodali promenljivu umesto da joj direktno dodeljujemo.<br>
+                    <span class="my_code">CFLAGS += -Wall</span> <br>
+                        
+                    Ovo dozvoljava popadanje dodatnih opcija iz okruženja:<br>
+                    <span class="my_code">$ CFLAGS='-Werror=conversion -Werror=double-promotion' make</span> <br>
+                    
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="proms_n">Promenljive specifične za cilj</h2>
+                <p class="tekst">
+                    Vrednosti promenljivih u Make-u su obično globalne. Iste su bez obzira na to gde se procenjuju, osim ako nisu resetovane. Jedan izuzetak od toga su automatske promenljive, a drugi su promenljive specifične za cilj. <br><br>
+
+                    Promenljive specifične za cilj omogućavaju da definišete različite vrednosti za istu promenljivu na osnovu cilja. Kao i kod automatskih promenljivih, ove vrednosti su dostupne samo u kontekstu komandi cilja i u drugim zadacima specifičnim za cilj.<br><br>
+                    
+                    Vrednost promenljive specifične za cilj postavljate na sledeći način:<br><br>
+                    <span class="my_code">cilj … : dodela</span> <br> 
+                    
+                    
+                    Višestruke ciljne vrednosti stvaraju vrednost promenljive specifične za cilj za svakog člana ciljne liste pojedinačno. Dodela može biti bilo koji važeći oblik dodele: rekurzivno (=), jednostavno (:=), dodavanje (+=) ili uslovno (?=). <br><br>
+                    
+                    Promenljive specifične za cilj imaju isti prioritet kao i svaka druga makefile promenljiva. Promenljive navedene na komandnoj liniji (i u okruženju ako je na snazi opcija -e) imaće prednost. Navođenje override direktive će omogućiti da se preferira vrednost promenljive specifične za cilj.<br><br>
+                    
+                    Kada definišete promenljivu specifičnu za cilj, ta vrednost promenljive je takođe na snazi za sve preduslove ovog cilja, i sve njihove preduslove, itd. U sledećem primeru vrednost CFLAGS biće postavjena na -g u komandama za prog, ali će takođe CFLAGS imati vrednost -g u komandama koje kreiraju prog.o, foo.o i bar.o.<br><br>
+                    <span class="my_code">prog : CFLAGS = -g		<br>
+                    prog : prog.o foo.o bar.o	</span> <br> 
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="promso_n">Promenljive specifične za obrazac</h2>
+                <p class="tekst">
+                    Pored vrednosti promenljivih specifičnih za cilj, Make podržava vrednosti promenljivih specifičnih za obrazac. U ovom obliku, promenljiva je definisana za bilo koji cilj koji odgovara navedenom obrascu.<br> <br> 
+
+                    Vrednost promenljive specifične za obrazac možete postaviti na seldeći način, pri čemu je obrazac %-obrazac:<br> <br> 
+                    <span class="my_code">obrazac … : dodela</span> <br>  
+                    
+                    
+                    Kao i kod vrednosti promenljivih specifičnih za cilj, višestruke vrednosti obrazaca stvaraju vrednost promenljive specifične za svaki obrazac pojedinačno. Dodela može biti bilo koji važeći oblik dodele. Bilo koja postavka promenljive komandne linije imaće prednost, osim ako nije navedeno drugačije. U sledećem primeru CFLAGS-u će biti dodeljena vrednost -O za sve ciljeve koji odgovaraju obrascu %.o.<br> <br> 
+                    <span class="my_code">%.o : CFLAGS = -O</span> <br> 
+                    
+                    
+                    Ako cilj odgovara više od jednog obrasca, prvo se tumače odgovarajuće promenljive specifične za obrazac sa dužim osnovama. Ovo dovodi do toga da specifičnije promenljive imaju prednost u odnosu na generičke. U sledećem primeru prva definicija promenljive CFLAGS će se koristiti za ažuriranje lib/bar.o iako se druga takođe primenjuje na ovaj cilj. <br> <br> 
+                    <span class="my_code">%.o: %.c<br>
+                    &ensp;&ensp;$(CC) -c $(CFLAGS) $(CPPFLAGS) $&lt; -o $@ <br>
+                    <br>                    
+                    lib/%.o: CFLAGS := -fPIC -g	<br>		
+                    %.o: CFLAGS := -g<br>				
+                    <br>                  
+                    all: foo.o lib/bar.o</span> <br> 
+                    					
+                    
+                    Promenljive specifične za obrazac koje rezultiraju istom dužinom stabla se razmatraju redosledom kojim su definisane u makefile-u.                    <br> <br> 
+                </p>
+                
+                <h2 class="naslov_make-s" id="bris_n">Brisanje vrednosti promenljivih i undefine direktiva</h2>
+                <p class="tekst">
+                    Ako želite da obrišete promenljivu, obično je dovoljno postaviti njenu vrednost na praznu. Proširivanje takve promenljive će dati isti rezultat, prazan string, bez obzira da li je postavljena ili ne. Međutim, ako koristite funkcije <span class="b_make">flavor</span>  i <span class="b_make">origin</span> , postoji razlika između promenljive koja nikada nije postavljena i promenljive sa praznom vrednošću. U takvim situacijama možete koristiti <span class="b_make">undefine</span>  direktivu da promenljiva izgleda kao da nikada nije postavljena.<br><br>
+
+                    Razmotrimo sledeći primer:<br><br>
+                    <span class="my_code">foo := foo<br>	
+                    bar = bar	<br>	
+                    undefine foo<br>		
+                    undefine bar<br>	
+                    <br>           
+                    $(info $(origin foo))	<br>
+                    $(info $(flavor bar))	</span> <br>
+
+                    Za obe promenljive biće odštampano <span class="b_make">undefined</span> .<br><br>
+                    
+                    Ako želite da poništite definiciju promenljive iz komandne linije, možete da koristite override direktivu zajedno sa undefine:<br><br>
+                    <span class="my_code">override undefine CFLAGS</span> <br>
+                    
+                </p>
+                
+                
+                <h2 class="naslov_make" id="pravila_n">Pravila</h2>
+                <p class="tekst">
+                    Makefile se sastoji od više pravila koja imaju sledeći format: <br><br>
+                    <span class="b_make">ciljevi : preduslov1 preduslov2 ... <br>
+                        &ensp;&ensp;komanda <br>
+                        &ensp;&ensp;komanda <br>
+                        &ensp;&ensp;...<br><br></span>
+                    
+                    Možemo da primetimo da se svako pravilo sastoji od: <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Ciljeva (targets) <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Liste preduslova (prerequisites list) <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Komandi (commands) <br><br>
+                    <span class="my_comment"> <i>Make najpre analizira čitavu datoteku makefile da bi napravio stablo zavisnosti mogućih ciljeva i njihovih preduslova, a potom se iteracijama kreće kroz to stablo da bi napravio potrebne datoteke.</i> </span> <br>
+                    
+                    
+                    Pravilo govori dve stvari, kada su ciljevi zastareli i kako da ih ažurirate kada je potrebno. Make sprovodi komande na osnovu preduslova za kreiranje ili ažuriranje cilja. Specijalno, pravilo može objasniti kako i kada izvršiti određenu radnju. Kriterijum za zastarelost određen je u smislu preduslova, koji se sastoje od naziva fajlova odvojenih razmacima. Cilj je zastareo ako ne postoji ili ako je stariji od bilo kog od preduslova (poređenjem vremena poslednje izmene). Ideja je da se sadržaj ciljne datoteke izračunava na osnovu informacija u preduslovima, tako da ako se bilo koji od preduslova promeni, sadržaj postojeće ciljne datoteke više neće biti važeći. <br><br>
+                    <span class="my_comment"> <i>Pravilo se smatra uspešnim ako se cilj ažurira nakon što se komande pokrenu, ali nije greška ako se to ne dogodi.</i> </span> <br>
+                                        
+                </p>
+
+                <h2 class="naslov_make-s" id="sinp_n">Sintaksa pravila</h2>
+                <p class="tekst">
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>Ciljevi i lista preduslova su odvojeni dvotačkom.<br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>Komande počinju tabom. <br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>Ciljevi predstaljvaju imena datoteka koje su odvojene blanko karakterom. <br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>Obično postoji samo jedan cilj po pravilu, ali ih u nekim slučajevima može biti i više.<br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>Mogu se koristiti džokeri.<br> 
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>Dugačak red može se podeliti umetanjem obrnute kose crte praćene novim redom. To nije neophodno jer Make ne postavlja ograničenja za dužinu reda u makefileu.<br> <br>
+                    <span class="my_comment"> <i>Ako iza obrnute kose crtke sledi jos jedna obrnuta kosa crta onemogućava se njeno specijalno značenje.</i> </span> <br>  
+                </p>
+                
+                <h2 class="naslov_make-s" id="dzoker_n">Korišćenje džokera u pravilima i funkcija wildcard</h2>
+                <p class="tekst">
+                    Jedno ime datoteke može specificirati mnogo datoteka koristećenjem džoker znakove. Neki od zamenskih znakova u Make-u su zvezdica (*), upitnik (?) i [...]. Na primer, *.c specificira listu svih datoteka u radnom direktorijumu čija se imena završavaju na .c.<br><br>
+
+                    Tilda (~) na početku naziva datoteke takođe ima poseban značaj:<br><br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Ako je sama ili praćena kosom crtom, predstavlja vaš početni direktorijum. Na primer, ~/bin se proširuje na /home/iou/bin. <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Ako iza ~ sledi reč, niz predstavlja početni direktorijum korisnika koji je nazvan tom rečju. Na primer ~john/bin se proširuje na /home/john/bin. <br><br>
+                    
+                    Poseban značaj džoker znaka može se isključiti tako što se ispred njega stavi obrnuta kosa crta. Dakle, foo\*bar bi se odnosio na određenu datoteku čije se ime sastoji od foo, zvezdice i bar.<br><br>
+                    
+                    Džokeri se mogu koristiti u komandama pravila, na primer za brisanje svih objektnih datoteka:<br><br>
+                    <span class="my_code">clean:<br>
+                    &ensp;&ensp;rm -f *.o</span> <br>
+                    
+                    
+                    Džoker znakovi su takođe korisni za preduslove pravila. Sa sledećim pravilom u makefile-u, make print će odštampati sve .c datoteke koje su se promenile od poslednjeg puta kada ste ih odštampali:<br><br>
+                    <span class="my_code">print: *.c<br>
+                    &ensp;&ensp;lpr -p $?<br>
+                    &ensp;&ensp;touch print</span> <br>
+                    
+                    Ovo pravilo koristi print kao praznu ciljnu datoteku i $? za štampanje samo onih datoteka koje su se promenile.<br><br>
+                    
+                    Proširenje džoker znakova se dešava automatski u pravilima. Ali proširenje džoker znakova se obično ne dešava kada je promenljiva postavljena ili unutar argumenata funkcije. Ako želite da izvršite proširenje džoker znakova na takvim mestima, potrebno je da koristite wildcard funkciju na sledeći način:<br><br>
+                    <span class="my_code">$ (wildcard šablon…)</span> <br>
+                    
+                    
+                    Proširenje džoker znakova se ne dešava kada definišete promenljivu. Dakle, ako napišete:<br><br>
+                    <span class="my_code">objects = *.o</span> <br>
+                    
+                    onda je vrednost promenljive objects doslovno *.o. Međutim, ako koristite vrednost promenljive objects u cilju ili preduslovu, proširenje džoker znakova će se tamo dogoditi. Takođe, ako je koristite u komandama, shell može izvršiti proširenje džoker znakova kada se komande pokrenu. Međutim, ako koristite funkciju wildcard proširenje će se dogoditi:<br><br>
+                    <span class="my_code">objects := $(wildcard *.o)</span> <br>
+                    
+                    
+                    Jedna upotreba wildcard funkcije je da dobijete listu svih C izvornih datoteka u direktorijumu:<br><br>
+                    <span class="my_code">$ (wildcard *.c)</span> <br>
+                    
+                    Možete da promenimo listu C izvornih datoteka u listu objektnih datoteka tako što ćete zameniti sufiks .c sa .o u rezultatu:<br><br>
+                    <span class="my_code">$ (patsubst %.c,%.o,$(wildcard *.c))</span> <br>
+                    
+                    Dakle, makefile za kompajliranje svih C izvornih datoteka u direktorijumu i zatim njihovo povezivanje zajedno može biti napisan na sledeći način:<br><br>
+                    <span class="my_code">objects := $(patsubst %.c,%.o,$(wildcard *.c))	<br>
+                    <br>  
+                    foo : $(objects)		<br>			
+                    &ensp;&ensp;cc -o foo $(objects)</span> <br>
+                    				
+                </p>
+                
+                <h2 class="naslov_make-s" id="pravb_n">Pravila bez preduslova</h2>
+                <p class="tekst">
+                    Obično pravila sa preduslovima služe za kreiranje ciljne datoteke ako se bilo koji od preduslova promeni. Međutim, pravilo ne mora da ima preduslove. Na primer, pravilo koje sadrži komandu za brisanje sa ciljnim clean nema preduslove.<br><br>
+                    <span class="my_code">clean:</span>						
+                    <span class="my_code" style="color: green;">&ensp;&ensp;# ne zanima nas ako dođe do greške prilikom izvršavanja clean-a</span>
+                    <span class="my_code">&ensp;&ensp;-rm -r ./build</span> <br>
+                    								
+                    
+                    Ako bilo koja komanda vrati izlazni kod koji nije nula, Make će se prekinuti i odštampati poruku o grešci. Možete reći Make-u da ignoriše izlazne kodove koji nisu nula tako što ćete dodati prefiks -.<br><br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="implp_n">Implicitna pravila</h2>
+                <p class="tekst">
+                    Često se koriste određeni standardni načini prepravljanja ciljnih datoteka. Implicitna pravila govore Make-u kako da koristi uobičajene tehnike tako da ne morate da ih detaljno navodite kada želite da ih koristite. Ugrađena implicitna pravila koriste implicitne promenljive u svojim komandama tako da, promenom vrednosti promenljivih, možete promeniti način na koji implicitno pravilo funkcioniše. <br><br>
+
+                    Na primer, jedan uobičajeni način da se napravi objektna datoteka je iz C izvorne datoteke pomoću C kompajlera, cc. Međutim, postoji implicitno pravilo za C kompilaciju. C kompilacija obično uzima .c datoteku i pravi .o datoteku. Dakle, Make primenjuje implicitno pravilo za C kompilaciju kada vidi ovu kombinaciju ekstenzija.<br><br>
+                    
+                    Implicitna pravila su uvek dostupna osim ako ih makefile eksplicitno ne predefiniše ili poništi. Da biste videli punu listu podrazumevanih pravila i promenljivih dostupnih u vašoj verziji Make-a, pokrenite sledeću komandu u direktorijumu bez makefile-a:<br><br>
+                    <span class="my_code">$ make -p</span> <br>
+                       
+                    
+                    Neka implicitna pravila data su u tabeli:<br><br>
+                    <table class="my_table tekst">
+                        <tr>
+                            <td>Kompilacija C programa</td>
+                            <td>n.o se automatski pravi od n.c komandom
+                                $(CC) $(CPPFLAGS) $(CFLAGS) -c
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Kompilacija C++ programa</td>
+                            <td>n.o se automatski pravi od n.cc, n.cpp ili n.C komandom
+                                $(CXX) $(CPPFLAGS) $(CXXFLAGS) -c
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Kompilacija Pascal programa</td>
+                            <td>n.o se automatski pravi od n.p komandom
+                                $(PC) $(PFLAGS) -c
+                                </td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    Opcija -r ili --no-builtin-rules poništava sva unapred definisana pravila.<br>
+                </p>
+                
+                <h2 class="naslov_make" id="ciljevi_n">Ciljevi</h2>
+                <p class="tekst">
+                    Ciljevi su leva strana u sintaksi pravila. Skoro uvek imenuju datoteke koje se generišu od strane Make-a. To je zato što Make koristi vreme poslednje izmene da prati da li je cilj noviji ili stariji od njegovih preduslova i da li ga treba ponovo izgraditi. <br>
+                    Kada pozivate Make, možete odrediti koje ciljeve želite da izgradite kao ciljeve tako što ćete ih navesti kao pozicioni argument:<br> <br>
+                    <span class="my_code" style="color: green;"># postavi 'test.txt' i 'all.zip' za ciljeve	</span> 
+                    
+                    <span class="my_code">make test.txt all.zip</span> <br>
+                    			
+                    Ako ne navedete cilj u komandi, Make koristi prvi cilj naveden u makefile-u, i on se naziva podrazumevani cilj. <br>
+
+                </p>
+
+                <h2 class="naslov_make-s" id="ugrim_n">Ugrađena imena ciljeva</h2>
+                <p class="tekst">
+                    Određena imena imaju posebno značenje ako se pojavljuju kao ciljevi. Neka od njih data su u sledećoj tabeli: <br> <br>
+                    <table class="my_table tekst" style="font-size: 14px;">
+                        <tr>
+                            <td><span class="b_make"> </span>ime cilja</td>
+                            <td><span class="b_make"> </span>značenje</td>
+                        </tr>
+                        <tr>
+                            <td>.PHONY</td>
+                            <td>Preduslovi se smatraju lažnim ciljevima. Make će se pokrenuti bezuslovno, bez obzira da li datoteka sa tim imenom postoji ili koje je vreme njene poslednje izmene. </td>
+                        </tr>
+                        <tr>
+                            <td>.DEFAULT</td>
+                            <td>Komande navedene za .DEFAULT se koriste za bilo koji cilj za koji nisu pronađena pravila. </td>
+                        </tr>
+                        <tr>
+                            <td>.PRECIOUS</td>
+                            <td>Ciljevi od kojih zavisi .PRECIOUS se ne brišu ako je make prekinut tokom izvršavanja komandi. </td>
+                        </tr>
+                        <tr>
+                            <td>.INTERMEDIATE</td>
+                            <td>Ciljevi od kojih zavisi .INTERMEDIATE tretiraju se kao međufajlovi. .INTERMEDIATE bez preduslova nema efekta</td>
+                        </tr>
+                        <tr>
+                            <td>.SECONDARY</td>
+                            <td>Ciljevi od kojih zavisi .SECONDARY se tretiraju kao međufajlovi, osim što se nikada ne brišu automatski. 
+                                .SECONDARY bez preduslova dovodi do toga da se svi ciljevi tretiraju kao sekundarni, tj. nijedan cilj se ne uklanja jer se smatra međufajlom.
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>.DELETE_ON_ERROR</td>
+                            <td>Ako se .DELETE_ON_ERROR spominje kao cilj bilo gde u makefile-u, onda će Make izbrisati cilj pravila ako se promenilo i njegova komanda izlazi sa izlaznim statusom koji nije nula.</td>
+                        </tr>
+                        <tr>
+                            <td>.IGNORE</td>
+                            <td>Ako navedete preduslove za .IGNORE, make će ignorisati greške u izvršavanju komandi za te određene datoteke. Komande za .IGNORE (ako postoje) se ignorišu.
+                                Ako se pominje kao cilj bez preduslova, .IGNORE kaže da ignoriše greške u izvršavanju komandi za sve datoteke. 
+                                </td>
+                        </tr>
+                    </table>
+                </p>
+                
+                
+                <h2 class="naslov_make-s" id="lazni_n">Lažni ciljevi</h2>
+                <p class="tekst">
+                    Ciljevi ne moraju da imenuju datoteke. U dva slučaja možete koristit lažne ciljeve:<br><br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>da biste izbegli konflikt sa datotekom istog imena <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span>da biste poboljšali performanse<br><br>
+                    
+                    Lažni ciljevi se zapravo koriste kada je potrebno izvršiti određenu radnju poput <span class="b_make">clean</span>, <span class="b_make">all</span>, <span class="b_make">test</span>, itd. U tim slučajevima ne želite da Make proverava da li postoji datoteka pod tim imenom.<br><br>
+                    
+                    Ako napišete pravilo čija komanda neće kreirati ciljnu datoteku, komanda će biti izvršena svaki put kada se cilj ponovo gradi. <br>
+                    <span class="my_code">clean:			<br>
+                    &ensp;&ensp;rm *.o temp</span> <br> 
+                    	
+                    Pošto komanda rm ne kreira datoteku pod nazivom clean, verovatno takva datoteka nikada neće postojati. Prema tome, komanda rm će biti izvršena svaki put kada pokrenete <span class="b_make">make clean</span>. Cilj clean neće funkcionisati ispravno ako je datoteka pod nazivom clean ikada kreirana u ovom direktorijumu. Pošto nema preduslova, clean bi se uvek smatrao ažurnim i njegova komanda se ne bi izvršavala. Da biste izbegli ovaj problem, možete eksplicitno da proglasite cilj lažnim tako što ćete ga učiniti preduslovom za specijalni cilj .PHONY na sledeći način:<br><br>
+                    <span class="my_code">.PHONY: clean	<br>
+                    clean:			<br>
+                    &ensp;&ensp;rm *.o temp</span> <br> 
+                    	
+                    Sada će make clean pokrenuti komandu bez obzira da li postoji datoteka pod nazivom clean.<br><br>
+                    
+                    Lažni ciljevi mogu imati preduslove. Kada jedan direktorijum sadrži više programa, najpogodnije je opisati sve programe u jednom makefile-u. Pošto će cilj koji je podrazumevano prepravljen biti prvi u makefile-u, uobičajeno je da se ovo učini lažnim ciljem pod nazivom all i da mu se, kao preduslovi, daju svi pojedinačni programi. <br><br>
+                    <span class="my_code">all : prog1 prog2 prog3			<br>
+                    .PHONY : all					<br>
+                    <br>
+                    prog1 : prog1.o utils.o				<br>
+                    &ensp;&ensp;cc -o prog1 prog1.o utils.o		<br>
+                            <br>
+                    prog2 : prog2.o				<br>
+                    &ensp;&ensp;cc -o prog2 prog2.o			<br>
+                            <br>
+                    prog3 : prog3.o sort.o utils.o			<br>
+                    &ensp;&ensp;cc -o prog3 prog3.o sort.o utils.o</span> <br> 
+                    	
+                    
+                    Sada naredbom make možete pokrenuti sva tri programa, ili navesti kao argumente one koje želite.<br><br>
+                    <span class="my_comment"> <i>Lažnost se ne nasleđuje! Preduslovi lažnog cilja nisu sami po sebi lažni, osim ako nije eksplicitno proglašeno da jesu.</i> </span> <br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="praznec_n">Prazne ciljne datoteke</h2>
+                <p class="tekst">
+                    Prazan cilj je varijanta lažnog cilja. Koristi se za čuvanje komandi za radnju koju s vremena na vreme eksplicitno zahtevate. Za razliku od lažnog cilja, ova ciljna datoteka može zaista postojati, ali sadržaj datoteke nije bitan i obično je prazan. Njena svrha je da zabeleži, sa vremenom poslednje izmene, kada su komande pravila poslednji put izvršene.<br><br>
+
+                    Prazna ciljna datoteka treba da ima neke preduslove. Kada zatražite da se prepravi prazan cilj, komande će se izvršavati ako je neki preduslov noviji od cilja, tj. ako se preduslov promenio od poslednjeg puta kada ste prepravljali cilj. <br><br>
+                    
+                    U sledećem primeru, <span class="b_make">make print</span> će izvršiti komandu lpr ako se bilo koja izvorna datoteka promenila od poslednjeg make print-a. Automatska promenljiva $? se koristi za štampanje samo onih datoteka koje su se promenile.<br><br>
+                    <span class="my_code">print: foo.c bar.c	<br>
+                    &ensp;&ensp;lpr -p $?	<br>	
+                    &ensp;&ensp;touch print	</span> <br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="autog_n">Automatsko generisanje ciljeva</h2>
+                <p class="tekst">
+                    Mnoga pravila u makefile-u govore samo da neki objektni fajl zavisi od neke datoteke zaglavlja. Na primer, ako main.c koristi defs.h preko #include, napisali biste:<br><br>
+                    <span class="my_code">main.o: defs.h</span> <br>
+                    
+                    Ovo pravilo vam je potrebno kako bi Make znao da mora ponovo napraviti main.o kad god se defs.h promeni. Za veliki program biste morali da upišete desetine takvih pravila u svoj makefile. Takođe, morali biste da ažurirate makefile svaki put kada dodate ili uklonite #include.<br><br>
+                    
+                    Da biste izbegli ovo, većina modernih C kompajlera može da napiše ova pravila za vas, posmatrajući #include redove u izvornim datotekama, pomoću opcije -M za kompajler. <br><br>
+                    <span class="my_code">$ cc -M main.c</span> <br>
+                    
+                    Ova komanda generiše izlaz:<br><br>
+                    <span class="my_code">main.o : main.c defs.h</span> <br>
+                    
+                    
+                    Praksa koju preporučujemo za automatsko generisanje preduslova je da imate jedan makefile koji odgovara svakoj izvornoj datoteci. Za svaki izvorni fajl name.c postoji makefile name.d koji navodi od kojih datoteka zavisi ime datoteke object.o. Na taj način samo izvorne datoteke koje su promenjene treba ponovo da se skeniraju da bi se proizveli novi preduslovi.<br><br>
+                    
+                    Za GCC kompajler, umesto opcije -M potrebno je da koristite opciju -MM. Ovo izostavlja preduslove za datoteke zaglavlja sistema. <br><br>
+                    
+                </p>
+                
+                
+                <h2 class="naslov_make" id="viscilj_n">Višestruki ciljevi</h2>
+                <p class="tekst">
+                    Kada eksplicitno pravilo ima više ciljeva, oni se mogu tretirati na jedan od dva moguća načina: kao nezavisni ciljevi ili kao grupisani ciljevi. Način na koji se oni tretiraju određuje se separatorom koji se pojavljuje posle liste ciljeva. <br>
+                </p>
+
+
+                <h2 class="naslov_make-s" id="pravilac_n">Pravila sa nezavisnim ciljevima</h2>
+                <p class="tekst">
+                    Pravila koja koriste standardni separator ciljeva, :, definišu nezavisne ciljeve. Ovo je ekvivalentno pisanju istog pravila jednom za svaki cilj, sa dupliranim preduslovima i komandama. <br><br>
+
+                    Pravila sa nezavisnim ciljevima su korisnna kada:<br><br>
+                    želite samo preduslove<br>
+                    slične komande odgovaraju svim ciljevima<br><br>
+                    
+                    Sledeći primer daje dodatni preduslov za svaku od tri pomenute objektne datoteke:<br><br>
+                    <span class="my_code">kbd.o command.o files.o: command.h</span> <br>
+                    
+
+                    To je ekvivalentno pisanju:<br><br>
+                    <span class="my_code">kbd.o: command.h		<br>
+                    command.o: command.h	<br>
+                    files.o: command.h	</span> <br>
+                    	
+                    
+                    U narednom primeru automatska promenljiva $@ se koristiti za zamenu određenog cilja koji treba da se koristi u komandama.<br><br>
+                    <span class="my_code">bigoutput littleoutput : text.g			<br>	
+                    &ensp;&ensp;generate text.g -$(subst output,,$@) &gt; $@</span> <br>
+                    	
+
+                    Ovo je ekvivalentno sa:<br><br>
+                    <span class="my_code">bigoutput : text.g					<br>
+                    &ensp;&ensp;generate text.g -big &gt; bigoutput<br>			
+                    littleoutput : text.g					<br>
+                    &ensp;&ensp;generate text.g -little &gt; littleoutput</span> <br>
+                    		
+                </p>
+                
+                <h2 class="naslov_make-s" id="pravilag_n">Pravila sa grupisanim ciljevima</h2>
+                <p class="tekst">
+                    Ako umesto nezavisnih ciljeva imate komande koje generišu više datoteka iz jednog poziva, možete izraziti taj odnos tako što ćete naglasiti da pravilo koristi grupisane ciljeve. Grupisano ciljno pravilo koristi separator &:, gde & implicira „sve“.<br><br>
+
+                    Kada make izgradi bilo koji od grupisanih ciljeva, on razume da su svi ostali ciljevi u grupi takođe kreirani kao rezultat pozivanja komandi. Štaviše, ako su samo neki od grupisanih ciljeva zastareli ili nedostaju Make će shvatiti da će pokretanje komandi ažurirati sve ciljeve.<br><br>
+                    
+                    Sledeće pravilo definiše grupisani cilj:<br><br>
+                    <span class="my_code">foo bar biz &: baz boz<br>		
+                    &ensp;&ensp;echo $^ > foo<br>		
+                    &ensp;&ensp;echo $^ > bar<br>		
+                    &ensp;&ensp;echo $^ > biz</span> <br>
+                    		
+                    
+                    Tokom izvršavanja komandi grupisanog cilja, automatska promenljiva $@ se postavlja na ime određenog cilja u grupi koji je pokrenuo pravilo. <br><br>
+                    
+                    Za razliku od nezavisnih ciljeva, pravilo grupisanog cilja mora da sadrži komande. Međutim, ciljevi koji su članovi grupisanog cilja mogu se pojaviti i u nezavisnim definicijama pravila cilja koje nemaju komande.<br><br>
+                    
+                </p>
+                
+                
+                <h2 class="naslov_make" id="preduslovi_n">Preduslovi</h2>
+                <p class="tekst">
+                    Preduslov je datoteka koja se koristi kao ulaz za kreiranje cilja. Obično zavili od nekoliko datoteka. Ako je bilo koji preduslov noviji (poređenjem vremena poslednje izmene) od cilja, Make će pokrenuti ciljno pravilo. <br> <br>
+
+                    Postoje dva različita tipa preduslova:  <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> normalni preduslovi <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> preduslovi sa redosledom <br>
+
+                </p>
+
+
+                <h2 class="naslov_make-s" id="normp_n">Normalni preduslovi</h2>
+                <p class="tekst">
+                    Nomralni preduslov nameće redosled po kome će se komande pozivati kao i odnos zavisnosti. Komande za sve preduslove cilja će biti završene pre nego što se pokrenu komande za cilj. Ako je bilo koji preduslov noviji od cilja, onda se cilj smatra zastarelim i mora se ponovo izgraditi. <br>
+                </p>
+                
+                <h2 class="naslov_make-s" id="predr_n">Preduslovi sa redosledom</h2>
+                <p class="tekst">
+                    Povremeno želite da nametnete određeni redosled pravila koja će se pozivati bez prisiljavanja da se cilj ažurira ako se jedno od tih pravila izvrši. U tom slučaju želite da definišete preduslove samo za porudžbinu. Preduslovi sa redosledom mogu se navesti postavljanjem uspravne crte (|) na listu preduslova. Svi preduslovi levo od simbola cevi su normalni, a svi preduslovi sa desne strane su sa redosledom.<br> <br>
+                    <span class="my_code">ciljevi : normalni-preduslovi | preduslovi-sa-redosledom</span> <br>
+                    
+                    Normalni odeljak preduslova može biti prazan. Takođe, i dalje možete deklarisati više redova preduslova za isti cilj. Oni se dodaju na odgovarajući način (normalni preduslovi se dodaju listi normalnih preduslova, preduslovi sa redosledom se dodaju listi preduslova sa redosledom). <br> <br>
+                    <span class="my_comment"> <i>Ako deklarišete istu datoteku kao normalan preduslov i preduslov sa redosledom, normalni preduslov ima prednost.</i> </span> <br>
+                    Tipičan primer je kreiranje direktorijuma za objektne datoteke. Vaši ciljevi treba da budu smešteni u poseban direktorijum, a taj direktorijum možda neće postojati pre nego što se pokrene make. U ovoj situaciji, želite da se direktorijum kreira pre nego što se u njega stave ciljevi, ali pošto se vremenske oznake na direktorijumima menjaju svaki put kada se datoteka doda, ukloni ili preimenuje, mi svakako ne želimo da ponovo izgradimo sve ciljeve kad god se promene vremenske oznake direktorijuma. Jedan od načina da se ovo uradi je pomoću preduslova sa redosledom tako što ćete učinite da direktorijum bude preduslov sa redosledom na svim ciljevima.<br><br>
+                    <span class="my_code">OBJDIR := objdir<br>						
+                    OBJS := $(addprefix $(OBJDIR)/,foo.o bar.o baz.o)<br>		
+                    <br>                                
+                    $(OBJDIR)/%.o : %.c						<br>
+                    &ensp;&ensp;$(COMPILE.c) $(OUTPUT_OPTION) $&lt;<br>		
+                    <br>                                
+                    all: $(OBJS)							<br>
+                    <br>                                
+                    $(OBJS): | $(OBJDIR)	<br>					
+                    <br>                                
+                    $(OBJDIR):					<br>		
+                    &ensp;&ensp;mkdir $(OBJDIR)</span> <br>
+                    					
+                    Sada će se pravilo za kreiranje direktorijuma objdir pokrenuti, ako je potrebno, pre nego što se napravi .o, ali neće biti napravljen .o jer je vremenska oznaka direktorijuma objdir promenjena.<br><br>
+                    
+                </p>
+                
+                
+                <h2 class="naslov_make" id="pret_n">Pretrazivanje preduslova u direktorijumima</h2>
+                <p class="tekst">
+                    Za velike sisteme, često je poželjno staviti izvore u poseban direktorijum od binarnih datoteka. Funkcije pretrage direktorijuma olakšavaju ovo tako što automatski pretražuje nekoliko direktorijuma da bi se pronašao preduslov. Kada ponovo distribuirate datoteke između direktorijuma, ne morate da menjate pojedinačna pravila, već samo putanje za pretragu. <br>
+                </p>
+
+                <h2 class="naslov_make-s" id="vpath_n">Opšta pretraga i VPATH</h2>
+                <p class="tekst">
+                    Vrednost promenljive VPATH navodi listu direktorijuma koje bi Make trebalo da pretraži. Najčešće se očekuje da direktorijumi sadrže datoteke preduslova koje se ne nalaze u trenutnom direktorijumu. Međutim, Make koristi VPATH kao listu za pretragu i za preduslove i za ciljeve pravila.<br><br>
+
+                    Ako datoteka koja je navedena kao cilj ili preduslov ne postoji u trenutnom direktorijumu, Make traži datoteku sa tim imenom u direktorijumima navedenim u VPATH-u. Ako se datoteka nađe u jednom od njih, ta datoteka može postati preduslov, a pravila tada mogu specificirati imena datoteka na listi preduslova kao da sve postoje u trenutnom direktorijumu. <br><br>
+                    
+                    U promenljivoj VPATH, imena direktorijuma su odvojena dvotačkama ili prazninama. Redosled u kome su direktorijumi navedeni je redosled koji Make prati prilikom pretrage.<br><br>
+                    
+                    U sledećem primeru VPATH specificira putanju koja sadrži dva direktorijuma, src i ../headers, u kojima se vrše pretrage, tim redosledom.<br><br>
+                    <span class="my_code">VPATH = src:../headers</span> <br>
+                    
+                    Pretpostavimo da datoteka foo.c ne postoji u trenutnom direktorijumu, ali se nalazi u direktorijumu src. Sledeće pravilo<br><br>
+                    <span class="my_code">foo.o : foo.c</span> <br>
+                    
+                    tumači se kao:<br><br>
+                    <span class="my_code">foo.o : src/foo.c</span> <br>
+                </p>
+                
+                <h2 class="naslov_make-s" id="selek_n">Selektivna pretraga i vpath direktiva</h2>
+                <p class="tekst">
+                    Slična promenljivoj VPATH, ali selektivnija, je vpath direktiva koja omogućava da odredite putanju za pretragu za određenu klasu imena datoteka, one koje odgovaraju određenom šablonu. Tako možete obezbediti određene direktorijume za pretragu za jednu klasu imena datoteka i druge direktorijume (ili nijedan) za drugu klasu imena datoteka. <br> <br>
+
+                    Postoje tri oblika vpath direktive: <br> <br>
+                    <table class="my_table tekst">
+                        <tr>
+                            <td>vpath obrazac direktorijumi</td>
+                            <td>Određuje direktorijume putanje za pretragu za imena datoteka koja odgovaraju obrascu.
+                                Putanja za pretragu, direktorijumi, je lista direktorijuma koje treba pretraživati, odvojenih tačkama ili prazninama, baš kao i putanja za pretragu koja se koristi u promenljivoj VPATH.
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>vpath obrazac</td>
+                            <td>Briše putanju za pretragu koja je povezana sa obrascem.</td>
+                        </tr>
+                        <tr>
+                            <td>vpath</td>
+                            <td>Briše sve putanje za pretragu koje su prethodno navedene sa vpath direktivama.</td>
+                        </tr>
+                    </table>
+                    
+                </p>
+                <p class="tekst">
+                    Obrazac je niz koji sadrži znak %. String mora da odgovara imenu datoteke preduslova koji se traži, znak % koji odgovara bilo kojoj sekvenci od nula ili više znakova. Na primer, %.h odgovara datotekama koje se završavaju na .h.<br><br>
+
+                    <span class="my_comment"> <i>Ako nema %, obrazac mora tačno da odgovara preduslovu, što često nije korisno.</i> </span> <br>
+                    
+                    Sledeći primer kaže Make-u da potraži bilo koji preduslov čije se ime završava na .h u direktorijumu ../headers ako datoteka nije pronađena u trenutnom direktorijumu.<br><br>
+                    <span class="my_code">vpath %.h ../headers</span> <br> 
+                    
+                    
+                    Ako se nekoliko obrazaca podudara sa imenom datoteke preduslova, izvršite obradu svake odgovarajuće vpath direktive jednu po jednu, pretražujući sve direktorijume pomenute u svakoj direktivi. Make obrađuje više vpath direktiva po redosledu kojim se pojavljuju u makefile-u. Više direktiva sa istim obrascem su nezavisne jedna od druge.<br><br>
+                    
+                    Sledeći primer će tražiti datoteku koja se završava na .c u foo, zatim blish, pa bar:<br><br>
+                    <span class="my_code">vpath %.c foo	<br>	
+                    vpath %.c blish	<br>
+                    vpath %.c bar</span> <br> 
+                    		
+                </p>
+                
+                <h2 class="naslov_make" id="komande_n">Komande</h2>
+                <h2 class="naslov_make-s" id="sintaksa_n">Sintaksa komandi</h2>
+                <p class="tekst">
+                    Makefile imaju neobično svojstvo da postoje dve različite sintakse u jednoj datoteci. Većina makefile-ova koristi Make sintaksu. Međutim, komande su osmišljene tako da mogu da budu interpretiranw od strane ljuske i zato se pišu korišćenjem shell sintakse. <br><br>
+
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Pravilo može da se sastoji od jedne ili više komandi koje se izvršavaju.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Prva komanda može da se javi u liniji ispod preduslova ili u istoj liniji sa preduslovima ali odvojena ;.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Svaka komanda u pravilu mora da počinje tabulatorom.<br>
+                    Znak kojim počinje komanda možete promeniti podešavanje promenljive .RECIPEPREFIX na alternativni znak. Ako je promenljiva prazna (kao što je podrazumevano), taj znak je standardni tabulator. <br><br>
+                    <span class="my_code">.RECIPEPREFIX = &gt;<br>
+                    all:<br>
+                    > @echo Hello, world</span> <br>
+                    
+
+                    Vrednost .RECIPEPREFIX se može promeniti više puta. Kada se jednom postavi na određenu vrednost, ostaje na snazi za sva pravila dok se ne izmeni.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Prazni redovi i komentari mogu se pojaviti među komandama i ignorišu se.<br><br>
+                    
+                    Neke posledice ovih pravila uključuju:<br><br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Prazan red koji počinje tabulatorom nije prazan, to je prazna komanda.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Komentar u receptu nije komentar; biće prosleđen ljusci kakav jeste. Da li će ljuska to tretirati kao komentar ili ne zavisi od vaše ljuske.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Definicija promenljive u koja je uvučena tabulatorom kao prvim znakom na liniji, smatraće se delom komandi, a ne definicijom Make promenljive, i prosleđivaće se ljusci.<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Uslovni izraz (ifdef, ifek, itd) koji je uvučen tabulatorom kao prvi znak na liniji, smatraće se delom komandi i prosleđivaće se ljusci.<br><br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="izvrsavanje_n">Izvršavanje</h2>
+                <p class="tekst">
+                    Kada dođe vreme za ažuriranje cilja, komande se izvršavaju pozivanjem nove pod-ljuske za svaki red. <br><br>
+
+                    Ponekad ćete želeti da se svi redovi u komandama prosleđuju u jedno pozivanje ljuske. Ako se specijalni cilj .ONESHELL pojavi bilo gde u makefile-u, onda će sve komande za svaki cilj biti prosleđene za jedno pozivanje ljuske. Novi redovi između redova recepta će biti sačuvani. Postoje dve situacije u kojima je ovo korisno: <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> kada želite da poboljšate performanse u makefile-ovima gde u pravilima ima mnogo komandnih linija, izbegavanjem dodatnih procesa<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> kada želite da novi redovi budu uključeni u vašu komandu<br><br>
+                    
+                </p>
+
+
+                <h2 class="naslov_make-s" id="greske_n">Greške </h2>
+                <p class="tekst">
+                    Nakon što se vrati svaki poziv ljuske, možete pogledati njegov izlazni status. Ako je ljuska uspešno završena, sa izlaznim statusom nula, sledeća komanda se izvršava u novoj ljusci. Nakon što je poslednja komanda završena, pravilo je završeno. Ako postoji greška, sa izlaznim statusom različitim od nule, Make odustaje od trenutnog pravila, a u nekim slučajevima i od svih pravila.<br><br>
+
+                    Ponekad neuspeh određene linije ne ukazuje na problem. Na primer, možete koristiti komandu mkdir da biste bili sigurni da direktorijum postoji. Ako direktorijum već postoji, mkdir će prijaviti grešku, ali verovatno želite da se make svakako nastavi.<br><br>
+                    
+                    Da biste ignorisali greške možete koristiti prefiks -.<br>
+                    U sledećem primeru make se nastavlja čak i ako rm ne može da ukloni datoteku:<br><br>
+                    <span class="my_code">clean:		<br>
+                        &ensp;&ensp;-rm -f *.o</span> <br>
+
+                    Kada pokrenete make sa opcijama -i ili --ignore-errors, greške se zanemaruju u svim komandama svih pravila. Pravilo u makefile-u za specijalni cilj .IGNORE ima isti efekat, ako nema preduslova. Kada se greške ignorišu, zbog oznake - ili -i, make tretira vraćanje greške kao uspeh, štampa poruku koja vam govori statusni kod sa kojim je ljuska izašla, i kaže da je greška zanemarena.<br><br>
+                    
+                </p>
+                
+
+                <h2 class="naslov_make" id="fje_n">Funkcije</h2>
+                <h2 class="naslov_make-s" id="fsint_n">Sintaksa za pozivanje funkcija</h2>
+                <p class="tekst">
+                    Poziv funkcije liči na referencu promenljive. Može se pojaviti svuda gde se može pojaviti referenca promenljive i proširuje se korišćenjem istih pravila kao i reference promenljivih. Poziv funkcije izgleda ovako:<br><br>
+                    <span class="my_code">$ (funkcija argumenti)</span> <br>
+                    <span class="my_code">$ {funkcija argumenti}</span><br>
+                    
+                    Ovde funkcija predstavlja ime jedne od funkcija koje su deo Make-a. Takođe, možete kreirati sopstvene funkcije korišćenjem call ugrađene funkcije.<br><br>
+                    
+                    Argumenti su odvojeni od naziva funkcije sa jednim ili više razmaka ili tabulatora, a ako postoji više od jednog argumenata oni se odvajaju zarezima. Takvi razmaci i zarezi nisu deo vrednosti argumenta. Graničnici koje koristite da okružite poziv funkcije, bilo da su obične ili vitičaste zagrade, mogu se pojaviti u argumentu samo u parovima koji se podudaraju. Druga vrsta graničnika se može pojaviti pojedinačno. Ako sami argumenti sadrže pozive drugih funkcija ili reference promenljivih, najpametnije je koristiti istu vrstu graničnika za sve reference. Bolje je napisati <br><br>
+                    <span class="my_code">$(subst a,b,$(k))</span> <br>
+                    
+                    a ne <br><br>
+                    <span class="my_code">$(subst a,b,${k})</span> <br>
+                    
+                    To je zato što je jasnije i zato što se samo jedan tip graničnika podudara da bi se pronašao kraj reference.<br><br>
+                    
+                    Zarezi i zagrade (bilo usklađene ili neusklađene) ne mogu se pojaviti u tekstu argumenta. Ovi znakovi se mogu staviti u vrednost argumenta zamenom promenljive. Prvo definišite promenljive zarez i razmak čije su vrednosti izolovani zarez i razmak, a zatim zamenite ove promenljive tamo gde se takvi znakovi traže:<br><br>
+                    <span class="my_code">comma:= ,<br>
+                    empty:=<br>
+                    space:= $(empty) $(empty)<br>
+                    foo:= a b c<br>
+                    bar:= $(subst $(space),$(comma),$(foo))	<br>
+                    # bar is now ‘a,b,c’.</span> <br>
+                    				
+                    Funkcija subst zamenjuje svaki razmak zarezom, kroz vrednost foo, i zamenjuje rezultat.<br><br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="fza_n">Funkcije za zamenu i analizu stringova</h2>
+                <p class="tekst">
+                    <span class="b_make">$(subst from,to,tekst)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Svako pojavljivanje from u tekstu se zamenjuje sa to. <br>
+                    Sledeći primer proizvodi vrednost ’fEEt on the strEEt’.<br><br>
+                    <span class="my_code">$(subst ee,EE,feet on the street)</span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(patsubst šablon,zamena,tekst)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Pronalazi reči razdvojene razmacima u tekstu koje odgovaraju šablonu i zamenjuje ih zamenom. Šablon može da sadrži % koji deluje kao džoker znak i odgovara bilo kom broju bilo kog karaktera u reči. Ako zamena takođe sadrži %, on se zamenjuje tekstom koji se podudara sa % u šablonu. Samo prvi % u šablonu i zameni se tretira na ovaj način, a svaki sledeći biva nepromenjen. Razmaci između reči se predstavljaju kao jedan razmak, a vodeći i završni razmaci se odbacuju. <br>
+                    Sledeći primer proizvodi vrednost ’k.c.o bar.o’:<br><br>
+                    <span class="my_code">$(patsubst %.c,%.o,x.c.c bar.c)</span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(string string)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Uklanja vodeći i završni razmak iz stringa i svaki interni niz od jednog ili više znakova razmaka zamenjuje jednim razmakom. Može biti veoma korisna kada se koristi u kombinaciji sa uslovima. <br>
+                    Sledeći primer rezultira ’a b c’:<br><br>
+                    <span class="my_code">$(strip a b c)</span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(findstring find,tekst)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Pretražuje pojavljivanje find-a u tekstu. Ako ga pronađe, vrednost je find, a u suprotnom vrednost je prazna. Ovu funkciju možete koristiti u uslovu da biste testirali prisustvo određenog podniza u datom nizu. <br>
+                    Prvi primer će proizvesti vrednost ’a’, a drugi ’’ (prazan string), respektivno:<br><br>
+                    <span class="my_code">$(findstring a,a b c) <br>
+                    $(findstring a,b c)   </span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(filter šablon...,tekst)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Vraća sve reči u tekstu razdvojene razmacima koje se podudaraju sa bilo kojom od šablonskih reči, uklanjajući sve reči koje se  podudaraju. Šabloni su napisani pomoću %, kao i kod patsubst funkcije.<br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(filter-out obrazac…,tekst)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Ova fukcija je suprotna funkciji filter. Vraća sve reči u tekstu razdvojene razmakom koje se ne podudaraju ni sa jednom od šablonskih reči. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(sort lista)</span>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Sortira reči liste leksikografski, uklanjajući duple reči. Izlaz je lista reči razdvojenih jednim razmakom. Ako redosled nije bitan, može se koristiti za uklanjanje duplikata reči. <br>
+                    Sledeći primer vraća ’bar foo lose’:<br><br>
+                    <span class="my_code">$(sort foo bar lose)</span> <br>
+                </p> 
+                <p class="tekst">
+                    <span class="b_make">$(word n,tekst) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Vraća n-tu reč teksta. Legitimne vrednosti n počinju od 1. Ako je n veće od broja reči u tekstu, vrednost je prazna. <br>
+                    Sledeći primer vraća ’bar’:<br><br>
+                    <span class="my_code">$(word 2, foo bar baz)</span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(wordlist s,e,tekst) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Vraća listu reči u tekstu koje počinju rečju s i završavaju se rečju e (uključujući i nju). Legitimne vrednosti s počinju od 1, dok e može da počinje od 0. Ako je s veći od broja reči u tekstu, vrednost je prazna. Ako je e veće od broja reči u tekstu, vraćaju se reči do kraja teksta. Ako je s veće od e, ništa se ne vraća. <br>
+                    Sledeći primer vraća ’bar baz’:<br><br>
+                    <span class="my_code">$(wordlist 2, 3, foo bar baz)</span> <br>      
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(words tekst) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Vraća broj reči u tekstu.<br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(firstwords imena...) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Imena argumenata se smatraju nizom imena, odvojenih razmakom. Vrednost je prvo ime u nizu. Ostala imena se ignorišu. <br>
+                    Sledeći primer vraća ’foo’:<br><br>
+                    <span class="my_code">$(firstword foo bar)</span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(lastwords imena…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Imena argumenata se smatraju nizom imena, odvojenih razmakom. Vrednost je poslednje ime u nizu. <br>
+                    Sledeći primer vraća ’bar’:<br> <br>
+                    <span class="my_code">$(lastword foo bar)</span> <br>
+                </p>
+
+                
+                
+                <h2 class="naslov_make-s" id="fid_n">Funkcije za imena datoteka</h2>
+                <p class="tekst">
+                    Sledeće ugrađene funkcije proširenja se odnose na rastavljanje imena datoteka ili listi imena datoteka. Svaka od njih vrši određenu transformaciju imena datoteke. Argument funkcije se smatra nizom imena datoteka, odvojenih razmakom, pri čemu se vodeći i završni razmaci zanemaruju. Svako ime datoteke u nizu se transformiše na isti način i rezultati se spajaju sa pojedinačnim razmacima između njih. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(dir imena...) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Izvlači direktorijum-deo svakog imena datoteke u imenima. Direktorijum-deo imena datoteke je sve do poslednje kose crte (uključujući i nju). Ako ime datoteke ne sadrži kosu crtu, direktorijum-deo je string ’./’. <br>
+                    Sledeći primer proizvodi rezultat ’src/ ./’:<br><br>
+                    <span class="my_code">$(dir src/foo.c hacks) </span> <br>
+                                       
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(notdir imena...) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Izvlači sve osim direktorijum-dela iz imena svake datoteke u imenima. Ako naziv datoteke ne sadrži kosu crtu, ostaje nepromenjen. U suprotnom, iz njega se uklanja sve do poslednje kose crte (uključujući i nju). Ime datoteke koje se završava kosom crtom postaje prazan string. To može da dovede do toga da rezultat nema uvek isti broj imena datoteka razdvojenih razmacima kao što je imao argument. <br>
+                    Sledeći primer proizvodi rezultat ’foo.c hacks’.<br><br>
+                    <span class="my_code">$(notdir src/foo.c hacks) </span> <br>
+                                       
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(suffixs imena...) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Izvlači sufiks svakog imena datoteke u imenima. Ako ime datoteke sadrži tačku, sufiks je sve od poslednje tačke do kraja. Inače, sufiks je prazan niz. Ovo često znači da će rezultat biti prazan kada imena nisu, a ako imena sadrže više imena datoteka, rezultat može sadržati manje imena datoteka. <br>
+                    Sledeći primer proizvodi rezultat ’.c .c’:<br><br>
+                    <span class="my_code">$(suffix src/foo.c src-1.0/bar.c hacks)</span> <br>
+                    
+                    
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(basename imena...) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Izdvaja sve osim sufiksa imena svake datoteke u imenima. Ako ime datoteke sadrži tačku, osnovno ime je sve od početka do poslednje tačke (ne uključujući nju). Tačke u delu direktorijuma se zanemaruju. Ako nema tačke, osnovno ime je celo ime datoteke. <br>
+                    Sledeći primer proizvodi rezultat ’src/foo src-1.0/bar hacks’:<br><br>
+                    <span class="my_code">$(basename src/foo.c src-1.0/bar hacks) </span> <br>
+                                       
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(addsufiks sufiks, imena…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Imena argumenata se smatraju nizom imena, odvojenim razmakom. Vrednost sufiksa se dodaje na kraj svakog pojedinačnog imena. <br>
+                    Sledeći primer proizvodi rezultat ’foo.c bar.c’:<br><br>
+                    <span class="my_code">$(addsuffix .c,foo bar)</span> <br>
+                                        
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(addprefix prefiks,imena…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Imena argumenata se smatraju nizom imena, odvojenim razmakom. Vrednost prefiksa se dodaje ispred svakog pojedinačnog imena.<br>
+                    Sledeći primer proizvodi rezultat ’src/foo src/bar’:<br><br>
+                    <span class="my_code">$(addprefix src/,foo bar)</span> <br>
+                            
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(join lista1, lista2) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Povezuje dva argumenta reč po reč. Dve prve reči (po jedna iz svakog argumenta) spojene čine prvu reč rezultata, dve druge reči čine drugu reč rezultata, itd. Dakle, n-ta reč rezultata dolazi od n-te reči svakog argumenta. Ako jedan argument ima više reči od drugog, dodatne reči se kopiraju nepromenjene u rezultat. Ova funkcija može spojiti rezultate funkcija dir i notdir, da bi proizvela originalnu listu datoteka koja je data tim dvema funkcijama.<br>
+                    Sledeći primer proizvodi ’a.c b.o’:<br><br>
+                    <span class="my_code">$(join a b,.c .o)</span> <br>
+                                         
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(wildcard šablon) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Argument šablon je šablon naziva datoteke, koji obično sadrži džoker znakove. Rezultat je lista imena postojećih datoteka razdvojenih razmacima koja odgovaraju šablonu.  <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(realpath imena…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Za svako ime datoteke u imenima vraća kanonsko apsolutno ime. Kanonsko ime ne sadrži nikakve . ili .. komponente, niti bilo koji ponovljeni separator putanje (/) ili simboličke veze. U slučaju neuspeha vraća se prazan string.<br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(abspath imena…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Za svako ime datoteke u imenima vraća apsolutno ime koje ne sadrži nikakve . ili .. komponente, niti bilo koji ponovljeni separator putanje (/). Za razliku od funkcije realpath, abspath ne rešava simbolične veze i ne zahteva da se imena datoteka odnose na postojeću datoteku ili direktorijum. <br>
+                </p>
+
+
+                <h2 class="naslov_make-s" id="fu_n">Funkcije za uslove</h2>
+                <p class="tekst">
+                    Postoje tri funkcije koje obezbeđuju uslovno proširenje. Ključni aspekt ovih funkcija je da nisu svi argumenti u početku prošireni. Biće prošireni samo oni argumenti koje treba proširiti. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(if uslov, onda-deo [, inače-deo]) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Funkcija if pruža podršku za uslovno proširenje u funkcionalnom kontekstu. <br>
+                    Prvom argumentu, uslov, najpre se uklanjaju razmaci sa početka i kraja, a zatim se proširuje. Ako se proširi na bilo koji niz koji nije prazan, onda se smatra da je uslov tačan. Ako se proširuje na prazan niz, uslov se smatra netačnim. Ako je uslov tačan, onda se procenjuje drugi argument, onda-deo, i ovo se koristi kao rezultat procene cele if funkcije. Ako je uslov netačan, onda se procenjuje treći argument, inače-deo i ovo je rezultat funkcije if. Ako ne postoji treći argument, funkcija if ne vredi ništa (prazan string). <br> <br>
+                    <span class="my_comment"> <i>Samo će jedan od onda-dela i inače-dela biti procenjen, nikada oba. </i> </span> <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(or uslov1 [, uslov2 [, uslov3...]]) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Funkcija or obezbeđuje operaciju „kratkog spoja“ OR. Svaki argument je proširen, po redu. Ako se argument proširi na neprazan string, obrada se zaustavlja i rezultat proširenja je taj string. Ako su, nakon što su svi argumenti prošireni, svi netačni (prazni), onda je rezultat proširenja prazan string. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(and uslov1 [, uslov2 [, uslov3...]]) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Funkcija and obezbeđuje operaciju „kratkog spoja“ AND. Svaki argument je proširen, po redu. Ako se argument proširi na prazan string, obrada se zaustavlja i rezultat proširenja je prazan string. Ako se svi argumenti prošire na neprazan string onda je rezultat proširenja proširenje poslednjeg argumenta. <br>
+                </p>
+
+
+                <h2 class="naslov_make-s" id="fforeach_n">Funkcija foreach</h2>
+                <p class="tekst">
+                    Funkcija foreach omogućava da se jedan deo teksta koristi više puta, svaki put sa različitom zamenom. Podseća na for i foreach petlju. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(foreach var,lista,tekst) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Prva dva argumenta, var i lista, se proširuju pre nego što se bilo šta drugo uradi. Poslednji argument, tekst, ne proširuje se u isto vreme. Zatim se za svaku reč proširene vrednosti liste, promenljiva imenovana proširenom vrednošću var postavlja na tu reč, a tekst se proširuje. Zapravo, tekst sadrži reference na tu promenljivu, tako da će njegovo proširenje svaki put biti drugačije. Rezultat je da se tekst proširuje onoliko puta koliko ima reči razdvojenih razmacima u listi. <br><br>
+
+                    Ovaj jednostavan primer postavlja promenljivu files na listu svih datoteka u direktorijumima na listi dirs:<br><br>
+                    <span class="my_code">dirs := a b c d <br>
+                    files := $(foreach dir,$(dirs),$(wildcard $(dir)/*))</span> <br>
+                    
+                    
+                    Ovde je tekst ’$(vildcard $(dir)/*)’. Prvo ponavljanje pronalazi vrednost ’a’ za dir, tako da daje isti rezultat kao ’$(vildcard a/*)’. Drugo ponavljanje daje rezultat ’$(vildcard b/*)’, i treće ’$(vildcard c/*)’.<br><br>
+                    
+                    Sledeći primer ima isti rezultat:<br><br>
+                    <span class="my_code">files := $(wildcard a/* b/* c/* d/*)</span> <br>
+                    
+                    
+                    Kada je tekst komplikovan, možete poboljšati čitljivost tako što ćete mu dati ime, uz dodatnu promenljivu:<br><br>
+                    <span class="my_code">find_files = $(wildcard $(dir)/*)	<br>		
+                    dirs := a b c d					<br>	
+                    files := $(foreach dir,$(dirs),$(find_files))</span> <br>
+                    		
+                </p>
+
+                
+                <h2 class="naslov_make-s" id="fdat_n">Funkcija datoteke</h2>
+                <p class="tekst">
+                    Funkcija <span class="b_make">file</span> omogućava makefile-u da piše ili čita iz datoteke. Podržana su dva načina pisanja: <br><br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> prepisivanje - tekst se upisuje na početak datoteke i sav postojeći sadržaj se gubi<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> dodavanje - tekst se upisuje na kraj datoteke, čuvajući postojeći sadržaj. <br>
+                    U oba slučaja datoteka se kreira ako ne postoji, a funkcija file se proširuje na prazan string. Ako se datoteka ne može otvoriti za pisanje ili ako operacija pisanja ne uspe dolazi do fatalne greške. <br><br>
+                    
+                    Prilikom čitanja iz datoteke, funkcija file se proširuje na doslovni sadržaj datoteke, osim što će konačni novi red, ako postoji, biti uklonjen. Pokušaj čitanja iz nepostojeće datoteke proširuje se na prazan string. <br>
+                    
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(file op ime[,tekst]) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Kada se proceni funkcija file, svi njeni argumenti se prvo prošire, pa se zatim otvara datoteka označena imenom u režimu opisanom u op.<br><br>
+
+                    Operator op može biti: <br><br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> &gt; označava da će datoteka biti prepisana novim sadržajem<br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> &gt;&gt; označava da će trenutni sadržaj datoteke biti dodat <br>
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> &lt; označava da će sadržaj datoteke biti pročitan<br>
+                </p>
+
+                
+
+                <h2 class="naslov_make-s" id="fpoz_n">Funkcija poziva</h2>
+                <p class="tekst">
+                    Funkcija <span class="b_make">call </span>je jedinstvena po tome što se može koristiti za kreiranje novih parametrizovanih funkcija. Možete napisati složeni izraz kao vrednost promenljive, a zatim koristiti poziv da ga proširite različitim vrednostima. <br>
+                </p>
+
+                <p class="tekst">
+                    <span class="b_make">$(call promenljiva,param,param,…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="my_comment"> <i>Budite oprezni kada dodajete razmak argumentima za pozivanje. Kao i kod drugih funkcija, svaki razmak sadržan u drugom i narednim argumentima se čuva što  može izazvati čudne efekte. Generalno je najsigurnije ukloniti sve suvišne razmake kada dajete parametre za pozivanje.</i> </span> <br>
+                    
+
+                    Kada Make proširi ovu funkciju, dodeljuje svaki param privremenim promenljivim $(1), $(2), itd. Promenljiva $(0) će sadržati promenljivu. Ne postoji maksimalan broj parametara. Ne postoji ni minimalan, ali nema smisla koristiti poziv bez parametara.<br><br>
+                    
+                    Zatim se promenljiva proširuje kao Make promenljiva u kontekstu ovih privremenih dodela. Dakle, svaka referenca na $(1) u vrednosti promenljive će se razrešiti na prvi param u pozivanju poziva.<br><br>
+                    
+                    <span class="my_comment"> <i>Promenljiva je ime promenljive, a ne referenca na tu promenljivu. Zbog toga ne treba da koristite $ ili zagrade kada ga pišete. </i> </span> <br>
+                    
+                    
+                    Ako je promenljiva ime ugrađene funkcije, ugrađena funkcija se uvek poziva.<br><br>
+                    
+                    Ovaj makro jednostavno preokreće svoje argumente, nakon čega će foo sadržati ’b a’:<br>
+                    <span class="my_code">reverse = $(2) $(1)		<br>
+                    foo = $(call reverse,a,b)</span> <br>
+                    	
+                </p>
+
+                
+                
+                <h2 class="naslov_make-s" id="fvred_n">Funkcija vrednosti</h2>
+                <p class="tekst">
+                    Funkcija value omogućava korišćenje vrednosti promenljive bez njenog proširenja. Ovo ne poništava proširenja koja su se već desila. Na primer, ako kreirate jednostavno proširenu promenljivu, njena vrednost se proširuje tokom definicije i u tom slučaju funkcija vrednosti će vratiti isti rezultat kao direktno korišćenje promenljive. <br>
+                </p>
+
+                <p class="tekst">
+                    <span class="b_make">$ (value promenljiva) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="my_comment"> <i>Promenljiva je ime promenljive, a ne referenca na tu promenljivu. Zbog toga ne treba da koristite $ ili zagrade kada ga pišete. </i> </span> <br>
+                    Rezultat sledeće funkcije je string koji sadrži vrednost promenljive, bez ikakvog proširenja. <br><br>
+                    <span class="my_code">FOO = $PATH	<br>		
+                    <br>                
+                    all:				<br>
+                            @echo $(FOO)	<br>	
+                            @echo $(value FOO)</span> <br>
+                    	
+                    U ovom makefile-u, prva izlazna linija bi bila ATH, pošto bi „$P“ bila proširena kao make promenljiva, dok bi druga izlazna linija bila trenutna vrednost vaše promenljive okruženja $PATH, pošto je funkcija vrednosti izbegavala proširenje.<br><br>
+                    
+                    Funkcija vrednosti se najčešće koristi u sprezi sa funkcijom eval. <br>
+                </p>
+                
+                
+                <h2 class="naslov_make-s" id="feval_n">Funkcija eval</h2>
+                <p class="tekst">
+                    Funkcija eval omogućava definisanje novih makefile konstrukcija koje nisu konstantne i koje su rezultat vrednovanja drugih promenljivih i funkcija. Argument funkcije eval se proširuje, a zatim se rezultati tog proširenja analiziraju kao sintaksa makefile-a. Prošireni rezultati mogu da definišu nove promenljive, ciljeve, implicitna ili eksplicitna pravila, itd.<br><br>
+
+                    Rezultat funkcije eval je uvek prazan string. Na taj način, može se postaviti praktično bilo gde u makefile-u bez izazivanja sintaksičkih grešaka.<br><br>
+                    
+                    Evo primera koji kombinuje niz koncepata i drugih funkcija i ilustruje kako se eval može koristiti:<br><br>
+                    <span class="my_code">PROGRAMS    = server client				<br>	
+                    <br>	
+                    server_OBJS = server.o server_priv.o server_access.o<br>		
+                    server_LIBS = priv protocol				<br>		
+                    <br>	
+                    client_OBJS = client.o client_api.o client_mem.o<br>			
+                    client_LIBS = protocol				<br>			
+                    <br>	  
+                    .PHONY: all						<br>		
+                    all: $(PROGRAMS)					<br>		
+                    <br>	
+                    define PROGRAM_template =				<br>	
+                     $(1): $$($(1)_OBJS) $$($(1)_LIBS:%=-l%)	<br>			
+                     ALL_OBJS   += $$($(1)_OBJS)			<br>		
+                    endef								<br>	
+                    <br>	
+                    $(foreach prog,$(PROGRAMS),$(eval $(call PROGRAM_template,$(prog))))<br>	
+                    <br>	
+                    $(PROGRAMS):			<br>				
+                            $(LINK.o) $^ $(LDLIBS) -o $@	<br>				
+                            <br>	
+                    clean: <br>								
+                            rm -f $(ALL_OBJS) $(PROGRAMS)</span> <br>
+                    			
+                </p>
+                
+                <h2 class="naslov_make-s" id="fpor_n">Funkcija porekla</h2>
+                <p class="tekst">
+                    Funkcija origin se razlikuje od većine drugih funkcija po tome što ne radi sa vrednostima promenljivih, već govori o njihovom poreklu. Rezultat ove funkcije je string koji govori kako je promenljiva definisana.  <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$ (origin promenljiva) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="my_comment"> <i>Ovde promenljiva predstavlja ime promenljive o kojoj treba da se raspitate, a ne referencu na tu promenljivu. </i> </span> <br>
+                    Mogući rezultati poziva ove funkcije dati su u tabeli: <br>
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_make">rezultat </span></td>
+                            <td><span class="b_make">značenje </span></td>
+                        </tr>
+                        <tr>
+                            <td>undefined</td>
+                            <td>Promenljiva nikada nije bila definisana.</td>
+                        </tr>
+                        <tr>
+                            <td>default</td>
+                            <td>Promenljiva ima podrazumevanu definiciju, kao što je uobičajeno sa CC i tako dalje. Pogledajte Promenljive koje koriste implicitna pravila. Imajte na umu da ako ste redefinisali podrazumevanu promenljivu, funkcija origin će vratiti poreklo kasnije definicije.</td>
+                        </tr>
+                        <tr>
+                            <td>environment</td>
+                            <td>Promenljiva je nasleđena iz okruženja predviđenog za izradu.</td>
+                        </tr>
+                        <tr>
+                            <td>environment override</td>
+                            <td>Promenljiva je nasleđena iz okruženja koje je obezbeđeno za pravljenje i zamenjuje podešavanje za promenljivu u makefileu kao rezultat opcije -e.</td>
+                        </tr>
+                        <tr>
+                            <td>file</td>
+                            <td>Promenljiva je definisana u makefile-u.</td>
+                        </tr>
+                        <tr>
+                            <td>command line</td>
+                            <td>Promenljiva je definisana u komandnoj liniji.</td>
+                        </tr>
+                        <tr>
+                            <td>override</td>
+                            <td>Promenljiva je definisana override direktivom u makefile-u.</td>
+                        </tr>
+                        <tr>
+                            <td>automatic</td>
+                            <td>Promenljiva je automatska promenljiva.</td>
+                        </tr>
+                    </table>
+                </p>
+
+                
+                
+                <h2 class="naslov_make-s" id="fukusa_n">Funkcija ukusa</h2>
+                <p class="tekst">
+                    Funkcija flavor, kao i funkcija porekla, ne radi sa vrednostima promenljivih, već govori o tipu promenljive. Rezultat ove funkcije je string koji identifikuje tip. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$ (flavor variable) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="my_comment"> <i>Ovde promenljiva predstavlja ime promenljive o kojoj se raspitujete, a ne referencu na tu promenljivu. </i> </span> <br>
+                    
+                    Mogući rezultati poziva ove funkcije dati su u tabeli <br>
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_make">rezultat </span></td>
+                            <td><span class="b_make">značenje </span></td>
+                        </tr>
+                        <tr>
+                            <td>undefined</td>
+                            <td>Promenljiva nikada nije bila definisana.</td>
+                        </tr>
+                        <tr>
+                            <td>recursive</td>
+                            <td>promenljiva je rekurzivno proširena promenljiva.</td>
+                        </tr>
+                        <tr>
+                            <td>simple</td>
+                            <td>Promenljiva je jednostavno proširena promenljiva.</td>
+                        </tr>
+                    </table>
+                </p>
+
+                
+                
+                <h2 class="naslov_make-s" id="fkmake_n">Funkcije koje kontrolišu Make</h2>
+                <p class="tekst">
+                    Ove funkcije kontrolišu način pokretanja. Koriste se za pružanje informacija korisniku makefile-a ili za zaustavljanje make-a ako se otkrije neka vrsta greške u okruženju. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(error tekst…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Generiše fatalnu grešku gde je poruka tekstualna. Greška se generiše svaki put kada se proceni ova funkcija. Dakle, ako se koristi u komandama ili na desnoj strani dodeljivanja rekurzivne promenljive, neće biti procenjeno kasnije. Tekst će biti proširen pre nego što se greška generiše.<br><br>
+
+                    Na primer,<br><br>
+                    <span class="my_code">ifdef ERROR1<br>				
+                    $(error error is $(ERROR1))<br>		
+                    endif	</span> <br>
+
+                    će generisati fatalnu grešku tokom čitanja makefile-a ako je definisana make promenljiva ERROR1, a <br><br>
+                    <span class="my_code">ERR = $(error found an error!)	<br>
+                    <br>                    
+                    .PHONY: err				<br>
+                    err: ; $(ERR)</span> <br>
+                    				
+                    će generisati fatalnu grešku dok je make pokrenut, ako se pozove cilj err. <br>
+                    
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(warning tekst...) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Ova funkcija radi slično kao i funkcija greške, osim što make ne završava. Umesto toga, tekst se proširuje i rezultujuća poruka se prikazuje, ali se obrada makefila-a nastavlja. Rezultat proširenja ove funkcije je prazan string. <br>
+                </p>
+                <p class="tekst">
+                    <span class="b_make">$(info tekst…) </span> 
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    Ova funkcija ne radi ništa više od štampanja svojih (proširenih) argumenta u standardni izlaz. Nije dodat naziv makefile ili broj linije. Rezultat proširenja ove funkcije je prazan string. <br>
+                </p>
+
+
+                <h2 class="naslov_make" id="uslovi_n">Uslovi</h2>
+                <p class="tekst">
+                    Uslovna direktiva uzrokuje da se deo makefile-a poštuje ili ignoriše u zavisnosti od vrednosti promenljivih. Uslovi mogu da uporede vrednost jedne promenljive sa drugom, ili vrednost promenljive sa konstantnim nizom. Uslovi kontrolišu šta make zapravo „vidi“ u makefile-u, pa se ne mogu koristiti za kontrolu  komandi u vreme izvršenja.  <br>
+                </p>
+                
+                <h2 class="naslov_make-s" id="upr_n">Primer</h2>
+                <p class="tekst">
+                    Sledeći primer uslova poručuje Make-u da koristi jedan skup biblioteka ako je CC promenljiva gcc, a drugi skup biblioteka u suprotnom. Funkcioniše tako što kontroliše koja od dve linije komandi će se koristiti za pravilo. <br><br>
+                    <span class="my_code">libs_for_gcc = -lgnu			<br>	
+                    normal_libs =					<br>
+                    <br>
+                    foo: $(objects)					<br>
+                    ifeq ($(CC),gcc)				<br>
+                            $(CC) -o foo $(objects) $(libs_for_gcc)	<br>
+                    else						<br>
+                            $(CC) -o foo $(objects) $(normal_libs)<br>	
+                    endif	</span> <br>
+                    					
+                    Ovaj uslov koristi tri direktive: ifeq, else i endif.<br><br>
+                    
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Direktiva ifek započinje uslov i specificira uslov. Sadrži dva argumenta, odvojena zarezom i okružena zagradama. Zamena promenljive se vrši za oba argumenta i zatim se upoređuju. Redovi makefile-a koji slede ifeq se poštuju ako se dva argumenta poklapaju, inače se ignorišu.<br><br>
+                    
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Else direktiva uzrokuje da se sledeći redovi poštuju ako prethodni uslov nije uspeo. To znači da se druga alternativna komanda povezivanja koristi kad god se prva alternativa ne koristi. Opciono je imati else u uslovu.<br><br>
+                    
+                    <span class="b_make">&ensp;&ensp;&#x021C0</span> Endif direktiva završava uslov. Svaki uslov mora da se završi endif. Sledi bezuslovni makefile tekst. <br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="sinu_n">Sintaksa uslova</h2>
+                <p class="tekst">
+                    Sintaksa jednostavnog uslova bez else-a je sledeća:<br><br>
+                    <span class="b_make">&ensp;&ensp;conditional-directive </span><br>
+                    <span class="b_make">&ensp;&ensp;text-if-true </span><br>
+                    <span class="b_make">&ensp;&ensp;endif </span><br>
+                    Uslovi utiču na to koje linije makefile-a se koriste. Ako je uslov tačan, make čita redove text-if-true kao deo makefile-a. Ako je uslov netačan, make potpuno ignoriše te linije. <br><br>
+                    
+                    Sintaksa složenog uslova je sledeća:<br><br>
+                    <span class="b_make">&ensp;&ensp;conditional-directive </span><br>
+                    <span class="b_make">&ensp;&ensp;text-if-true </span><br>
+                    <span class="b_make">&ensp;&ensp;else </span><br>
+                    <span class="b_make">&ensp;&ensp;text-if-false </span><br>
+                    <span class="b_make">&ensp;&ensp;endif </span><br>
+                    ili<br>
+                    <span class="b_make">&ensp;&ensp;conditional-directive-one </span><br>
+                    <span class="b_make">&ensp;&ensp;text-if-one-is-true </span><br>
+                    <span class="b_make">&ensp;&ensp;else conditional-directive-two </span><br>
+                    <span class="b_make">&ensp;&ensp;text-if-two-is-true </span><br>
+                    <span class="b_make">&ensp;&ensp;else </span><br>
+                    <span class="b_make">&ensp;&ensp;text-if-one-and-two-are-false </span><br>
+                    <span class="b_make">&ensp;&ensp;endif </span><br>
+                    Jednom kada je dati uslov istinit, koristi se text-if-true i nijedna druga klauzula se ne koristi. Ako nijedan uslov nije istinit onda se koristi text-if-flase. <br><br>
+                    
+                    Dodatni razmaci su dozvoljeni i zanemareni na početku linije uslovne direktive, ali tab nije dozvoljen. (Ako red počinje tabulatorom, smatraće se delom komandi za pravilo.) Osim toga, dodatni razmaci ili tabulatori mogu biti umetnuti bez efekta bilo gde osim unutar naziva direktive ili unutar argumenta. Komentar koji počinje sa # može se pojaviti na kraju reda. <br>
+                    
+                </p>
+                
+                <h2 class="naslov_make-s" id="udir_n">Uslovne direktive</h2>
+                <p class="tekst">
+                    Postoje četiri različite direktive koje testiraju različite uslove. Date su u sledećoj tabeli:
+                    <table class="my_table tekst">
+                        <tr>
+                            <td><span class="b_make">direktiva </span></td>
+                            <td><span class="b_make">upotreba </span></td>
+                        </tr>
+                        <tr>
+                            <td>ifek (arg1, arg2) <br>
+                                ifek 'arg1' 'arg2' <br>
+                                ifek "arg1" "arg2" <br>
+                                ifek "arg1" 'arg2' <br>
+                                ifek 'arg1' "arg2"
+                                </td>
+                            <td>Proširuje sve reference promenljivih u arg1 i arg2 i upoređuje ih. Ako su identične, text-if-true je efikasan. U suprotnom, text-if-false, ako postoji, je efikasan.</td>
+                        </tr>
+                        <tr>
+                            <td>ifnek (arg1, arg2)<br>
+                                ifnek 'arg1' 'arg2'<br>
+                                ifnek "arg1" "arg2"<br>
+                                ifnek "arg1" 'arg2'<br>
+                                ifnek 'arg1' "arg2"
+                                </td>
+                            <td>Proširuje sve reference promenljivih u arg1 i arg2 i upoređuje ih. Ako su različite, text-if-true je efikasan. U suprotnom, text-if-false, ako postoji, je efikasan.</td>
+                        </tr>
+                        <tr>
+                            <td>ifdef ime-promenljive</td>
+                            <td>Forma ifdef uzima ime-promenljive kao svoj argument, a ne referencu na promenljivu. Ako vrednost te promenljive ima vrednost koja nije prazna, text-if-true je efikasan. U suprotnom, text-if-false, ako postoji, je efikasan. </td>
+                        </tr>
+                        <tr>
+                            <td>ifndef ime-promenljive</td>
+                            <td>Ako promenljiva ime-promenljive ima praznu vrednost, text-if-true je efikasan. U suprotnom, text-if-false, ako postoji, je efikasan.</td>
+                        </tr>
+                    </table>
+                </p>
+                
+
+                <h2 class="naslov_make" id="pr1_n">Primer 1</h2>
+                <p class="tekst">
+                    Neka je dat jednostavam “Hello World” C program koji se nalazi u hello.c fajlu i samo ispisuje poruku u terminalu: <br> <br>
+                    <span class="my_code">#include &lt;stdio.h&gt;		<br>	
+                    int main() {				<br>
+                    &ensp;&ensp;printf(“Hello World\n”);	<br>	
+                    &ensp;&ensp;return 0;			<br>
+                    }	</span> <br>
+                    				
+                </p>
+
+                <h2 class="naslov_make-s" id="kjedank_n">Kompilacija u jednom koraku</h2>
+                <p class="tekst">
+                    Makefile bi mogao izgledati ovako: <br><br>
+                    <span class="my_code">all : hello				<br>
+                    hello : hello.c 		<br>		
+                    &ensp;&ensp;gcc -o hello hello.c 	<br>	
+                    clean : 				<br>	
+                    &ensp;&ensp;rm hello</span> <br>
+                    			
+                    
+                    Pokretanje komande “make” bez argumenata pokreće prvo pravilo na koje se naiđe. U ovom primeru to je “all” koje kao preduslov ima “hello”. Make ne može da pronađe fajl “hello” (barem u prvom pozivu), tako da traži odgovarajuće pravilo kako bi ga kreirao. To pravilo je “hello” koje ima preduslov “hello.c”, koji postoji u direktorijumu. Pokreće se komanda “gcc -o hello hello.c”. U ovom trenutku se dobije “hello” izvršni fajl koji je preduslov za pravilo “all”, te se sada ono može pokrenuti. Budući da ispod ovog pravila ne postoji nijedna komanda, ovo pravilo ne radi ništa. Time se izvršavanje Make-a završava. <br> <br>
+                    Ukoliko ciljna datoteka u nekom pravilu postoji, komanda će se pokrenuti samo u slučaju ako je preduslov noviji od cilj. Drugim rečima, komanda će se pokrenuti samo ako je neki od preduslova menjan od poslednjeg pokretanja make komande. U suprotnom slučaju, nema smisla pokretati naredbu ponovno. Kao povrda toga, ako ponovo pokrenemo “make” komandu dobijamo sledeći ispis: <br><br>
+                    <span class="my_code">make: Nothing to be done for “all” </span> <br>
+                    
+                    Prilikom pozivanja “make” komande, moguće je specificirati cilj. Na primer, “make clean” uklanja fajl hello. Ukoliko se pokrene “make” bez cilja pozvaće se prvi cilja na koje se naiđe. U ovom primeru, “make all” je isto kao i “make”.<br><br>
+                    
+                    Ukoliko komanda ne počinje tabulatorom, u terminalu se dobija poruka: <br><br>
+                    <span class="my_code">makefile:4: *** missing separator.Stop.</span> <br>
+                    
+                    Ukoliko ne postoji makefile u trenutnom direktorijum dobija se greska: <br><br>
+                    <span class="my_code">make:*** No targets specified and no makefile found. Stop.</span> <br>
+                    
+                    
+                </p>
+
+                <h2 class="naslov_make-s" id="kil_n">Kompilacija i linkovanje</h2>
+                <p class="tekst">
+                    Malo detaljniji makefile mogao bi izgledati ovako: <br><br>
+                    <span class="my_code">all: hello 			<br>	
+                    hello: hello.o 		<br>		
+                    &ensp;&ensp;gcc -o hello hello.o <br>		
+                    hello.o: hello.c 	<br>		
+                    &ensp;&ensp;gcc -c hello.c 		<br>	
+                    clean: 				<br>	
+                    &ensp;&ensp;rm hello.o hello</span> <br>
+                    		
+                    Sada će se zasebno kompajlirati i linkovati program. Prvo pravilo na koje se nailazi je “all:hello”, i budući da nema “hello” izvršnog fajla, traži se pravilo za njegovo kreiranje. Pravilo “hello” ima preduslov “hello.o” i pošto ni taj fajl ne postoji, na sličan način se traži pravilo za njega. Pravilo za “hello.o” ima preduslov “hello.c”, koji postoji u direktorijumu. Pokreće se komanda “gcc -c hello.c”. Rekurzivno unazad, pravilo “hello” će dalje da pokrene komandu “gcc -o hello hello.o”, dok pravilo “all” ne radi zapravo ništa. U ovom će poziv “make clean” naredbe izbrisati i objektni fajl “hello.o”. <br>
+                    
+                </p>
+
+                <h2 class="naslov_make-s" id="lazcilj_n">Lažni ciljevi</h2>
+                <p class="tekst">
+                    Ukoliko je cilj fajl, biće proverena zastarelost njegovih preduslova. Međutim, lažna pravila se uvek izvršavaju. Standardna lažna pravila su “all”, “clean” i “install”. Kako bi se naznačilo da je neki cilj lažan koristi se oznaka “.PHONY” neposredno pre pravila. U ovom primeru “clean” bi mogao da bude lažni cilj: <br><br>
+                    <span class="my_code">.PHONY: all 		<br>	
+                    all: hello 			<br>
+                    hello: hello.o 		<br>	
+                    &ensp;&ensp;gcc -o hello hello.o	<br> 
+                    hello.o: hello.c 	<br>	
+                    &ensp;&ensp;gcc -c hello.c 		<br>
+                    <br>
+                    .PHONY: clean 		<br>
+                    clean: 				<br>
+                    &ensp;&ensp;rm hello.o hello</span> <br>
+                    	
+                </p>
+
+                <h2 class="naslov_make-s" id="aprom_n">Automatke promenljive</h2>
+                <p class="tekst">
+                    Možemo napraviti ekvivalentan makefile koristeći automatske promenljive: <br><br>
+                    <span class="my_code">.PHONY: all 	<br>		
+                    all: hello 		<br>	
+                    hello: hello.o 	<br>		
+                    &ensp;&ensp;gcc -o $@ $&lt; <br>		
+                    hello.o: hello.c<br> 		
+                    &ensp;&ensp;gcc -c $&lt;  	<br>	
+                    .PHONY: clean 	<br>	
+                    clean: 			<br>	
+                    &ensp;&ensp;rm hello.o hello</span> <br>
+                    	
+                </p>
+
+                <h2 class="naslov_make" id="pr2_n">Primer 2</h2>
+                <p class="tekst">
+                    Dat je jednostavan program pomoću tri fajla: <br><br>
+                    1. calculate.c <br>
+                    <span class="my_code">#include "helper.h"					<br>
+                    #include &lt;stdio.h&gt;			<br>		
+                    #include &lt;stdlib.h&gt;		<br>			
+                    #include &lt;string.h&gt;			<br>		
+                    <br>
+                    void main (int argc,char** argv) {	<br>		 
+                        &ensp;&ensp;int a = atoi(argv[1]); 				<br>
+                        &ensp;&ensp;int b = atoi(argv[2]); 				<br>
+                        &ensp;&ensp;int res = pomnozi(a,b); 			<br>
+                        &ensp;&ensp;printf("Rezultat mnozenja je: %d\n",res);	<br> 
+                    } 	</span> <br>
+                    						
+                    2. helper.h <br>
+                    <span class="my_code">#ifndef HELPER_H 					<br>
+                    #define HELPER_H 					<br>
+                    <br>
+                    extern int pomnozi(int, int); 		<br>		
+                    <br>
+                    #endif </span> <br>
+                    							
+                    3. helper.c <br>
+                    <span class="my_code">#include "helper.h" 				<br>	
+                    <br>
+                    int pomnozi(int a, int b) { 		<br>		
+                        &ensp;&ensp;return b*a; 					<br>
+                    }	</span> <br>
+                    						 
+                    
+                    U fajlu calculate.c nalazi se main funkcija koja prima parametre prilikom njenog poziva. Parametri se parsiraju u intiger brojeve a zatim se nad njima poziva funkcija pomnozi() i rezultat se ispisuje u terminalu. Funkcija ima svoju deklaraciju u “helper.h” fajlu, a svoju definiciju u “helper.c” fajlu. Potrebno je napraviti makefile koji kompajlira prethodni program u objektne fajlove a zatim ih linkuje u izvršni. Ukoliko se neki od izvornih fajlova promeni, makefile treba da rekompajlira sve fajlove na koje on utiče. Proces kompajliranja u ovom slučaju je prikazan na sledećoj slici:<br><br>
+                    <img src="img/slike_make/pr2.png" alt="pr2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Makefile bi mogao da izgleda ovako: <br><br>
+                    <span class="my_code">all: calculate 					<br>
+                    calculate: calculate.o helper.o 		<br>
+                    &ensp;&ensp;gcc -o calculate calculate.o helper.o 	<br>
+                    calculate.o: calculate.c helper.h 		<br>
+                    &ensp;&ensp;gcc -c calculate.c 			<br>
+                    helper.o: helper.c helper.h 		<br>	
+                    &ensp;&ensp;gcc -c helper.c 			<br>
+                    clean: 						<br>
+                    &ensp;&ensp;rm -f calculate *.o	</span> <br>
+                    		
+                </p>
+                
+
+                <h2 class="naslov_make" id="pr3_n">Primer 3</h2>
+                <p class="tekst">
+                    Evo jednostavnog makefile-a koji opisuje način na koji izvršna datoteka “edit”. Ona zavisi od osam objektnih datoteka koje zauzvrat zavise od osam C izvornih i tri datoteke zaglavlja.<br><br>
+
+                    Sve C datoteke uključuju “defs.h”, ali samo one koje definišu komande za uređivanje uključuju “command.h”, a samo datoteke niskog nivoa koje menjaju bafer uređivača uključuju “buffer.h”.<br><br>
+                    <span class="my_code">edit : main.o kbd.o command.o display.o \				<br>	
+                    &ensp;&ensp;insert.o search.o files.o utils.o				<br>		
+                    &ensp;&ensp;cc -o edit main.o kbd.o command.o display.o \	<br>			
+                    &ensp;&ensp;&ensp;&ensp;insert.o search.o files.o utils.o	<br>				
+                                       <br>
+                    main.o : main.c defs.h						<br>		
+                    &ensp;&ensp;cc -c main.c						<br>		
+                    kbd.o : kbd.c defs.h command.h				<br>		
+                    &ensp;&ensp;cc -c kbd.c							<br>	
+                    command.o : command.c defs.h command.h		<br>		
+                    &ensp;&ensp;cc -c command.c						<br>		
+                    display.o : display.c defs.h buffer.h		<br>				
+                    &ensp;&ensp;cc -c display.c						<br>		
+                    insert.o : insert.c defs.h buffer.h			<br>			
+                    &ensp;&ensp;cc -c insert.c						<br>		
+                    search.o : search.c defs.h buffer.h			<br>			
+                    &ensp;&ensp;cc -c search.c						<br>		
+                    files.o : files.c defs.h buffer.h command.h	<br>				
+                    &ensp;&ensp;cc -c files.c						<br>		
+                    utils.o : utils.c defs.h					<br>			
+                    &ensp;&ensp;cc -c utils.c						<br>		
+                    clean :										<br>
+                    &ensp;&ensp;rm edit main.o kbd.o command.o display.o \<br>
+                    &ensp;&ensp;insert.o search.o files.o utils.o</span> <br>
+                    
+                    
+                    
+                    Da biste koristili ovaj makefile za kreiranje izvršne datoteke pod nazivom edit otkucajte:<br><br>
+                    <span class="my_code">$ make</span> <br>
+                        
+                    Da biste koristili ovaj makefile za brisanje izvršne datoteke i svih objektnih datoteka iz direktorijuma otkucajte:<br><br>
+                    <span class="my_code">$ make clean</span> <br>
+                        
+                    
+                    Cilj “clean”-a nije datoteka, već samo ime radnje. Pošto obično ne želite da izvršite radnje u ovom pravilu, “clean” nije preduslov za bilo koje drugo pravilo. Shodno tome, Make nikada ne radi ništa sa tim osim ako to posebno ne kažete. Takođe, “clean” nema nikakve preduslove.<br><br>
+                    
+                    Make čita makefile u trenutnom direktorijumu i počinje obradom prvog pravila. U primeru, ovo pravilo je za ponovno povezivanje izmene, ali pre nego što make može u potpunosti da obradi ovo pravilo, mora da obradi pravila za datoteke od kojih zavisi uređivanje, a to su u ovom slučaju objektne datoteke. Svaki od ovih fajlova se obrađuje prema sopstvenom pravilu. Ova pravila kažu da se ažurira svaki .o fajl prevođenjem njegovog izvornog fajla. Ponovna kompilacija se mora obaviti ako je izvorna datoteka, ili bilo koja od datoteka zaglavlja nazvana kao preduslovi, novija od objektne datoteke, ili ako objektna datoteka ne postoji.<br><br>
+                    
+                    Ostala pravila se obrađuju jer se njihovi ciljevi pojavljuju kao preduslovi cilja. Ako cilj ne zavisi od nekog drugog pravila, to pravilo se ne obrađuje, osim ako ne kažete make-u da to uradi.<br><br>
+                    
+                    Morali smo da navedemo sve objektne datoteke dva puta u pravilu za uređivanje:<br><br>
+                    <span class="my_code">edit : main.o kbd.o command.o display.o \			<br>
+                    &ensp;&ensp;insert.o search.o files.o utils.o		<br>	
+                    &ensp;&ensp;cc -o edit main.o kbd.o command.o display.o \	<br>	
+                    &ensp;&ensp;insert.o search.o files.o utils.o	</span> <br>
+                    		
+                    
+                    Takvo dupliranje je sklono greškama. Ako se u sistem doda nova objektna datoteka, možemo je dodati na jednu listu i zaboraviti da je dodamo na drugu. <br><br>
+                    
+                    Možemo eliminisati rizik i pojednostaviti makefile korišćenjem promenljive objects. Na svako mesto na koje želimo da stavimo listu naziva fajlova objekata, možemo da zamenimo vrednost promenljive pisanjem $(objects):<br><br>
+                    <span class="my_code">objects = main.o kbd.o command.o display.o \	<br>
+                    &ensp;&ensp;insert.o search.o files.o utils.o</span> <br>
+                    			
+                    
+                    Evo kako izgleda kompletan jednostavan makefile kada koristite promenljivu za objektne datoteke:<br><br>
+                    <span class="my_code">objects = main.o kbd.o command.o display.o \<br>			
+                    &ensp;&ensp;insert.o search.o files.o utils.o	<br>				
+                              <br>
+                    edit : $(objects)						<br>	
+                    &ensp;&ensp;cc -o edit $(objects)			<br>			
+                    main.o : main.c defs.h					<br>		
+                    &ensp;&ensp;cc -c main.c					<br>		
+                    kbd.o : kbd.c defs.h command.h			<br>		
+                    &ensp;&ensp;cc -c kbd.c						<br>	
+                    command.o : command.c defs.h command.h	<br>		
+                    &ensp;&ensp;cc -c command.c					<br>		
+                    display.o : display.c defs.h buffer.h	<br>				
+                    &ensp;&ensp;cc -c display.c					<br>		
+                    insert.o : insert.c defs.h buffer.h		<br>			
+                    &ensp;&ensp;cc -c insert.c					<br>		
+                    search.o : search.c defs.h buffer.h		<br>			
+                    &ensp;&ensp;cc -c search.c					<br>		
+                    files.o : files.c defs.h buffer.h command.h	<br>			
+                    &ensp;&ensp;cc -c files.c			<br>				
+                    utils.o : utils.c defs.h		<br>					
+                    &ensp;&ensp;cc -c utils.c			<br>				
+                    clean :								<br>	
+                    &ensp;&ensp; rm edit $(objects)	</span> <br>
+                    					
+                </p>
+
+            </div>
+            <div style="padding-top: 40vh; padding-bottom: 30vh;">
+                <button class="make__btn" ><a href="/quiz.html">Kviz</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

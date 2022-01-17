@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDB</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html" id="navbar__logo" style="background-image: linear-gradient(to right, #300833, #8d0297);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;">GNU Alati</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="console.html" class="navbar__links" id="konzola-page">Konzola</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="bash.html" class="navbar__links" id="bash-page">Bash</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gcc.html" class="navbar__links" id="gcc-page">GCC</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="make.html" class="navbar__links" id="make-page">Make</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="gdb.html" class="navbar__links" id="gdb-page" style="
+                    background-image: linear-gradient(to right, #300833a8, #8d0297);
+                    background-size: 100%;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-text-fill-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    cursor:pointer;
+                    text-decoration: none;
+                    ">GDB</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Navigation bar Section -->
+    <div class="sidenavD">
+        <div class="sidenav_gdb">
+            <a class="gdbID" href="#gdbID" style="color: #8d02978c;"><span class="nav_h">GDB</span></a>
+
+            <a class="opis_n" href="#opis_n"><span class="nav_h">Opis GDB-a</span></a>
+            <a class="uvod1_n" href="#uvod1_n">&#x021C0 Uvod</a>
+            <a class="instalacija_n" href="#instalacija_n">&#x021C0 Instalacija</a>
+            <a class="pozivanje_n" href="#pozivanje_n">&#x021C0 Pozivanje</a>
+            <a class="izlaz_n" href="#izlaz_n">&#x021C0 Izlaz iz GDB-a</a>
+            <a class="odabir_n" href="#odabir_n">&#x021C0 Odabir fajlova</a>
+            <a class="prekid_n" href="#prekid_n">&#x021C0 Tačke prekida (eng. Breakpoints)</a>
+            <a class="komande_n" href="#komande_n">&#x021C0 GDB komande</a>
+            <a class="osnova_n" href="#osnova_n"><span class="nav_h">Osnovna upotreba GDB-a</span></a>
+            <a class="gdbro_n" href="#gdbro_n">&#x021C0 GDB i razvojna okruženja</a>
+            <a class="tui_n" href="#tui_n">&#x021C0 GDB TUI (Text User Interface)</a>
+            <a class="dtui_n" href="#dtui_n">&#x021C0 Debagovanje u TUI režimu</a>
+            <a class="emacs_n" href="#emacs_n">&#x021C0 GDB i Emacs</a>
+            <a class="pr2_n" href="#pr2_n">&#x021C0 Primer</a>
+            <a class="vpo_n" href="#vpo_n"><span class="nav_h">GDB u višeprocesnom okruženju</span></a>
+            <a class="uvod3_n" href="#uvod3_n">&#x021C0 Uvod</a>
+            <a class="debag_n" href="#debag_n">&#x021C0 Debagovanje procesa</a>
+            <a class="vdebag_n" href="#vdebag_n">&#x021C0 Višeprocesno debagovanje</a>
+            <a class="fork_n" href="#fork_n">&#x021C0 Primer-fork</a>
+            <a class="exec_n" href="#exec_n">&#x021C0 Primer-exec</a>
+            <a class="vno_n" href="#vno_n"><span class="nav_h">GDB u višenitnom okruženju</span></a>
+            <a class="uvod4_n" href="#uvod4_n">&#x021C0 Uvod</a>
+            <a class="primer2_n" href="#primer2_n">&#x021C0 Primer</a>
+
+            <a class="" href="#"><span class="nav_h"><br> <br> <br> <br> <br> <br></span></a>
+        </div>
+    </div>
+    
+    <!-- GDB section -->
+    <div class="gdb" id="gdbID">
+        <div class="gdb__container">
+            <div class="text-box">
+                <h2 class="naslov_gdb-l">GDB</h2>
+                <p class="tekst">Nekada se dešava da provedemo sate i sate gledajući u kod i pokušavajući da pronađemo grešku, odnosno razlog zbog koga se naš program ne ponaša očekivano. Za ubrzanje procesa detekcije greške koriste se specijalni programi koji se nazivaju debageri. U ovom poglavlju upoznaćemo se sa osnovnim konceptima i upotrebom GDB debagera.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gdb" style="background-image: url(img/Background-Gdb-tekst.jpg);">
+        <div class="gdb__container">
+            <div class="text-box">
+
+                <h2 class="naslov_gdb" id="opis_n">Opis GDB-a</h2>
+                <h2 class="naslov_gdb-s" id="uvod1_n">Uvod</h2>
+                <p class="tekst">
+                    Često se prilikom pisanja programa susrećemo sa greškama u kodu. Postoje tri osnovne vrste grešaka: <br> <br>
+                    &ensp;&ensp;<span class="b_gdb">●</span> greške prilikom prevođenja programa (leksičke i sintaksičke greške - interpreter ili kompajler šalje upozorenja u slučaju ovakvih grešaka), <br>
+                    &ensp;&ensp;<span class="b_gdb">●</span> greške prilikom izvršavanja programa (fatalne greške koje dovode do prekida programa u izvršavanju)<br>
+                    &ensp;&ensp;<span class="b_gdb">●</span> i logičke greške (greške koje dovode do neočekivanog ponašanja programa). <br><br>
+                    Softveri koji se koriste kako bi se greške u izvršavanju i logičke greške lakše detektovale nazivaju se debageri. Debager je program koji se koristi za testiranje i proveru rada drugih programa (ciljni programi). Glavna uloga debagera je da pokreće ciljni program pod određenim uslovima i na taj način omogući programeru da u svakom trenutku može pratiti stanje programa u toku njegovog izvršavanja npr. promene u računarskim resursima (najčešće memorijske adrese koje koristi ciljni program).<br><br>
+                    
+                    GNU debager ili GDB je originalno razvijao Richard Stallman 1986. godine kao deo njegovog GNU sistema. GDB je slobodan softver zaštićen od strane General Public License (GPL). GPL omogucava kopiranje programa, modifikovanje kopije kao i njeno distribuiranje. GDB je standardan debager za GNU operativni sistem. Prenosiv je, a takođe radi i  na mnogim sistemima sličnim Unix-u i upotrebljiv je za veliki broj programskih jezika kao što su Ada, C, C++, Objective-C, Go i drugi. Kod za GDB napisan je u C-u. Poslednja stabilna verzija ovog alata je 11.1 (u odnosu na vreme pisanja rada). Osnovne 4 funkcionalnosti koje GDB pruža kako bi se otklonile greške u izvršavanju i logičke greške u kodu:<br><br>
+                    <span class="b_gdb">1.</span> pokretanje programa uz specijalne opcije<br>
+                    <span class="b_gdb">2.</span> zaustavljanje programa na odredjenoj liniji koda<br>
+                    <span class="b_gdb">3.</span> pregled resursa koje program koristi prilikom njegovog zaustavljanja<br>
+                    <span class="b_gdb">4.</span> promena delova koda, tako da se nakon ispravljanja greške može nastaviti sa debagovanjem i otklanjanjem preostalih.<br><br>
+                    Preterano korišćenje debagera je loša navika. Umesto toga, mnogo je bolje greške otkrivati pažljivim pregledom samog koda. Ipak, u situacijama kada je upotreba debagera neizbežna, GDB je, bilo da se koristi iz komandne linije, ili iz nekog drugog okruženja (o njima će biti reči u narednim poglavljima), moćan alat za obavljanje tog zadatka.<br>
+
+                </p>
+
+                <h2 class="naslov_gdb-s" id="instalacija_n">Instalacija</h2>
+                <p class="tekst">
+                    GDB se isporučuje kao sastavni deo većine GNU/Linux distribucija. Ukoliko GDB ne postoji na sistemu, može se instalirati na koristeći neki od sledeća dva načina:<br><br>
+                    &ensp;&ensp;<span class="b_gdb">● </span>Prvi način se koristi za Debian GNU/Linux distribucije poput Ubuntu-a, Mint-a i drugih.
+                    <span class="my_code">sudo apt-get update <br>
+                    sudo apt-get install gdb</span> <br>
+                    
+                    &ensp;&ensp;<span class="b_gdb">● </span>Drugi način:<br><br>
+                    Korak 1: Preuzimanje izvornog koda. Izvorni kod svih verzija se može preuzeti na linku <a href="http://ftp.gnu.org/gnu/gdb/">http://ftp.gnu.org/gnu/gdb/</a>.<br><br>
+                    <span class="my_code">wget “http://ftp.gnu.org/gnu/gdb/gdb-7.11.tar.gz”</span> <br>
+                     
+                    Korak 2: Raspakivanje preuzete datoteke.<br><br>
+                    <span class="my_code">tar -xvzf gdb-7.11.tar.gz</span> <br>
+                    
+                    Korak 3: Provera konfiguracije i kompajliranje.<br><br>
+                    <span class="my_code">cd gdb-7.11 <br>
+                    gdb-7.11$ ./configure <br>
+                    gdb-7.11$ make</span> <br>
+                    
+                    Ovaj korak će potrajati neko vreme. Kada se završi, možete proveriti da li je GDB binarna datoteka na lokaciji gdb-7.11/gdb/gdb.<br>
+                    Korak 4: Instalacija GDB-a.<br><br>
+                    <span class="my_code">make install</span> <br>
+                    
+                    Podrazumevano instalira GDB binarne datoteke na lokaciji /usr/local/bin i biblioteke na /usr/local/lib. <br>
+                    Nakon instalacije, možete proveriti GDB verziju.<br><br>
+                    <span class="my_code">gdb --version</span> <br>
+
+                </p>
+                <h2 class="naslov_gdb-s" id="pozivanje_n">Pozivanje</h2>
+                <p class="tekst">
+                    Opcijom gdb pozivamo debager. Jednom kada se pokrene, GDB čita komande iz GDB konzole sve dok se eksplicitno ne zatraži izlaz opcijom quit ili ctrl+d (Slika 1). GDB terminal je sličan običnom terminalu, samo što naravno prepoznaje samo komande koje se odnose na debagovanje. Nije neophodno izaći iz GDB konzole da bi se izvršila neka UNIX naredba, dovoljno je koristiti komandu shell. Komandom make se može pokrenuti make, dakle ne mora se kucati komanda shell make.<br><br>
+                    <span class="my_comment"> <i>GDB terminal, baš kao i klasični terminal, podržava automatsko kompletiranje imena komande pritiskom na Tab taster, što takođe treba obavezno koristiti u cilju izbegavanja kucanja punih imena komandi.</i> </span> <br>
+                    
+
+                    Slika 1<br> <br>
+                    <img src="img/slike_gdb/pozivanje.png" alt="pozivanje" style="width:100%;max-width: 700px;"> <br> <br>
+                    GDB se moze pokretati sa raznim argumentima i opcijama u cilju podešavanja okruženja za debagovanje na samom početku. U nastavku će biti prikazane neke od mogućih opcija prilikom pokretanja debagera.<br>
+                    Najčešći način pokretanja GDB-a je sa jednim argumentom koji predstavlja ime izvršnog programa:<br><br>
+                    <span class="my_code">gdb program</span> <br>
+                                
+                    Fatalne greške u programu dovode do prekida izvršavanja programa uz odgovarajuću poruku o grešci. Nakon što se desi fatalna greška u programu operativni sistem pokreće mehanizam oporavka od greške koji najčešće rezultuje fajlom u kojem su zapisani sadržaji registara, status procesa i podaci procesa u trenutku greške. Taj fajl se može koristiti za analizu i otkrivanje uzroka greške i naziva se jezgro fajl (eng. core file/core dump file). Kao argument pored izvršnog fajla može se proslediti i jezgro fajl:<br><br>
+                    <span class="my_code">gdb program core</span> <br>
+                                
+                    Moguće je proslediti bilo kakve argumente GDB-u nakon opcije --args koja zaustavlja procesiranje narednih opcija.<br><br>
+                    <span class="my_code">gdb --args gcc -02 -c foo.c</span> <br>
+                               
+                    Prilikom pokretanja GDB-a može se videti uvodni tekst (Slika 1). Pokretanje bez prikazivanja uvodnog materijala može se izvršiti sledećom opcijom:<br><br>
+                    <span class="my_code">gdb -silent</span> <br>
+                                
+                    Nadalje, ponašanje GDB-a određuju opcije unešene u komandnoj liniji. GDB može prikazati dostupne opcije.<br>
+                    Naredba<br><br>
+                    <span class="my_code">gdb –help</span> <br>
+                                
+                    prikazuje sve dostupne opcije i ukratko ih opisuje (‘gdb -h’ je ekvivalentna naredba).<br>
+                    Sve opcije i prosleđeni argumenti izvršavaju se sekvencijalnim redom. Redosled se može promeniti korišćenjem opcije ‘-x’.<br>
+
+                </p>
+
+                <h2 class="naslov_gdb-s" id="izlaz_n">Izlaz iz GDB-a</h2>
+                <p class="tekst">
+                    Kao što je već napomenuto, izlaz iz GDB-a omogućava naredba quit ili naredba koja označava kraj fajla tj. ctrl+d. <br><br>
+                    Komanda ctrl+c se ne koristi za izlaz ali je korisno upotrebiti za prekidanje bilo koje akcije debagera. Bezbedno je koristiti ovu naredbu zato što GDB ne dozvoljava njeno izvršenje dok se ne obezbede uslovi kada je to bezbedno. Npr. česta greška u programima su beskonačne petlje koje, ukoliko dodatno u okviru same petlje imamo i curenje memorije mogu dovesti do fatalnih posledica. Jedini način zaustavljanja debagera ukoliko uđe u beskonačnu petlju je upravo upotreba naredbe ctrl+c. Nakon prekida, biće označena problematična linija, pa daljim debagovanjem liniju po liniju programer bi trebao da uoči grešku. <br>
+                </p>
+
+                <h2 class="naslov_gdb-s" id="odabir_n">Odabir fajlova</h2>
+                <p class="tekst">
+                    Prilikom pokretanja, GDB čita sve  argumente osim onih koji se odnose na izvršivi fajl i jezgro fajl. Ako GDB verzija ne podržava rad sa jezgro fajlom, što je slučaj sa velikim brojem ugrađenih uređaja, u tom slučaju će izdati upozorenje i ignorisaće drugi argument. <br> <br>
+                    Većina opcija ima duže i kraće forme tj. GDB podržava skraćen zapis opcija. Zapis se može skraćivati dokle god je opcija koju opisuje jednoznačno određena. Argumenti koji predstavljaju opciju mogu imati prefiks ‘--’ ili ‘-’. Navedimo neke primere u nastavku: <br>                    
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="b_gdb">● </span>Čitanje tabličnih simbola iz fajla:<br>
+                    &ensp;&ensp;-symbols file<br>
+                    &ensp;&ensp;-s file<br><br>
+                    <span class="b_gdb">● </span>Koristi fajl file za izvršavanje i za ispitivanje samih podataka u kombinaciji sa jezgro fajlom:<br>
+                    &ensp;&ensp;-exec file<br>
+                    &ensp;&ensp;-e file<br><br>
+                    <span class="b_gdb">● </span>Čita tabelu simbola iz fajla file i koristi je kao izvršivi fajl:<br>
+                    &ensp;&ensp;-se file<br><br>
+                    <span class="b_gdb">● </span>Koristi fajl file kao jezgro fajl:<br>
+                    &ensp;&ensp;-core file<br>
+                    &ensp;&ensp;-c file<br><br>
+                    <span class="b_gdb">● </span>Izvršava naredbe iz fajla file:<br>
+                    &ensp;&ensp;-command file<br>
+                    &ensp;&ensp;-x file<br><br>
+                    <span class="b_gdb">● </span>Izvršava jednu GDB komandu. <br>
+                    &ensp;&ensp;-eval-command command<br>
+                    &ensp;&ensp;-ex command<br><br>
+                    <span class="b_gdb">● </span>Ukoliko želimo da navedemo više komandi, dovoljno je ponoviti naredbu željeni broj puta: <br>
+                    &ensp;&ensp;gdb -ex  c1 -ex  c2 … -ex  cn ,  gde su   ci, i = 1, 2, …, n komande.<br><br>
+                    <span class="b_gdb">● </span>Dodaje putanju do direktorijuma iz koga može čitati fajlove:<br>
+                    &ensp;&ensp;-directory direktory_name<br>
+                    &ensp;&ensp;-d directory<br>
+                </p>
+
+
+                <h2 class="naslov_gdb-s" id="prekid_n">Tačke prekida (eng. Breakpoints)</h2>
+                <p class="tekst">
+                    Tačke prekida služe za označavanje broja linije, naziva funkcije ili adrese na kojoj želimo da se program zaustavi prilikom debagovanja. Izvršavanje se zaustavlja ispred linije u kojoj je postavljena prekidna tačka, tj. instrukcija koja se nalazi u toj liniji se ne izvršava. Na nekim sistemima, tačke prekida se mogu postaviti na deljene biblioteke pre početka izvršavanja. To je glavno ograničenje za HP-UX sisteme: neophodno je sačekati početak izvršavanja da bi se postavile tačke na rutinama deljene biblioteke koje nisu pozvane direktno iz programa (npr.  rutina koja je argument funkcije pthread_create koja kreira novu nit u okviru tekućeg procesa - više o nitima i procesima biće narednim poglavljima). Tačka prekida se postavlja naredbom break ili nekim njenim varijacijama koje će biti u nastavku opisane. Specijalna promenljiva debagera ‘$bpnum’ čuva broj tačaka prekida koje su poslednje dodate. Naredba show conv(convenience) prikazuje vrednosti svih specijalnih promenljivih debagera, pa samim tim i ‘$bpnum’. Naredba continue prelazi sa jedne tačke prekida na prvu sledeću. <br>
+                    <span class="my_comment"> <i>Deljene ili dinamičke biblioteke su jedna vrsta eksternih biblioteka. Prilikom pokretanja programa dinamičke biblioteke se učitavaju u memoriju računara zajedno sa programom kako bi se razrešili pozivi nekih funkcija izvršive datoteke. Dakle, linkovanje se vrši dinamički tj. u fazi izvršavanja.</i> </span> <br>
+                    
+                    Primeri postavljanja tačaka prekida:<br>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="b_gdb">● </span>break location<br><br>
+                    Postavlja tačku prekida na zadatu lokaciju, koja može biti naziv funkcije, broj linije ili adresa neke instrukcije. Postavljena tačka će zaustaviti program pre izvršenja označene linije.<br>
+                    Kada se koristi izvorni kod  i naredbi break se kao argument prosledi naziv funkcije to može dovesti do problema. Naime, neki programski jezici poput C++ pružaju podršku opterećivanju metoda tj. više funkcija može imati isti naziv ali različite parametre. Jasno je da mesto postavljanja tačke prekida u ovom slučaju nije jednoznačno određeno.<br>
+                    Takođe je moguće postaviti tačku prekida koja bi prekinula program samo ukoliko se nalazi u konkretnoj niti ili zadatku.<br><br>
+                    <span class="b_gdb">● </span>break<br><br>
+                    Kada se pozove bez argumenata, break postavlja tačku prekida na sledeću instrukciju koja će se izvršiti u tekućem stek okviru.<br>
+                    Često se za postavljanje prekidne tačke kao argumenti break komande koriste + ili – praćeni nekim brojem. U tom slučaju se prekidna tačka postavlja onoliko linija koda iza odnosno ispred tekuće pozicije u izvršavanju programa koliko iznosi dati broj.<br><br>
+                    <span class="b_gdb">● </span>break … if cond<br><br>
+                    Postavlja tačku prekida pod uslovom cond; izračunava izraz cond svaki put kada pokušava da postavi tačku prekida, i postavlja je jedino ukoliko je vrednost izraza različita od nule, odnosno ukoliko je izraz tačan. ‘…’ predstavlja neki od gore navedenih argumenata.<br><br>
+                    <span class="b_gdb">● </span>tbreak args<br><br>
+                    Postavlja tačku prekida na koju možemo samo jednom da se zaustavimo. Dakle, nakon prvog zaustavljanja na postavljenoj tački prekida dolazi do njenog brisanja.<br><br>
+                    <span class="b_gdb">● </span>hbreak args<br><br>
+                    Za postavljanje ovakve tačke prekida neophodna nam je određena podrška hardvera, što automatski ukazuje na ograničenu upotrebu ove naredbe. Glavna svrha naredbe je EPROM/ROM debagovanje gde tačka prekida može da se postavi na instrukciji bez promene same instrukcije. Može se koristiti na većini računara koji podržavaju x86 arhitekturu. Ovi računari će postaviti prepreku kada program pokuša da pristupi podatku ili adresi instrukcije koja pripada registru. Jedna od mana hardverskih tačaka prekida registara je ta što je njihov broj ograničen. Npr. na DSU (Debug Support Unit) istovremeno mogu biti postavljene samo dve tačke prekida. Ukoliko se pokuša dodavanje novih, GDB će odbiti ovaj zahtev. Takođe, moguće je i ograničavanje broja tačaka prekida na pojedinim sistemima.<br><br>
+                    <span class="my_comment"> <i>EPROM i ROM su memorije koju su dostupne samo za čitanje, čuvaju podatke i kada računar ostane bez napajanja. Sadržaj EPROM-a može biti izbrisan pri izlaganju uv-zracima</i> </span> <br>
+                    
+                    <span class="my_comment"> <i>x86 je arhitektura skupa instrukcija za računarske procesore, prvenstveno razvijana od strane Intel-a</i> </span> <br>
+                    
+                    <span class="b_gdb">● </span>rbreak regex<br><br>
+                    Postavlja tačku prekida na sve funkcije čiji naziv odgovara navedenom regularnom izrazu. Jednom kada se postave ovakve tačke prekida, tretiraju se kao one postavljene break naredbom. Mogu se obrisati, isključiti (ne brišu se, ali debager kada naiđe na njih ignoriše ih) ili im se može dodati dodatni uslov kao bilo kojoj drugoj tački prekida.<br><br>
+                    Ukoliko želimo da postavimo tačku prekida na svaku funkciju u programu, to možemo uraditi tako što kao regex prosledimo samo tačku.<br><br>
+                    <span class="my_comment"> <i>Tačka u regularnim izrazima predstavlja bilo koji karakter.</i> </span> <br>
+                    
+                </p>
+                <p class="tekst">
+                    Specijalni oblici tačaka prekida su tačke nadgledanja (eng. watchpoints) i tačke hvatanja (eng. catchpoints).<br>
+                    Tačka nadgledanja zaustavlja program kada se vrednost određenog izraza promeni. Izraz može biti vrednost promenljive, ili može uključivati jednu ili više promenljivih u kombinaciji sa nekim od operatora npr. ‘x * y’. Nekad se naziva i tačka zaustavljanja podataka. Neophodno je koristiti različite izraze za postavljanje tačaka nadgledanja. Uprkos tome, nad tačkama nadgledanja moguće je primenjivati iste operacije kao i nad tačkama prekida. Moguće ih je uključivati, isključivati, brisati itd…<br>
+                    Tačka hvatanja zaustavlja program kada se desi određeni događaj kao što je npr. izbacivanje C++ izuzetaka ili učitavanje biblioteke. Kao i kod tačaka nadgledanja, moguće je koristiti različite komande za njihovo postavljanje, ali i primenjivati operacije nad njima kao i nad bilo kojom tačkom prekida.<br>
+                    GDB pridružuje broj svakoj tački prekida, nadgledanja i hvatanja kada se kreiraju. Ti brojevi su uzastopni i numerisanje kreće od jedan. U okviru komandi za upravljanje određenom tačkom dovoljno je navesti redni broj tačke koja nas zanima. Neke GDB komande mogu operisati i sa nizom određenih tačaka. Ako želimo da operišemo sa tačkama od 5 do 10, dovoljno je kao argument navesti ‘5-10’. Komandom ‘info break’ dobijamo neke korisne informacije vezane za tačke prekida u našem programu, kao što su njihovi redni brojevi i adrese.<br>
+                </p>
+
+                <h2 class="naslov_gdb-s" id="komande_n">GDB komande</h2>
+                <p class="tekst">
+                    U nastavku navodimo neke GDB komande koje se mogu pozivati kada je GDB pozvan nad izvršnom datotekom. <br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td>break</td>
+                            <td>-kao što je već napomenuto, postavljanje tačke prekida</td>
+                        </tr>
+                        <tr>
+                            <td>clear [arg]</td>
+                            <td>-briše tačku prekida u zavisnosti od argumenta:  <br>
+                                1. ako je navedeni argument broj linije, briše se tačka prekida na toj liniji <br>
+                                2. ako je navedeni argument naziv funkcije, brišu se sve tačke prekida u okviru te funkcije
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>continue</td>
+                            <td>-nastavak izvršavanja programa do sledeće tačke prekida</td>
+                        </tr>
+                        <tr>
+                            <td>display var</td>
+                            <td>-prikazuje vrednost promenljive var svaki put kada se program zaustavi prilikom debagovanja (bilo da je u pitanju tačka prekida ili komanda ‘next’)</td>
+                        </tr>
+                        <tr>
+                            <td>frame</td>
+                            <td>-prikazuje liniju do koje se stiglo debagovanjem</td>
+                        </tr>
+                        <tr>
+                            <td>help [arg]</td>
+                            <td>-prikazuje GDB dokumentaciju <br>
+                                -opcioni argument navodimo ukoliko želimo opis konkretne komande.
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>info args/locals/catch</td>
+                            <td>-ako je argument args ispisuju se sve promenljive tekućeg stek okvira <br>
+                                -ako je argument locals ispisuju se sve lokalne promenljive tekuće funkcije <br>
+                                -ako je argument catch ispisuju se uhvaćene greške (izuzeci)
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>info registers</td>
+                            <td>-prikazuje sadržaj registara</td>
+                        </tr>
+                        <tr>
+                            <td>info threads</td>
+                            <td>-prikazuje niti koje se koriste</td>
+                        </tr>
+                        <tr>
+                            <td>kill</td>
+                            <td>-prekida program u bilo kom trenutku</td>
+                        </tr>
+                        <tr>
+                            <td>list</td>
+                            <td>-prikazuje izvorni kod</td>
+                        </tr>
+                        <tr>
+                            <td>next</td>
+                            <td>-prelazak na sledeću liniju koda </td>
+                        </tr>
+                        <tr>
+                            <td>print arg</td>
+                            <td>-ispisuje vrednost promenljve arg <br>
+                                -ukoliko prosledimo ime niza, ispisaće se adresa početka; moguće je dobiti i ispis svih elemenata niza malom modifikacijom argumenta <br> '*naziv-niza@duzina-niza' <br>
+                                -ukoliko nas zanima adresa neke promenljive ‘&naziv_prom’<br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>run</td>
+                            <td>-pokretanje debagovanja programa</td>
+                        </tr>
+                        <tr>
+                            <td>step</td>
+                            <td>-ukoliko se u tekućoj liniji poziva funkcija, komanda step ima značenje da preusmeri debagovanje na telo date funkcije <br>
+                                -ako se u tekućoj liniji ne nalazi funkcija, komanda step ima isti efekat kao i komanda next</td>
+                        </tr>
+                        <tr>
+                            <td>where</td>
+                            <td>-prikazuje tekuću liniju i naziv funkcije u kojoj se nalazimo</td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    Postoje i komande koje se mogu pozivati u GDB terminalu kao što su: help, tui, version i druge. <br>
+                </p>
+
+
+
+                <h2 class="naslov_gdb" id="osnova_n">Osnovna upotreba GDB-a</h2>
+                <h2 class="naslov_gdb-s" id="gdbro_n">GDB i razvojna okruženja</h2>
+                <p class="tekst">
+                    Kao što smo već videli GDB je konzolni alat. U nastavku će biti opisano tekstualno korisničko okruženje TUI koje olakšava proces debagovanja. Kao modifikacija tektualnih korisničkih okruženja nastaju grafička korisnička okruženja. Modifikacija u smislu jednostavnije upotrebe i vizuelizacije za samog korisnika. Trenutno najpoznatiji GUI za rad sa GDB-om je gdbgui. <br> <br>
+                    Danas je sve veća upotreba integrisanih razvojnih okruženja (eng. IDE), koja predstavljaju više od alata za debagovanje. IDE se uglavnom sastoje iz editora za pisanje izvornog koda, alata za automatizaciju i debagera. Pomenuta okruženja pružaju potpunu automatizaciju procesa debagovanja. Jedni od najpoznatijih IDE okruženja koja koriste GDB su GNU Emacs, CLion, Eclipse CDT, NetBeans, QtCreator i drugi. Iako postoje modernija okruženja za debagovanje korišćenjem GDB-a, prikazaćemo podršku koju Emacs pruža kada je u pitanju proces debagovanja. Emacs je tradicionalan editor koji se vezuje za GNU/Linux operativni sistem, što je glavni razlog navedene odluke. <br>
+                </p>
+
+                <h2 class="naslov_gdb-s" id="tui_n">GDB TUI (Text User Interface)</h2>
+                <p class="tekst">
+                    GDB tekstualni korisnički interfejs je konzola koja koristi kursor biblioteke za prikazivanje izvornog koda, asemblerskog izlaza, registara procesora i GDB komandi u različitim prozorima. TUI režim je podržan jedino na platformama gde su dostupne određene kursor biblioteke. <br>
+                    <span class="my_comment"> <i>Kursor (eng. curses) biblioteke pružaju veliki skup funkcija koje omogućavaju manipulisanje terminalom pružajući tekstualni korisnički interfejs.</i> </span> <br>
+                    TUI režim se može dobiti komandom ‘gdbtui’ ili ‘gdb -tui’. Takođe, TUI je moguće pokrenuti iz GDB terminala komandom ‘tui enable’. <br>
+                    Izlaz iz TUI režima se može postići komandom ‘quit’ ili ‘tui disable’.<br>
+                    TUI režim može prikazivati nekoliko tekstualnih prozora:<br>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    ● komandni <br> <br>
+                    Ovaj prozor je namenjen GDB komandama sa GDB terminalom i izlazom. Ulaz se unosi standardno, kucanjem odgovarajućih naredbi u prozoru.<br> <br>
+                    ● izvorni<br> <br>
+                    Ovaj prozor prikazuje izvorni kod programa. Tekuću liniju koja se izvršava i aktivne tačke prekida koje se vidi na prozoru.<br> <br>
+                    ● asemblerski<br> <br>
+                    Ovaj prozor prikazuje asemblerski izlaz programa.<br> <br>
+                    ● registarski<br> <br>
+                    Ovaj prozor prikazuje registre procesora. Registri su istaknuti kada se promeni njihova vrednost.<br> <br>
+                </p>
+                <p class="tekst">
+                    Izvorni i asemblerski prozor prikazuju trenutnu poziciju u programu isticanjem linije korišćenjem simbola '&gt;'. <br> <br>
+                    Tačke prekida se označavaju sa dva simbola. <br> <br>
+                    Prvi simbol prikazuje tip tačke prekida:  <br> <br>              
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    ● B<br> <br>
+                    Tačka prekida koja je posećena bar jednom.<br> <br>
+                    ● b<br> <br>
+                    Tačka prekida koja nijednom nije bila posećena.<br> <br>
+                    ● H<br> <br>
+                    Hardverska tačka prekida koja je posećena bar jednom.<br> <br>
+                    ● h<br> <br>
+                    Hardverska tačka prekida koja nijednom nije bila posećena.<br> <br>
+                </p>
+                <p class="tekst">
+                    Drugi simbol prikazuje da li je tačka isključena ili ne:<br> 
+                    +      	Tačka prekida je uključena.<br> 
+                    -       	Tačka prekida je isključena.<br> 
+                    Primer posećene i uključene tačke prekida:<br> 
+                    <img src="img/slike_gdb/tui1.png" alt="tui1" style="width:100%;max-width: 800px;"> <br> <br>
+                    
+                    Izvorni, asemblerski i registarski prozor se ažuriraju kada se tekuća nit promeni, kada se stek okvir promeni ili brojač programa.<br> 
+                    <span class="my_comment"> <i>PC (Program counter) tj. brojač programa je registar koji služi kao pokazivač na narednu instrukciju u programu koja treba da se izvrši.</i> </span> <br>
+                    Nije moguća istovremena vidljivost svih navedenih prozora. Komandni prozor je uvek vidljiv. Ostali se mogu grupisati na sledeće načine:<br> 
+                    <span class="b_gdb">&ensp;&ensp;● </span>samo izvorni,<br> 
+                    <span class="b_gdb">&ensp;&ensp;● </span>samo asemblerski,<br> 
+                    <span class="b_gdb">&ensp;&ensp;● </span>izvorni i asemblerski,<br> 
+                    <span class="b_gdb">&ensp;&ensp;● </span>izvorni i registarski ili<br> 
+                    <span class="b_gdb">&ensp;&ensp;● </span>asemblerski i registarski.<br> <br> 
+                    Natpis iznad komandnog prozora prikazuje sledeće informacije:<br> <br> 
+                    <span class="b_gdb">target </span>&ensp;&ensp;Prikazuje trenutni cilj GDB-a.<br> <br> 
+                    <span class="b_gdb">process</span>&ensp;&ensp;Prikazuje tekući proces ili broj niti. Kada se nijedan proces ne debaguje, na     ovom polju je upisano No process.<br> <br> 
+                    <span class="b_gdb">function</span>&ensp;&ensp;Prikazuje naziv funkcije u tekućem stek okviru. Kada se nijedan simbol ne poklapa  sa tekućim brojačem programa, prikazuje se string ‘??’.<br> <br> 
+                    <span class="b_gdb">line</span>&ensp;&ensp;Prikazuje broj linije u tekućem okviru. Kada je broj linije nepoznat, prikazuje    se string ‘??’.<br> <br> 
+                    <span class="b_gdb">pc </span>&ensp;&ensp;Prikazuje adresu brojača programa.<br> <br> 
+                    TUI pruža mogućnost korišćenja režima JednoSlovo, koji omogućava povezivanje jednog slova sa odgovarajućom GDB komandom. Neki primeri:<br> <br> 
+                    <span class="b_gdb">c</span>&ensp;&ensp;nastavi              <br> <br>                                	
+                    <span class="b_gdb">r</span>&ensp;&ensp;izvršavaj<br> <br> 
+                    <span class="b_gdb">d</span>&ensp;&ensp;brisanje tačaka prekida        <br> <br>             	
+                    <span class="b_gdb">s</span>&ensp;&ensp;idi ‘unutar’ tekuće linije<br> <br> 
+                    <span class="b_gdb">f</span>&ensp;&ensp;koja linija se sledeća izvršava  <br> <br>       	
+                    <span class="b_gdb">u</span>&ensp;&ensp;vrati se jednu liniju unazad<br> <br> 
+                    <span class="b_gdb">n</span>&ensp;&ensp;idi na sledeću liniju      <br> <br>                        
+                    <span class="b_gdb">h</span>&ensp;&ensp;pomoć<br> <br> 
+                    <span class="b_gdb">q</span>&ensp;&ensp;izadji iz TUI režima     <br> <br>        	            
+                    <span class="b_gdb">b</span>&ensp;&ensp;postavi tačku prekida<br> <br> 
+                    Neke korisne komande za upravljanje TUI prozorima: <br> <br>           
+                    <table class="my_table tekst">
+                        <tr>
+                            <td>info win</td>
+                            <td>-ispisuje nazive prozora i njihove veličine</td>
+                        </tr>
+                        <tr>
+                            <td>layout next</td>
+                            <td>-prikazuje sledeću grupu prozora (u nekom od prethodnih pasusa nabrojana su moguća grupisana)</td>
+                        </tr>
+                        <tr>
+                            <td>layout prev</td>
+                            <td>-prikazuje prethodnu grupu prozora</td>
+                        </tr>
+                        <tr>
+                            <td>layout src</td>
+                            <td>-prikazuje izvorni prozor</td>
+                        </tr>
+                        <tr>
+                            <td>layout asm</td>
+                            <td>-prikazuje asemblerski prozor</td>
+                        </tr>
+                        <tr>
+                            <td>layout regs</td>
+                            <td>-prikazuje registarski prozor</td>
+                        </tr>
+                    </table>
+                </p>
+                <p class="tekst">
+                    Spisak navedenih naredbi se može dobiti komandom help layout. <br> <br>
+                    Na sledećoj slici prikazan je TUI režim sa izvornim prozorom. <br> <br>
+                    <img src="img/slike_gdb/tui.png" alt="tui" style="width:100%;max-width: 700px;"> <br>
+
+                </p>
+
+
+                <h2 class="naslov_gdb-s" id="dtui_n">Debagovanje u TUI režimu</h2>
+                <p class="tekst">
+                    Do sada smo se upoznali sa dovoljno teorije, vreme je da vidimo kako to funkcioniše u praksi. Kao prvi primer na kome ćemo prikazati upotrebu GDB-a uzećemo sledeći C kod koji prikazuje Euklidov algoritam za računanje NZD-a dva broja: <br> <br>
+                    <img src="img/slike_gdb/debag1.png" alt="debag1" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Koraci su sledeći: <br> <br>
+                    &ensp;&ensp; 1. Neka se naš program zove euklid.c. Prevodimo program na sledeći način:<br> <br>
+                    <span class="my_code">gcc euklid.c -g -o euklid</span> <br>
+                    
+                    Dakle, neophodno je koristiti opciju -g kako bismo mogli debagovati izvršni fajl. Izvršni program opcijom -o preimenujemo u euklid (umesto a.out, što je podrazumevani naziv).<br><br>
+                    &ensp;&ensp; 2. Sledećom opcijom pozivamo TUI režim iz konzole:<br>
+                    <span class="my_code">gdbtui euklid</span> <br>
+
+                    &ensp;&ensp; 3. Trenutno, na raspolaganju imamo prazan izvorni prozor i komandni prozor u kome je neophodno kliknuti c+enter kako bismo obezbedili terminal za unos komandi.<br><br>
+                    <img src="img/slike_gdb/debag2.png" alt="debag2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    &ensp;&ensp; 4. U okviru izvornog prozora možemo videti izvorni kod fajla euklid:<br><br>
+                    <img src="img/slike_gdb/debag3.png" alt="debag3" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Postavljamo tačke prekida na linijama 18, 20 i 22:<br><br>
+
+                    <span class="my_code">b 18 <br>
+                    b 20<br>
+                    b 22</span> <br>
+                    
+                    Umesto komande b može se koristiti i break, ovde želimo da iskoristimo prednosti JednoSlovo režima.<br><br>
+
+                    &ensp;&ensp; 5. Sledećom naredbom pokrećemo debagovanje programa i zaustavljamo se na prvoj postavljenoj tački prekida tj. na liniji 18:<br><br>
+                    <span class="my_code">run</span> <br>
+                    
+                    &ensp;&ensp; 6. Sledećim naredbama ispisujemo vrednosti promenljivih a i b:<br><br>
+                    <span class="my_code">p a<br>
+                    p b</span> <br>
+
+                    Komanda p je skraćeni zapis komande print.<br>
+                    Da li je rezultat očekivan? Ovde se jasno može videti da debager <span class="b_gdb">ne</span> uzima u obzir tekuću liniju. U promenljivoj a se sasvim slučajno našla upisana jedinica.<br><br>
+                    <img src="img/slike_gdb/debag4.png" alt="debag4" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    &ensp;&ensp; 7. Na ovom mestu možemo jasno prikazati razlike između komandi next i continue. Naime, brisanjem tačke prekida na liniji 20 i upotrebom naredbe next prelazimo na sledeću liniju (na kojoj postoji napisan kod) tj. na liniju broj 20, dok bismo upotrebom naredbe continue prešli na liniju 22 tj. na sledeću tačku prekida. Naredba step bi na ovom primeru funkcionisala isto kao i next zbog toga što u tekućoj liniji nemamo poziv funkcije. <br><br>
+                    <span class="my_code">d 20<br>
+                    n</span> <br>
+                    
+                    &ensp;&ensp; 8. Sada, kada se nalazimo u liniji 20 možemo iskoristiti naredbu step kako bismo iz main-a prešli u funkciju nzd. <br><br>
+
+                    &ensp;&ensp; 9.Zanimljive naredbe kada se nalazimo u telu neke funkcije su info locals i info registers. <br><br>
+                    Nakon komande info registers na početku petlje u funkciji nzd:<br><br>
+                    <img src="img/slike_gdb/debag5.png" alt="debag5" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    &ensp;&ensp; 10. Rekli smo da su tačke nadgledanja specijalne vrste tačaka prekida. Postavljanjem tačke nadgledanja nad promenljivom a prikazaćemo njihovu funkcionalnost (još uvek se nalazimo u funkciji nzd):<br><br>
+                    <span class="my_code">watch a</span> <br> <br>
+                    <span class="my_comment"> <i>Razlog zašto i ovde nismo koristili JednoSlovo režim je to što postoji GDB komanda where, i GDB nije u mogućnosti da prepozna o kojoj naredbi je reč u slučaju kucanja slova w.</i> </span> <br>
+                    &ensp;&ensp; 11. Sledeća naredba koju izvršavamo je continue. Očekivano ponašanje bi bilo da pređemo na sledeću tačku prekida tj. na liniju 22. Međutim, kako smo nad promenljivom a postavili tačku nadgledanja i a je promenila vrednost, to je rezultat komande continue sledeći:<br><br>
+                    <img src="img/slike_gdb/debag6.png" alt="debag6" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    &ensp;&ensp; 12. Na samom kraju, kucanjem tri puta naredbe continue uspešno završavamo program pri čemu se u komandnom prozoru može videti ispisana odgovarajuća poruka kao rezultat funkcije printf. Primetimo da nakon prve naredbe continue u komandnom prozoru možemo videti obaveštenje da je tačka nadgledanja nad promenljivom a obrisana. Razlog tome je upravo to što je a u funkciji nzd bila lokalna kopija promenljive a iz main-a, pa samim tim, kada se vratimo u main ta kopija više ne postoji (jer ne postoji ni stek okvir za funkciju nzd).<br><br>
+                    Telo petlje unutar nzd funkcije se izvršava samo jednom jer se već u prvom koraku dobije ostatak jednak nuli. Ovaj primer je uzet radi jednostavnosti, ukoliko se uzmu dva broja koja nisu deljiva jedan drugim, biće potrebno više continue naredbi do završetka programa. Razlog je isti kao pre, tačka nadgledanja beleži svaku promenu promenljive a u okviru funkcije nzd.<br> <br>
+                    <span class="my_comment"> <i>Napomena: Kada se debagovanje vrši u TUI režimu može se desiti da se okruženje nekada ponaša čudno, u smislu duplira neke linije ili menja font u okviru prikazanih prozora. Ovaj problem se jednostavno rešava komandnom ctrl+l za osvežavanje izgleda prozora.</i> </span> <br>
+
+                    Debagovanje u okviru GDB terminala se izvršava analogno, s tim što je debagovanje u TUI režimu značajno olakšano zahvaljujući dodatnim prozorima jer uvek imamo uvid do koje linije se stiglo sa debagovanjem bez pozivanja dodatnih komandi.<br><br>
+
+                </p>
+
+                <h2 class="naslov_gdb-s" id="emacs_n">GDB i Emacs</h2>
+                <p class="tekst">
+                    GNU Emacs je tekst editor dizajniran za POSIX operativne sisteme i dostupan je na GNU/Linux-u, Windows-u, macOS-u…<br><br>
+                    <span class="my_comment"> <i>POSIX je zajedničko ime za porodicu povezanih standarda koje definiše Institut inženjera elektrotehnike i elektronike.</i> </span> <br>
+                    Emacs se pokreće naredbom:	<br><br>
+                    <span class="my_code">emacs</span> <br> 
+                
+                    Glavni deo Emacs prozora čini površina za unos teksta. Na samom dnu početnog prozora može se videti statusna linija tzv. minibuffer koja služi za unos dodatnih komandi.<br><br>
+                    Neke značajnije Emacs komande:
+                    &ensp;&ensp;● C - &lt;chr&gt;	ima značenje držati pritisnut taster ctrl dok se ukuca karakter &lt;chr&gt;<br> <br> 
+                    &ensp;&ensp;● M - &lt;chr&gt;	ima značenje držati pritisnut taster alt dok se ukuca karakter &lt;chr&gt;<br> <br> 
+
+                    GDB iz Emacs-a pokrećemo sledećom komandom:<br> <br> 
+                    <span class="my_code">M - x gdb</span> <br> 
+                    
+                    Nakon toga, u okviru statusne linije unosimo:<br> <br> 
+                    <span class="my_code">gdb -i=mi ./euklid</span> <br> 
+                    
+                    Verovatno će gore navedena komanda biti predložena od strane Emacs-a, ali bez ‘./’ kod naziva izvršnog fajla. Opcija ‘-i=mi’ šalje signal GDB-u da se debagovanje izvršava u integrisanom razvojnom okruženju.<br> 
+                    Sada, na ekranu možete videti GDB konzolu sličnu onoj koja se dobija pokretanjem GDB-a iz konzole.<br> <br> 
+                    <img src="img/slike_gdb/emacs1.png" alt="emacs1" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Na početku prozora Emacs-a imamo meni sa alatkama koje se mogu koristiti kako bi se olakšao postupak debagovanja programa. <br> <br> 
+                    Ukoliko postavimo tačku prekida na nekoj liniji koda i pokrenemo debagovanje komandom ‘run’, Emacs automatski otvara novi prozor u okviru kojeg prikazuje liniju izvornog koda do koje se stiglo debagovanjem. Nadalje, GDB-u možemo zadavati komande iz konzole, kao što smo navikli, ili jednostavno koristiti ugrađene alatke za debagovanje. <br> <br> 
+                    Još jedna bitna karakteristika Emacs-a je ta da se nakon završetka izvršavanja programa prikazuje prozor sa izlaznim podacima. Dakle, Emacs razdvaja prozore GDB interpretera, izvorni kod i izlaz i samim tim olakšava preglednost. Međutim, Emacs može i više od ovoga. U okviru meni alata ‘Gud -> GDB-Windows -> …’ možemo sami izabrati koji prozor želimo da se prikaže pored ova tri. Odvojeno otvaranje svakog prozora svaki put kada debagujemo program može postati zamorno. Unošenjem komande ‘M - x’ a zatim: <br> <br> 
+                    <span class="my_code">gdb-many-windows</span> <br> 
+                    
+                    unutar minibuffer-a dobićemo prikaz svih prozora. Nakon ovoga, raspored prozora je mnogo pregledniji. Primer ovakvog prikaza možemo videti na sledećoj slici:<br> <br> 
+                    <img src="img/slike_gdb/emacs2.png" alt="emacs2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Sve dosadašnje tehnike su veoma korisne ali treba se setiti svaki put komande za prikazivanje više prozora. Ukoliko želimo da nam se svaki put prilikom pokretanja debagera prikazuje svih šest prozora, izvorni kod i slično iskoristićemo promenu podrazumevanih prikaza u okviru Emacs-a. Komandom ‘M - x customize’ otvaramo Emacs podešavanja. Navođenjem opcije ‘Gdb’ u polje za pretragu, prikazuje se sledeći prozor:<br> <br> 
+                    <img src="img/slike_gdb/emacs3.png" alt="emacs3" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Listanjem ponuđenih opcija mogu se pronaći opcije za podrazumevani prikaz šest prozora i prikaz izvornog koda prilikom pokretanja GDB-a nad nekim izvršnim fajlom. Prikaz datih opcija nakon promene i čuvanja njihovih novih vrednosti je sledeći:<br> <br> 
+                    <img src="img/slike_gdb/emacs4.png" alt="emacs4" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Na samom kraju, u Emacs-u je moguće i ručno postavljanje tačaka prekida, klikom na obojeni deo ispred željene linije koda. Nakon ovoga, prikazuje se crvena tačka koja predstavlja tačku prekida.<br> 
+                    Dakle, da bismo debagovali kod u Emacs-u GDB-om skoro da nam nije potrebno znanje komandnih funkcija GDB-a zahvaljujući mnogobrojnim Emacs ugrađenim alatkama.<br> 
+
+                </p>
+
+                <h2 class="naslov_gdb-s" id="pr2_n">Primer</h2>
+                <p class="tekst">
+                    Na sledećem primeru ilustrovaćemo postupak debagovanja. Dakle, imamo kod, imamo grešku i kako da je odredimo. <br><br>
+                    <img src="img/slike_gdb/pr2-1.png" alt="pr2-1" style="width:100%;max-width: 700px;"> <br> <br>
+                    <img src="img/slike_gdb/pr2-2.png" alt="pr2-2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Kod je napisan u C++ i služi za učitavanje i ispis binarnog stabla. Prevođenjem programa ‘g++ -g stablo.cpp -o stablo’ dobijamo izvršni program stablo. Pokretanjem izvršnog programa, nakon učitavanja vrednosti u čvorovima stabla sa standardnog ulaza, dobijamo grešku segmentation fault. Postavlja se pitanje, gde je greška? Vrsta greške nam sugeriše da pristupamo memoriji koja nije naša pa možemo pretpostaviti da je u pitanju neinicijalizovani pokazivač. <br>
+                    Za debagovanje programa koristićemo Emacs okruženje.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;1. </span>Nakon pokretanja debagovanja programa klikom na opciju Run i unošenja čvorova stabla (u odgovarajući prozor za ulaz), zaustavljamo se u liniji 28, gde se izbacuje greška. Dakle, problem nastaje prilikom pokušaja ispisa levog podstabla.<br><br>
+                    <img src="img/slike_gdb/pr2-3.png" alt="pr2-3" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="b_gdb">&ensp;&ensp;2. </span>Postavimo tačku prekida negde na početku programa, npr. na liniji 46, kako bismo od početka pratili ponašanje programa. Pokretanjem debagovanja programa zaustavljamo se na početku petlje i dalje debagovanje izvodimo liniju po liniju. Kada dođemo do linije 48, iskoristićemo naredbu step (koja je ugrađena u Emacs-u) i na taj način debagovanje preusmeriti na funkciju koja dodaje čvor u stablo.<br><br>
+                    <span class="b_gdb">&ensp;&ensp;3. </span>Sada, kao i pre, debagujemo program liniju po liniju. Koristeći ugrađenu opciju za naredbu next vidimo da se preskače prvi if (jer nije ispunjen uslov) i da se prelazi na drugi. Međutim, kako je to moguće kada u stablu trenutno nemamo ništa? Očigledno da koren ima neku drugu vrednost. <br><br>
+                    <span class="b_gdb">&ensp;&ensp;4. </span>Naredbom za ispis argumenata funkcije dobijamo prikaz vrednosti svih argumenata (unosimo 1 kao prvi čvor u stablu). Dakle, vidimo da je problem u korenu. Umesto da ima vrednost NULL (što je u nekim jezicima podrazumevana vrednost ukoliko se nije izvršila inicijalizacija), koren je dobio neku sasvim slučajnu vrednost. Greška koju smo pronašli se poklapa sa našom pretpostavkom o neinicijalizovanom pokazivaču.<br><br>
+                    <img src="img/slike_gdb/pr2-4.png" alt="pr2-4" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    <span class="b_gdb">&ensp;&ensp;5. </span>Postavljanjem na početku (u liniji 43) korena na NULL i ponovnim prevođenjem i pokretanjem programa, vidimo da je problem u potpunosti rešen. <br><br>
+                    <span class="my_comment"> <i>Nakon izmene izvornog koda neophodno je izvršiti ponovno prevođenje kako bi GDB radio sa najnovijom verzijom izvršnog fajla.</i> </span> <br>
+                </p>
+
+
+
+                <h2 class="naslov_gdb" id="vpo_n">GDB u višeprocesnom okruženju</h2>
+                <h2 class="naslov_gdb-s" id="uvod3_n">Uvod</h2>
+                <p class="tekst">
+                    Upoznajmo se najpre sa nekim osnovnim pojmovima višeprocesnog okruženja. <br>
+                    Proces definišemo kao program u izvršavanju. Svaki proces ima svoj ID (PID - Process ID) - ceo broj koji je jedinstven za svaki proces na sistemu.<br><br>
+                    <span class="my_comment"> <i>Više informacija i detaljniji opisi koncepata mogu se naći u knjizi The Linux Programming Interface.</i> </span> <br>
+                    Signal je obaveštenje koje se šalje procesu kao indikator nekog događaja. Takođe, signali se mogu koristiti za komunikaciju između različitih procesa tj. jedan proces može poslati signal drugom procesu.<br><br>
+                    Višeprocesno okruženje se može odnositi na više procesa koji se izvršavaju na jednom procesoru ili na više procesora. Ubuduće, pod pojmom višeprocesno okruženje podrazumevamo izvršavanje više procesa na jednom procesoru. U ovom slučaju programi planeri raspoređuju koji proces će se u kom trenutku izvršavati na procesoru.<br><br>
+                    U nastavku navodimo sistemske pozive koji će nam biti korisni u daljem radu:<br><br>
+                    <span class="my_comment"> <i> Sistemski pozivi su skupovi funkcija koji predstavljaju interfejs ka operativnom sistemu. Npr. da bi aplikativni program pristupio hardveru (štampaču itd.) neophodno je koristiti odgovarajući sistemski poziv.</i> </span> <br>
+                </p>
+                <p class="tekst" style="padding-left: 40px;">
+                    <span class="b_gdb">● fork</span> - je sistemski poziv koji kreira novi proces dupliranjem tekućeg. Novi proces se naziva dete proces, dok se tekući proces naziva roditeljski. Nakon kreiranja dete procesa, oba procesa izvršavaju instrukcije nakon fork poziva (osim ukoliko se ne postave uslovne naredbe koje će ograditi deo koda koji izvršava dete proces). Dete proces koristi isti brojač programa, iste registre procesora i fajlove kao i roditeljski proces. Fork se poziva bez argumenata i kao povratnu vrednost vraća ceo broj. Ako je povratna vrednost:<br><br>
+                    <span class="b_gdb">&ensp;&ensp;1. </span>negativan ceo broj - kreiranje dete procesa nije uspelo.<br>
+                    <span class="b_gdb">&ensp;&ensp;2. </span>nula - nalazimo se u dete procesu.<br>
+                    <span class="b_gdb">&ensp;&ensp;3. </span>pozitivan ceo broj - nalazimo se u roditeljskom procesu. Povratna vrednost u ovom slučaju predstavlja ID dete procesa.<br>
+                    <span class="b_gdb">● exec</span> - predstavlja funkcionalnost operativnog sistema da pokreće izvršni fajl u kontekstu već postojećeg procesa, zamenjujući prethodnu izvršnu datoteku. POSIX standard deklariše exec funkcije u okviru zaglavlja unistd.h u programskog jeziku C. Postoji veliki broj funkcija iz exec familije, neke od njih navodimo u nastavku:<br><br>
+                    <span class="b_gdb">&ensp;&ensp;1. </span>execvp, execv - kreira se dete proces koje ne mora izvršavati isti program kao i roditeljski proces. Exec familija funkcija omogućava izvršavanje bilo kog programa, uključujući binarne izvršne datoteke, shell skriptove i slično. Deklaracije funkcija su sledeće:<br><br>
+                    <span class="my_code">int execvp (const char *file, char *const argv[]);<br>
+                    int execv (const char *path, char *const argv[]);</span> <br>
+                    
+                    gde parametar file/path pokazuje na naziv fajla/putanju fajla koji treba da se izvršava, a parametar argv predstavlja niz opcija sa kojima pozivamo dati fajl i obavezno se mora završiti NULL pokazivačem.<br>
+                    <span class="b_gdb">&ensp;&ensp;2. </span>execlp, execl - koriste se u iste svrhe pri čemu su potpisi poziva nešto drugačiji:<br><br>
+                    <span class="my_code">int execlp (const char *file, const char *arg,.../* (char  *) NULL */);<br><br>
+                    int execl (const char *path, const char *arg,.../* (char  *) NULL */);</span> <br>
+                    
+                    gde parametar file/path pokazuje na naziv fajla/putanju fajla koji treba da se izvršava, a opcioni parametri predstavljaju opcije sa kojima pozivamo dati fajl. Na kraju svih opcija navodi se kastovani NULL pokazivač.<br>
+                    Povratna vrednost postoji ukoliko je došlo do greške, i u tom slučaju funkcije vraćaju     -1. Nastavak ‘p’ (execvp, execlp) označava da u slučaju da naziv fajla ne sadrži ‘/’ pretražuje se Putanja promenljiva, u suprotnom izvršava se fajl na zadatoj putanji i Putanja promenljiva se ignoriše.  Nastavak ‘l’ (execlp, execl) označava da se opcije odnosno argumenti željenog procesa navode jedan po jedan, kao lista. Nastavak ‘v’ (execvp, execv) označava da se opcije odnosno argumenti željenog procesa smeštaju u niz i na taj način se prosleđuju.<br> <br>
+                    <span class="my_comment"> <i>Putanja promenljiva (eng. PATH variable) sadrži niz direktorijuma koji su razdvojeni ‘:’ i sadrže neke izvršne datoteke.</i> </span> <br>
+                </p>
+
+                <h2 class="naslov_gdb-s" id="debag_n">Debagovanje procesa</h2>
+                <p class="tekst">
+                    Debagovanje procesa čiji ID je poznat može se pokrenuti komandom: <br><br>
+                    <span class="my_code">gdb process_ID</span> <br> <br>
+                    <span class="my_comment"> <i>Ako drugi argument počinje brojem, GDB će prvo pokušati da mu pridruži proces, ukoliko ne uspe, pokušava da ga otvori kao jezgro fajl. Ako postoji jezgro fajl čije ime počinje cifrom, sprečavanje GDB-a da ga tretira kao PID može se postići dodatkom ‘./’, npr. ‘./12345’</i> </span> <br>
+                    Međutim, postavlja se pitanje šta ukoliko je gdb već pozvan ili program već pokrenut.<br>
+                    GDB omogućava debagovanje već pokrenutih programa. Komanda <br><br>
+                    <span class="my_code">attach process_id</span> <br>
+                    
+                    debaguje program koji je pokrenut van GDB-a. Komanda kao argument dobija ID procesa. Najjednostavniji način za dobijanje ID procesa na Unix sistemima je korišćenjem funkcije ps, ili jobs -l shell komande. Za upotrebu attach komande neophodno je da program bude pokrenut u okruženju koje podržava procese. Takođe, potrebno je imati dozvolu za slanje signala procesu.<br>
+                    Prilikom korišćenja attach komande, debager pronalazi traženi proces tako što prvo pretražuje tekući direktorijum a zatim fajlove izvorne putanje. Takođe, moguće je koristiti komandu file za učitavanje programa.<br> <br>
+                    <span class="my_comment"> <i>Ukoliko se traženi fajl ne nalazi u tekućem direktorijumu GDB pretražuje listu direktorijuma koji se jednim imenom nazivaju izvorna putanja.</i> </span> <br>
+                    Nakon povezivanja sa procesom GDB ga zaustavlja. Nadalje, nad datim procesom moguće je pozivati sve komande GDB-a kao i nad programom čije je debagovanje pokrenuto komandom run. Komandom continue omogućavamo da program nastavi svoje izvršavanje.<br>
+                    Ukoliko izvršen program ne želimo više debagovati, to možemo postići komandom detach. Na ovaj način oslobađamo proces tj. GDB i proces nastavljaju da funkcionišu nezavisno. Kada je GDB povezan sa procesom, izlaz iz GDB-a će dovesti do prekida veze tj. komande detach. Ukoliko smo proces pokrenuli komandom run, izlazom iz GDB-a uništavamo dati proces.<br><br>
+                </p>
+
+                <h2 class="naslov_gdb-s" id="vdebag_n">Višeprocesno debagovanje</h2>
+                <p class="tekst">
+                    Na većini sistema, GDB ne pruža specijalnu podršku za debagovanje programa koji su kreirani kao dodatni procesi korišćenjem sistemskog poziva fork. Nakon sistemskog poziva fork, GDB će nastaviti da debaguje roditeljski proces dok će se dete proces izvršiti nesmetano. Ukoliko se postavi tačka prekida u delu koda koji izvršava dete proces, dete proces će dobiti SIGTRAP signal koji će prekinuti izvršavanje procesa, osim u slučaju da dete proces uhvati signal. <br><br>
+                    Međutim, ipak postoji način za debagovanje dete procesa. Pozivom funkcije sleep u kodu koji dete proces izvršava nakon poziva fork. Možda je korisno pozivati funkciju sleep ukoliko neka promenljiva ima određenu vrednost ili koristiti neki drugi indikator u slučaju da ne želimo debagovanje dete procesa da bismo izbegli nepotrebno kašnjenje (prouzrokovano pozivom sleep). Dok dete proces “spava”, koristeći ps program možemo dobiti njegov ID. Zatim pozivamo GDB (novi poziv GDB-a ukoliko debagujemo i roditeljski proces) koji će pratiti dete proces (debagovanje već pokrenutog programa). Nadalje, moguće je debagovanje dete procesa kao i bilo kojeg drugog programa.<br><br>
+                    Na HP-UX (od verzije 11 i više) sistemima, GDB pruža podršku za debagovanje programa koji su kreirani kao dodatni procesi korišćenjem fork-a ili exec-a. Nažalost, GDB u jednom trenutku može pratiti samo jedan proces.<br><br>
+                    Podrazumevano, kada program pozove fork, GDB će nastaviti sa debagovanjem roditeljskog procesa i dete proces se nesmetano izvršava. Da bismo pratili debagovanje dete procesa umesto roditelja, neophodno je koristiti komandu:<br><br>
+                    <span class="my_code">set follow-fork-mode mode</span> <br>
+                    
+                    mode može biti:    <br><br>
+                    <span class="b_gdb">● </span>parent - u tom slučaju roditeljski proces se debaguje nakon fork-a (podrazumevano ponašanje)<br><br>
+                    <span class="b_gdb">● </span>child - u tom slučaju novi proces se debaguje nakon fork-a, roditeljski se nesmetano izvršava<br><br>
+                    <span class="b_gdb">● </span>ask - u tom slučaju debager postavlja pitanje koju od prethodne dve opcije želimo da izaberemo<br><br>
+                    Takođe, korisna komanda je:<br><br>
+                    <span class="my_code">show follow-fork-mode</span> <br>
+                    
+                    koja ispisuje naziv procesa koji se debaguje (roditelj ili dete).<br>
+                    Kao što je već rečeno, funkcije iz familije exec kreiraju novi proces na osnovu prosleđenih argumenata. Debagovanje novog procesa je moguće i može se postići navođenjem sledeće komande:<br><br>
+                    <span class="my_code">set follow-exec-mode new</span> <br>
+                    
+                    Ukoliko ipak želimo debagovanje tekućeg procesa dovoljno je argument new zameniti argumentom same.<br><br>
+                    Takođe, korisna komanda je:<br><br>
+                    <span class="my_code">show follow-exec-mode</span> <br>
+                    
+                    koja ispisuje naziv procesa koji se debaguje (novi ili stari).<br><br>
+
+                </p>
+
+                <h2 class="naslov_gdb-s" id="fork_n">Primer-fork</h2>
+                <p class="tekst">
+                    Na sledećem primeru ilustrujmo debagovanje u višeprocesnom okruženju koristeći sistemski poziv fork. <br><br>
+                    <img src="img/slike_gdb/pfork1.png" alt="pfork1" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_gdb/pfork2.png" alt="pfork2" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_gdb/pfork3.png" alt="pfork3" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Kod kreira dete proces koje treba da ispiše rastuće sortiran niz koristeći algoritam za brzo sortiranje. Kako znamo da svaki proces ima svoj memorijski prostor i da je niz u dete procesu kopija niza iz roditeljskog procesa, to će roditelj očekivano ispisati niz u prvobitnom obliku (a ne sortiranom). Pored toga, kod ispisuje i PID odgovarajućeg procesa i njegovog roditelja/deteta. Za unos: 5 4 5 1 3 2 očekivani izlaz iz dete procesa je 1 2 3 4 5 a iz roditeljskog 4 5 1 3 2 (prva petica označava broj elemenata niza). Međutim, izlaz je sledeći (naziv programa je fork.c):<br><br>
+                    <img src="img/slike_gdb/pfork4.png" alt="pfork4" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Dakle, očigledno ulazimo u dete proces ali iz nekog razloga ne dobijamo ispis sortiranog niza, zapravo, ne dobijamo ispis niza uopšte. Očigledno da negde postoji problem. Ovoga puta nemamo segmentation fault pa ne možemo tek tako pretpostaviti u čemu je greška. Ovo je idealna prilika za korišćenje debagera. <br>
+                    Kao i pre, debagovanje ćemo prikazati u Emacs okruženju.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;1. </span>Kako roditeljski proces radi sve kako treba, pretpostavljamo da je greška negde u dete procesu. U vezi sa tim, preusmeravamo debagovanje na dete proces komandom:<br><br>
+                    <span class="my_code">set follow-fork-mode child</span> <br> 
+                    
+                    Znamo da nakon što smo preusmerili debagovanje, kod koji izvršava dete proces možemo debagovati kao i bilo koji drugi program.<br> <br>
+                    <span class="b_gdb">&ensp;&ensp;2. </span>Najbolje bi bilo postaviti tačku prekida na početku dete procesa. Kako se linije 52 i 53 izvršavaju to je najbolje tačku prekida postaviti na liniji 54. <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;3. </span>Pokretanjem debagovanja programa zaustavljamo se na liniji 54 i prozori imaju sledeći prikaz:<br><br>
+                    <img src="img/slike_gdb/pfork5.png" alt="pfork5" style="width:100%;max-width: 700px;"> <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;4. </span>Očigledno da je preostali deo koji dete izvršava u if bloku potpuno u redu, dakle, ima smisla iskoristiti naredbu step kako bismo proverili šta se dešava u funkciji za sortiranje.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;5. </span>Nakon što smo iskoristili ugrađenu step line komandu otvara se novi stek okvir za funkciju sortiraj. U sklopu prozora koji prikazuje stek okvire, možemo pratiti trenutno aktivne stek okvire, a redni broj 0 označava poslednje otvoreni stek okvir. <br>
+                    Prozor vezan za lokalne promenljive nam mnogo olakšava posao. Moguće je pratiti vrednosti lokalnih promenljivih a da pritom ne moramo pozivati komandu info locals. <br>
+                    Na početku funkcije sortiraj bilo bi dobro proveriti vrednosti svih argumenata. Dakle, sledeća komanda koju pozivamo je: <br><br>
+                    <span class="my_comment"> <i>Stek okviri su numerisani u opadajućem poretku u odnosu na redosled otvaranja.</i> </span> <br>
+                    <img src="img/slike_gdb/pfork6.png" alt="pfork6" style="width:100%;max-width: 700px;"> <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;6. </span>Dalje debagovanje izvodimo liniju po liniju. Petlja je prilično jednostavna, kao i funkcija swap, dakle, na njima se ne moramo zadržavati.<br><br>
+                    Nakon što smo izašli iz petlje vidimo (iz prozora za lokalne promenljive) da je pozicija pivota 3. Kako smo na početku za pivot izabrali prvi element odnosno 4, njegova pozicija u sortiranom nizu zaista jeste 3.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;7. </span>Sada, kada se nalazimo na liniji 36, pozivamo step ugrađenu komandu, da vidimo šta se dešava sa ovim pozivom. Želimo da sortiramo sve elemente koji se nalaze levo od pivota i vidimo da su to oni koji imaju pozicije od 0 do 2, dakle i dalje je sve u redu.<br><br>
+                    <img src="img/slike_gdb/pfork7.png" alt="pfork7" style="width:100%;max-width: 700px;"> <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;8. </span>Izlaskom iz petlje dobijamo da je pozicija pivota 1. Kako je za pivota izabran prvi element levo od prethodnog pivota tj. broj 2 (dobijen tako što je 4 u prethodnom pozivu došla na svoje mesto), to je njegova pozicija u sortiranom nizu zaista 1.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;9. </span>Kako smo u prethodnom pozivu ušli u prvi rekurzivni poziv i videli da sve funkcioniše kako treba, hajde ovoga puta da uđemo u drugi rekurzivni poziv da vidimo šta se u tom slučaju dešava. <br><br>
+                    <img src="img/slike_gdb/pfork8.png" alt="pfork8" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Očigledno da je neophodno sortirati niz od dva elementa, tj. dovoljno je odrediti koji      je od njih veći. Nakon izlaska iz petlje u okviru prozora za lokalne promenljive vidimo da je pozicija pivota 1 kao i u prethodnom pozivu.<br><br>
+                    <img src="img/slike_gdb/pfork9.png" alt="pfork9" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Sada, možemo primetiti gde se potencijalno nalazi problem. Naime, svaki put kada pozivamo drugi rekurzivni poziv za sortiranje uključujemo poziciju pivota. Kako je pozicija pivota jedinstvena, to će u svim narednim pozivima prvi element niza koji se sortira (tj. pivot) biti postavljan na svoju poziciju (na koju je već postavljen u prethodnom pozivu). Dakle, imamo problem beskonačne rekurzije. <br>
+                    Kako da rešimo navedeni problem? Umesto da u drugom rekurzivnom pozivu uključujemo pivot, poziv će biti oblika sortiraj(a, pivot_poz+1, d).<br>
+                    Ponovnim prevođenjem i pokretanjem programa vidimo da sve funkcioniše kako treba i da smo dobili očekivani ispis. <br><br>
+                    <img src="img/slike_gdb/pfork10.png" alt="pfork10" style="width:100%;max-width: 700px;"> <br>
+
+                </p>
+
+                <h2 class="naslov_gdb-s" id="exec_n">Primer-exec</h2>
+                <p class="tekst">
+                    Na sledećem primeru ilustrujmo debagovanje u višeprocesnom okruženju koristeći sistemski poziv exec, konkretno, funkciju execlp čija funkcionalnost je opisana u uvodnom delu. <br><br>
+                    <img src="img/slike_gdb/pexec1.png" alt="pexec1" style="width:100%;max-width: 700px;"> <br> 
+                    <img src="img/slike_gdb/pexec2.png" alt="pexec2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Neka je naziv prvog programa exec.c a drugog program.c. Prvi program poziva drugi program korišćenjem poziva exec. Drugi program učitava imena dok se ne unese reč ‘kraj’ i ispisuje ih u onom redosledu u kom su i uneta. <br><br>
+                    Šta se dešava nakon prevođenja i pokretanja programa?<br><br>
+                    <img src="img/slike_gdb/pexec3.png" alt="pexec3" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Dakle, nemamo očekivano ponašanje programa. Umesto da se učitavanje imena zaustavi prilikom unosa reči ‘kraj’, nastavlja se. Mogući problemi su da program ne učitava imena kako treba ili da se poređenje ne izvršava kako treba. Iskoristićemo mehanizam debagovanja kako bismo odredili u čemu je zapravo problem. Kao i pre, postupak ćemo prikazati korišćenjem Emacs okruženja.<br><br>
+                    <span class="b_gdb">&ensp;&ensp;1. </span>Unesemo komandu za debagovanje procesa dobijenog korišćenjem funkcija iz familije exec:<br><br>
+                    <span class="my_code">set follow-exec-mode new</span> <br>
+                    
+                    <span class="b_gdb">&ensp;&ensp;2. </span>Postavimo tačku prekida na funkciju main:<br><br>
+                    <span class="my_code">break main</span> <br>
+
+                    Ova naredba je <span class="b_gdb">važna</span> . Ukoliko dodajemo tačke prekida po proizvoljnim linijama (koje ne uključuju liniju potpisa main funkcije) prilikom poziva execlp, nećemo biti u mogućnosti da postavljamo tačke prekida u novom procesu. Kako su tačke prekida jedan od ključnih pojmova kada je u pitanju debagovanje, njihovo nepostojanje nema smisla za postupak debagovanja. <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;3. </span>Pokrećemo program ugrađenom opcijom ‘Run’. Vidimo da se debagovanje zaustavilo na potpisu funkcije main, što je i očekivano zbog postavljanja tačke prekida. <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;4. </span>Komandom ‘Continue’ prikazuje se izvorni kod programa koji pokrećemo sistemskim pozivom exec i debagovanje se zaustavlja na potpisu main-a.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;5. </span>Sada, novi program debagujemo liniju po liniju. Unesimo prvo ime i vidimo šta se dešava sa promenljivom ime.<br><br>
+                    <img src="img/slike_gdb/pexec4.png" alt="pexec4" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Kao prvo ime unosimo ‘Ana’. Vidimo da je promenljiva učitana kako treba. Nakon imena, dodaje se terminalna nula, a nakon toga idu neki karakteri koji nisu bitni (koristimo statički alocirane nizove karaktera pa se preostala mesta popunjavaju karakterima koji nam ništa ne znače). <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;6. </span>Ako nastavimo sa debagovanjem liniju po liniju i unošenjem imena primetićemo da se učitavanje imena korektno izvršava. Dakle, naš problem je očigledno poređenje.<br><br>
+                    Kako bismo prevazišli problem, umesto operatora ‘!=’ koristimo C ugrađenu funkciju iz zaglavlja string.h koja služi za poređenje stringova.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;7. </span>Ponovnim prevođenjem i pokretanjem programa vidimo da sve funkcioniše kako treba i da smo dobili očekivani ispis.<br><br>
+                    <img src="img/slike_gdb/pexec5.png" alt="pexec5" style="width:100%;max-width: 700px;"> <br> <br>
+
+                </p>
+
+
+                <h2 class="naslov_gdb" id="vno_n">GDB u višenitnom okruženju</h2>
+                <h2 class="naslov_gdb-s" id="uvod4_n">Uvod</h2>
+                <p class="tekst">
+                    Osnovne jedinice za izvršavanje u okviru procesa nazivaju se niti (eng. threads). Niti su delovi jednog procesa i izvršavaju se koristeći resurse datog procesa. Pored resursa procesa kojem pripadaju, niti poseduju i sopstvene resurse i to: registre, brojač programa i stek. Često se nazivaju i lakim procesima. Takođe, kao i procesi svaka nit ima identifikator ID (TID - Thread ID).<br><br>
+                    Na nekim operativnim sistemima, poput GNU/Linux-a i Solaris-a, jedan program može imati više niti u izvršavanju. <br><br>
+                    GDB pruža podršku za debagovanje višenitnih pograma. Pogodnosti koje pruža su sledeće:<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> automatsko obaveštenje prilikom pojavljivanja nove niti<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> ‘thread thread_id’ komanda za prebacivanje sa jedne niti na drugu<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> ‘info threads’ kao što je već napomenuto, prikazuje identifikatore trenutno poznatih niti<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> ‘thread apply [thread-id-list | all] args’ komanda koja primenjuje args nad prosleđenom listom niti<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> postavljanje tačaka prekida u okviru pojedinačnih niti<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> ‘set print thread-events’ kontroliše ispisivanje poruka pri pokretanju i zavšetku izvršavanja niti<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> ‘set libthread-db-search-path path’ dopušta korisniku da izabere koju libthread_db želi da koristi ukoliko podrazumevana biblioteka nije kompatibilna sa programom<br><br>
+                    Pogodnosti koje GDB pruža kada je u pitanju višenitno debagovanje omogućavaju posmatranje svih niti u toku izvršavanja programa - ali kada GDB preuzme kontrolu, moguće je obavljati debagovanje samo jedne niti. Ova nit naziva se trenutna nit. Komande debagovanja prikazuju informacije programa iz ugla trenutne niti. <br><br>
+                    Kada god GDB prepozna novu nit u programu, prikazuje sistemski identifikator niti sa porukom u obliku ‘[New systag]’, gde je systag identifikator niti koji se razlikuje od sistema do stistema. Npr. na GNU/Linux-u kada GDB prepozna novu nit, može se videti poruka:<br><br>
+                    <span class="my_comment"> <i>libthread_db je biblioteka koja pruža podršku za praćenje i rad sa nitima, uglavnom se koristi u višenitnim programima.</i> </span> <br>
+                    [New Thread 0x41a01234 (LWP 25582)]<br><br>
+                    <span class="my_comment"> <i>Skraćenica LWP - Light-Weight Process.</i> </span> <br>
+
+                    Za svrhe debagovanja, GDB pridružuje sopstvene brojeve nitima - jedan ceo broj ID kao što je već napomenuto. ID je jedinstven za niti u istom inferior-u, ali može biti isti za niti koje se nalaze u različitim inferior-ima.<br><br>
+                    <span class="my_comment"> <i>GDB stanju programa koji se izvršava pridružuje objekat koji se naziva inferior.</i> </span> <br>
+                    Kada god se debagovanje programa zaustavi iz nekog razloga, zaustavlja se izvršavanje svih niti, ne samo tekuće. Ovakvo ponašanje omogućava ispitivanje celokupnog programa, uključujući i prelaz sa jedne niti na drugu, bez brige da će doći do problema u programu.<br><br>
+                    Nekada će se desiti da se program zaustavi u jednoj niti a nakon naredbe continue ili jednostavno step u drugoj niti. Ovo se dešava kada god neka druga nit naleti na tačku prekida, signal ili izuzetak pre nego što je prethodna nit završila svoje izvršavanje.<br><br>
+
+                    Komandom ‘info threads’ GDB prikazuje sve niti koje su trenutno pokrenute u programu. Pored toga, za svaku nit se prikazuju:<br><br>
+                    <span class="b_gdb">&ensp;&ensp;1. </span>broj niti <br>
+                    <span class="b_gdb">&ensp;&ensp;2. </span>sistemski identifikator niti (systag)<br>
+                    <span class="b_gdb">&ensp;&ensp;3. </span>rezime stek okvira niti<br>
+                    Karakter ‘*’ na levoj strani označava nit koja se trenutno izvršava. <br><br>
+                    <img src="img/slike_gdb/uvod4-1.png" alt="primer4-1" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Komandom ‘thread thread_id’ postavljamo nit sa prosleđenim thread_id-jem kao trenutnu. Nakon komande, GDB prikazuje identifikator postavljene niti kao i rezime stek okvira niti:<br><br>
+                    <img src="img/slike_gdb/uvod4-2.png" alt="primer4-2" style="width:100%;max-width: 700px;"> <br> <br>
+
+                    Komanda ‘thread apply [thread-id-list | all ]’ omogućava primenu navedene komande na jednu ili više niti. Moguće je proslediti listu ID-jeva niti ili iskoristiti argument all koji će navedenu komandu primeniti nad svakom niti u programu. Takođe, možemo birati redosled kojim želimo da se komanda primenjuje nad nitima, uzlazno ili silazno. Npr. ‘thread apply all command’ primenjuje komandu na nitima od poslednje do prve, dok ‘thread apply all -ascending command’ primenjuje u rastućem poretku. <br><br>
+                    Argumenti args koji se navode na samom kraju određuju izlaz i način obrade greške koja je nastala primenom prosleđene komande nad određenom niti. Argumenti moraju početi karakterom ‘-’ nakon koji sledi jedno od slova ‘q’, ‘c’ ili ‘s’.<br><br>
+                    Podrazumevano, GDB prikazuje neke informacije vezane za konkretnu nit pre izlaza iz prosleđene komande i pre greške ukoliko je prouzrokovana navedenom komandom. Za podešavanje načina prikaza ovih informacija mogu se koristiti sledeći argumenti:<br><br>
+
+                    <table class="my_table tekst">
+                        <tr>
+                            <td> &minus;c</td>
+                            <td>argument predstavlja skraćen zapis komande ‘continue’, koja prikazuje sve greške izazvane prosleđenom naredbom, a nakon toka nastavlja sa izvršavanjem naredbe nad preostalim prosleđenim nitima</td>
+                        </tr>
+                        <tr>
+                            <td>&minus;s</td>
+                            <td>argument predstavlja skraćen zapis komande ‘silent’, koja ukoliko postoji neka greška, jednostavno je ignoriše. Dakle, izvršavanje se nastavlja, ali se informacije vezane za izlaz i greške ne ispisuju</td>
+                        </tr>
+                        <tr>
+                            <td>&minus;q</td>
+                            <td>argument predstavlja skraćen zapis komande ‘quiet’ koja onemogućava ispis informacija vezanih za niti</td>
+                        </tr>
+                    </table>
+                </p>    
+                <p class="tekst">
+                    Napomena: Argumenti -c i -s se ne mogu navoditi istovremeno.<br><br>
+                    Postoje i neke skraćene verzije komande za primenjivanje nad nitima i to su:<br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> taas [option] command<br><br>
+                    Skraćenica za thread apply all -s [option] command. <br><br>
+                    <span class="b_gdb">&ensp;&ensp;● </span> tfaas [option] command<br><br>
+                    Skaćenica za thread apply all -s -- frame apply all -s [option] command. Primenjuje komandu na stekove svih niti, zanemarujući greške i prazne izlaze. Primetimo da je argument -s naveden dva puta: prvo pojavljivanje ukazuje na to da se prikazuju informacije samo za one niti čiji stekovi imaju neki ispis, dok se drugo pojavljivanje prikazuju informacije samo za one niti nad kojim aje upešno primenjena prosleđena komanda.<br><br>
+                    Može se koristiti u slučajevima da želimo da ispišemo vrednost lokalne promenljive ili argumente funkcije a da nam pritom ne znamo nit u kojoj se promenljiva odnosno argumenti nalaze.<br><br>
+
+                    Komanda ‘thread name [name]’ dodeljuje ime tekućoj niti. Ukoliko nema prosleđenih argumenata, uklanja se ime trenutne niti. Naziv niti se može videti komandom ‘info threads’.<br><br>
+                    Na nekim sistemima, poput GNU/Linux-a, GDB je u mogućnosti da prikaže naziv niti koji određuje sam operativni sistem. Na ovakvim sistemima, naziv dobijen komandom ‘thread name’ će imati prednost u odnosu na sistemski naziv niti. Uklanjanje naziva omogućava GDB-u da ponovo prikazuje naziv određen sistemom.<br><br>
+
+                    Komanda ‘thread find [regexp]’ pronalazi niti čiji ID ili sistemski identifikator odgovara prosleđenom regularnom izrazu. <br><br>
+                </p>
+
+                <h2 class="naslov_gdb-s" id="primer2_n">Primer</h2>
+                <p class="tekst">
+                    Na sledećem primeru ilustrujmo debagovanje u višenitnom okruženju. Nadalje pretpostavljamo da je korisnik upoznat sa bibliotekom pthread.h koja pruža podršku za rad sa nitima kada je u pitanju programski jezik C.<br><br>
+                    <img src="img/slike_gdb/pr4-1.png" alt="pr4-1" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_gdb/pr4-2.png" alt="pr4-2" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_gdb/pr4-3.png" alt="pr4-3" style="width:100%;max-width: 700px;"> <br>
+                    <img src="img/slike_gdb/pr4-4.png" alt="pr4-4" style="width:100%;max-width: 700px;"> <br><br>
+                    
+                    Neka je naziv programa niti.c. Program izračunava skalarni proizvod dva vektora. Broj niti se unosi sa standardnog ulaza. Posao na niti se deli tako što svaka nit dobije deo niza koji treba da obradi. Neka je n dimenzija vektora a m broj niti, pri čemu možemo pretpostaviti da je n > m (u suprotnom imamo besposlene niti a to ne želimo) i m deli n (radi uniformnije podele poslova po nitima). Prva nit obrađuje prvih d = n / m elemenata i tako redom za svaku nit.  <br><br>
+                    Prevođenjem i pokretanjem programa, i unosom jednostavnih vektora x = (1, 0, 1, 0, 1, 0) i y = (2, 0, 2, 0, 2, 0) dobijamo netačan rezultat.<br><br>
+                    <img src="img/slike_gdb/pr4-5.png" alt="pr4-5" style="width:100%;max-width: 700px;"> <br><br>
+
+
+                    Gde je problem? Kako kod ima preko 100 linija, najbolje bi bilo iskoristiti mehanizam debagovanja za detekciju greške.<br>
+                    Debagovanje prikazujemo u Emacs okruženju. <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;1. </span>Postavljamo tačku prekida na funkciju main kao i na neku liniju u okviru funkcije koju izvršavaju niti (funkcija nit), kako bismo mogli debagovanje preusmeriti na kreirane niti, ukoliko to bude potrebno. Da bismo mogli debagovati kompletan deo koji izvršavaju novokreirane niti, tačku prekida postavljamo na liniji 91, odnosno negde na samom početku funkcije nit.<br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;2. </span>Debagovanjem liniju po liniju i unošenjem odgovarajućih vrednosti vidimo da su vektori x i y uspešno učitani. Ispis elemenata nizova videti u delu vezanom za GDB komande (naredba p x ispisuje adresu niza).<br><br>
+                    <img src="img/slike_gdb/pr4-6.png" alt="pr4-6" style="width:100%;max-width: 700px;"> <br><br><br>
+
+
+                    <span class="b_gdb">&ensp;&ensp;3. </span>Ako nastavimo sa debagovanjem liniju po liniju očigledno da u main-u nema problema. Nakon kreiranja niti, debagovanje se preusmerava na postavljenu tačku prekida u okviru funkcije koju izvršavaju niti. <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;4. </span>Kako sve niti izvršavaju istu funkciju, svejedno je koju ćemo odabrati za debagovanje. Neka je to poslednja odnosno 4. nit. Zašto četvrta? Prva nit obuhvata deo vezan za funkciju main. Iako nas GDB obaveštava ukoliko se pokrene nova nit, dobra je praksa iskoristiti komandu za informacije o nitima, da bismo znali koliko niti je trenutno aktivno i koja nit se trenutno izvršava (zahvaljujući prefiksnom karakteru ID-ja *).<br><br>
+                    <img src="img/slike_gdb/pr4-7.png" alt="pr4-7" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Da bismo preusmerili debagovanje na 4. nit neophodno je pozvati komandu ‘thread 4’:<br><br>
+                    <img src="img/slike_gdb/pr4-8.png" alt="pr4-8" style="width:100%;max-width: 700px;"> <br><br>
+
+                    <span class="b_gdb">&ensp;&ensp;5. </span>Sada u prozoru za lokalne promenljive pratimo vrednosti promenljivih u okviru funkcije nit. For petlju debagujemo postupno. Šta možemo primetiti? Petlja se izvršava 3 puta, što nije u skladu sa onim d = m / n iz postavke zadatka koje iznosi 2. Takođe, u toj 3. iteraciji suma se u potpunosti narušava:<br><br>
+                    <img src="img/slike_gdb/pr4-9.png" alt="pr4-9" style="width:100%;max-width: 700px;"> <br><br>
+
+                    Dakle, očigledno je problem u jednakosti kod uslova izlaska iz petlje tj. petlja <br>
+                    se izvršava jedan put više od očekivanog i na taj način pristupamo lokacijama koje prethodno nismo inicijalizivali. <br>
+                    Ispravljanjem greške, ponovnim prevođenjem i pokretanjem programa vidimo da sve funkcioniše <br>
+                    kako treba i da smo dobili očekivani ispis.<br><br>
+                    <img src="img/slike_gdb/pr4-10.png" alt="pr4-10" style="width:100%;max-width: 700px;"> <br><br>
+                </p>
+
+                
+            </div>
+            <div style="padding-top: 40vh; padding-bottom: 30vh;">
+                <button class="gdb__btn" ><a href="/quiz.html">Kviz</a></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>
